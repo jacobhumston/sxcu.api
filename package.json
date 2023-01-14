@@ -1,0 +1,28 @@
+{
+    "name": "sxcu.api",
+    "version": "1.0.1",
+    "description": "Node.js library to interact with the sxcu.net API.",
+    "main": "src/index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Lovely-Experiences/sxcu.api.git"
+    },
+    "scripts": {
+        "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c jsdoc.json --verbose",
+        "test": "node ./test/index.js",
+        "publish": "npm publish --access public"
+    },
+    "keywords": [
+        "sxcu.net"
+    ],
+    "author": "Jacob Humston",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Lovely-Experiences/sxcu.api/issues"
+    },
+    "homepage": "https://github.com/Lovely-Experiences/sxcu.api#readme",
+    "devDependencies": {
+        "clean-jsdoc-theme": "^4.2.2",
+        "jsdoc": "^4.0.0"
+    }
+}
