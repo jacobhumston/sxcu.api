@@ -36,7 +36,10 @@ const baseURL = "https://sxcu.net/api";
  */
 
 /**
+ * Methods that interact with the files endpoint.
  * @namespace Files
+ * @example
+ * const { Files: sxcuFiles } = require("sxcu.api");
  */
 exports.Files = {
     /**
@@ -65,11 +68,11 @@ exports.Files = {
     /**
      * Get the meta info of a file.
      * @function getFileMeta
-     * @memberof Files
-     * @instance
      * @param {Snowflake} fileId ID of the file to get the meta info of.
      * @returns {Promise<FileMetaResponse>}
      * @throws {ErrorResponse}
+     * @memberof Files
+     * @instance
      */
     getFileMeta: async function (fileId) {
         return new Promise(function (resolve, reject) {
