@@ -20,7 +20,7 @@ Here's an example using the `getFileMeta` method.
 
 ```js
 const sxcu = require("sxcu.api");
-sxcu.File.getFileMeta("1234abcd")
+sxcu.Files.getFileMeta("1234abcd")
     .then((metaData) => {
         console.log(`File URL: ${metaData.url}`);
     })
@@ -34,13 +34,13 @@ sxcu.File.getFileMeta("1234abcd")
 
 #### sxcu.api
 
--   **Docs:** https://lovely-experiences.github.io/sxcu.api/
--   **GitHub:** https://github.com/Lovely-Experiences/sxcu.api
--   **NPM:** https://www.npmjs.com/package/sxcu.api
+-   **Docs:** [https://lovely-experiences.github.io/sxcu.api/](https://lovely-experiences.github.io/sxcu.api/)
+-   **GitHub:** [https://github.com/Lovely-Experiences/sxcu.api](https://github.com/Lovely-Experiences/sxcu.api)
+-   **NPM:** [https://www.npmjs.com/package/sxcu.api](https://www.npmjs.com/package/sxcu.api)
 
 #### sxcu.net
 
--   **Website:** https://sxcu.net/
--   **API Docs:** https://sxcu.net/api/docs/
--   **Discord:** https://discord.gg/ZBcYQwMWTG
--   **Donate:** https://paypal.me/MisterFix
+-   **Website:** [https://sxcu.net/](https://sxcu.net/)
+-   **API Docs:** [https://sxcu.net/api/docs/](https://sxcu.net/api/docs/)
+-   **Discord:** [https://discord.gg/ZBcYQwMWTG](https://discord.gg/ZBcYQwMWTG)
+-   **Donate:** [https://paypal.me/MisterFix](https://paypal.me/MisterFix)
