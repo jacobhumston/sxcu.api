@@ -3,7 +3,7 @@ const https = require("https");
 const fs = require("fs");
 
 // Configuration
-const packageVersion = "1.0.2";
+const packageVersion = "1.0.3";
 const packageUrl = "https://github.com/Lovely-Experiences/sxcu.api";
 const userAgent = `sxcu.api/${packageVersion} (+${packageUrl})`;
 const baseURL = "https://sxcu.net/api";
@@ -39,9 +39,9 @@ const baseURL = "https://sxcu.net/api";
  * Methods that interact with the files endpoint.
  * @namespace Files
  * @example
- * const { Files: sxcuFiles } = require("sxcu.api");
+ * const { files: sxcuFiles } = require("sxcu.api");
  */
-exports.Files = {
+exports.files = {
     /**
      * Represents OpenGraph properties of a file meta response.
      * @typedef {Object} FileMetaResponseOpenGraphProperties
@@ -65,6 +65,7 @@ exports.Files = {
      * @property {FileMetaResponseOpenGraphProperties|undefined} openGraphProperties OpenGraph properties for this file.
      */
 
+    // TODO: Change method to use the new 'fetch' api.
     /**
      * Get the meta info of a file.
      * @function getFileMeta
@@ -82,9 +83,9 @@ exports.Files = {
                     method: "GET",
                     headers: { "User-Agent": userAgent, Accept: "application/json" },
                 },
-                function (response) {
-                    response.on("data", function (data) {
-                        if (response.statusCode == 200) {
+                function (incomingMessage) {
+                    incomingMessage.on("data", function (data) {
+                        if (incomingMessage.statusCode == 200) {
                             const parsedData = JSON.parse(data);
                             const resolvedData = {};
                             resolvedData.id = parsedData.id;
@@ -103,11 +104,11 @@ exports.Files = {
                                 resolvedData.openGraphProperties.discordHideURL = parsedData.og_properties.discord_hide_url;
                             }
                             resolve(resolvedData);
-                        } else if (response.statusCode == 400 || response.statusCode == 429) {
+                        } else if (incomingMessage.statusCode == 400 || incomingMessage.statusCode == 429) {
                             const parsedData = JSON.parse(data);
                             reject({ error: parsedData.error, code: parsedData.code });
                         } else {
-                            reject({ error: `Received status code ${Response.statusCode}.`, code: 0 });
+                            reject({ error: `Received status code ${incomingMessage.statusCode}.`, code: 0 });
                         }
                     });
                 }
@@ -116,6 +117,25 @@ exports.Files = {
                 reject({ error: Error, code: -1 });
             });
             request.end();
+        });
+    },
+
+    uploadFile: async function (file, options, customURL) {
+        return new Promise(function (resolve, reject) {
+            const formData = new FormData();
+            try {
+                formData.set("file", new Blob(Buffer.from(fs.readFileSync(file))));
+            } catch (error) {
+                reject({ error: "Couldn't send file: " + error, code: -1 });
+            }
+            fetch(`${baseURL}/files/create`, {
+                method: "POST",
+                body: formData,
+                headers: { "User-Agent": userAgent, Accept: "application/json", "Content-Type": "multipart/form-data" },
+            }).then(async function (response) {
+                console.log(formData)
+                resolve(await response.json());
+            });
         });
     },
 };

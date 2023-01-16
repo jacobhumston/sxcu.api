@@ -2,6 +2,8 @@
 
 Node.js library to interact with the sxcu.net API.
 
+**Warning** - This module is still being created and does not currently support every feature of the sxcu api.
+
 ## Installation
 
 To install, run the following command in your terminal of choice:
@@ -10,17 +12,18 @@ To install, run the following command in your terminal of choice:
 npm i sxcu.api
 ```
 
+**Important:** sxcu.api requires Node.js v18+!
+
 ### Usage
 
 You can find the documentation for sxcu.api [here](https://lovely-experiences.github.io/sxcu.api/).
 
-Using methods provided by sxcu.api is pretty simple!
-
-Here's an example using the `getFileMeta` method.
+Here's an example of using the `getFileMeta` method.
 
 ```js
 const sxcu = require("sxcu.api");
-sxcu.Files.getFileMeta("1234abcd")
+sxcu.files
+    .getFileMeta("1234abcd")
     .then((metaData) => {
         console.log(`File URL: ${metaData.url}`);
     })
@@ -28,6 +31,16 @@ sxcu.Files.getFileMeta("1234abcd")
         // Always listen for errors!
         console.error(error);
     });
+```
+
+Note that if you don't need all endpoint methods, you can require a specfic one.
+
+```js
+const { files: sxcu } = require("sxcu.api");
+// OR: const { files } = require("sxcu.api");
+
+sxcu.getFileMeta("example"); // will work
+sxcu.listSubdomains("example"); // will NOT work
 ```
 
 ### Links
