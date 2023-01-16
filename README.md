@@ -1,6 +1,6 @@
 # sxcu.api
 
-Node.js library to interact with the sxcu.net API.
+Node.js library to interact with the sxcu.net API with no dependencies. Types are defined so you can easily understand what data you are receiving and/or supposed to send.
 
 **Warning** - This module is still being created and does not currently support every feature of the sxcu api.
 
@@ -12,9 +12,9 @@ To install, run the following command in your terminal of choice:
 npm i sxcu.api
 ```
 
-**Important:** sxcu.api requires Node.js v18+!
+**Important:** sxcu.api requires Node.js **v18** or above. Install the latest LTS version here: https://nodejs.org/en/
 
-### Usage
+## Usage
 
 You can find the documentation for sxcu.api [here](https://lovely-experiences.github.io/sxcu.api/).
 
@@ -33,27 +33,38 @@ sxcu.files
     });
 ```
 
-Note that if you don't need all endpoint methods, you can require a specfic one.
+Note that if you don't need all endpoint methods, you can require a specific one.
 
 ```js
 const { files: sxcu } = require("sxcu.api");
 // OR: const { files } = require("sxcu.api");
 
-sxcu.getFileMeta("example"); // will work
-sxcu.listSubdomains("example"); // will NOT work
+sxcu.getFileMeta("example");
 ```
 
-### Links
+When handling errors, you will receive two values, `error` and `code`. Error is the error message, and code is the number associated with the error. If the error is local, then the error code will be `-1`. If the error is a unknown status code returned by the API, then the error code will be `0`. Any other error codes are provided by the API.
 
-#### sxcu.api
+```js
+{ error: "Something went wrong...", code: -1 }
+```
+
+## Links
+
+### sxcu.api
 
 -   **Docs:** [https://lovely-experiences.github.io/sxcu.api/](https://lovely-experiences.github.io/sxcu.api/)
 -   **GitHub:** [https://github.com/Lovely-Experiences/sxcu.api](https://github.com/Lovely-Experiences/sxcu.api)
 -   **NPM:** [https://www.npmjs.com/package/sxcu.api](https://www.npmjs.com/package/sxcu.api)
 
-#### sxcu.net
+### sxcu.net
 
 -   **Website:** [https://sxcu.net/](https://sxcu.net/)
 -   **API Docs:** [https://sxcu.net/api/docs/](https://sxcu.net/api/docs/)
 -   **Discord:** [https://discord.gg/ZBcYQwMWTG](https://discord.gg/ZBcYQwMWTG)
 -   **Donate:** [https://paypal.me/MisterFix](https://paypal.me/MisterFix)
+
+## Changelog
+
+-   **v1.1.0**
+    -   `uploadFile` method is now fully complete and functional.
+    -   Fixed some typos and type definitions.

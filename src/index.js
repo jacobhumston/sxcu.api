@@ -3,7 +3,7 @@ const https = require("https");
 const fs = require("fs");
 
 // Configuration
-const packageVersion = "1.0.3";
+const packageVersion = "1.1.0";
 const packageUrl = "https://github.com/Lovely-Experiences/sxcu.api";
 const userAgent = `sxcu.api/${packageVersion} (+${packageUrl})`;
 const baseURL = "https://sxcu.net/api";
@@ -45,10 +45,10 @@ exports.files = {
     /**
      * Represents OpenGraph properties of a file meta response.
      * @typedef {Object} FileMetaResponseOpenGraphProperties
-     * @property {string?} color OpenGraph HEX color code.
-     * @property {string?} title OpenGraph title.
-     * @property {string?} description OpenGraph description.
-     * @property {boolean?} discordHideURL Whether to hide this file's url in Discord or not when sent.
+     * @property {string} [color] OpenGraph HEX color code.
+     * @property {string} [title] OpenGraph title.
+     * @property {string} [description] OpenGraph description.
+     * @property {boolean} [discordHideURL] Whether to hide this file's url in Discord or not when sent.
      */
 
     /**
@@ -120,22 +120,114 @@ exports.files = {
         });
     },
 
-    uploadFile: async function (file, options, customURL) {
+    /**
+     * Represents OpenGraph properties for UploadFileOptions.
+     * @typedef {Object} UploadFileOptionsOpenGraphProperties
+     * @property {string|boolean} title Configures the value for the 'title' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+     * @property {string|boolean} description Configures the value for the 'description' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+     * @property {string|boolean} color Configures the value for the 'theme-color' OpenGraph meta tag, must be a valid HEX color code, if set to false, the tag will be omitted entirely.
+     * @property {string|boolean} siteName Configures the value for the 'site-name' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+     * @property {boolean} discordHideUrl If false, discord will not hide the url of the file when sent as a direct link.
+     */
+
+    /**
+     * Options for uploading a file.
+     * @typedef {Object} UploadFileOptions
+     * @property {string} [token] Subdomain's upload token.
+     * @property {Snowflake} [collection] Collection to upload too.
+     * @property {string} [collectionToken] Collection's upload token.
+     * @property {boolean} [noEmbed] If true, the url will be a link directly to the image instead.
+     * @property {boolean} [selfDestruct] If true, the file will be automatically deleted after 24 hours.
+     * @property {UploadFileOptionsOpenGraphProperties} [openGraphProperties] OpenGraph properties which allow you to change how the url is embedded on different websites.
+     */
+
+    /**
+     * Represents the response returned by 'uploadFile'.
+     * @typedef {Object} UploadedFileResponse
+     * @property {Snowflake} id ID of the uploaded file.
+     * @property {URL} url URL of the uploaded file.
+     * @property {URL} deletionUrl Deletion URL for the uploaded file.
+     * @property {string} deletionToken Deletion token for the uploaded file.
+     * @property {URL} thumbnail Thumbnail of the uploaded file.
+     */
+
+    /**
+     * Get the meta info of a file.
+     * @function uploadFile
+     * @param {string} file Path of the file to upload.
+     * @param {UploadFileOptions} [options] Upload file options.
+     * @param {URL} [subdomain] Subdomain to upload the file to. Ex; 'something.shx.gg'
+     * @returns {Promise<UploadedFileResponse>}
+     * @throws {ErrorResponse}
+     * @memberof Files
+     * @instance
+     */
+    uploadFile: async function (file, options, subdomain) {
         return new Promise(function (resolve, reject) {
             const formData = new FormData();
             try {
-                formData.set("file", new Blob(Buffer.from(fs.readFileSync(file))));
+                formData.set("file", new Blob([fs.readFileSync(file)]));
             } catch (error) {
-                reject({ error: "Couldn't send file: " + error, code: -1 });
+                reject({ error: `Couldn't parse file: ${error}`, code: -1 });
             }
-            fetch(`${baseURL}/files/create`, {
+            if (options) {
+                if (options.token) {
+                    formData.set("token", options.token);
+                }
+                if (options.collection) {
+                    formData.set("collection", options.collection);
+                }
+                if (options.collectionToken) {
+                    formData.set("collection_token", options.collectionToken);
+                }
+                if (options.noEmbed == true) {
+                    formData.set("noembed", "true");
+                }
+                if (options.selfDestruct) {
+                    formData.set("self_destruct", "true");
+                }
+                if (options.openGraphProperties) {
+                    formData.set(
+                        "og_properties",
+                        JSON.stringify({
+                            title: options.openGraphProperties.title,
+                            description: options.openGraphProperties.description,
+                            color: options.openGraphProperties.color,
+                            site_name: options.openGraphProperties.siteName,
+                            discord_hide_url: options.openGraphProperties.discordHideUrl,
+                        })
+                    );
+                }
+            }
+            let url = baseURL;
+            if (subdomain) {
+                url = "https://" + subdomain + "/api";
+            }
+            fetch(`${url}/files/create`, {
                 method: "POST",
                 body: formData,
-                headers: { "User-Agent": userAgent, Accept: "application/json", "Content-Type": "multipart/form-data" },
-            }).then(async function (response) {
-                console.log(formData)
-                resolve(await response.json());
-            });
+                headers: { "User-Agent": userAgent, Accept: "application/json" },
+            })
+                .then(async function (response) {
+                    if (response.status == 200) {
+                        const data = await response.json();
+                        const parsedData = {};
+                        parsedData.id = data.id;
+                        parsedData.url = data.url;
+                        parsedData.deletionUrl = data.del_url;
+                        parsedData.deletionToken = data.del_url.split("/").pop();
+                        parsedData.thumbnail = data.thumb;
+                        resolve(parsedData);
+                    } else if (response.status == 400 || response.status == 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({ error: `Received status code ${incomingMessage.statusCode}.`, code: 0 });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
         });
     },
 };
