@@ -183,7 +183,7 @@ exports.files = {
                 if (options.noEmbed == true) {
                     formData.set("noembed", "true");
                 }
-                if (options.selfDestruct) {
+                if (options.selfDestruct == true) {
                     formData.set("self_destruct", "true");
                 }
                 if (options.openGraphProperties) {
