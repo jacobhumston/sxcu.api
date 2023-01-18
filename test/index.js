@@ -3,12 +3,22 @@ const secrets = require("./secrets.json");
 
 async function test() {
     sxcu.files
-        .uploadFile("./test/test.png", { token: secrets["upload-token"], openGraphProperties: { title: "hi lol" } }, "lol.reeee.ee")
-        .then(function (uploadedFile) {
-            console.log(uploadedFile);
+        .uploadFile(__dirname + "/a-test.png")
+        .then(function (data) {
+            console.log("url", data.url);
+            setTimeout(function () {
+                sxcu.files
+                    .deleteFile(data.id, data.deletionToken)
+                    .then(function (message) {
+                        console.log("message", message);
+                    })
+                    .catch(function (err) {
+                        console.log(err);
+                    });
+            }, 1000 * 5);
         })
-        .catch(function (error) {
-            console.log(error.code, error.error);
+        .catch(function (err) {
+            console.log(err);
         });
 }
 

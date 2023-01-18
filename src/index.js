@@ -36,6 +36,11 @@ const baseURL = "https://sxcu.net/api";
  */
 
 /**
+ * Represents a path to a file.
+ * @typedef {string} FilePath
+ */
+
+/**
  * Methods that interact with the files endpoint.
  * @namespace Files
  * @example
@@ -81,7 +86,10 @@ exports.files = {
                 `${baseURL}/files/${fileId}`,
                 {
                     method: "GET",
-                    headers: { "User-Agent": userAgent, Accept: "application/json" },
+                    headers: {
+                        "User-Agent": userAgent,
+                        Accept: "application/json",
+                    },
                 },
                 function (incomingMessage) {
                     incomingMessage.on("data", function (data) {
@@ -101,14 +109,21 @@ exports.files = {
                                 resolvedData.openGraphProperties.color = parsedData.og_properties.color;
                                 resolvedData.openGraphProperties.title = parsedData.og_properties.title;
                                 resolvedData.openGraphProperties.description = parsedData.og_properties.description;
-                                resolvedData.openGraphProperties.discordHideURL = parsedData.og_properties.discord_hide_url;
+                                resolvedData.openGraphProperties.discordHideURL =
+                                    parsedData.og_properties.discord_hide_url;
                             }
                             resolve(resolvedData);
                         } else if (incomingMessage.statusCode == 400 || incomingMessage.statusCode == 429) {
                             const parsedData = JSON.parse(data);
-                            reject({ error: parsedData.error, code: parsedData.code });
+                            reject({
+                                error: parsedData.error,
+                                code: parsedData.code,
+                            });
                         } else {
-                            reject({ error: `Received status code ${incomingMessage.statusCode}.`, code: 0 });
+                            reject({
+                                error: `Received status code ${incomingMessage.statusCode}.`,
+                                code: 0,
+                            });
                         }
                     });
                 }
@@ -152,9 +167,9 @@ exports.files = {
      */
 
     /**
-     * Get the meta info of a file.
+     * Upload a file and retrieve and URL for it.
      * @function uploadFile
-     * @param {string} file Path of the file to upload.
+     * @param {FilePath} file Path of the file to upload.
      * @param {UploadFileOptions} [options] Upload file options.
      * @param {URL} [subdomain] Subdomain to upload the file to. Ex; 'something.shx.gg'
      * @returns {Promise<UploadedFileResponse>}
@@ -206,7 +221,10 @@ exports.files = {
             fetch(`${url}/files/create`, {
                 method: "POST",
                 body: formData,
-                headers: { "User-Agent": userAgent, Accept: "application/json" },
+                headers: {
+                    "User-Agent": userAgent,
+                    Accept: "application/json",
+                },
             })
                 .then(async function (response) {
                     if (response.status == 200) {
@@ -222,7 +240,49 @@ exports.files = {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {
-                        reject({ error: `Received status code ${incomingMessage.statusCode}.`, code: 0 });
+                        reject({
+                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
+
+    /**
+     * Delete a file using the deletion token.
+     * @function deleteFile
+     * @param {Snowflake} fileId ID of the file to delete.
+     * @param {string} deletionToken Deletion token.
+     * @returns {string} Message result.
+     * @throws {ErrorResponse}
+     * @memberof Files
+     * @instance
+     */
+    deleteFile: async function (fileId, deletionToken) {
+        return new Promise(function (resolve, reject) {
+            fetch(`${baseURL}/files/delete/${fileId}/${deletionToken}`, {
+                method: "GET",
+                headers: {
+                    "User-Agent": userAgent,
+                    Accept: "application/json",
+                },
+            })
+                .then(async function (response) {
+                    if (response.status == 200) {
+                        const data = await response.json();
+                        return resolve(data.message);
+                    } else if (response.status == 400 || response.status == 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            code: 0,
+                        });
                     }
                 })
                 .catch(function (error) {

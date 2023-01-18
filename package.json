@@ -10,7 +10,8 @@
     "scripts": {
         "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c jsdoc.json --verbose",
         "test": "node ./test/index.js",
-        "publish": "npm publish --access public"
+        "publish": "npm publish --access public",
+        "local-node-test": "./node/bin/node ./test/index.js"
     },
     "keywords": [
         "sxcu.net"
