@@ -33,7 +33,7 @@ sxcu.files
     });
 ```
 
-And here is an example of the 'uploadFile' method.
+And here is an example of the `uploadFile` method.
 
 ```js
 const sxcu = require("sxcu.api");
