@@ -2,3 +2,5 @@ node_modules
 docs
 test
 package-lock.json
+node
+.npmrc
