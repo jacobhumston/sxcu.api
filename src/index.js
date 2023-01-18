@@ -3,7 +3,7 @@ const https = require("https");
 const fs = require("fs");
 
 // Configuration
-const packageVersion = "1.1.0";
+const packageVersion = "1.1.2";
 const packageUrl = "https://github.com/Lovely-Experiences/sxcu.api";
 const userAgent = `sxcu.api/${packageVersion} (+${packageUrl})`;
 const baseURL = "https://sxcu.net/api";
