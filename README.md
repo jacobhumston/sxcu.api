@@ -12,7 +12,7 @@ To install, run the following command in your terminal of choice:
 npm i sxcu.api
 ```
 
-**Important:** sxcu.api requires Node.js **v18** or above. Install the latest LTS version here: https://nodejs.org/en/
+**Important:** sxcu.api requires Node.js **v18** or above. Install the latest LTS version here: [https://nodejs.org/en/](https://nodejs.org/en/)
 
 ## Usage
 
