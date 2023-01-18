@@ -42,9 +42,9 @@ const uploadData = await sxcu.files.uploadFile(__dirname + "/a-test.png", option
 console.log(uploadData);
 ```
 
-You must include `__dirname` before you provide the file path if you don't want to provide the full path to the file.
+You must include `__dirname` before you provide the file path if you don't want to provide the full path to the file. Note that the above wont work unless you have a filed named `a-test.png` in the same folder as your code.
 
----
+### Requiring Specific Endpoints
 
 Note that if you don't need all endpoint methods, you can require a specific one.
 
@@ -55,7 +55,7 @@ const { files: sxcu } = require("sxcu.api");
 sxcu.getFileMeta("example");
 ```
 
----
+### Handling Errors
 
 When handling errors, you will receive two values, `error` and `code`. Error is the error message, and code is the number associated with the error. If the error is local, then the error code will be `-1`. If the error is a unknown status code returned by the API, then the error code will be `0`. Any other error codes are provided by the API.
 
