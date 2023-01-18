@@ -1,6 +1,6 @@
 {
     "opts": {
-        "template": "node_modules/clean-jsdoc-theme"
+        "template": ""
     },
     "markdown": {
         "hardwrap": false,

@@ -8,7 +8,7 @@
         "url": "git+https://github.com/Lovely-Experiences/sxcu.api.git"
     },
     "scripts": {
-        "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c jsdoc.json --verbose",
+        "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c jsdoc.json -r --verbose",
         "test": "node ./test/index.js",
         "publish": "npm publish --access public",
         "local-node-test": "./node/bin/node ./test/index.js"
@@ -23,7 +23,6 @@
     },
     "homepage": "https://github.com/Lovely-Experiences/sxcu.api#readme",
     "devDependencies": {
-        "clean-jsdoc-theme": "^4.2.2",
         "jsdoc": "^4.0.0"
     }
 }

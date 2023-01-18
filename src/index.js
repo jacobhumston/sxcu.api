@@ -1,3 +1,8 @@
+/**
+ * @file sxcu.api library.
+ * @author Jacob Humston
+ */
+
 // Modules
 const https = require("https");
 const fs = require("fs");
@@ -257,7 +262,7 @@ exports.files = {
      * @function deleteFile
      * @param {Snowflake} fileId ID of the file to delete.
      * @param {string} deletionToken Deletion token.
-     * @returns {string} Message result.
+     * @returns {Promise<string>} Message result.
      * @throws {ErrorResponse}
      * @memberof Files
      * @instance
