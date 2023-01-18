@@ -42,7 +42,7 @@ const uploadData = await sxcu.files.uploadFile(__dirname + "/a-test.png", option
 console.log(uploadData);
 ```
 
-You must include `__dirname` before you provide the file path if you don't want to provide the full path to the file. Note that the above wont work unless you have a filed named `a-test.png` in the same folder as your code.
+You must include `__dirname` before you provide the file if you don't want to provide the full path to the file. Note that the above code wont work unless you have a file named `a-test.png` in the same folder as your code.
 
 ### Requiring Specific Endpoints
 
