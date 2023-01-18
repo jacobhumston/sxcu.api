@@ -71,8 +71,6 @@ When handling errors, you will receive two values, `error` and `code`. Error is 
 -   **Discord:** [https://discord.gg/ZBcYQwMWTG](https://discord.gg/ZBcYQwMWTG)
 -   **Donate:** [https://paypal.me/MisterFix](https://paypal.me/MisterFix)
 
-## Changelog
+## Releases
 
--   **v1.1.0**
-    -   `uploadFile` method is now fully complete and functional.
-    -   Fixed some typos and type definitions.
+You may view all available releases [here (GitHub)](https://github.com/Lovely-Experiences/sxcu.api/releases) and [here (NPM)](https://www.npmjs.com/package/sxcu.api?activeTab=versions).
