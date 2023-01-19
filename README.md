@@ -63,6 +63,8 @@ When handling errors, you will receive two values, `error` and `code`. Error is 
 { error: "Something went wrong...", code: -1 }
 ```
 
+It's important to note that those values may not be present for errors that revolve around providing incorrect method parameters. You can use the utility method `resolveError()` if you want an error response 100% of the time.
+
 ## Links
 
 ### sxcu.api

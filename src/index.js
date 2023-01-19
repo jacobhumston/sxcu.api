@@ -8,9 +8,9 @@ const https = require("https");
 const fs = require("fs");
 
 // Configuration
-const packageVersion = "1.1.2";
+const packageVersion = require("../package.json").version;
 const packageUrl = "https://github.com/Lovely-Experiences/sxcu.api";
-const userAgent = `sxcu.api/${packageVersion} (+${packageUrl})`;
+const userAgent = `sxcu.api/${packageVersion} (+${packageUrl}) - Node.js ${process.version}`;
 const baseURL = "https://sxcu.net/api";
 
 /**
@@ -46,10 +46,12 @@ const baseURL = "https://sxcu.net/api";
  */
 
 /**
- * Methods that interact with the files endpoint.
+ * Methods that interact with the "Files" endpoint.
  * @namespace Files
  * @example
- * const { files: sxcuFiles } = require("sxcu.api");
+ * const { files: sxcuFiles } = require("sxcu.api"); // sxcuFiles.<method>
+ * const { files } = require("sxcu.api"); // files.<method>
+ * const sxcu = require("sxcu.api"); // sxcu.files.<method>
  */
 exports.files = {
     /**
@@ -75,7 +77,6 @@ exports.files = {
      * @property {FileMetaResponseOpenGraphProperties|undefined} openGraphProperties OpenGraph properties for this file.
      */
 
-    // TODO: Change method to use the new 'fetch' api.
     /**
      * Get the meta info of a file.
      * @function getFileMeta
@@ -84,6 +85,7 @@ exports.files = {
      * @throws {ErrorResponse}
      * @memberof Files
      * @instance
+     * @todo Change method to use the new 'fetch' api.
      */
     getFileMeta: async function (fileId) {
         return new Promise(function (resolve, reject) {
@@ -181,6 +183,11 @@ exports.files = {
      * @throws {ErrorResponse}
      * @memberof Files
      * @instance
+     * @example
+     * const sxcu = require("sxcu.api");
+     * const options = { openGraphProperties: { siteName: "Test Image". discordHideUrl: false } };
+     * const uploadData = await sxcu.files.uploadFile(__dirname + "/a-test.png", options).catch(function (e) { console.log(e); });
+     * console.log(uploadData);
      */
     uploadFile: async function (file, options, subdomain) {
         return new Promise(function (resolve, reject) {
@@ -294,5 +301,104 @@ exports.files = {
                     reject({ error: `Request failed: ${error}`, code: -1 });
                 });
         });
+    },
+};
+
+/**
+ * Methods that interact with the "Subdomains" endpoint.
+ * @namespace Subdomains
+ * @example
+ * const { subdomains: sxcuSubdomains } = require("sxcu.api"); // sxcuSubdomains.<method>
+ * const { subdomains } = require("sxcu.api"); // subdomains.<method>
+ * const sxcu = require("sxcu.api"); // sxcu.subdomains.<method>
+ */
+exports.subdomains = {
+    /**
+     * Represents values returned by 'listSubdomains'.
+     * @typedef {Object} SubdomainListData
+     * @property {string} domain Name of the subdomain.
+     * @property {number} uploadCount Number of files uploaded to this subdomain.
+     * @property {boolean} public Whether this subdomain is public or not.
+     * @property {number} fileViews Number of files views on this subdomain.
+     */
+
+    /**
+     * Get a list of all current subdomains with some basic information about each of them.
+     * WARNING: This endpoint contains NSFW domain names.
+     * @function listSubdomains
+     * @returns {Promise<SubdomainListData[]>} An array of subdomain data.
+     * @throws {ErrorResponse}
+     * @memberof Subdomains
+     * @instance
+     */
+    listSubdomains: async function () {
+        return new Promise(function (resolve, reject) {
+            fetch(`${baseURL}/subdomains`, {
+                method: "GET",
+                headers: {
+                    "User-Agent": userAgent,
+                    Accept: "application/json",
+                },
+            })
+                .then(async function (response) {
+                    if (response.status == 200) {
+                        const data = await response.json();
+                        const dataToReturn = [];
+                        for (subdomain of data) {
+                            dataToReturn.push({
+                                domain: subdomain.domain,
+                                uploadCount: subdomain.upload_count,
+                                public: subdomain.public,
+                                fileViews: subdomain.file_views,
+                            });
+                        }
+                        resolve(dataToReturn);
+                    } else if (response.status == 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
+};
+
+/**
+ * Methods that can provide some assistance when using other methods.
+ * All methods defined as a utility method do not create API calls.
+ * @namespace Utility
+ * @example
+ * const { utility: sxcuUtility } = require("sxcu.api"); // sxcuUtility.<method>
+ * const { utility } = require("sxcu.api"); // utility.<method>
+ * const sxcu = require("sxcu.api"); // sxcu.utility.<method>
+ */
+exports.utility = {
+    /**
+     * Resolve an error, this can be used to guarantee the presence of a error and code value.
+     * @function resolveError
+     * @param {any} error Error to resolve.
+     * @returns {ErrorResponse} Error response.
+     * @memberof Utility
+     * @instance
+     */
+    resolveError: function (error) {
+        if (error) {
+            if (typeof error === "object" && !Array.isArray(error)) {
+                return { error: error.error ?? error.message ?? "unknown", code: error.code ?? -1 };
+            } else if (typeof error === "string") {
+                return { error: error, code: -1 };
+            } else {
+                return { error: toString(error).replace("[object Undefined]", "unknown"), code: -1 };
+            }
+        } else {
+            return { error: "unknown", code: -1 };
+        }
     },
 };

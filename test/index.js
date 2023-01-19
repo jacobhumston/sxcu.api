@@ -15,7 +15,21 @@ async function test() {
                     .catch(function (err) {
                         console.log(err);
                     });
-            }, 1000 * 5);
+            }, 1000 * 15);
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
+
+    sxcu.subdomains
+        .listSubdomains()
+        .then(function (data) {
+            let totalViews = 0;
+            for (domain of data) {
+                totalViews = totalViews + domain.fileViews;
+            }
+            console.log(totalViews);
+            console.log(data[0]);
         })
         .catch(function (err) {
             console.log(err);

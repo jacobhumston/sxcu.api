@@ -10,12 +10,19 @@
     "scripts": {
         "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c jsdoc.json -r --verbose",
         "test": "node ./test/index.js",
-        "publish": "npm publish --access public",
         "local-node-test": "./node/bin/node ./test/index.js"
     },
     "keywords": [
-        "sxcu.net"
+        "sxcu.net",
+        "sxcu",
+        "wrapper",
+        "library",
+        "api"
     ],
+    "directories": {
+        "lib": "/src",
+        "test": "/test"
+    },
     "author": "Jacob Humston",
     "license": "MIT",
     "bugs": {
