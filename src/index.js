@@ -14,16 +14,6 @@ const userAgent = `sxcu.api/${packageVersion} (+${packageUrl}) - Node.js ${proce
 const baseURL = "https://sxcu.net/api";
 
 /**
- * Extra string values that can represent a boolean for query strings.
- * @typedef {'True'|'true'|'1'|'False'|'false'|'0'} BooleanQueryStringExtraOptions
- */
-
-/**
- * Represents a boolean for query strings.
- * @typedef {boolean|BooleanQueryStringExtraOptions} BooleanQueryString
- */
-
-/**
  * Represents a Snowflake.
  * @typedef {string} Snowflake
  */
@@ -82,7 +72,7 @@ exports.files = {
      * @function getFileMeta
      * @param {Snowflake} fileId ID of the file to get the meta info of.
      * @returns {Promise<FileMetaResponse>}
-     * @throws {ErrorResponse}
+     * @throws {ErrorResponse|any}
      * @memberof Files
      * @instance
      * @todo Change method to use the new 'fetch' api.
@@ -180,7 +170,7 @@ exports.files = {
      * @param {UploadFileOptions} [options] Upload file options.
      * @param {URL} [subdomain] Subdomain to upload the file to. Ex; 'something.shx.gg'
      * @returns {Promise<UploadedFileResponse>}
-     * @throws {ErrorResponse}
+     * @throws {ErrorResponse|any}
      * @memberof Files
      * @instance
      * @example
@@ -270,7 +260,7 @@ exports.files = {
      * @param {Snowflake} fileId ID of the file to delete.
      * @param {string} deletionToken Deletion token.
      * @returns {Promise<string>} Message result.
-     * @throws {ErrorResponse}
+     * @throws {ErrorResponse|any}
      * @memberof Files
      * @instance
      */
@@ -327,7 +317,7 @@ exports.subdomains = {
      * WARNING: This endpoint contains NSFW domain names.
      * @function listSubdomains
      * @returns {Promise<SubdomainListData[]>} An array of subdomain data.
-     * @throws {ErrorResponse}
+     * @throws {ErrorResponse|any}
      * @memberof Subdomains
      * @instance
      */
@@ -354,6 +344,104 @@ exports.subdomains = {
                         }
                         resolve(dataToReturn);
                     } else if (response.status == 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
+
+    /**
+     * Represents the response returned by 'getSubdomainMeta()'.
+     * @typedef {Object} SubdomainMetaResponse
+     * @property {Snowflake} id ID of the subdomain.
+     * @property {number} files Number of files associated with this subdomain.
+     * @property {number} links Number of links associated with this subdomain.
+     * @property {number} fileViews Total amount of views that all files got combined that are associated with this subdomain.
+     * @property {boolean} public Wether this subdomain is public or not.
+     * @property {boolean} root Wether this subdomain is a root domain or not.
+     * @property {number} lastActivity Timestamp of last interaction with this subdomain. (File views, file uploads, and file deletions.)
+     * @property {Date} lastActivityDate 'lastActivity' converted to date object.
+     */
+
+    /**
+     * Get the meta info of a subdomain.
+     * @function getSubdomainMeta
+     * @param {string} subdomain Name of the subdomain to get the meta info of. Ex; 'sxcu.net'
+     * @returns {Promise<SubdomainMetaResponse>} Meta information for the subdomain provided.
+     * @throws {ErrorResponse|any}
+     * @memberof Subdomains
+     * @instance
+     */
+    getSubdomainMeta: async function (subdomain) {
+        return new Promise(function (resolve, reject) {
+            fetch(`${baseURL}/subdomains/${subdomain}`, {
+                method: "GET",
+                headers: {
+                    "User-Agent": userAgent,
+                    Accept: "application/json",
+                },
+            })
+                .then(async function (response) {
+                    if (response.status == 200) {
+                        const data = await response.json();
+                        const dataToReturn = {};
+                        dataToReturn.id = data.id;
+                        dataToReturn.files = data.files;
+                        dataToReturn.links = data.links;
+                        dataToReturn.fileViews = data.file_views;
+                        dataToReturn.public = data.public;
+                        dataToReturn.root = data.root;
+                        dataToReturn.lastActivity = data.last_activity;
+                        dataToReturn.lastActivityDate = new Date(data.last_activity * 1000);
+                        resolve(dataToReturn);
+                    } else if (response.status == 400 || response.status == 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
+
+    /**
+     * Check if a subdomain already exists.
+     * @function checkSubdomain
+     * @param {string} subdomain Name of the subdomain to check. Ex; 'sxcu.net'
+     * @returns {Promise<boolean>} Wether the subdomain exists or not.
+     * @throws {ErrorResponse|any}
+     * @memberof Subdomains
+     * @instance
+     */
+    checkSubdomain: async function (subdomain) {
+        return new Promise(function (resolve, reject) {
+            fetch(`${baseURL}/subdomains/check/${subdomain}`, {
+                method: "GET",
+                headers: {
+                    "User-Agent": userAgent,
+                    Accept: "application/json",
+                },
+            })
+                .then(async function (response) {
+                    if (response.status == 200) {
+                        const data = await response.json();
+                        resolve(data.exists);
+                    } else if (response.status == 400 || response.status == 429) {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {
