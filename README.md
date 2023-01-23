@@ -84,4 +84,4 @@ It's important to note that those values may not be present for errors that revo
 
 ## Releases
 
-You may view all available releases [here (GitHub)](https://github.com/Lovely-Experiences/sxcu.api/releases) and [here (NPM)](https://www.npmjs.com/package/sxcu.api?activeTab=versions).
+You may view all available releases [here (GitHub)](https://github.com/Lovely-Experiences/sxcu.api/releases) and [here (NPM)](https://www.npmjs.com/package/sxcu.api?activeTab=versions). It's important to note that NPM releases do not contain the `/test` directory or the `/docs` directory, as well as the ignore files.
