@@ -4,7 +4,6 @@
  */
 
 // Modules
-const https = require("https");
 const fs = require("fs");
 
 // Configuration
@@ -75,60 +74,52 @@ exports.files = {
      * @throws {ErrorResponse|any}
      * @memberof Files
      * @instance
-     * @todo Change method to use the new 'fetch' api.
      */
     getFileMeta: async function (fileId) {
         return new Promise(function (resolve, reject) {
-            const request = https.request(
-                `${baseURL}/files/${fileId}`,
-                {
-                    method: "GET",
-                    headers: {
-                        "User-Agent": userAgent,
-                        Accept: "application/json",
-                    },
+            fetch(`${baseURL}/files/${fileId}`, {
+                method: "GET",
+                headers: {
+                    "User-Agent": userAgent,
+                    Accept: "application/json",
                 },
-                function (incomingMessage) {
-                    incomingMessage.on("data", function (data) {
-                        if (incomingMessage.statusCode == 200) {
-                            const parsedData = JSON.parse(data);
-                            const resolvedData = {};
-                            resolvedData.id = parsedData.id;
-                            resolvedData.url = parsedData.url;
-                            resolvedData.views = parsedData.views;
-                            resolvedData.viewable = parsedData.viewable;
-                            resolvedData.collection = parsedData.collection;
-                            resolvedData.size = parsedData.size;
-                            resolvedData.creationTime = parsedData.creation_time;
-                            resolvedData.creationTimeDate = new Date(resolvedData.creationTime * 1000);
-                            if (parsedData.og_properties != undefined) {
-                                resolvedData.openGraphProperties = {};
-                                resolvedData.openGraphProperties.color = parsedData.og_properties.color;
-                                resolvedData.openGraphProperties.title = parsedData.og_properties.title;
-                                resolvedData.openGraphProperties.description = parsedData.og_properties.description;
-                                resolvedData.openGraphProperties.discordHideURL =
-                                    parsedData.og_properties.discord_hide_url;
-                            }
-                            resolve(resolvedData);
-                        } else if (incomingMessage.statusCode == 400 || incomingMessage.statusCode == 429) {
-                            const parsedData = JSON.parse(data);
-                            reject({
-                                error: parsedData.error,
-                                code: parsedData.code,
-                            });
-                        } else {
-                            reject({
-                                error: `Received status code ${incomingMessage.statusCode}.`,
-                                code: 0,
-                            });
+            })
+                .then(async function (response) {
+                    if (response.status == 200) {
+                        const parsedData = await response.json();
+                        const resolvedData = {};
+                        resolvedData.id = parsedData.id;
+                        resolvedData.url = parsedData.url;
+                        resolvedData.views = parsedData.views;
+                        resolvedData.viewable = parsedData.viewable;
+                        resolvedData.collection = parsedData.collection;
+                        resolvedData.size = parsedData.size;
+                        resolvedData.creationTime = parsedData.creation_time;
+                        resolvedData.creationTimeDate = new Date(resolvedData.creationTime * 1000);
+                        if (parsedData.og_properties != undefined) {
+                            resolvedData.openGraphProperties = {};
+                            resolvedData.openGraphProperties.color = parsedData.og_properties.color;
+                            resolvedData.openGraphProperties.title = parsedData.og_properties.title;
+                            resolvedData.openGraphProperties.description = parsedData.og_properties.description;
+                            resolvedData.openGraphProperties.discordHideURL = parsedData.og_properties.discord_hide_url;
                         }
-                    });
-                }
-            );
-            request.on("error", function (Error) {
-                reject({ error: Error, code: -1 });
-            });
-            request.end();
+                        resolve(resolvedData);
+                    } else if (response.status == 400 || response.status == 429) {
+                        const parsedData = await response.json();
+                        reject({
+                            error: parsedData.error,
+                            code: parsedData.code,
+                        });
+                    } else {
+                        reject({
+                            error: `Received status code ${response.status}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
         });
     },
 
@@ -243,7 +234,7 @@ exports.files = {
                         reject({ error: data.error, code: data.code });
                     } else {
                         reject({
-                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            error: `Received status code ${response.status}.`,
                             code: 0,
                         });
                     }
@@ -282,7 +273,7 @@ exports.files = {
                         reject({ error: data.error, code: data.code });
                     } else {
                         reject({
-                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            error: `Received status code ${response.status}.`,
                             code: 0,
                         });
                     }
@@ -348,7 +339,7 @@ exports.subdomains = {
                         reject({ error: data.error, code: data.code });
                     } else {
                         reject({
-                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            error: `Received status code ${response.status}.`,
                             code: 0,
                         });
                     }
@@ -408,7 +399,7 @@ exports.subdomains = {
                         reject({ error: data.error, code: data.code });
                     } else {
                         reject({
-                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            error: `Received status code ${response.status}.`,
                             code: 0,
                         });
                     }
@@ -446,7 +437,7 @@ exports.subdomains = {
                         reject({ error: data.error, code: data.code });
                     } else {
                         reject({
-                            error: `Received status code ${incomingMessage.statusCode}.`,
+                            error: `Received status code ${response.status}.`,
                             code: 0,
                         });
                     }
@@ -457,6 +448,192 @@ exports.subdomains = {
         });
     },
 };
+
+/**
+ * Methods that interact with the "Collections" endpoint.
+ * @namespace Collections
+ * @example
+ * const { collections: sxcuCollections } = require("sxcu.api"); // sxcuCollections.<method>
+ * const { collections } = require("sxcu.api"); // collections.<method>
+ * const sxcu = require("sxcu.api"); // sxcu.collections.<method>
+ */
+exports.collections = {
+    /**
+     * Represents a file object in a collection meta response.
+     * @typedef {Object} CollectionMetaResponseFile
+     * @property {Snowflake} id ID of the file.
+     * @property {URL} url URL of the file.
+     * @property {URL} thumbnail Thumbnail of the file.
+     * @property {number} views The amount of views of the file.
+     */
+
+    /**
+     * Represents the response returned by the 'getCollectionMeta' method.
+     * @typedef {Object} CollectionMetaResponse
+     * @property {Snowflake} id ID of the collection.
+     * @property {string} title Title of the collection.
+     * @property {string} description Description of the collection.
+     * @property {number} views The amount of views of the collection.
+     * @property {number} creationTime Unix timestamp of when the collection was created.
+     * @property {Date} creationTimeDate 'creationTime' converted to a Date object.
+     * @property {boolean} public Whether the collection is public or not.
+     * @property {boolean} unlisted Whether the collection is unlisted or not.
+     * @property {number} fileViews Number of views all the files in this collection got combined.
+     * @property {CollectionMetaResponseFile[]} files Files that belong to this collection.
+     */
+
+    /**
+     * Get the meta information of a collection.
+     * @function getCollectionMeta
+     * @param {Snowflake} collectionId ID of the collection to get the meta info of.
+     * @returns {Promise<CollectionMetaResponse>} Collection meta response.
+     * @throws {ErrorResponse|any}
+     * @memberof Collections
+     * @instance
+     */
+    getCollectionMeta: async function (collectionId) {
+        return new Promise(function (resolve, reject) {
+            fetch(`${baseURL}/collections/${collectionId}`, {
+                method: "GET",
+                headers: {
+                    "User-Agent": userAgent,
+                    Accept: "application/json",
+                },
+            })
+                .then(async function (response) {
+                    if (response.status == 200) {
+                        const data = await response.json();
+                        const returnedData = {};
+                        returnedData.id = data.id;
+                        returnedData.title = data.title;
+                        returnedData.description = data.desc;
+                        returnedData.views = data.views;
+                        returnedData.creationTime = data.creation_time;
+                        returnedData.creationTimeDate = new Date(data.creation_time * 1000);
+                        returnedData.public = data.public;
+                        returnedData.unlisted = data.unlisted;
+                        returnedData.fileViews = data.file_views;
+                        returnedData.files = [];
+                        for (file of data.files) {
+                            returnedData.files.push({
+                                id: file.id,
+                                url: file.url,
+                                thumbnail: file.thumb,
+                                views: file.views,
+                            });
+                        }
+                        resolve(returnedData);
+                    } else if (response.status == 400 || response.status == 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${response.status}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
+
+    /**
+     * Response returned by the 'createCollection' method.
+     * @typedef {Object} CreatedCollectionResponse
+     * @property {Snowflake} collectionId
+     * @property {string} title Title of the collection.
+     * @property {string?} description Description of the collection.
+     * @property {boolean} unlisted Whether this collection is unlisted or not.
+     * @property {boolean} private Whether the collection is private or not.
+     * @property {string?} collectionToken Upload token of the collection.
+     */
+
+    /**
+     * Create a collection.
+     * @function createCollection
+     * @param {string} title Title of the collection.
+     * @param {string} [description] Description of the collection.
+     * @param {boolean} [private] If true, the collection will be private.
+     * @param {boolean} [unlisted] If true, the collection will be unlisted.
+     * @returns {Promise<CreatedCollectionResponse>} Data about the newly created collection.
+     * @throws {ErrorResponse|any}
+     * @memberof Collections
+     * @instance
+     */
+    createCollection: async function (title, description, private, unlisted) {
+        return new Promise(function (resolve, reject) {
+            const params = new URLSearchParams();
+            params.set("title", title);
+            if (description) {
+                params.set("desc", description);
+            }
+            if (private == true) {
+                params.set("private", "true");
+            } else {
+                params.set("private", "false");
+            }
+            if (unlisted == true) {
+                params.set("unlisted", "true");
+            } else {
+                params.set("unlisted", "false");
+            }
+            fetch(`${baseURL}/collections/create`, {
+                method: "POST",
+                body: params,
+                headers: {
+                    "User-Agent": userAgent,
+                    Accept: "application/json",
+                },
+            })
+                .then(async function (response) {
+                    if (response.status == 200) {
+                        const data = await response.json();
+                        const returnedData = {};
+                        returnedData.collectionId = data.collection_id;
+                        returnedData.title = data.title;
+                        returnedData.description = data.description ?? null;
+                        returnedData.unlisted = data.unlisted;
+                        returnedData.private = data.private;
+                        returnedData.collectionToken = data.collection_token ?? null;
+                        resolve(returnedData);
+                    } else if (response.status == 400 || response.status == 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${response.status}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
+};
+
+/**
+ * Methods that interact with the "Links" endpoint.
+ * @namespace Links
+ * @example
+ * const { links: sxcuLinks } = require("sxcu.api"); // sxcuLinks.<method>
+ * const { links } = require("sxcu.api"); // links.<method>
+ * const sxcu = require("sxcu.api"); // sxcu.links.<method>
+ */
+exports.links = {};
+
+/**
+ * Methods that interact with the "Text" endpoint.
+ * @namespace Text
+ * @example
+ * const { text: sxcuText } = require("sxcu.api"); // sxcuText.<method>
+ * const { text } = require("sxcu.api"); // text.<method>
+ * const sxcu = require("sxcu.api"); // sxcu.text.<method>
+ */
+exports.text = {};
 
 /**
  * Methods that can provide some assistance when using other methods.
