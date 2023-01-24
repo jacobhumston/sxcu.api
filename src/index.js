@@ -85,7 +85,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         const parsedData = await response.json();
                         const resolvedData = {};
                         resolvedData.id = parsedData.id;
@@ -96,7 +96,7 @@ exports.files = {
                         resolvedData.size = parsedData.size;
                         resolvedData.creationTime = parsedData.creation_time;
                         resolvedData.creationTimeDate = new Date(resolvedData.creationTime * 1000);
-                        if (parsedData.og_properties != undefined) {
+                        if (parsedData.og_properties !== undefined) {
                             resolvedData.openGraphProperties = {};
                             resolvedData.openGraphProperties.color = parsedData.og_properties.color;
                             resolvedData.openGraphProperties.title = parsedData.og_properties.title;
@@ -104,7 +104,7 @@ exports.files = {
                             resolvedData.openGraphProperties.discordHideURL = parsedData.og_properties.discord_hide_url;
                         }
                         resolve(resolvedData);
-                    } else if (response.status == 400 || response.status == 429) {
+                    } else if (response.status === 400 || response.status === 429) {
                         const parsedData = await response.json();
                         reject({
                             error: parsedData.error,
@@ -188,10 +188,10 @@ exports.files = {
                 if (options.collectionToken) {
                     formData.set('collection_token', options.collectionToken);
                 }
-                if (options.noEmbed == true) {
+                if (options.noEmbed === true) {
                     formData.set('noembed', 'true');
                 }
-                if (options.selfDestruct == true) {
+                if (options.selfDestruct === true) {
                     formData.set('self_destruct', 'true');
                 }
                 if (options.openGraphProperties) {
@@ -220,7 +220,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         const data = await response.json();
                         const parsedData = {};
                         parsedData.id = data.id;
@@ -229,7 +229,7 @@ exports.files = {
                         parsedData.deletionToken = data.del_url.split('/').pop();
                         parsedData.thumbnail = data.thumb;
                         resolve(parsedData);
-                    } else if (response.status == 400 || response.status == 429) {
+                    } else if (response.status === 400 || response.status === 429) {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {
@@ -265,10 +265,10 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         const data = await response.json();
                         return resolve(data.message);
-                    } else if (response.status == 400 || response.status == 429) {
+                    } else if (response.status === 400 || response.status === 429) {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {
@@ -322,7 +322,7 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         const data = await response.json();
                         const dataToReturn = [];
                         for (const subdomain of data) {
@@ -334,7 +334,7 @@ exports.subdomains = {
                             });
                         }
                         resolve(dataToReturn);
-                    } else if (response.status == 429) {
+                    } else if (response.status === 429) {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {
@@ -382,7 +382,7 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         const data = await response.json();
                         const dataToReturn = {};
                         dataToReturn.id = data.id;
@@ -394,7 +394,7 @@ exports.subdomains = {
                         dataToReturn.lastActivity = data.last_activity;
                         dataToReturn.lastActivityDate = new Date(data.last_activity * 1000);
                         resolve(dataToReturn);
-                    } else if (response.status == 400 || response.status == 429) {
+                    } else if (response.status === 400 || response.status === 429) {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {
@@ -429,10 +429,10 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         const data = await response.json();
                         resolve(data.exists);
-                    } else if (response.status == 400 || response.status == 429) {
+                    } else if (response.status === 400 || response.status === 429) {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {
@@ -501,7 +501,7 @@ exports.collections = {
                 },
             })
                 .then(async function (response) {
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
                         returnedData.id = data.id;
@@ -514,7 +514,7 @@ exports.collections = {
                         returnedData.unlisted = data.unlisted;
                         returnedData.fileViews = data.file_views;
                         returnedData.files = [];
-                        for (file of data.files) {
+                        for (const file of data.files) {
                             returnedData.files.push({
                                 id: file.id,
                                 url: file.url,
@@ -523,7 +523,7 @@ exports.collections = {
                             });
                         }
                         resolve(returnedData);
-                    } else if (response.status == 400 || response.status == 429) {
+                    } else if (response.status === 400 || response.status === 429) {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {
@@ -569,12 +569,12 @@ exports.collections = {
             if (description) {
                 params.set('desc', description);
             }
-            if (public == false) {
+            if (public === false) {
                 params.set('private', 'true');
             } else {
                 params.set('private', 'false');
             }
-            if (unlisted == true) {
+            if (unlisted === true) {
                 params.set('unlisted', 'true');
             } else {
                 params.set('unlisted', 'false');
@@ -588,7 +588,7 @@ exports.collections = {
                 },
             })
                 .then(async function (response) {
-                    if (response.status == 200) {
+                    if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
                         returnedData.collectionId = data.collection_id;
@@ -598,7 +598,7 @@ exports.collections = {
                         returnedData.private = data.private;
                         returnedData.collectionToken = data.collection_token ?? null;
                         resolve(returnedData);
-                    } else if (response.status == 400 || response.status == 429) {
+                    } else if (response.status === 400 || response.status === 429) {
                         const data = await response.json();
                         reject({ error: data.error, code: data.code });
                     } else {

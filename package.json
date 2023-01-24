@@ -10,7 +10,8 @@
     "scripts": {
         "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c jsdoc.json -r --verbose",
         "test": "node ./test/index.js",
-        "local-node-test": "./node/bin/node ./test/index.js"
+        "local-node-test": "./node/bin/node ./test/index.js",
+        "check": "./node_modules/.bin/eslint src/index.js"
     },
     "keywords": [
         "sxcu.net",
@@ -32,6 +33,7 @@
     "devDependencies": {
         "eslint": "^8.32.0",
         "eslint-config-prettier": "^8.6.0",
+        "eslint-plugin-prettier": "^4.2.1",
         "jsdoc": "^4.0.0",
         "prettier": "^2.8.3"
     }
