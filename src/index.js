@@ -624,7 +624,104 @@ exports.collections = {
  * const sxcu = require("sxcu.api"); // sxcu.links.<method>
  */
 exports.links = {
-    value: null,
+    /**
+     * Represents the response returned by the 'createLink' method.
+     * @typedef {Object} CreatedLinkResponse
+     * @property {string} id ID of the new redirect link.
+     * @property {URL} url URL of the new redirect link.
+     * @property {URL} deletionUrl Deletion URL for the new redirect link.
+     * @property {string} deletionToken Deletion token for the new redirect link.
+     */
+
+    /**
+     * Create a link redirect.
+     * @function createLink
+     * @param {URL} link Link to redirect to.
+     * @param {string} [subdomain] Subdomain to upload the link redirect to. Ex; 'shx.gg'
+     * @returns {Promise<CreatedLinkResponse>} Data about the newly created link redirect.
+     * @throws {ErrorResponse|any}
+     * @memberof Links
+     * @instance
+     */
+    createLink: async function (link, subdomain) {
+        return new Promise(function (resolve, reject) {
+            const params = new URLSearchParams();
+            params.set('link', link);
+            let url = baseURL;
+            if (subdomain) {
+                url = 'https://' + subdomain + '/api';
+            }
+            fetch(`${url}/links/create`, {
+                method: 'POST',
+                body: params,
+                headers: {
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
+                },
+            })
+                .then(async function (response) {
+                    if (response.status === 200) {
+                        const data = await response.json();
+                        const returnedData = {};
+                        returnedData.id = data.url.split('/').pop();
+                        returnedData.url = data.url;
+                        returnedData.deletionUrl = data.del_url;
+                        returnedData.deletionToken = data.del_url.split('/').pop();
+                        resolve(returnedData);
+                    } else if (response.status === 400 || response.status === 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${response.status}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
+
+    /**
+     * Delete a link redirect.
+     * @function deleteLink
+     * @param {string} linkId ID of the link redirect to delete.
+     * @param {string} deletionToken Deletion token of the link redirect.
+     * @returns {Promise<string>} Message result.
+     * @throws {ErrorResponse|any}
+     * @memberof Links
+     * @instance
+     */
+    deleteLink: async function (linkId, deletionToken) {
+        return new Promise(function (resolve, reject) {
+            fetch(`${baseURL}/links/delete/${linkId}/${deletionToken}`, {
+                method: 'GET',
+                headers: {
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
+                },
+            })
+                .then(async function (response) {
+                    if (response.status === 200) {
+                        const data = await response.json();
+                        resolve(data.message);
+                    } else if (response.status === 400 || response.status === 429) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${response.status}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
 };
 
 /**
