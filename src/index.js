@@ -555,21 +555,22 @@ exports.collections = {
      * @function createCollection
      * @param {string} title Title of the collection.
      * @param {string} [description] Description of the collection.
-     * @param {boolean} [public] If false, the collection will be private.
+     * @param {boolean} [isPrivate] If true, the collection will be private.
      * @param {boolean} [unlisted] If true, the collection will be unlisted.
      * @returns {Promise<CreatedCollectionResponse>} Data about the newly created collection.
      * @throws {ErrorResponse|any}
      * @memberof Collections
      * @instance
      */
-    createCollection: async function (title, description, public, unlisted) {
+    createCollection: async function (title, description, isPrivate, unlisted) {
+        // Note that isPrivate is not named 'private' due to jsdoc errors when generating.
         return new Promise(function (resolve, reject) {
             const params = new URLSearchParams();
             params.set('title', title);
             if (description) {
                 params.set('desc', description);
             }
-            if (public === false) {
+            if (isPrivate === true) {
                 params.set('private', 'true');
             } else {
                 params.set('private', 'false');
