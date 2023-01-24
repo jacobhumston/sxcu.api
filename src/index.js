@@ -4,13 +4,13 @@
  */
 
 // Modules
-const fs = require("fs");
+const fs = require('fs');
 
 // Configuration
-const packageVersion = require("../package.json").version;
-const packageUrl = "https://github.com/Lovely-Experiences/sxcu.api";
+const packageVersion = require('../package.json').version;
+const packageUrl = 'https://github.com/Lovely-Experiences/sxcu.api';
 const userAgent = `sxcu.api/${packageVersion} (+${packageUrl}) - Node.js ${process.version}`;
-const baseURL = "https://sxcu.net/api";
+const baseURL = 'https://sxcu.net/api';
 
 /**
  * Represents a Snowflake.
@@ -78,10 +78,10 @@ exports.files = {
     getFileMeta: async function (fileId) {
         return new Promise(function (resolve, reject) {
             fetch(`${baseURL}/files/${fileId}`, {
-                method: "GET",
+                method: 'GET',
                 headers: {
-                    "User-Agent": userAgent,
-                    Accept: "application/json",
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
                 },
             })
                 .then(async function (response) {
@@ -174,29 +174,29 @@ exports.files = {
         return new Promise(function (resolve, reject) {
             const formData = new FormData();
             try {
-                formData.set("file", new Blob([fs.readFileSync(file)]));
+                formData.set('file', new Blob([fs.readFileSync(file)]));
             } catch (error) {
                 reject({ error: `Couldn't parse file: ${error}`, code: -1 });
             }
             if (options) {
                 if (options.token) {
-                    formData.set("token", options.token);
+                    formData.set('token', options.token);
                 }
                 if (options.collection) {
-                    formData.set("collection", options.collection);
+                    formData.set('collection', options.collection);
                 }
                 if (options.collectionToken) {
-                    formData.set("collection_token", options.collectionToken);
+                    formData.set('collection_token', options.collectionToken);
                 }
                 if (options.noEmbed == true) {
-                    formData.set("noembed", "true");
+                    formData.set('noembed', 'true');
                 }
                 if (options.selfDestruct == true) {
-                    formData.set("self_destruct", "true");
+                    formData.set('self_destruct', 'true');
                 }
                 if (options.openGraphProperties) {
                     formData.set(
-                        "og_properties",
+                        'og_properties',
                         JSON.stringify({
                             title: options.openGraphProperties.title,
                             description: options.openGraphProperties.description,
@@ -209,14 +209,14 @@ exports.files = {
             }
             let url = baseURL;
             if (subdomain) {
-                url = "https://" + subdomain + "/api";
+                url = 'https://' + subdomain + '/api';
             }
             fetch(`${url}/files/create`, {
-                method: "POST",
+                method: 'POST',
                 body: formData,
                 headers: {
-                    "User-Agent": userAgent,
-                    Accept: "application/json",
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
                 },
             })
                 .then(async function (response) {
@@ -226,7 +226,7 @@ exports.files = {
                         parsedData.id = data.id;
                         parsedData.url = data.url;
                         parsedData.deletionUrl = data.del_url;
-                        parsedData.deletionToken = data.del_url.split("/").pop();
+                        parsedData.deletionToken = data.del_url.split('/').pop();
                         parsedData.thumbnail = data.thumb;
                         resolve(parsedData);
                     } else if (response.status == 400 || response.status == 429) {
@@ -258,10 +258,10 @@ exports.files = {
     deleteFile: async function (fileId, deletionToken) {
         return new Promise(function (resolve, reject) {
             fetch(`${baseURL}/files/delete/${fileId}/${deletionToken}`, {
-                method: "GET",
+                method: 'GET',
                 headers: {
-                    "User-Agent": userAgent,
-                    Accept: "application/json",
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
                 },
             })
                 .then(async function (response) {
@@ -315,17 +315,17 @@ exports.subdomains = {
     listSubdomains: async function () {
         return new Promise(function (resolve, reject) {
             fetch(`${baseURL}/subdomains`, {
-                method: "GET",
+                method: 'GET',
                 headers: {
-                    "User-Agent": userAgent,
-                    Accept: "application/json",
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
                 },
             })
                 .then(async function (response) {
                     if (response.status == 200) {
                         const data = await response.json();
                         const dataToReturn = [];
-                        for (subdomain of data) {
+                        for (const subdomain of data) {
                             dataToReturn.push({
                                 domain: subdomain.domain,
                                 uploadCount: subdomain.upload_count,
@@ -375,10 +375,10 @@ exports.subdomains = {
     getSubdomainMeta: async function (subdomain) {
         return new Promise(function (resolve, reject) {
             fetch(`${baseURL}/subdomains/${subdomain}`, {
-                method: "GET",
+                method: 'GET',
                 headers: {
-                    "User-Agent": userAgent,
-                    Accept: "application/json",
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
                 },
             })
                 .then(async function (response) {
@@ -422,10 +422,10 @@ exports.subdomains = {
     checkSubdomain: async function (subdomain) {
         return new Promise(function (resolve, reject) {
             fetch(`${baseURL}/subdomains/check/${subdomain}`, {
-                method: "GET",
+                method: 'GET',
                 headers: {
-                    "User-Agent": userAgent,
-                    Accept: "application/json",
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
                 },
             })
                 .then(async function (response) {
@@ -494,10 +494,10 @@ exports.collections = {
     getCollectionMeta: async function (collectionId) {
         return new Promise(function (resolve, reject) {
             fetch(`${baseURL}/collections/${collectionId}`, {
-                method: "GET",
+                method: 'GET',
                 headers: {
-                    "User-Agent": userAgent,
-                    Accept: "application/json",
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
                 },
             })
                 .then(async function (response) {
@@ -555,36 +555,36 @@ exports.collections = {
      * @function createCollection
      * @param {string} title Title of the collection.
      * @param {string} [description] Description of the collection.
-     * @param {boolean} [isPrivate] If true, the collection will be private.
+     * @param {boolean} [public] If false, the collection will be private.
      * @param {boolean} [unlisted] If true, the collection will be unlisted.
      * @returns {Promise<CreatedCollectionResponse>} Data about the newly created collection.
      * @throws {ErrorResponse|any}
      * @memberof Collections
      * @instance
      */
-    createCollection: async function (title, description, isPrivate, unlisted) {
+    createCollection: async function (title, description, public, unlisted) {
         return new Promise(function (resolve, reject) {
             const params = new URLSearchParams();
-            params.set("title", title);
+            params.set('title', title);
             if (description) {
-                params.set("desc", description);
+                params.set('desc', description);
             }
-            if (isPrivate == true) {
-                params.set("private", "true");
+            if (public == false) {
+                params.set('private', 'true');
             } else {
-                params.set("private", "false");
+                params.set('private', 'false');
             }
             if (unlisted == true) {
-                params.set("unlisted", "true");
+                params.set('unlisted', 'true');
             } else {
-                params.set("unlisted", "false");
+                params.set('unlisted', 'false');
             }
             fetch(`${baseURL}/collections/create`, {
-                method: "POST",
+                method: 'POST',
                 body: params,
                 headers: {
-                    "User-Agent": userAgent,
-                    Accept: "application/json",
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
                 },
             })
                 .then(async function (response) {
@@ -659,15 +659,15 @@ exports.utility = {
      */
     resolveError: function (error) {
         if (error) {
-            if (typeof error === "object" && !Array.isArray(error)) {
-                return { error: error.error ?? error.message ?? "unknown", code: error.code ?? -1 };
-            } else if (typeof error === "string") {
+            if (typeof error === 'object' && !Array.isArray(error)) {
+                return { error: error.error ?? error.message ?? 'unknown', code: error.code ?? -1 };
+            } else if (typeof error === 'string') {
                 return { error: error, code: -1 };
             } else {
-                return { error: toString(error).replace("[object Undefined]", "unknown"), code: -1 };
+                return { error: toString(error).replace('[object Undefined]', 'unknown'), code: -1 };
             }
         } else {
-            return { error: "unknown", code: -1 };
+            return { error: 'unknown', code: -1 };
         }
     },
 };
