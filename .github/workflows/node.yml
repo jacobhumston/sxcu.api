@@ -20,11 +20,3 @@ jobs:
             - name: Run Check
               id: eslint-check
               run: npm run check
-            
-            - uses: peter-evans/commit-comment@v2
-              with:
-                body: |
-                    Eslint result:
-                    ```
-                    ${{fromJSON(steps.eslint-check.outputs)}}
-                    ```
