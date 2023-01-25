@@ -1,4 +1,4 @@
-name: 'Node Testing'
+name: 'Eslint Check (Node.js)'
 
 on:
     push:
@@ -11,5 +11,5 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 18
-            - run: npm check
+            - run: npm run check
         
