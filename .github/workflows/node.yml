@@ -12,13 +12,19 @@ jobs:
               with:
                 node-version: 18
                 cache: 'npm'
-            - run: npm install
-            - run: npm run check
-              id: "check"
+            
+            - name: Install Needed Dependencies
+              id: install-dependencies
+              run: npm install
+            
+            - name: Run Check
+              id: eslint-check
+              run: npm run check
+            
             - uses: peter-evans/commit-comment@v2
               with:
                 body: |
                     Eslint result:
                     ```
-                    ${{fromJSON(steps.check)}}
+                    ${{fromJSON(steps.eslint-check.outputs)}}
                     ```
