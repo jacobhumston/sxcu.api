@@ -11,7 +11,7 @@
         "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c jsdoc.json -r --verbose",
         "test": "node ./test/index.js",
         "local-node-test": "./node/bin/node ./test/index.js",
-        "check": "./node_modules/.bin/eslint src/",
+        "check": "./node_modules/.bin/eslint src/"
     },
     "keywords": [
         "sxcu.net",
