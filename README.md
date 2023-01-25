@@ -1,10 +1,10 @@
 # sxcu.api ![](https://img.shields.io/github/v/release/lovely-experiences/sxcu.api?style=flat-square) ![](https://img.shields.io/npm/v/sxcu.api?style=flat-square) ![](https://img.shields.io/github/package-json/v/lovely-experiences/sxcu.api?style=flat-square) ![](https://img.shields.io/github/license/lovely-experiences/sxcu.api?style=flat-square)
 
-Node.js library to interact with the sxcu.net API. 
+Node.js library to interact with the sxcu.net API.
 
 Easily upload images with the sxcu.net API. Allowing you to get a publicly sharable URL for anyone you wish to view. You can learn more [here](https://sxcu.net/). This module has **no dependencies**.
 
-**Warning** - This module is still being created and does not currently support every feature of the sxcu api.
+As of **version 1.2.0**, this module supports **all** endpoints. 100% API coverage.
 
 ## Installation
 
@@ -23,9 +23,9 @@ You can find the documentation for sxcu.api [here](https://lovely-experiences.gi
 Here's an example of using the `getFileMeta` method.
 
 ```js
-const sxcu = require("sxcu.api");
+const sxcu = require('sxcu.api');
 sxcu.files
-    .getFileMeta("1234abcd")
+    .getFileMeta('1234abcd')
     .then((metaData) => {
         console.log(`File URL: ${metaData.url}`);
     })
@@ -51,10 +51,10 @@ You must include `__dirname` before you provide the file if you don't want to pr
 Note that if you don't need all endpoint methods, you can require a specific one.
 
 ```js
-const { files: sxcu } = require("sxcu.api");
+const { files: sxcu } = require('sxcu.api');
 // OR: const { files } = require("sxcu.api");
 
-sxcu.getFileMeta("example");
+sxcu.getFileMeta('example');
 ```
 
 ### Handling Errors
@@ -66,6 +66,12 @@ When handling errors, you will receive two values, `error` and `code`. Error is 
 ```
 
 It's important to note that those values may not be present for errors that revolve around providing incorrect method parameters. You can use the utility method `resolveError` if you want an error response 100% of the time.
+
+## Testing and/or Contributing
+
+After you installed the repository, please install all needed dependence's.
+
+### Commands
 
 ## Links
 

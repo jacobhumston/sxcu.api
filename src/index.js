@@ -9,8 +9,9 @@ const fs = require('fs');
 // Configuration
 const packageVersion = require('../package.json').version;
 const packageUrl = 'https://github.com/Lovely-Experiences/sxcu.api';
-const userAgent = `sxcu.api/${packageVersion} (+${packageUrl}) - Node.js ${process.version}`;
-const baseURL = 'https://sxcu.net/api';
+const userAgent = `sxcu.api/v${packageVersion} (+${packageUrl}) - Node.js ${process.version}`;
+const baseUrl = 'https://sxcu.net/api';
+const textBaseUrl = 'https://cancer-co.de/';
 
 /**
  * Represents a Snowflake.
@@ -77,7 +78,7 @@ exports.files = {
      */
     getFileMeta: async function (fileId) {
         return new Promise(function (resolve, reject) {
-            fetch(`${baseURL}/files/${fileId}`, {
+            fetch(`${baseUrl}/files/${fileId}`, {
                 method: 'GET',
                 headers: {
                     'User-Agent': userAgent,
@@ -207,7 +208,7 @@ exports.files = {
                     );
                 }
             }
-            let url = baseURL;
+            let url = baseUrl;
             if (subdomain) {
                 url = 'https://' + subdomain + '/api';
             }
@@ -257,7 +258,7 @@ exports.files = {
      */
     deleteFile: async function (fileId, deletionToken) {
         return new Promise(function (resolve, reject) {
-            fetch(`${baseURL}/files/delete/${fileId}/${deletionToken}`, {
+            fetch(`${baseUrl}/files/delete/${fileId}/${deletionToken}`, {
                 method: 'GET',
                 headers: {
                     'User-Agent': userAgent,
@@ -314,7 +315,7 @@ exports.subdomains = {
      */
     listSubdomains: async function () {
         return new Promise(function (resolve, reject) {
-            fetch(`${baseURL}/subdomains`, {
+            fetch(`${baseUrl}/subdomains`, {
                 method: 'GET',
                 headers: {
                     'User-Agent': userAgent,
@@ -374,7 +375,7 @@ exports.subdomains = {
      */
     getSubdomainMeta: async function (subdomain) {
         return new Promise(function (resolve, reject) {
-            fetch(`${baseURL}/subdomains/${subdomain}`, {
+            fetch(`${baseUrl}/subdomains/${subdomain}`, {
                 method: 'GET',
                 headers: {
                     'User-Agent': userAgent,
@@ -421,7 +422,7 @@ exports.subdomains = {
      */
     checkSubdomain: async function (subdomain) {
         return new Promise(function (resolve, reject) {
-            fetch(`${baseURL}/subdomains/check/${subdomain}`, {
+            fetch(`${baseUrl}/subdomains/check/${subdomain}`, {
                 method: 'GET',
                 headers: {
                     'User-Agent': userAgent,
@@ -493,7 +494,7 @@ exports.collections = {
      */
     getCollectionMeta: async function (collectionId) {
         return new Promise(function (resolve, reject) {
-            fetch(`${baseURL}/collections/${collectionId}`, {
+            fetch(`${baseUrl}/collections/${collectionId}`, {
                 method: 'GET',
                 headers: {
                     'User-Agent': userAgent,
@@ -580,7 +581,7 @@ exports.collections = {
             } else {
                 params.set('unlisted', 'false');
             }
-            fetch(`${baseURL}/collections/create`, {
+            fetch(`${baseUrl}/collections/create`, {
                 method: 'POST',
                 body: params,
                 headers: {
@@ -648,7 +649,7 @@ exports.links = {
         return new Promise(function (resolve, reject) {
             const params = new URLSearchParams();
             params.set('link', link);
-            let url = baseURL;
+            let url = baseUrl;
             if (subdomain) {
                 url = 'https://' + subdomain + '/api';
             }
@@ -697,7 +698,7 @@ exports.links = {
      */
     deleteLink: async function (linkId, deletionToken) {
         return new Promise(function (resolve, reject) {
-            fetch(`${baseURL}/links/delete/${linkId}/${deletionToken}`, {
+            fetch(`${baseUrl}/links/delete/${linkId}/${deletionToken}`, {
                 method: 'GET',
                 headers: {
                     'User-Agent': userAgent,
@@ -734,7 +735,99 @@ exports.links = {
  * const sxcu = require("sxcu.api"); // sxcu.text.<method>
  */
 exports.text = {
-    value: null,
+    /**
+     * Represents the response returned by the 'createPaste' method.
+     * @typedef {Object} CreatedPasteResponse
+     * @property {string} id ID of the new text paste.
+     * @property {URL} url URL of the new text paste.
+     * @property {URL} deletionUrl Deletion URL for the new text paste.
+     * @property {string} deletionToken Deletion token for the new text paste.
+     */
+
+    /**
+     * Create a text paste.
+     * @function createPaste
+     * @param {string} text Text that will be used in the text paste.
+     * @returns {Promise<CreatedPasteResponse>} Data about the newly created text paste.
+     * @throws {ErrorResponse|any}
+     * @memberof Text
+     * @instance
+     */
+    createPaste: async function (text) {
+        return new Promise(function (resolve, reject) {
+            const params = new URLSearchParams();
+            params.set('text', text);
+            fetch(`${textBaseUrl}/upload`, {
+                method: 'POST',
+                body: params,
+                headers: {
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
+                },
+            })
+                .then(async function (response) {
+                    if (response.status === 200) {
+                        const data = await response.json();
+                        const returnedData = {};
+                        returnedData.id = data.url.split('/').pop();
+                        returnedData.url = data.url;
+                        returnedData.deletionUrl = data.del_url;
+                        returnedData.deletionToken = data.del_url.split('/').pop();
+                        resolve(returnedData);
+                    } else if (response.status === 400) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${response.status}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
+
+    /**
+     * Delete a text paste.
+     * @function deletePaste
+     * @param {string} pasteId ID of the text paste to delete.
+     * @param {string} deletionToken Deletion token of the text paste.
+     * @returns {Promise<string>} Message result.
+     * @throws {ErrorResponse|any}
+     * @memberof Text
+     * @instance
+     */
+    deletePaste: async function (pasteId, deletionToken) {
+        return new Promise(function (resolve, reject) {
+            fetch(`${textBaseUrl}/d/${pasteId}/${deletionToken}`, {
+                method: 'GET',
+                headers: {
+                    'User-Agent': userAgent,
+                    Accept: 'application/json',
+                },
+            })
+                .then(async function (response) {
+                    if (response.status === 200) {
+                        const data = await response.json();
+                        resolve(data.message);
+                    } else if (response.status === 400) {
+                        const data = await response.json();
+                        reject({ error: data.error, code: data.code });
+                    } else {
+                        reject({
+                            error: `Received status code ${response.status}.`,
+                            code: 0,
+                        });
+                    }
+                })
+                .catch(function (error) {
+                    reject({ error: `Request failed: ${error}`, code: -1 });
+                });
+        });
+    },
 };
 
 /**
