@@ -11,5 +11,8 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                   node-version: 18
-            - run: npm run check
+                  cache: 'npm'
+            - run: npm install -g eslint
+            - run: npm run eslint -v
+            - run: npm run check-safe
         
