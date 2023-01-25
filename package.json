@@ -12,7 +12,6 @@
         "test": "node ./test/index.js",
         "local-node-test": "./node/bin/node ./test/index.js",
         "check": "./node_modules/.bin/eslint src/",
-        "check-safe": "eslint src/"
     },
     "keywords": [
         "sxcu.net",

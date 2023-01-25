@@ -12,7 +12,6 @@ jobs:
               with:
                   node-version: 18
                   cache: 'npm'
-            - run: npm install -g eslint
-            - run: npm run eslint -v
-            - run: npm run check-safe
+            - run: npm install
+            - run: npm run check
         
