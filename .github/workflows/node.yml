@@ -2,6 +2,7 @@ name: 'Eslint Check (Node.js)'
 
 on:
     push:
+    pull_request_review_comment:
 
 jobs:
     build:

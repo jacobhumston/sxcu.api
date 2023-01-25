@@ -69,9 +69,20 @@ It's important to note that those values may not be present for errors that revo
 
 ## Testing and/or Contributing
 
-After you installed the repository, please install all needed dependence's.
+After you have installed the repository, please install all needed dependence's using `npm ci`.
+
+You may create tests in the `test/index.js`
 
 ### Commands
+
+We have a list of npm commands available in `package.json`.
+
+| Command       | Explanation                                                                                                                                                           | Usage                     |
+| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
+| Documentation | Generate documentation.                                                                                                                                               | `npm run generate-doc`    |
+| Test          | Run the index.js file found in `test/index.js` using the global node command.                                                                                         | `npm run test`            |
+| Local Test    | Same as the test command, however it uses a local version of node. To use this command, you must install Node.js and place the folder inside the repository's folder. | `npm run local-node-test` |
+| Check         | Check for Eslint issues in all files under the source folder.                                                                                                         | `npm run check`           |
 
 ## Links
 
