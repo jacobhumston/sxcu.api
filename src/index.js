@@ -97,7 +97,7 @@ exports.files = {
                         resolvedData.size = parsedData.size;
                         resolvedData.creationTime = parsedData.creation_time;
                         resolvedData.creationTimeDate = new Date(resolvedData.creationTime * 1000);
-                        if (parsedData.og_properties != undefined) {
+                        if (parsedData.og_properties !== undefined) {
                             resolvedData.openGraphProperties = {};
                             resolvedData.openGraphProperties.color = parsedData.og_properties.color;
                             resolvedData.openGraphProperties.title = parsedData.og_properties.title;
