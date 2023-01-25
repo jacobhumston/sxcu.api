@@ -71,7 +71,7 @@ It's important to note that those values may not be present for errors that revo
 
 After you have installed the repository, please install all needed dependence's using `npm ci`.
 
-You may create tests in the `test/index.js`
+You may create tests in the `test/index.js` file.
 
 ### Commands
 
