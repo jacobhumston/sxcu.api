@@ -20,5 +20,5 @@ jobs:
                 body: |
                     Eslint result:
                     ```
-                    ${{fromJSON(steps.check.outputs)}}
+                    ${{toJSON(steps.check.outputs)}}
                     ```
