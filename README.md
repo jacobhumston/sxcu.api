@@ -18,7 +18,7 @@ npm i sxcu.api
 
 ## Usage
 
-You can find the documentation for sxcu.api [here](https://lovely-experiences.github.io/sxcu.api/). The documentation includes all type specifications as well as some tutorials. Please view the documentation before asking any questions. 
+You can find the documentation for sxcu.api [here](https://lovely-experiences.github.io/sxcu.api/). The documentation includes all type specifications as well as some tutorials. Please view the documentation before asking any questions.
 
 If you end up needing assistance, you can [create an issue on GitHub](https://github.com/Lovely-Experiences/sxcu.api/issues/new).
 
@@ -83,6 +83,7 @@ We have a list of npm commands available in `package.json`.
 | Test          | Run the index.js file found in `test/index.js` using the global node command.                                                                                         | `npm run test`            |
 | Local Test    | Same as the test command, however it uses a local version of node. To use this command, you must install Node.js and place the folder inside the repository's folder. | `npm run local-node-test` |
 | Check         | Check for Eslint issues in all files under the source folder.                                                                                                         | `npm run check`           |
+| Types         | Generate type definitions.                                                                                                                                            | `npm run generate-types`  |
 
 ## Links
 
