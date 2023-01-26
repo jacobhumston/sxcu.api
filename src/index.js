@@ -165,10 +165,11 @@ exports.files = {
      * @throws {ErrorResponse|any}
      * @memberof Files
      * @instance
+     * @tutorial uploading-a-file
      * @example
      * const sxcu = require("sxcu.api");
      * const options = { openGraphProperties: { siteName: "Test Image". discordHideUrl: false } };
-     * const uploadData = await sxcu.files.uploadFile(__dirname + "/a-test.png", options).catch(function (e) { console.log(e); });
+     * const uploadData = await sxcu.files.uploadFile("image.png", options).catch(function (e) { console.log(e); });
      * console.log(uploadData);
      */
     uploadFile: async function (file, options, subdomain) {

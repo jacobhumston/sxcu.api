@@ -18,7 +18,9 @@ npm i sxcu.api
 
 ## Usage
 
-You can find the documentation for sxcu.api [here](https://lovely-experiences.github.io/sxcu.api/).
+You can find the documentation for sxcu.api [here](https://lovely-experiences.github.io/sxcu.api/). The documentation includes all type specifications as well as some tutorials. Please view the documentation before asking any questions. 
+
+If you end up needing assistance, you can [create an issue on GitHub](https://github.com/Lovely-Experiences/sxcu.api/issues/new).
 
 Here's an example of using the `getFileMeta` method.
 
@@ -40,11 +42,9 @@ And here is an example of the `uploadFile` method.
 ```js
 const sxcu = require("sxcu.api");
 const options = { openGraphProperties: { siteName: "Test Image". discordHideUrl: false } };
-const uploadData = await sxcu.files.uploadFile(__dirname + "/a-test.png", options).catch(function (e) { console.log(e); });
+const uploadData = await sxcu.files.uploadFile("/a-test.png", options).catch(function (e) { console.log(e); });
 console.log(uploadData);
 ```
-
-You must include `__dirname` before you provide the file if you don't want to provide the full path to the file. Note that the above code wont work unless you have a file named `a-test.png` in the same folder as your code.
 
 ### Requiring Specific Endpoints
 

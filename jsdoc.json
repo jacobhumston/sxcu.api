@@ -1,9 +1,13 @@
 {
-    "opts": {
-        "template": ""
-    },
     "markdown": {
         "hardwrap": false,
         "idInHeadings": true
+    },
+    "templates": {
+        "default": {
+            "staticFiles": {
+                "paths": ["tutorials/assets/"]
+            }
+        }
     }
 }
