@@ -20,6 +20,8 @@ const rateLimitData = {};
 /**
  * Save data that is provided from rate limit headers.
  * @function saveRateLimitData
+ * @param {Headers} headers
+ * @param {string} functionName
  * @returns {null}
  * @private
  */
@@ -43,7 +45,7 @@ function saveRateLimitData(headers, functionName) {
     // However if a bucket with this function name already exists and does not have the same bucket value, the old bucket will be deleted.
     if (isGlobal === false) {
         for (const bucket in rateLimitData) {
-            if (bucket.functions.findIndex((name) => name === functionName) !== -1) {
+            if (rateLimitData[bucket].functions.findIndex((name) => name === functionName) !== -1) {
                 if (bucket !== data.bucket) {
                     rateLimitData[bucket] = undefined;
                 }
@@ -57,6 +59,7 @@ function saveRateLimitData(headers, functionName) {
         } else {
             rateLimitData[data.bucket] = {
                 functions: [functionName],
+                bucket: data.bucket,
                 lastRateLimit: data,
             };
         }
@@ -278,6 +281,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'uploadFile');
                     if (response.status === 200) {
                         const data = await response.json();
                         const parsedData = {};
@@ -323,6 +327,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'deleteFile');
                     if (response.status === 200) {
                         const data = await response.json();
                         return resolve(data.message);
@@ -380,6 +385,7 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'listSubdomains');
                     if (response.status === 200) {
                         const data = await response.json();
                         const dataToReturn = [];
@@ -440,6 +446,7 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'getSubdomainMeta');
                     if (response.status === 200) {
                         const data = await response.json();
                         const dataToReturn = {};
@@ -487,6 +494,7 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'checkSubdomain');
                     if (response.status === 200) {
                         const data = await response.json();
                         resolve(data.exists);
@@ -559,6 +567,7 @@ exports.collections = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'getCollectionMeta');
                     if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
@@ -647,6 +656,7 @@ exports.collections = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'createCollection');
                     if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
@@ -719,6 +729,7 @@ exports.links = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'createLink');
                     if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
@@ -763,6 +774,7 @@ exports.links = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'deleteLink');
                     if (response.status === 200) {
                         const data = await response.json();
                         resolve(data.message);
@@ -823,6 +835,7 @@ exports.text = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'createPaste');
                     if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
@@ -867,6 +880,7 @@ exports.text = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'deletePaste');
                     if (response.status === 200) {
                         const data = await response.json();
                         resolve(data.message);
