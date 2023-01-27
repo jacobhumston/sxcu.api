@@ -13,6 +13,35 @@ const userAgent = `sxcu.api/v${packageVersion} (+${packageUrl}) - Node.js ${proc
 const baseUrl = 'https://sxcu.net/api';
 const textBaseUrl = 'https://cancer-co.de/';
 
+// Data Objects
+const rateLimitData = {};
+
+// Private Methods & Types
+/**
+ * Save data that is provided from rate limit headers.
+ * @function saveRateLimitData
+ * @returns {null}
+ * @private
+ */
+function saveRateLimitData(headers, functionName) {
+    const data = {};
+    data.limit = headers.get('X-RateLimit-Limit');
+    data.remaining = headers.get('X-RateLimit-Remaining');
+    data.reset = headers.get('X-RateLimit-Reset');
+    data.bucket = headers.get('X-RateLimit-Bucket');
+    if (data.reset !== null) {
+        data.resetDate = new Date(data.reset * 1000);
+    }
+    // If any headers are not present then no data is saved.
+    if (data.limit === null || data.remaining === null || data.reset === null || data.bucket === null) return null;
+    // If bucket is already saved, we can just change it's rate limit data.
+    // However if a bucket with this function name already exists and does not have the same bucket value, the old bucket will be deleted.
+    let bucketAlreadySaved = false;
+    
+    return null;
+}
+
+// Public Methods
 /**
  * Represents a Snowflake.
  * @typedef {string} Snowflake
@@ -86,6 +115,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'getFileMeta');
                     if (response.status === 200) {
                         const parsedData = await response.json();
                         const resolvedData = {};
