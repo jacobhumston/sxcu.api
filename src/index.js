@@ -25,10 +25,15 @@ const rateLimitData = {};
  */
 function saveRateLimitData(headers, functionName) {
     const data = {};
+    let isGlobal = false;
     data.limit = headers.get('X-RateLimit-Limit');
     data.remaining = headers.get('X-RateLimit-Remaining');
     data.reset = headers.get('X-RateLimit-Reset');
+    data.resetAfter = headers.get('X-RateLimit-Reset-After');
     data.bucket = headers.get('X-RateLimit-Bucket');
+    if (headers.get('X-RateLimit-Global') !== null) {
+        isGlobal = true;
+    }
     if (data.reset !== null) {
         data.resetDate = new Date(data.reset * 1000);
     }
@@ -36,8 +41,29 @@ function saveRateLimitData(headers, functionName) {
     if (data.limit === null || data.remaining === null || data.reset === null || data.bucket === null) return null;
     // If bucket is already saved, we can just change it's rate limit data.
     // However if a bucket with this function name already exists and does not have the same bucket value, the old bucket will be deleted.
-    let bucketAlreadySaved = false;
-    
+    if (isGlobal === false) {
+        for (const bucket in rateLimitData) {
+            if (bucket.functions.findIndex((name) => name === functionName) !== -1) {
+                if (bucket !== data.bucket) {
+                    rateLimitData[bucket] = undefined;
+                }
+            }
+        }
+        if (rateLimitData[data.bucket]) {
+            rateLimitData[data.bucket].lastRateLimit = data;
+            if (rateLimitData[data.bucket].functions.findIndex((name) => name === functionName) === -1) {
+                rateLimitData[data.bucket].functions.push(functionName);
+            }
+        } else {
+            rateLimitData[data.bucket] = {
+                functions: [functionName],
+                lastRateLimit: data,
+            };
+        }
+    } else {
+        rateLimitData['global'] = data;
+    }
+    console.log(rateLimitData);
     return null;
 }
 
@@ -115,6 +141,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'getFileMeta');
                     if (response.status === 200) {
                         const parsedData = await response.json();
                         const resolvedData = {};
