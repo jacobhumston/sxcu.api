@@ -50,7 +50,7 @@ function saveRateLimitData(headers, functionName) {
         for (const bucket in rateLimitData) {
             if (rateLimitData[bucket].functions.findIndex((name) => name === functionName) !== -1) {
                 if (bucket !== data.bucket) {
-                    rateLimitData[bucket] = undefined;
+                    delete rateLimitData[bucket];
                 }
             }
         }
@@ -973,4 +973,14 @@ exports.utility = {
     getRateLimitData: function () {
         return Object.assign({}, rateLimitData);
     },
+
+    /**
+     * Get the current rate limit that was provided by the specific method.
+     * @function getRateLimitByMethod
+     * @param {string} functionName Name of the method. Ex; 'uploadFile'
+     * @returns {RateLimit|null}
+     * @memberof Utility
+     * @instance
+     */
+    getRateLimitByMethod: function (functionName) {},
 };
