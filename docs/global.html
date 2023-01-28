@@ -415,7 +415,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line472">line 472</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line545">line 545</a>
     </li></ul></dd>
     
 
@@ -608,7 +608,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line463">line 463</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line536">line 536</a>
     </li></ul></dd>
     
 
@@ -889,7 +889,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line544">line 544</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line618">line 618</a>
     </li></ul></dd>
     
 
@@ -1082,7 +1082,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line630">line 630</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line705">line 705</a>
     </li></ul></dd>
     
 
@@ -1275,7 +1275,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line739">line 739</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line816">line 816</a>
     </li></ul></dd>
     
 
@@ -1422,7 +1422,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line26">line 26</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line93">line 93</a>
     </li></ul></dd>
     
 
@@ -1791,7 +1791,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line56">line 56</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line123">line 123</a>
     </li></ul></dd>
     
 
@@ -2018,7 +2018,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line47">line 47</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line114">line 114</a>
     </li></ul></dd>
     
 
@@ -2090,7 +2090,439 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line33">line 33</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line100">line 100</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="RateLimit">RateLimit</h4>
+
+
+
+
+<div class="description">
+    Represents a rate limit.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>functions</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;string></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">An array of function names that caused this rate limit. This array is always empty if 'global' is true.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bucket</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A unique string that identifies the rate limit.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lastRateLimit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type"><a href="global.html#RateLimitData">RateLimitData</a></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Data of this rate limit.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>global</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Whether this rate limit is the global rate limit or not.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line956">line 956</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+            
+                
+<h4 class="name" id="RateLimitData">RateLimitData</h4>
+
+
+
+
+<div class="description">
+    Represents rate limit data.
+</div>
+
+
+
+    <h5>Type:</h5>
+    <ul>
+        <li>
+            
+<span class="param-type">Object</span>
+
+
+        </li>
+    </ul>
+
+
+
+
+
+    <h5 class="subsection-title">Properties:</h5>
+
+    
+
+<table class="props">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>limit</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Number of requests allowed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>remaining</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Number of requests that can still be made.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>reset</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Epoch time of when the rate limit resets.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resetAfter</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">Total amount of time in seconds until the rate limit resets. Note that this value only updates when new rate limit data is processed.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>bucket</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">A unique string that identifies the rate limit.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>resetDate</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Date</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">'reset' converted to date object.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line945">line 945</a>
     </li></ul></dd>
     
 
@@ -2162,7 +2594,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line16">line 16</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line83">line 83</a>
     </li></ul></dd>
     
 
@@ -2355,7 +2787,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line299">line 299</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line369">line 369</a>
     </li></ul></dd>
     
 
@@ -2640,7 +3072,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line355">line 355</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line426">line 426</a>
     </li></ul></dd>
     
 
@@ -2712,7 +3144,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line21">line 21</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line88">line 88</a>
     </li></ul></dd>
     
 
@@ -3001,7 +3433,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line137">line 137</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line205">line 205</a>
     </li></ul></dd>
     
 
@@ -3229,7 +3661,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line127">line 127</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line195">line 195</a>
     </li></ul></dd>
     
 
@@ -3445,7 +3877,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="index.js.html">index.js</a>, <a href="index.js.html#line148">line 148</a>
+        <a href="index.js.html">index.js</a>, <a href="index.js.html#line216">line 216</a>
     </li></ul></dd>
     
 
@@ -3481,7 +3913,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Thu Jan 26 2023 09:49:51 GMT-0500 (Eastern Standard Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.0</a> on Sat Jan 28 2023 03:07:09 GMT-0500 (Eastern Standard Time)
 </footer>
 
 <script> prettyPrint(); </script>

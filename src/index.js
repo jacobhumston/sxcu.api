@@ -36,11 +36,14 @@ function saveRateLimitData(headers, functionName) {
     if (headers.get('X-RateLimit-Global') !== null) {
         isGlobal = true;
     }
-    if (data.reset !== null) {
-        data.resetDate = new Date(data.reset * 1000);
-    }
     // If any headers are not present then no data is saved.
     if (data.limit === null || data.remaining === null || data.reset === null || data.bucket === null) return null;
+    // Convert strings to numbers then add resetDate value.
+    data.limit = Number(data.limit);
+    data.remaining = Number(data.remaining);
+    data.reset = Number(data.remaining);
+    data.resetAfter = Number(data.resetAfter);
+    data.resetDate = new Date(data.reset * 1000);
     // If bucket is already saved, we can just change it's rate limit data.
     // However if a bucket with this function name already exists and does not have the same bucket value, the old bucket will be deleted.
     if (isGlobal === false) {
@@ -61,10 +64,16 @@ function saveRateLimitData(headers, functionName) {
                 functions: [functionName],
                 bucket: data.bucket,
                 lastRateLimit: data,
+                global: false,
             };
         }
     } else {
-        rateLimitData['global'] = data;
+        rateLimitData['global'] = {
+            functions: [],
+            bucket: data.bucket,
+            lastRateLimit: data,
+            global: true,
+        };
     }
     console.log(rateLimitData);
     return null;
@@ -622,8 +631,8 @@ exports.collections = {
      * @function createCollection
      * @param {string} title Title of the collection.
      * @param {string} [description] Description of the collection.
-     * @param {boolean} [isPrivate] If true, the collection will be private.
-     * @param {boolean} [unlisted] If true, the collection will be unlisted.
+     * @param {boolean} [isPrivate=false] If true, the collection will be private.
+     * @param {boolean} [unlisted=false] If true, the collection will be unlisted.
      * @returns {Promise<CreatedCollectionResponse>} Data about the newly created collection.
      * @throws {ErrorResponse|any}
      * @memberof Collections
@@ -931,5 +940,37 @@ exports.utility = {
         } else {
             return { error: 'unknown', code: -1 };
         }
+    },
+
+    /**
+     * Represents rate limit data.
+     * @typedef {Object} RateLimitData
+     * @property {number} limit Number of requests allowed.
+     * @property {number} remaining Number of requests that can still be made.
+     * @property {number} reset Epoch time of when the rate limit resets.
+     * @property {number} resetAfter Total amount of time in seconds until the rate limit resets. Note that this value only updates when new rate limit data is processed.
+     * @property {string} bucket A unique string that identifies the rate limit.
+     * @property {Date} resetDate 'reset' converted to date object.
+     */
+
+    /**
+     * Represents a rate limit.
+     * @typedef {Object} RateLimit
+     * @property {string[]} functions An array of function names that caused this rate limit. This array is always empty if 'global' is true.
+     * @property {string} bucket A unique string that identifies the rate limit.
+     * @property {RateLimitData} lastRateLimit Data of this rate limit.
+     * @property {boolean} global Whether this rate limit is the global rate limit or not.
+     */
+
+    /**
+     * Rate limit data object. This object contains all rate limit buckets, including global.
+     * Key of each rate limit is the bucket, however global has the key 'global'.
+     * @function getRateLimitData
+     * @returns {Object.<string, RateLimit>}
+     * @memberof Utility
+     * @instance
+     */
+    getRateLimitData: function () {
+        return Object.assign({}, rateLimitData);
     },
 };

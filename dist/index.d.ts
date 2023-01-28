@@ -307,6 +307,51 @@ export namespace text {
 }
 export namespace utility {
     function resolveError(error: any): ErrorResponse;
+    function getRateLimitData(): {
+        [x: string]: {
+            /**
+             * An array of function names that caused this rate limit. This array is always empty if 'global' is true.
+             */
+            functions: string[];
+            /**
+             * A unique string that identifies the rate limit.
+             */
+            bucket: string;
+            /**
+             * Data of this rate limit.
+             */
+            lastRateLimit: {
+                /**
+                 * Number of requests allowed.
+                 */
+                limit: number;
+                /**
+                 * Number of requests that can still be made.
+                 */
+                remaining: number;
+                /**
+                 * Epoch time of when the rate limit resets.
+                 */
+                reset: number;
+                /**
+                 * Total amount of time in seconds until the rate limit resets. Note that this value only updates when new rate limit data is processed.
+                 */
+                resetAfter: number;
+                /**
+                 * A unique string that identifies the rate limit.
+                 */
+                bucket: string;
+                /**
+                 * 'reset' converted to date object.
+                 */
+                resetDate: Date;
+            };
+            /**
+             * Whether this rate limit is the global rate limit or not.
+             */
+            global: boolean;
+        };
+    };
 }
 /**
  * Represents a Snowflake.
