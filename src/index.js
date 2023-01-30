@@ -965,13 +965,14 @@ exports.utility = {
     /**
      * Rate limit data object. This object contains all rate limit buckets, including global.
      * Key of each rate limit is the bucket, however global has the key 'global'.
+     * WARNING: Modifying this object may cause issues.
      * @function getRateLimitData
      * @returns {Object.<string, RateLimit>}
      * @memberof Utility
      * @instance
      */
     getRateLimitData: function () {
-        return Object.assign({}, rateLimitData);
+        return rateLimitData;
     },
 
     /**
@@ -982,5 +983,27 @@ exports.utility = {
      * @memberof Utility
      * @instance
      */
-    getRateLimitByMethod: function (functionName) {},
+    getRateLimitByMethod: function (functionName) {
+        const rateLimitData = this.getRateLimitData();
+        let foundRateLimit = null;
+        for (const entry of Object.entries(rateLimitData)) {
+            const rateLimit = entry[1];
+            if (rateLimit.functions.findIndex((name) => name === functionName) !== -1) {
+                foundRateLimit = rateLimit;
+            }
+        }
+        return foundRateLimit;
+    },
+
+    /**
+     * Get the current global limit.
+     * @function getGlobalRateLimit
+     * @returns {RateLimit|null}
+     * @memberof Utility
+     * @instance
+     */
+    getGlobalRateLimit: function () {
+        const rateLimitData = this.getRateLimitData();
+        return rateLimitData['global'] ?? null;
+    },
 };

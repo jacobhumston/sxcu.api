@@ -40,10 +40,16 @@ sxcu.files
 And here is an example of the `uploadFile` method.
 
 ```js
-const sxcu = require("sxcu.api");
-const options = { openGraphProperties: { siteName: "Test Image". discordHideUrl: false } };
-const uploadData = await sxcu.files.uploadFile("/a-test.png", options).catch(function (e) { console.log(e); });
-console.log(uploadData);
+const sxcu = require('sxcu.api');
+const options = { openGraphProperties: { siteName: 'Test Image', discordHideUrl: false } };
+sxcu.files
+    .uploadFile('/a-test.png', options)
+    .then(function (data) {
+        console.log('URL:', data.url);
+    })
+    .catch(function (e) {
+        console.log(utility.resolveError(e));
+    });
 ```
 
 ### Requiring Specific Endpoints
