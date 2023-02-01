@@ -19,7 +19,7 @@ export namespace files {
         /**
          * ID of the collection that this file is associated with.
          */
-        collection: string;
+        collection: string | null;
         /**
          * File size in bytes.
          */
@@ -39,42 +39,42 @@ export namespace files {
             /**
              * OpenGraph HEX color code.
              */
-            color?: string;
+            color?: string | undefined;
             /**
              * OpenGraph title.
              */
-            title?: string;
+            title?: string | undefined;
             /**
              * OpenGraph description.
              */
-            description?: string;
+            description?: string | undefined;
             /**
              * Whether to hide this file's url in Discord or not when sent.
              */
-            discordHideURL?: boolean;
-        };
+            discordHideURL?: boolean | undefined;
+        } | undefined;
     }>;
     function uploadFile(file: string, options?: {
         /**
          * Subdomain's upload token.
          */
-        token?: string;
+        token?: string | undefined;
         /**
          * Collection to upload too.
          */
-        collection?: string;
+        collection?: string | undefined;
         /**
          * Collection's upload token.
          */
-        collectionToken?: string;
+        collectionToken?: string | undefined;
         /**
          * If true, the url will be a link directly to the image instead.
          */
-        noEmbed?: boolean;
+        noEmbed?: boolean | undefined;
         /**
          * If true, the file will be automatically deleted after 24 hours.
          */
-        selfDestruct?: boolean;
+        selfDestruct?: boolean | undefined;
         /**
          * OpenGraph properties which allow you to change how the url is embedded on different websites.
          */
@@ -99,8 +99,8 @@ export namespace files {
              * If false, discord will not hide the url of the file when sent as a direct link.
              */
             discordHideUrl: boolean;
-        };
-    }, subdomain?: string): Promise<{
+        } | undefined;
+    } | undefined, subdomain?: string | undefined): Promise<{
         /**
          * ID of the uploaded file.
          */
@@ -239,7 +239,7 @@ export namespace collections {
             views: number;
         }[];
     }>;
-    function createCollection(title: string, description?: string, isPrivate?: boolean, unlisted?: boolean): Promise<{
+    function createCollection(title: string, description?: string | undefined, isPrivate?: boolean | undefined, unlisted?: boolean | undefined): Promise<{
         collectionId: string;
         /**
          * Title of the collection.
@@ -248,7 +248,7 @@ export namespace collections {
         /**
          * Description of the collection.
          */
-        description: string;
+        description: string | null;
         /**
          * Whether this collection is unlisted or not.
          */
@@ -260,11 +260,11 @@ export namespace collections {
         /**
          * Upload token of the collection.
          */
-        collectionToken: string;
+        collectionToken: string | null;
     }>;
 }
 export namespace links {
-    function createLink(link: string, subdomain?: string): Promise<{
+    function createLink(link: string, subdomain?: string | undefined): Promise<{
         /**
          * ID of the new redirect link.
          */
@@ -394,7 +394,7 @@ export namespace utility {
          * Whether this rate limit is the global rate limit or not.
          */
         global: boolean;
-    };
+    } | null;
     function getGlobalRateLimit(): {
         /**
          * An array of function names that caused this rate limit. This array is always empty if 'global' is true.
@@ -437,7 +437,8 @@ export namespace utility {
          * Whether this rate limit is the global rate limit or not.
          */
         global: boolean;
-    };
+    } | null;
+    function getRateLimitPromise(functionName?: string | string[] | undefined): Promise<void>;
 }
 /**
  * Represents a Snowflake.

@@ -41,7 +41,7 @@ function saveRateLimitData(headers, functionName) {
     // Convert strings to numbers then add resetDate value.
     data.limit = Number(data.limit);
     data.remaining = Number(data.remaining);
-    data.reset = Number(data.remaining);
+    data.reset = Number(data.reset);
     data.resetAfter = Number(data.resetAfter);
     data.resetDate = new Date(data.reset * 1000);
     // If bucket is already saved, we can just change it's rate limit data.
@@ -75,7 +75,6 @@ function saveRateLimitData(headers, functionName) {
             global: true,
         };
     }
-    console.log(rateLimitData);
     return null;
 }
 
@@ -1005,5 +1004,72 @@ exports.utility = {
     getGlobalRateLimit: function () {
         const rateLimitData = this.getRateLimitData();
         return rateLimitData['global'] ?? null;
+    },
+
+    /**
+     * Get a promise that resolves when the rate limit(s) is no longer in effect.
+     * This method will resolve instantly if the global rate limit and none of the provide function name's rate limits have been reached yet.
+     * The global rate limit is always accounted for, even when providing a function name.
+     * @function getRateLimitPromise
+     * @param {string|string[]|'all'} [functionName] Name of the function or an array of function names that belong to the rate limit(s) that you need to get a promise for. Provide the string 'all' if you want all rate limits currently saved to be accounted for.
+     * @returns {Promise<void>}
+     * @memberof Utility
+     * @instance
+     * @tutorial obeying-rate-limits
+     */
+    getRateLimitPromise: async function (functionName) {
+        /**
+         * Inner method for awaiting rate limits.
+         * @function awaitRateLimit
+         * @param {RateLimit} rateLimit
+         * @returns {Promise<void>}
+         * @private
+         */
+        async function awaitRateLimit(rateLimit) {
+            return new Promise(function (resolve) {
+                const interval = setInterval(function () {
+                    if (new Date() > rateLimit.lastRateLimit.resetDate) {
+                        clearInterval(interval);
+                        resolve();
+                    }
+                }, 1000);
+            });
+        }
+        const globalRateLimit = this.getGlobalRateLimit();
+        if (globalRateLimit) {
+            if (globalRateLimit.lastRateLimit.remaining === 0) {
+                await awaitRateLimit(globalRateLimit);
+            }
+        }
+        if (functionName) {
+            if (Array.isArray(functionName)) {
+                for (const method of functionName) {
+                    const rateLimit = this.getRateLimitByMethod(method);
+                    if (rateLimit) {
+                        if (rateLimit.lastRateLimit.remaining === 0) {
+                            await awaitRateLimit(rateLimit);
+                        }
+                    }
+                }
+            } else if (functionName === 'all') {
+                const rateLimitData = this.getRateLimitData();
+                for (const entry of Object.entries(rateLimitData)) {
+                    const rateLimit = entry[1];
+                    if (rateLimit.global === false) {
+                        if (rateLimit.lastRateLimit.remaining === 0) {
+                            await awaitRateLimit(rateLimit);
+                        }
+                    }
+                }
+            } else {
+                const rateLimit = this.getRateLimitByMethod(functionName);
+                if (rateLimit) {
+                    if (rateLimit.lastRateLimit.remaining === 0) {
+                        await awaitRateLimit(rateLimit);
+                    }
+                }
+            }
+        }
+        return;
     },
 };
