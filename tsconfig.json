@@ -6,6 +6,7 @@
         "emitDeclarationOnly": true,
         "outDir": "dist",
         "declarationMap": true,
-        "lib": ["es2018", "dom"]
+        "lib": ["es2018", "dom"],
+        "strictNullChecks": true
     }
 }

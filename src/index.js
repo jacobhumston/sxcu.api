@@ -13,6 +13,71 @@ const userAgent = `sxcu.api/v${packageVersion} (+${packageUrl}) - Node.js ${proc
 const baseUrl = 'https://sxcu.net/api';
 const textBaseUrl = 'https://cancer-co.de/';
 
+// Data Objects
+const rateLimitData = {};
+
+// Private Methods & Types
+/**
+ * Save data that is provided from rate limit headers.
+ * @function saveRateLimitData
+ * @param {Headers} headers
+ * @param {string} functionName
+ * @returns {null}
+ * @private
+ */
+function saveRateLimitData(headers, functionName) {
+    const data = {};
+    let isGlobal = false;
+    data.limit = headers.get('X-RateLimit-Limit');
+    data.remaining = headers.get('X-RateLimit-Remaining');
+    data.reset = headers.get('X-RateLimit-Reset');
+    data.resetAfter = headers.get('X-RateLimit-Reset-After');
+    data.bucket = headers.get('X-RateLimit-Bucket');
+    if (headers.get('X-RateLimit-Global') !== null) {
+        isGlobal = true;
+    }
+    // If any headers are not present then no data is saved.
+    if (data.limit === null || data.remaining === null || data.reset === null || data.bucket === null) return null;
+    // Convert strings to numbers then add resetDate value.
+    data.limit = Number(data.limit);
+    data.remaining = Number(data.remaining);
+    data.reset = Number(data.reset);
+    data.resetAfter = Number(data.resetAfter);
+    data.resetDate = new Date(data.reset * 1000);
+    // If bucket is already saved, we can just change it's rate limit data.
+    // However if a bucket with this function name already exists and does not have the same bucket value, the old bucket will be deleted.
+    if (isGlobal === false) {
+        for (const bucket in rateLimitData) {
+            if (rateLimitData[bucket].functions.findIndex((name) => name === functionName) !== -1) {
+                if (bucket !== data.bucket) {
+                    delete rateLimitData[bucket];
+                }
+            }
+        }
+        if (rateLimitData[data.bucket]) {
+            rateLimitData[data.bucket].lastRateLimit = data;
+            if (rateLimitData[data.bucket].functions.findIndex((name) => name === functionName) === -1) {
+                rateLimitData[data.bucket].functions.push(functionName);
+            }
+        } else {
+            rateLimitData[data.bucket] = {
+                functions: [functionName],
+                bucket: data.bucket,
+                lastRateLimit: data,
+                global: false,
+            };
+        }
+    } else {
+        rateLimitData['global'] = {
+            functions: [],
+            bucket: data.bucket,
+            lastRateLimit: data,
+            global: true,
+        };
+    }
+    return null;
+}
+
 // Public Methods
 /**
  * Represents a Snowflake.
@@ -87,6 +152,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'getFileMeta');
                     if (response.status === 200) {
                         const parsedData = await response.json();
                         const resolvedData = {};
@@ -223,6 +289,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'uploadFile');
                     if (response.status === 200) {
                         const data = await response.json();
                         const parsedData = {};
@@ -268,6 +335,7 @@ exports.files = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'deleteFile');
                     if (response.status === 200) {
                         const data = await response.json();
                         return resolve(data.message);
@@ -325,6 +393,7 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'listSubdomains');
                     if (response.status === 200) {
                         const data = await response.json();
                         const dataToReturn = [];
@@ -385,6 +454,7 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'getSubdomainMeta');
                     if (response.status === 200) {
                         const data = await response.json();
                         const dataToReturn = {};
@@ -432,6 +502,7 @@ exports.subdomains = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'checkSubdomain');
                     if (response.status === 200) {
                         const data = await response.json();
                         resolve(data.exists);
@@ -504,6 +575,7 @@ exports.collections = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'getCollectionMeta');
                     if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
@@ -558,8 +630,8 @@ exports.collections = {
      * @function createCollection
      * @param {string} title Title of the collection.
      * @param {string} [description] Description of the collection.
-     * @param {boolean} [isPrivate] If true, the collection will be private.
-     * @param {boolean} [unlisted] If true, the collection will be unlisted.
+     * @param {boolean} [isPrivate=false] If true, the collection will be private.
+     * @param {boolean} [unlisted=false] If true, the collection will be unlisted.
      * @returns {Promise<CreatedCollectionResponse>} Data about the newly created collection.
      * @throws {ErrorResponse|any}
      * @memberof Collections
@@ -592,6 +664,7 @@ exports.collections = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'createCollection');
                     if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
@@ -664,6 +737,7 @@ exports.links = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'createLink');
                     if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
@@ -708,6 +782,7 @@ exports.links = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'deleteLink');
                     if (response.status === 200) {
                         const data = await response.json();
                         resolve(data.message);
@@ -768,6 +843,7 @@ exports.text = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'createPaste');
                     if (response.status === 200) {
                         const data = await response.json();
                         const returnedData = {};
@@ -812,6 +888,7 @@ exports.text = {
                 },
             })
                 .then(async function (response) {
+                    saveRateLimitData(response.headers, 'deletePaste');
                     if (response.status === 200) {
                         const data = await response.json();
                         resolve(data.message);
@@ -862,5 +939,137 @@ exports.utility = {
         } else {
             return { error: 'unknown', code: -1 };
         }
+    },
+
+    /**
+     * Represents rate limit data.
+     * @typedef {Object} RateLimitData
+     * @property {number} limit Number of requests allowed.
+     * @property {number} remaining Number of requests that can still be made.
+     * @property {number} reset Epoch time of when the rate limit resets.
+     * @property {number} resetAfter Total amount of time in seconds until the rate limit resets. Note that this value only updates when new rate limit data is processed.
+     * @property {string} bucket A unique string that identifies the rate limit.
+     * @property {Date} resetDate 'reset' converted to date object.
+     */
+
+    /**
+     * Represents a rate limit.
+     * @typedef {Object} RateLimit
+     * @property {string[]} functions An array of function names that caused this rate limit. This array is always empty if 'global' is true.
+     * @property {string} bucket A unique string that identifies the rate limit.
+     * @property {RateLimitData} lastRateLimit Data of this rate limit.
+     * @property {boolean} global Whether this rate limit is the global rate limit or not.
+     */
+
+    /**
+     * Rate limit data object. This object contains all rate limit buckets, including global.
+     * Key of each rate limit is the bucket, however global has the key 'global'.
+     * WARNING: Modifying this object may cause issues.
+     * @function getRateLimitData
+     * @returns {Object.<string, RateLimit>}
+     * @memberof Utility
+     * @instance
+     */
+    getRateLimitData: function () {
+        return rateLimitData;
+    },
+
+    /**
+     * Get the current rate limit that was provided by the specific method.
+     * @function getRateLimitByMethod
+     * @param {string} functionName Name of the method. Ex; 'uploadFile'
+     * @returns {RateLimit|null}
+     * @memberof Utility
+     * @instance
+     */
+    getRateLimitByMethod: function (functionName) {
+        const rateLimitData = this.getRateLimitData();
+        let foundRateLimit = null;
+        for (const entry of Object.entries(rateLimitData)) {
+            const rateLimit = entry[1];
+            if (rateLimit.functions.findIndex((name) => name === functionName) !== -1) {
+                foundRateLimit = rateLimit;
+            }
+        }
+        return foundRateLimit;
+    },
+
+    /**
+     * Get the current global limit.
+     * @function getGlobalRateLimit
+     * @returns {RateLimit|null}
+     * @memberof Utility
+     * @instance
+     */
+    getGlobalRateLimit: function () {
+        const rateLimitData = this.getRateLimitData();
+        return rateLimitData['global'] ?? null;
+    },
+
+    /**
+     * Get a promise that resolves when the rate limit(s) is no longer in effect.
+     * This method will resolve instantly if the global rate limit and none of the provide function name's rate limits have been reached yet.
+     * The global rate limit is always accounted for, even when providing a function name.
+     * @function getRateLimitPromise
+     * @param {string|string[]|'all'} [functionName] Name of the function or an array of function names that belong to the rate limit(s) that you need to get a promise for. Provide the string 'all' if you want all rate limits currently saved to be accounted for.
+     * @returns {Promise<void>}
+     * @memberof Utility
+     * @instance
+     * @tutorial obeying-rate-limits
+     */
+    getRateLimitPromise: async function (functionName) {
+        /**
+         * Inner method for awaiting rate limits.
+         * @function awaitRateLimit
+         * @param {RateLimit} rateLimit
+         * @returns {Promise<void>}
+         * @private
+         */
+        async function awaitRateLimit(rateLimit) {
+            return new Promise(function (resolve) {
+                const interval = setInterval(function () {
+                    if (new Date() > rateLimit.lastRateLimit.resetDate) {
+                        clearInterval(interval);
+                        resolve();
+                    }
+                }, 1000);
+            });
+        }
+        const globalRateLimit = this.getGlobalRateLimit();
+        if (globalRateLimit) {
+            if (globalRateLimit.lastRateLimit.remaining === 0) {
+                await awaitRateLimit(globalRateLimit);
+            }
+        }
+        if (functionName) {
+            if (Array.isArray(functionName)) {
+                for (const method of functionName) {
+                    const rateLimit = this.getRateLimitByMethod(method);
+                    if (rateLimit) {
+                        if (rateLimit.lastRateLimit.remaining === 0) {
+                            await awaitRateLimit(rateLimit);
+                        }
+                    }
+                }
+            } else if (functionName === 'all') {
+                const rateLimitData = this.getRateLimitData();
+                for (const entry of Object.entries(rateLimitData)) {
+                    const rateLimit = entry[1];
+                    if (rateLimit.global === false) {
+                        if (rateLimit.lastRateLimit.remaining === 0) {
+                            await awaitRateLimit(rateLimit);
+                        }
+                    }
+                }
+            } else {
+                const rateLimit = this.getRateLimitByMethod(functionName);
+                if (rateLimit) {
+                    if (rateLimit.lastRateLimit.remaining === 0) {
+                        await awaitRateLimit(rateLimit);
+                    }
+                }
+            }
+        }
+        return;
     },
 };

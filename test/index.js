@@ -3,22 +3,17 @@ const { files, subdomains, collections, text, links, utility } = require('../');
 const secrets = require('./secrets.json');
 
 async function test() {
-    text.createPaste('hello!! :D')
-        .then(function (data) {
-            console.log(data);
-            setTimeout(function () {
-                text.deletePaste(data.id, data.deletionToken)
-                    .then(function (msg) {
-                        console.log(msg);
-                    })
-                    .catch(function (e) {
-                        console.log(utility.resolveError(e));
-                    });
-            }, 5 * 1000);
-        })
-        .catch(function (e) {
-            console.log(utility.resolveError(e));
-        });
+    while (true) {
+        await files
+            .uploadFile('test/a-test-min.png')
+            .then(function (data) {
+                console.log('Success!', data.url);
+            })
+            .catch(function (err) {
+                console.log('Error!', utility.resolveError(err));
+            });
+        await utility.getRateLimitPromise('all');
+    }
 }
 
 test();
