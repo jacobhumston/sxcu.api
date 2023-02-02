@@ -5,9 +5,13 @@
     },
     "templates": {
         "default": {
+            "outputSourceFiles": false,
             "staticFiles": {
                 "paths": ["tutorials/assets/"]
             }
         }
+    },
+    "opts": {
+        "template": "node_modules/clean-jsdoc-theme"
     }
 }
