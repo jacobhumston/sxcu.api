@@ -186,6 +186,10 @@ export namespace collections {
          */
         id: string;
         /**
+         * URL of the collection.
+         */
+        url: string;
+        /**
          * Title of the collection.
          */
         title: string;
@@ -240,7 +244,14 @@ export namespace collections {
         }[];
     }>;
     function createCollection(title: string, description?: string | undefined, isPrivate?: boolean | undefined, unlisted?: boolean | undefined): Promise<{
+        /**
+         * ID of the collection.
+         */
         collectionId: string;
+        /**
+         * URL of the collection.
+         */
+        url: string;
         /**
          * Title of the collection.
          */

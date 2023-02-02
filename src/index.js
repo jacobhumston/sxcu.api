@@ -43,7 +43,7 @@ function saveRateLimitData(headers, functionName) {
     data.remaining = Number(data.remaining);
     data.reset = Number(data.reset);
     data.resetAfter = Number(data.resetAfter);
-    data.resetDate = new Date(data.reset * 1000);
+    data.resetDate = new Date((data.reset + 1) * 1000);
     // If bucket is already saved, we can just change it's rate limit data.
     // However if a bucket with this function name already exists and does not have the same bucket value, the old bucket will be deleted.
     if (isGlobal === false) {
@@ -545,6 +545,7 @@ exports.collections = {
      * Represents the response returned by the 'getCollectionMeta' method.
      * @typedef {Object} CollectionMetaResponse
      * @property {Snowflake} id ID of the collection.
+     * @property {URL} url URL of the collection.
      * @property {string} title Title of the collection.
      * @property {string} description Description of the collection.
      * @property {number} views The amount of views of the collection.
@@ -580,6 +581,7 @@ exports.collections = {
                         const data = await response.json();
                         const returnedData = {};
                         returnedData.id = data.id;
+                        returnedData.url = 'https://sxcu.net/c/' + data.id;
                         returnedData.title = data.title;
                         returnedData.description = data.desc;
                         returnedData.views = data.views;
@@ -617,7 +619,8 @@ exports.collections = {
     /**
      * Response returned by the 'createCollection' method.
      * @typedef {Object} CreatedCollectionResponse
-     * @property {Snowflake} collectionId
+     * @property {Snowflake} collectionId ID of the collection.
+     * @property {URL} url URL of the collection.
      * @property {string} title Title of the collection.
      * @property {string?} description Description of the collection.
      * @property {boolean} unlisted Whether this collection is unlisted or not.
@@ -652,8 +655,6 @@ exports.collections = {
             }
             if (unlisted === true) {
                 params.set('unlisted', 'true');
-            } else {
-                params.set('unlisted', 'false');
             }
             fetch(`${baseUrl}/collections/create`, {
                 method: 'POST',
@@ -669,6 +670,7 @@ exports.collections = {
                         const data = await response.json();
                         const returnedData = {};
                         returnedData.collectionId = data.collection_id;
+                        returnedData.url = 'https://sxcu.net/c/' + data.collection_id;
                         returnedData.title = data.title;
                         returnedData.description = data.description ?? null;
                         returnedData.unlisted = data.unlisted;
