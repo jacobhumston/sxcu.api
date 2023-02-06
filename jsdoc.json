@@ -5,7 +5,7 @@
     },
     "templates": {
         "default": {
-            "outputSourceFiles": false,
+            "outputSourceFiles": true,
             "staticFiles": {
                 "paths": ["tutorials/assets/"]
             }
