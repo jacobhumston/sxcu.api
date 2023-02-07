@@ -33,7 +33,7 @@
     },
     "homepage": "https://github.com/Lovely-Experiences/sxcu.api#readme",
     "devDependencies": {
-        "clean-jsdoc-theme": "^4.2.4",
+        "clean-jsdoc-theme": "^4.2.5",
         "eslint": "^8.32.0",
         "eslint-config-prettier": "^8.6.0",
         "eslint-plugin-prettier": "^4.2.1",
