@@ -52,6 +52,8 @@ sxcu.files
     });
 ```
 
+> If you would like to test in your browser, use [RunKit](https://npm.runkit.com/sxcu.api). RunKit examples: [Creating a Paste](https://runkit.com/embed/h7h32ibjf5t5), [Creating a Link Redirect](https://runkit.com/embed/bivumop1mkbf)
+
 ### Requiring Specific Endpoints
 
 Note that if you don't need all endpoint methods, you can require a specific one.
