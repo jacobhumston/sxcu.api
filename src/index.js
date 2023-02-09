@@ -1075,3 +1075,102 @@ exports.utility = {
         return;
     },
 };
+
+/**
+ * Create a sxcu queue.
+ * This queue can be used to execute methods in a synchronized manner.
+ * @class
+ */
+exports.queue = class queue {
+    /**
+     * Represents an object in the queue.
+     * @typedef {Object} QueueObject
+     * @property {function} function Method to be executed.
+     * @property {function} finished Method to be executed once the function has been executed.
+     * @property {string} [rateLimit] Rate limit that the method must obey.
+     */
+
+    /**
+     * Queue array.
+     * @type {QueueObject[]}
+     */
+    #queueData = [];
+
+    /**
+     * Upload to the queue.
+     * @function upload
+     * @memberof queue
+     * @param {function} method Method that should be queued.
+     * @param {string} [methodName] Name of the method. This is used to obey the rate limit for the method's specific endpoint. If nothing is provided, only the global rate limit will be obeyed.
+     * @returns {Promise<any>}
+     */
+    async upload(method, methodName) {
+        const self = this;
+        return new Promise(function (resolve) {
+            self.#queueData.push({
+                function: method,
+                finished: resolve,
+                rateLimit: methodName,
+            });
+        });
+    }
+
+    /**
+     * Queue interval result. (intervalID)
+     * @type {number|null}
+     */
+    #intervalID = null;
+
+    /**
+     * Stop/pause the queue.
+     * @function stop
+     * @memberof queue
+     * @returns {void}
+     */
+    stop() {
+        return clearInterval(this.#intervalID);
+    }
+
+    /**
+     * Start/unpause the queue.
+     * @function start
+     * @memberof queue
+     * @returns {void}
+     */
+    start() {
+        const self = this;
+        let processing = false;
+        this.#intervalID = setInterval(async function () {
+            if (processing === true) return;
+            processing = true;
+            const queueObject = self.#queueData[0];
+            if (queueObject) {
+                await exports.utility.getRateLimitPromise(queueObject.rateLimit);
+                try {
+                    const result = await queueObject.function();
+                    queueObject.finished(result);
+                } catch (error) {
+                    queueObject.finished(exports.utility.resolveError(error));
+                }
+                self.#queueData[0] = undefined;
+                self.#queueData.forEach(function (value, index) {
+                    if (index > 0) {
+                        self.#queueData[index - 1] = value;
+                        self.#queueData[index] = undefined;
+                    }
+                });
+            }
+            processing = false;
+        }, 1000);
+    }
+
+    /**
+     * @param {boolean} doNotStart If true, the queue will not be executed until you call '<queue>.start()'.
+     * @constructor
+     */
+    constructor(doNotStart) {
+        if (doNotStart !== true) {
+            this.start();
+        }
+    }
+};

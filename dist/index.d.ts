@@ -476,4 +476,35 @@ export type ErrorResponse = {
  * Represents a path to a file.
  */
 export type FilePath = string;
+export class queue {
+    /**
+     * @param {boolean} doNotStart If true, the queue will not be executed until you call '<queue>.start()'.
+     * @constructor
+     */
+    constructor(doNotStart: boolean);
+    /**
+     * Upload to the queue.
+     * @function upload
+     * @memberof queue
+     * @param {function} method Method that should be queued.
+     * @param {string} [methodName] Name of the method. This is used to obey the rate limit for the method's specific endpoint. If nothing is provided, only the global rate limit will be obeyed.
+     * @returns {Promise<any>}
+     */
+    upload(method: Function, methodName?: string | undefined): Promise<any>;
+    /**
+     * Stop/pause the queue.
+     * @function stop
+     * @memberof queue
+     * @returns {void}
+     */
+    stop(): void;
+    /**
+     * Start/unpause the queue.
+     * @function start
+     * @memberof queue
+     * @returns {void}
+     */
+    start(): void;
+    #private;
+}
 //# sourceMappingURL=index.d.ts.map
