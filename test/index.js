@@ -8,7 +8,7 @@ async function test() {
     images.forEach(function (image, index) {
         q.upload(async function () {
             console.log('running...', index);
-            return await files.uploadFile(`test/${image}`, {}, 'shx.gg');
+            return await files.uploadFile(`test/${image}`, { selfDestruct: true }, 'shx.gg');
         }, 'uploadFile').then(function (d) {
             console.log(d);
         });
