@@ -3,7 +3,7 @@ const { files, subdomains, collections, text, links, utility, queue } = require(
 const secrets = require('./secrets.json');
 
 async function test() {
-    const q = new queue();
+    const q = new queue(true);
     const images = ['test.png', 'test.png', 'test.png', 'test.png', 'test.png', 'test.png'];
     images.forEach(function (image, index) {
         q.upload(async function () {
@@ -13,6 +13,9 @@ async function test() {
             console.log(d);
         });
     });
+    setTimeout(() => {
+        q.start();
+    }, 3000);
 }
 
 test();
