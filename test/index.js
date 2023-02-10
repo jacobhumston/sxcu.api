@@ -4,14 +4,26 @@ const secrets = require('./secrets.json');
 
 async function test() {
     const queue = new utility.queue();
-    queue
-        .push(() => {
-            console.log('This function is being executed.');
-        })
-        .then(() => {
-            console.log('The function in the queue has finished execution.');
-            queue.stop();
-        });
+    const images = ['test!!', 'test!!', 'test!!'];
+    images.forEach(function (image, index) {
+        const progress = ((index + 1) / images.length) * 100;
+        queue
+            .push(function () {
+                console.log('UPLOADING...');
+                return text.createPaste(`test/${image}`);
+            }, 'createPaste')
+            .then(function (data) {
+                if (data.error) {
+                    console.log(Math.round(progress) + '%', 'ERROR!', data.error);
+                } else {
+                    console.log(Math.round(progress) + '%', 'UPLOADED!', data.url);
+                }
+                if (progress === 100) {
+                    console.log('DONE!');
+                    queue.stop();
+                }
+            });
+    });
 }
 
 test();
