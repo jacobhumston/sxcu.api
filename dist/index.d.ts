@@ -317,8 +317,8 @@ export namespace text {
     function deletePaste(pasteId: string, deletionToken: string): Promise<string>;
 }
 export namespace utility {
-    function resolveError(error: any): ErrorResponse;
-    function getRateLimitData(): {
+    export function resolveError(error: any): ErrorResponse;
+    export function getRateLimitData(): {
         [x: string]: {
             /**
              * An array of function names that caused this rate limit. This array is always empty if 'global' is true.
@@ -363,7 +363,7 @@ export namespace utility {
             global: boolean;
         };
     };
-    function getRateLimitByMethod(functionName: string): {
+    export function getRateLimitByMethod(functionName: string): {
         /**
          * An array of function names that caused this rate limit. This array is always empty if 'global' is true.
          */
@@ -406,7 +406,7 @@ export namespace utility {
          */
         global: boolean;
     } | null;
-    function getGlobalRateLimit(): {
+    export function getGlobalRateLimit(): {
         /**
          * An array of function names that caused this rate limit. This array is always empty if 'global' is true.
          */
@@ -449,7 +449,8 @@ export namespace utility {
          */
         global: boolean;
     } | null;
-    function getRateLimitPromise(functionName?: string | string[] | undefined): Promise<void>;
+    export function getRateLimitPromise(functionName?: string | string[] | undefined): Promise<void>;
+    export { queue };
 }
 /**
  * Represents a Snowflake.
@@ -476,35 +477,60 @@ export type ErrorResponse = {
  * Represents a path to a file.
  */
 export type FilePath = string;
-export class queue {
+declare class queue {
     /**
-     * @param {boolean} doNotStart If true, the queue will not be executed until you call '<queue>.start()'.
-     * @constructor
+     * @param {boolean} [doNotStart] If true, the queue will not be executed until you call 'queue.start()'.
+     * @constructs Utility#queue
+     * @memberof Utility#queue
+     * @instance
      */
-    constructor(doNotStart: boolean);
+    constructor(doNotStart?: boolean | undefined);
     /**
-     * Upload to the queue.
-     * @function upload
-     * @memberof queue
+     * Push a method/function to the queue.
+     * @function push
      * @param {function} method Method that should be queued.
      * @param {string} [methodName] Name of the method. This is used to obey the rate limit for the method's specific endpoint. If nothing is provided, only the global rate limit will be obeyed.
      * @returns {Promise<any>}
+     * @memberof Utility#queue
+     * @instance
+     * @example
+     * const { utility } = require('sxcu.api');
+     * const queue = new utility.queue();
+     * queue
+     *  .push(() => {
+     *      console.log('This function is being executed.');
+     *  })
+     *  .then(() => {
+     *      console.log('The function in the queue has finished execution.');
+     *      queue.stop();
+     *  });
      */
-    upload(method: Function, methodName?: string | undefined): Promise<any>;
+    push(method: Function, methodName?: string | undefined): Promise<any>;
+    /**
+     * Clear the queue.
+     * @function clear
+     * @returns {void}
+     * @memberof Utility#queue
+     * @instance
+     */
+    clear(): void;
     /**
      * Stop/pause the queue.
      * @function stop
-     * @memberof queue
      * @returns {void}
+     * @memberof Utility#queue
+     * @instance
      */
     stop(): void;
     /**
      * Start/unpause the queue.
      * @function start
-     * @memberof queue
      * @returns {void}
+     * @memberof Utility#queue
+     * @instance
      */
     start(): void;
     #private;
 }
+export {};
 //# sourceMappingURL=index.d.ts.map

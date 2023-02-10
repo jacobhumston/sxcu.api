@@ -1,21 +1,17 @@
 /* eslint-disable */
-const { files, subdomains, collections, text, links, utility, queue } = require('../');
+const { files, subdomains, collections, text, links, utility } = require('../');
 const secrets = require('./secrets.json');
 
 async function test() {
-    const q = new queue(true);
-    const images = ['test.png', 'test.png', 'test.png', 'test.png', 'test.png', 'test.png'];
-    images.forEach(function (image, index) {
-        q.upload(async function () {
-            console.log('running...', index);
-            return await files.uploadFile(`test/${image}`, { selfDestruct: true }, 'shx.gg');
-        }, 'uploadFile').then(function (d) {
-            console.log(d);
+    const queue = new utility.queue();
+    queue
+        .push(() => {
+            console.log('This function is being executed.');
+        })
+        .then(() => {
+            console.log('The function in the queue has finished execution.');
+            queue.stop();
         });
-    });
-    setTimeout(() => {
-        q.start();
-    }, 3000);
 }
 
 test();
