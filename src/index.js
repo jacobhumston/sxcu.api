@@ -1073,7 +1073,7 @@ exports.utility = {
 
     /**
      * Create a sxcu queue.
-     * This queue can be used to execute methods in a synchronized manner.
+     * This queue can be used to execute methods in a asynchronous manner.
      * @class
      * @memberof Utility
      * @instance
