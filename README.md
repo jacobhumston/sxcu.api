@@ -6,7 +6,7 @@ Easily upload images with the sxcu.net API. Allowing you to get a publicly shara
 
 As of **version 1.2.0**, this module supports **all** endpoints. 100% API coverage.
 
-Interested in a command line interface instead? Visit [sxcu.cli](https://github.com/Lovely-Experiences/sxcu.cli) instead.
+Interested in a command line interface instead? Visit [sxcu.cli](https://github.com/Lovely-Experiences/sxcu.cli).
 
 ## Installation
 
