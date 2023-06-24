@@ -9,9 +9,9 @@ const fs = require('fs');
 // Configuration
 const packageVersion = require('../package.json').version;
 const packageUrl = 'https://github.com/Lovely-Experiences/sxcu.api';
-const userAgent = `sxcu.api/v${packageVersion} (+${packageUrl}) - Node.js ${process.version}`;
 const baseUrl = 'https://sxcu.net/api';
 const textBaseUrl = 'https://cancer-co.de/';
+let userAgent = `sxcu.api/v${packageVersion} (+${packageUrl}) - Node.js ${process.version}`;
 
 // Data Objects
 const rateLimitData = {};
@@ -190,11 +190,11 @@ exports.files = {
     /**
      * Represents OpenGraph properties for UploadFileOptions.
      * @typedef {Object} UploadFileOptionsOpenGraphProperties
-     * @property {string|boolean} title Configures the value for the 'title' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
-     * @property {string|boolean} description Configures the value for the 'description' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
-     * @property {string|boolean} color Configures the value for the 'theme-color' OpenGraph meta tag, must be a valid HEX color code, if set to false, the tag will be omitted entirely.
-     * @property {string|boolean} siteName Configures the value for the 'site-name' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
-     * @property {boolean} discordHideUrl If false, discord will not hide the url of the file when sent as a direct link.
+     * @property {string|false} [title] Configures the value for the 'title' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+     * @property {string|false} [description] Configures the value for the 'description' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+     * @property {string|false} [color] Configures the value for the 'theme-color' OpenGraph meta tag, must be a valid HEX color code, if set to false, the tag will be omitted entirely.
+     * @property {string|false} [siteName] Configures the value for the 'site-name' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+     * @property {boolean} [discordHideUrl] If false, discord will not hide the url of the file when sent as a direct link.
      */
 
     /**
@@ -1069,6 +1069,73 @@ exports.utility = {
             }
         }
         return;
+    },
+
+    /**
+     * Set the user agent.
+     * Example: sxcuUploader/$versionNumber (+$url)
+     * WARNING: Changing the user agent may cause API requests to be denied.
+     * @function setUserAgent
+     * @param {string} newUserAgent New User Agent to be used.
+     * @returns {void}
+     * @throws {ErrorResponse}
+     * @memberof Utility
+     * @instance
+     */
+    setUserAgent: function (newUserAgent) {
+        if (typeof newUserAgent !== 'string') throw { error: 'User Agent must be a string.', code: -1 };
+        userAgent = newUserAgent;
+        return;
+    },
+
+    /**
+     * Represents the response returned by "convertSxcuFile".
+     * @typedef {Object} ConvertedSxcuFile
+     * @property {string} domain Domain.
+     * @property {UploadFileOptions} options File upload options.
+     */
+
+    /**
+     * Convert a sxcu file to a UploadFileOptions object.
+     * Note: Requires the file to have the correct options, it's preferred that the file is downloaded from sxcu.net.
+     * You can use the "Custom Uploader Workshop" tool from https://sxcu.net/ to get the file needed for this method.
+     * @function convertSxcuFile
+     * @param {FilePath} file File which should be converted.
+     * @returns {ConvertedSxcuFile}
+     * @throws {ErrorResponse|any}
+     * @memberof Utility
+     * @instance
+     */
+    convertSxcuFile: function (file) {
+        if (file.split('.').pop() !== 'sxcu') throw { error: 'File must be an sxcu file.', code: -1 };
+        const fileString = fs.readFileSync(file).toString();
+        const convertedJson = JSON.parse(fileString);
+        if (!convertedJson) throw { error: 'Could not convert file content to JSON.', code: -1 };
+        if (convertedJson.Version !== '13.6.1')
+            console.warn(
+                `Sxcu file version is not 13.6.1, current version is '${convertedJson.Version}'. Conversion may error or convert incorrectly. Please create an issue on github if the version you are using is greater. https://github.com/Lovely-Experiences/sxcu.api/issues`
+            );
+        const uploadFileOptions = {};
+        const response = {};
+        const data = convertedJson.Arguments;
+        uploadFileOptions.token = data.token;
+        uploadFileOptions.collection = data.collection;
+        uploadFileOptions.collectionToken = data.collection_token;
+        uploadFileOptions.noEmbed = data.noembed;
+        uploadFileOptions.selfDestruct = data.self_destruct;
+        if (data.og_properties !== undefined) {
+            const convertedJson = JSON.parse(data.og_properties);
+            const openGraphProperties = {};
+            openGraphProperties.title = convertedJson.title;
+            openGraphProperties.description = convertedJson.description;
+            openGraphProperties.color = convertedJson.color;
+            openGraphProperties.siteName = convertedJson.site_name;
+            openGraphProperties.discordHideUrl = convertedJson.discord_hide_url;
+            uploadFileOptions.openGraphProperties = openGraphProperties;
+        }
+        response.domain = convertedJson.RequestURL.split('/')[2];
+        response.options = uploadFileOptions;
+        return response;
     },
 
     /**

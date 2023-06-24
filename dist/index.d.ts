@@ -82,23 +82,23 @@ export namespace files {
             /**
              * Configures the value for the 'title' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
              */
-            title: string | boolean;
+            title?: string | false | undefined;
             /**
              * Configures the value for the 'description' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
              */
-            description: string | boolean;
+            description?: string | false | undefined;
             /**
              * Configures the value for the 'theme-color' OpenGraph meta tag, must be a valid HEX color code, if set to false, the tag will be omitted entirely.
              */
-            color: string | boolean;
+            color?: string | false | undefined;
             /**
              * Configures the value for the 'site-name' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
              */
-            siteName: string | boolean;
+            siteName?: string | false | undefined;
             /**
              * If false, discord will not hide the url of the file when sent as a direct link.
              */
-            discordHideUrl: boolean;
+            discordHideUrl?: boolean | undefined;
         } | undefined;
     } | undefined, subdomain?: string | undefined): Promise<{
         /**
@@ -450,6 +450,63 @@ export namespace utility {
         global: boolean;
     } | null;
     export function getRateLimitPromise(functionName?: string | string[] | undefined): Promise<void>;
+    export function setUserAgent(newUserAgent: string): void;
+    export function convertSxcuFile(file: string): {
+        /**
+         * Domain.
+         */
+        domain: string;
+        /**
+         * File upload options.
+         */
+        options: {
+            /**
+             * Subdomain's upload token.
+             */
+            token?: string | undefined;
+            /**
+             * Collection to upload too.
+             */
+            collection?: string | undefined;
+            /**
+             * Collection's upload token.
+             */
+            collectionToken?: string | undefined;
+            /**
+             * If true, the url will be a link directly to the image instead.
+             */
+            noEmbed?: boolean | undefined;
+            /**
+             * If true, the file will be automatically deleted after 24 hours.
+             */
+            selfDestruct?: boolean | undefined;
+            /**
+             * OpenGraph properties which allow you to change how the url is embedded on different websites.
+             */
+            openGraphProperties?: {
+                /**
+                 * Configures the value for the 'title' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+                 */
+                title?: string | false | undefined;
+                /**
+                 * Configures the value for the 'description' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+                 */
+                description?: string | false | undefined;
+                /**
+                 * Configures the value for the 'theme-color' OpenGraph meta tag, must be a valid HEX color code, if set to false, the tag will be omitted entirely.
+                 */
+                color?: string | false | undefined;
+                /**
+                 * Configures the value for the 'site-name' OpenGraph meta tag, if set to false, the tag will be omitted entirely.
+                 */
+                siteName?: string | false | undefined;
+                /**
+                 * If false, discord will not hide the url of the file when sent as a direct link.
+                 */
+                discordHideUrl?: boolean | undefined;
+            } | undefined;
+        };
+    };
     export { queue };
 }
 /**
