@@ -14,7 +14,7 @@ const textBaseUrl = 'https://cancer-co.de/';
 let userAgent = `sxcu.api/v${packageVersion} (+${packageUrl}) - Node.js ${process.version}`;
 
 // Data Objects
-const rateLimitData = {};
+let rateLimitData = {};
 
 // Private Methods & Types
 /**
