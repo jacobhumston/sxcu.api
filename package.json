@@ -1,6 +1,6 @@
 {
     "name": "sxcu.api",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "description": "Node.js library to interact with the sxcu.net API.",
     "main": "src/index.js",
     "repository": {
@@ -9,12 +9,12 @@
     },
     "types": "./dist/index.d.ts",
     "scripts": {
-        "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c ./jsdoc.json -u ./tutorials/ -r --verbose",
+        "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c ./jsdoc.json -u ./tutorials/ -r --verbose -P ./package.json",
         "test": "node ./test/index.js",
         "local-node-test": "./node/bin/node ./test/index.js",
         "check": "./node_modules/.bin/eslint src/",
         "generate-types": "./node_modules/.bin/tsc",
-        "generate-doc-windows": ".\\node_modules\\.bin\\jsdoc .\\src\\ -d .\\docs\\ -R .\\README.md -c .\\jsdoc.json -u .\\tutorials\\ -r --verbose",
+        "generate-doc-windows": ".\\node_modules\\.bin\\jsdoc .\\src\\ -d .\\docs\\ -R .\\README.md -c .\\jsdoc.json -u .\\tutorials\\ -r --verbose -P .\\package.json",
         "check-windows": ".\\node_modules\\.bin\\eslint src\\",
         "generate-types-windows": ".\\node_modules\\.bin\\tsc"
     },
@@ -34,7 +34,7 @@
     "bugs": {
         "url": "https://github.com/Lovely-Experiences/sxcu.api/issues"
     },
-    "homepage": "https://github.com/Lovely-Experiences/sxcu.api#readme",
+    "homepage": "https://sxcu.api.lovelyjacob.com",
     "devDependencies": {
         "clean-jsdoc-theme": "^4.2.5",
         "eslint": "^8.32.0",
