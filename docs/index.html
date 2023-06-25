@@ -2,6 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>sxcu.api</title>
         <meta property="og:title" content="sxcu.api - node.js library to interact with the sxcu.net api." />
         <meta property="og:type" content="website" />
@@ -10,6 +11,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
         <style>
             body,
             button,
@@ -79,6 +81,46 @@
             #copy:hover {
                 color: rgb(81, 107, 255);
             }
+
+            #code-block {
+                display: inline-block;
+                padding: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: large;
+                background-color: rgb(54, 54, 54);
+                color: rgb(255, 255, 255);
+                border-radius: 15px;
+                font-family: 'Source Code Pro', monospace;
+                font-size: medium;
+                text-align: left;
+                max-width: 80%;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            c-const {
+                color: rgb(103, 139, 255);
+            }
+
+            c-return {
+                color: rgb(255, 194, 103);
+            }
+
+            c-5,
+            c-function {
+                color: rgb(255, 112, 112);
+            }
+
+            c-7,
+            c-string {
+                color: rgb(105, 255, 143);
+            }
+
+            c-3,
+            c-property {
+                color: rgb(203, 250, 127);
+            }
         </style>
     </head>
     <body>
@@ -97,6 +139,12 @@
                 <br />
                 Past Versions: <a href="1.2.5/index.html">1.2.5</a>
             </p>
+            <br /><br />
+            <div id="code-block">
+                <c-const>const</c-const> sxcu = <c-function>require</c-function>(<c-string>'sxcu.api'</c-string>);
+                <br />
+                <c-1></c-1><c-2></c-2><c-3></c-3><c-4></c-4><c-5></c-5><c-6></c-6><c-7></c-7><c-8></c-8>
+            </div>
         </div>
         <script>
             const copy = document.getElementById('copy');
@@ -119,6 +167,73 @@
                     coolDown = false;
                 }, 3000);
             };
+
+            const elements = [
+                document.getElementsByTagName('c-1').item(0),
+                document.getElementsByTagName('c-2').item(0),
+                document.getElementsByTagName('c-3').item(0),
+                document.getElementsByTagName('c-4').item(0),
+                document.getElementsByTagName('c-5').item(0),
+                document.getElementsByTagName('c-6').item(0),
+                document.getElementsByTagName('c-7').item(0),
+                document.getElementsByTagName('c-8').item(0),
+            ];
+
+            const codeStrings = [
+                ['sxcu', '.', 'files', '.', 'uploadFile', '(', "'cool.png'", ');'],
+                ['sxcu', '.', 'files', '.', 'getFileMeta', '(', "'66CzGXRrQ'", ');'],
+                ['sxcu', '.', 'links', '.', 'createLink', '(', "'https://google.com'", ');'],
+                ['sxcu', '.', 'text', '.', 'createPaste', '(', "'function add(a, b) { return a + b }'", ');'],
+                ['sxcu', '.', 'subdomains', '.', 'checkSubdomain', '(', "'lovelyjacob-4463.shx.gg'", ');'],
+                ['sxcu', '.', 'subdomains', '.', 'getSubdomainMeta', '(', "'shx.gg'", ');'],
+                ['sxcu', '.', 'subdomains', '.', 'listSubdomains', '(', '', ');'],
+                ['sxcu', '.', 'utility', '.', 'convertSxcuFile', '(', "'uploader.sxcu'", ');'],
+                ['sxcu', '.', 'utility', '.', 'resolveError', '(', "'Missing ) after argument list'", ');'],
+            ];
+
+            async function wait(time) {
+                return new Promise((resolve) => {
+                    setTimeout(() => {
+                        return resolve();
+                    }, time);
+                });
+            }
+
+            // https://stackoverflow.com/questions/1431094/how-do-i-replace-a-character-at-a-particular-index-in-javascript
+            function setCharAt(str, index, chr) {
+                if (index > str.length - 1) return str;
+                return str.substring(0, index) + chr + str.substring(index + 1);
+            }
+
+            async function animation() {
+                const chosenString = codeStrings[Math.floor(Math.random() * codeStrings.length)];
+
+                for (let i = 0; i < elements.length; i++) {
+                    const element = elements[i];
+                    const codeString = chosenString[i];
+                    for (let i = 0; i < codeString.length; i++) {
+                        element.innerHTML = element.innerHTML + codeString.charAt(i);
+                        await wait(50);
+                    }
+                }
+
+                await wait(3000);
+
+                for (let i = elements.length - 1; i !== -1; i--) {
+                    const element = elements[i];
+                    const codeString = chosenString[i];
+                    for (let i = codeString.length - 1; i !== -1; i--) {
+                        element.innerHTML = element.innerHTML = setCharAt(element.innerHTML, i, '');
+                        await wait(50);
+                    }
+                }
+
+                await wait(2000);
+
+                animation();
+            }
+
+            animation();
         </script>
     </body>
 </html>
