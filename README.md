@@ -24,7 +24,9 @@ You can find the documentation for sxcu.api [here](https://lovely-experiences.gi
 
 If you end up needing assistance, you can [create an issue on GitHub](https://github.com/Lovely-Experiences/sxcu.api/issues/new).
 
-Here's an example of using the `getFileMeta` method.
+### Examples
+
+_Getting information of a file..._
 
 ```js
 const sxcu = require('sxcu.api');
@@ -35,11 +37,11 @@ sxcu.files
     })
     .catch((error) => {
         // Always listen for errors!
-        console.error(error);
+        console.log(sxcu.utility.resolveError(error));
     });
 ```
 
-And here is an example of the `uploadFile` method.
+_Uploading a file..._
 
 ```js
 const sxcu = require('sxcu.api');
@@ -49,8 +51,10 @@ sxcu.files
     .then(function (data) {
         console.log('URL:', data.url);
     })
-    .catch(function (e) {
-        console.log(utility.resolveError(e));
+    .catch(function (error) {
+        // resolveError allows us to guarantee an error object will always be received.
+        const errorObject = sxcu.utility.resolveError(error);
+        console.log(`Ran into the error '${errorObject.error}' with the code ${errorObject.code}!`);
     });
 ```
 
