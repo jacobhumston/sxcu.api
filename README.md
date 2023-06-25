@@ -24,7 +24,7 @@ You can find the documentation for sxcu.api [here](https://lovely-experiences.gi
 
 If you end up needing assistance, you can [create an issue on GitHub](https://github.com/Lovely-Experiences/sxcu.api/issues/new).
 
-### Usage Examples
+### Examples
 
 _Getting information of a file..._
 

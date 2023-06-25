@@ -81,8 +81,13 @@ function saveRateLimitData(headers, functionName) {
  */
 
 /**
- * Represents a URL.
+ * Represents a URL. (Ex; https://example.com)
  * @typedef {string} URL
+ */
+
+/**
+ * Represents a domain/subdomain that was registered from sxcu.net.
+ * @typedef {string} Domain
  */
 
 /**
@@ -223,7 +228,7 @@ exports.files = {
      * @function uploadFile
      * @param {FilePath} file Path of the file to upload.
      * @param {UploadFileOptions} [options] Upload file options.
-     * @param {URL} [subdomain] Subdomain to upload the file to. Ex; 'something.shx.gg'
+     * @param {Domain} [subdomain] Subdomain to upload the file to.
      * @returns {Promise<UploadedFileResponse>}
      * @throws {ErrorResponse|any}
      * @memberof Files
@@ -364,7 +369,7 @@ exports.subdomains = {
     /**
      * Represents values returned by 'listSubdomains'.
      * @typedef {Object} SubdomainListData
-     * @property {string} domain Name of the subdomain.
+     * @property {Domain} domain Name of the subdomain.
      * @property {number} uploadCount Number of files uploaded to this subdomain.
      * @property {boolean} public Whether this subdomain is public or not.
      * @property {number} fileViews Number of files views on this subdomain.
@@ -434,7 +439,7 @@ exports.subdomains = {
     /**
      * Get the meta info of a subdomain.
      * @function getSubdomainMeta
-     * @param {string} subdomain Name of the subdomain to get the meta info of. Ex; 'sxcu.net'
+     * @param {Domain} subdomain Name of the subdomain to get the meta info of.
      * @returns {Promise<SubdomainMetaResponse>} Meta information for the subdomain provided.
      * @throws {ErrorResponse|any}
      * @memberof Subdomains
@@ -482,7 +487,7 @@ exports.subdomains = {
     /**
      * Check if a subdomain already exists.
      * @function checkSubdomain
-     * @param {string} subdomain Name of the subdomain to check. Ex; 'sxcu.net'
+     * @param {Domain} subdomain Name of the subdomain to check.
      * @returns {Promise<boolean>} Wether the subdomain exists or not.
      * @throws {ErrorResponse|any}
      * @memberof Subdomains
@@ -712,7 +717,7 @@ exports.links = {
      * Create a link redirect.
      * @function createLink
      * @param {URL} link Link to redirect to.
-     * @param {string} [subdomain] Subdomain to upload the link redirect to. Ex; 'shx.gg'
+     * @param {Domain} [subdomain] Subdomain to upload the link redirect to.
      * @returns {Promise<CreatedLinkResponse>} Data about the newly created link redirect.
      * @throws {ErrorResponse|any}
      * @memberof Links
