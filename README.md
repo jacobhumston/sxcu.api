@@ -54,7 +54,7 @@ sxcu.files
     .catch(function (error) {
         // resolveError allows us to guarantee an error object will always be received.
         const errorObject = sxcu.utility.resolveError(error);
-        console.log(`Ran into the error '${errorObject.error}' with code of ${errorObject.code}!`);
+        console.log(`Ran into the error '${errorObject.error}' with the code ${errorObject.code}!`);
     });
 ```
 
