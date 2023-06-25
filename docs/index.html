@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>sxcu.api</title>
+        <meta property="og:title" content="sxcu.api - node.js library to interact with the sxcu.net api." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sxcu.api.lovelyjacob.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+        <style>
+            body,
+            button,
+            input,
+            textarea {
+                font-family: 'Nunito', sans-serif;
+            }
+
+            body {
+                height: 100vh;
+                box-sizing: content-box;
+                margin: 0px;
+                padding: 0px;
+                overflow: hidden;
+            }
+
+            #wrapper {
+                box-sizing: border-box;
+                text-align: center;
+                max-width: 90%;
+                height: 70%;
+                margin-top: 5%;
+                /*margin-bottom: auto;*/
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            #first-header,
+            #first-paragraph {
+                margin-bottom: 5px;
+                margin-top: 5px;
+            }
+
+            h1 {
+                font-size: xx-large;
+            }
+
+            p {
+                font-size: large;
+            }
+
+            #install-command {
+                display: inline-block;
+                padding: 10px;
+                padding-left: 20px;
+                padding-right: 20px;
+                font-size: large;
+                background-color: rgb(236, 236, 236);
+                border-radius: 15px;
+            }
+
+            .material-icons-round {
+                vertical-align: text-top !important;
+                cursor: pointer;
+            }
+
+            a {
+                color: rgb(81, 107, 255);
+                text-decoration: none;
+            }
+
+            a:hover {
+                color: rgb(48, 56, 107);
+            }
+
+            #copy:hover {
+                color: rgb(81, 107, 255);
+            }
+        </style>
+    </head>
+    <body>
+        <br />
+        <div id="wrapper">
+            <h1 id="first-header">sxcu.api</h1>
+            <p id="first-paragraph">
+                Node.js library to interact with the <a href="https://sxcu.net" target="_blank">sxcu.net</a> API.
+            </p>
+            <br /><br />
+            <div id="install-command">
+                npm install sxcu.api &nbsp;<span class="material-icons-round" id="copy">content_copy</span>
+            </div>
+            <p id="doc">
+                View the documentation for the latest version <a href="1.2.6/index.html">here</a>.
+                <br />
+                Past Versions: <a href="1.2.5/index.html">1.2.5</a>
+            </p>
+        </div>
+        <script>
+            const copy = document.getElementById('copy');
+            let coolDown = false;
+            copy.onmousedown = async function () {
+                if (coolDown === true) return;
+                coolDown = true;
+                copy.innerText = 'hourglass_empty';
+                try {
+                    await navigator.clipboard.writeText('npm install sxcu.api');
+                    copy.innerText = 'done';
+                    copy.style.color = 'rgb(93, 166, 99)';
+                } catch {
+                    copy.innerText = 'error';
+                    copy.style.color = 'rgb(243, 109, 109)';
+                }
+                setTimeout(function () {
+                    copy.innerText = 'content_copy';
+                    copy.style.color = null;
+                    coolDown = false;
+                }, 3000);
+            };
+        </script>
+    </body>
+</html>
