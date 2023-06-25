@@ -49,8 +49,8 @@ sxcu.files
     .then(function (data) {
         console.log('URL:', data.url);
     })
-    .catch(function (e) {
-        console.log(utility.resolveError(e));
+    .catch(function (error) {
+        console.log(sxcu.utility.resolveError(error));
     });
 ```
 
