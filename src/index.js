@@ -1005,6 +1005,18 @@ exports.utility = {
     },
 
     /**
+     * Wipe all current rate limit data.
+     * @function wipeRateLimitData
+     * @returns {void}
+     * @memberof Utility
+     * @instance
+     */
+    wipeRateLimitData: function () {
+        rateLimitData = {};
+        return;
+    },
+
+    /**
      * Get a promise that resolves when the rate limit(s) is no longer in effect.
      * This method will resolve instantly if the global rate limit and none of the provide function name's rate limits have been reached yet.
      * The global rate limit is always accounted for, even when providing a function name.
