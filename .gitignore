@@ -1,2 +1,5 @@
 # Node dependencies
 node_modules/
+
+# Test directory 
+test/
