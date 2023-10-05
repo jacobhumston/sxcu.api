@@ -2,10 +2,13 @@
     "name": "sxcu.api",
     "version": "1.3.0",
     "description": "Node.js library to interact with the sxcu.net API.",
-    "main": "src/index.js",
+    "main": "build/index.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1"
     },
+    "files": [
+        "build"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Lovely-Experiences/sxcu.api.git"
