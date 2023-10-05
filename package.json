@@ -4,9 +4,11 @@
     "description": "Node.js library to interact with the sxcu.net API.",
     "main": "build/index.js",
     "types": "build/index.d.ts",
+    "type": "module",
     "scripts": {
         "test": "node test/index.js",
-        "build": "npx tsc --outDir build && prettier build/ --write"
+        "build": "npx tsc --outDir build && prettier build/ --write",
+        "format": "prettier src/ --write"
     },
     "files": [
         "build",
@@ -31,6 +33,7 @@
     },
     "homepage": "https://github.com/Lovely-Experiences/sxcu.api#readme",
     "devDependencies": {
+        "@types/node": "^20.8.2",
         "eslint": "^8.50.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-prettier": "^5.0.0",

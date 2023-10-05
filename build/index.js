@@ -1,3 +1,2 @@
-'use strict';
-const x = 'hello world';
-console.log(x);
+import { uploadFile, getFileMeta, deleteFile } from './endpoints/files';
+export { uploadFile, getFileMeta, deleteFile };

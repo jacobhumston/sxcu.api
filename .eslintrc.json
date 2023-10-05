@@ -14,5 +14,6 @@
         "prettier/prettier": "error",
         "eqeqeq": ["error", "always"]
     },
-    "plugins": ["prettier"]
+    "plugins": ["prettier"],
+    "ignorePatterns": ["node_modules/", "test/", "build/"]
 }
