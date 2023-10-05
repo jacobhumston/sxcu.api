@@ -4,6 +4,12 @@ export type RequestType = 'GET' | 'POST';
 /** Status code and message. */
 export type StatusCodeMessage = { code: number; message: string };
 
-export function request(method: RequestType, codes: StatusCodeMessage[]): object {
+/** Request options. */
+export type RequestOptions = {
+    type: RequestType,
+    
+};
+
+export async function request(options: RequestOptions): Promise<object> {
     return {};
 }
