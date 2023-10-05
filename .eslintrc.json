@@ -8,12 +8,13 @@
     "extends": ["eslint:recommended", "prettier"],
     "overrides": [],
     "parserOptions": {
-        "ecmaVersion": "latest"
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
     "rules": {
         "prettier/prettier": "error",
         "eqeqeq": ["error", "always"]
     },
     "plugins": ["prettier"],
-    "ignorePatterns": ["node_modules/", "test/", "build/"]
+    "ignorePatterns": ["node_modules/", "test/"]
 }

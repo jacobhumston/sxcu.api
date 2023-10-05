@@ -1,4 +1,4 @@
-export declare function uploadFile(): void;
-export declare function getFileMeta(): void;
-export declare function deleteFile(): void;
+export declare function uploadFile(): Promise<void>;
+export declare function getFileMeta(): Promise<void>;
+export declare function deleteFile(): Promise<void>;
 //# sourceMappingURL=files.d.ts.map

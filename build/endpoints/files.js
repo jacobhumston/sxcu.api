@@ -1,3 +1,3 @@
-export function uploadFile() {}
-export function getFileMeta() {}
-export function deleteFile() {}
+export async function uploadFile() {}
+export async function getFileMeta() {}
+export async function deleteFile() {}

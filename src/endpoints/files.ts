@@ -1,13 +1,7 @@
-import { request } from "../request";
+import { request } from '../request.js';
 
-export function uploadFile() {
+export async function uploadFile() {}
 
-}
+export async function getFileMeta() {}
 
-export function getFileMeta() {
-
-}
-
-export function deleteFile() {
-
-}
+export async function deleteFile() {}
