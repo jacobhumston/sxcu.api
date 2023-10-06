@@ -45,11 +45,16 @@ main();
 If you preferred categorized imports, then you can use `categorizeImports`.
 
 ```js
+// Import the package.
 import { categorizeImports } from 'sxcu.api';
+
+// Categorize imports.
 const sxcu = categorizeImports();
 
+// Set the request user agent to the default.
 sxcu.userAgent.useUserAgentDefault();
 
+// Upload the file and log the response.
 sxcu.files
     .uploadFile('image.png')
     .then((response) => console.log(response))
