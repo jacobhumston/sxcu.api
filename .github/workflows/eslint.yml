@@ -2,7 +2,6 @@ name: 'Eslint Check (Latest Build)'
 
 on:
     push:
-    pull_request:
 
 jobs:
     build:
@@ -21,6 +20,10 @@ jobs:
             - name: Build Source
               id: build-source
               run: npm run build
+
+            - name: Format Build
+              id: format-build
+              run: npm run format-build
 
             - name: Run Eslint
               id: eslint-check
