@@ -5,8 +5,6 @@ on:
 jobs:
     eslint:
         runs-on: 'ubuntu-latest'
-        outputs:
-            output: ${{ steps.eslint-check.outputs }}
         steps:
             - uses: actions/checkout@v3
             - uses: actions/setup-node@v3
@@ -28,19 +26,31 @@ jobs:
 
             - name: Run Eslint
               id: eslint-check
-              run: echo (npm run eslint) >> "$GITHUB_OUTPUT"
+              run: npm run eslint
 
-    eslint_result:
+    eslint_error:
         runs-on: ubuntu-latest
-        if: failure()
+        if: failure() && github.event_name == 'pull_request'
         needs: eslint
         steps:
             - name: Checkout
               uses: actions/checkout@v3
 
-            - env:
-                  OUTPUT: ${{needs.eslint.outputs}}
-              name: Comment PR
+            - name: Comment PR
               uses: thollander/actions-comment-pull-request@v2
               with:
-                  message: '$OUTPUT'
+                  message: Eslint failed on '$GITHUB_SHA'!
+
+            - name: add label
+              uses: actions-ecosystem/action-add-labels@v1
+              with:
+                  labels: eslint-failed
+
+    eslint_success:
+        runs-on: ubuntu-latest
+        if: success() && github.event_name == 'pull_request'
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions-ecosystem/action-remove-labels@v1
+              with:
+                  labels: eslint-failed
