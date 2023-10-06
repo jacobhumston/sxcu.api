@@ -60,3 +60,8 @@ sxcu.files
     .then((response) => console.log(response))
     .catch((err) => console.log(err));
 ```
+
+## Contributors
+
+<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors -end -->
