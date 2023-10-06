@@ -64,4 +64,21 @@ sxcu.files
 ## Contributors
 
 <!-- readme: collaborators,contributors -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/jacobhumston-school">
+            <img src="https://avatars.githubusercontent.com/u/113031145?v=4" width="100;" alt="jacobhumston-school"/>
+            <br />
+            <sub><b>Jacob Humston's School Account</b></sub>
+        </a>
+    </td>
+    <td align="center">
+        <a href="https://github.com/jacobhumston">
+            <img src="https://avatars.githubusercontent.com/u/57332486?v=4" width="100;" alt="jacobhumston"/>
+            <br />
+            <sub><b>Jacob Humston</b></sub>
+        </a>
+    </td></tr>
+</table>
 <!-- readme: collaborators,contributors -end -->
