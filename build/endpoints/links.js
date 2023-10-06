@@ -1,2 +1,2 @@
-export async function createLink() { }
-export async function deleteLink() { }
+export async function createLink() {}
+export async function deleteLink() {}

@@ -29,6 +29,8 @@ import {
     // Functions
     createPaste,
     deletePaste,
+    // Type
+    Paste,
 } from './endpoints/text.js';
 
 // Other Modules
@@ -41,31 +43,23 @@ import {
 } from './error.js';
 
 import {
-    // Functions
-    setUserAgent,
-    useUserAgentDefault,
-    getUserAgent,
-} from './user-agent.js';
+    // Classes
+    UserAgent,
+    // Types
+    UserAgentClass,
+} from './classes/user-agent.js';
 
-/**
- * Categorize imports into their respective categories.
- * This does not include types.
- */
-export function categorizeImports() {
-    return {
-        files: { uploadFile: uploadFile, getFileMeta: getFileMeta, deleteFile: deleteFile },
-        collections: { createCollection: createCollection, getCollectionMeta: getCollectionMeta },
-        subdomains: {
-            checkSubdomain: checkSubdomain,
-            getSubdomainMeta: getSubdomainMeta,
-            listSubdomains: listSubdomains,
-        },
-        links: { createLink: createLink, deleteLink: deleteLink },
-        text: { createPaste: createPaste, deletePaste: deletePaste },
-        userAgent: { setUserAgent: setUserAgent, useUserAgentDefault: useUserAgentDefault, getUserAgent: getUserAgent },
-        utility: { createError: createError, resolveError: resolveError },
-    };
-}
+import {
+    // Functions
+    categorizeImports,
+} from './categorize.js';
+
+import {
+    // Types
+    DeletionToken,
+    Url,
+    Snowflake,
+} from './types.js';
 
 export {
     // Endpoints
@@ -83,12 +77,20 @@ export {
     deletePaste,
 
     // Other Modules
+    categorizeImports,
     createError,
     resolveError,
-    setUserAgent,
-    useUserAgentDefault,
-    getUserAgent,
+
+    // Variables
+    UserAgent,
+
+    // Classes
+    UserAgentClass,
 
     // Types
     ErrorObject,
+    Paste,
+    DeletionToken,
+    Url,
+    Snowflake,
 };

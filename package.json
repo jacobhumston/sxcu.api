@@ -15,10 +15,12 @@
         "test": "node test/index.js",
         "build": "npx tsc --outDir build",
         "format": "npx prettier src/ --write",
-        "format-build": "prettier build/ --write",
+        "format-build": "npx prettier build/ --write",
+        "format-test": "npx prettier test/ --write",
         "eslint": "npx eslint build/",
         "gen-doc": "npx typedoc src/index.ts",
-        "compile": "npm run build && npm run format-build && npm run gen-doc && npm run eslint"
+        "compile": "npm run build && npm run format-build && npm run gen-doc && npm run eslint",
+        "format-all": "npm run format && npm run format-build && npm run format-test"
     },
     "files": [
         "build",

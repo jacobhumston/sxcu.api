@@ -1,15 +1,12 @@
 import { ErrorObject } from './error.js';
-import { getUserAgent } from './user-agent.js';
-
-/** Status code and message. */
-export type StatusCodeMessage = { code: number; message: string };
+import { UserAgent } from './classes/user-agent.js';
 
 /** Request options. */
 export type RequestOptions = {
     /** Type of request. */
     type: 'GET' | 'POST';
     /** Array of error status codes and messages. */
-    statusErrors: StatusCodeMessage[];
+    statusErrors: number[];
     /** Base url of the request. */
     baseUrl: 'https://sxcu.net/api/' | 'https://cancer-co.de/';
     /**
@@ -23,28 +20,34 @@ export type RequestOptions = {
 
 /**
  * Create an API request.
- * @throws {ErrorObject}
  */
-export async function request(options: RequestOptions): Promise<object> {
+export async function request(options: RequestOptions): Promise<any> {
+    // Make a request to the API.
     const response = await fetch(`${options.baseUrl}${options.path}`, {
         method: options.type,
         body: options.body ?? undefined,
         headers: {
-            'User-Agent': getUserAgent() ?? '',
+            'User-Agent': UserAgent.get() ?? '',
             Accept: 'application/json',
         },
     }).catch((error) => {
         throw { message: error, code: 0 };
     });
 
-    options.statusErrors.forEach((error) => {
-        if (response.status === error.code) {
-            throw { message: error.message, code: response.status };
+    // Check for any of the predefined error status codes.
+    options.statusErrors.forEach(async (error) => {
+        if (response.status === error) {
+            const json = await response.json().catch((error) => {
+                throw { message: error, code: -1 };
+            });
+            throw { message: json.error ?? 'Unknown', code: json.code ?? 0 };
         }
     });
 
+    // If it's not an OK, we throw an unknown error.
     if (response.status !== 200) throw { message: 'Unknown', code: response.status };
 
+    // If it's an OK, we return the JSON.
     return await response.json().catch((error) => {
         throw { message: error, code: -1 };
     });
