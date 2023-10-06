@@ -32,6 +32,8 @@ sxcu.uploadFile('image.png')
 On `v1.3.0` we made the switch to ESM and TypeScript.
 If you need to use commonjs, then you can use the import function.
 
+Please view [commonjs-latest](https://github.com/Lovely-Experiences/sxcu.api/tree/commonjs-latest) for the latest commonjs version of sxcu.api.
+
 ```js
 // Wrap code in an async function due to commonjs not having top-level await.
 async function main() {
