@@ -65,5 +65,5 @@ sxcu.files
 
 ## Contributors
 
-<!-- readme: collaborators,contributors,<jacobhumston-school>/- -start -->
-<!-- readme: collaborators,contributors,<jacobhumston-school>/- -end -->
+<!-- readme: collaborators,contributors,jacobhumston-school/- -start -->
+<!-- readme: collaborators,contributors,jacobhumston-school/- -end -->
