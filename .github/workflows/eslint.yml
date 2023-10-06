@@ -1,7 +1,6 @@
 name: 'Eslint Check (Latest Build)'
 on:
     - push
-    - pull_request
 
 jobs:
     eslint:
@@ -36,13 +35,12 @@ jobs:
         if: failure()
         needs: eslint
         steps:
-            - env:
-                  OUTPUT: ${{needs.eslint.outputs}}
-
             - name: Checkout
               uses: actions/checkout@v3
 
             - name: Comment PR
+              env:
+                  OUTPUT: ${{needs.eslint.outputs}}
               uses: thollander/actions-comment-pull-request@v2
               with:
                   message: '$OUTPUT'
