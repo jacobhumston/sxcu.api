@@ -27,37 +27,17 @@ setUserAgent, useUserAgentDefault, getUserAgent, } from './user-agent.js';
  */
 export function categorizeImports() {
     return {
-        files: {
-            uploadFile: uploadFile,
-            getFileMeta: getFileMeta,
-            deleteFile: deleteFile,
-        },
-        collections: {
-            createCollection: createCollection,
-            getCollectionMeta: getCollectionMeta,
-        },
+        files: { uploadFile: uploadFile, getFileMeta: getFileMeta, deleteFile: deleteFile },
+        collections: { createCollection: createCollection, getCollectionMeta: getCollectionMeta },
         subdomains: {
             checkSubdomain: checkSubdomain,
             getSubdomainMeta: getSubdomainMeta,
             listSubdomains: listSubdomains,
         },
-        links: {
-            createLink: createLink,
-            deleteLink: deleteLink,
-        },
-        text: {
-            createPaste: createPaste,
-            deletePaste: deletePaste,
-        },
-        userAgent: {
-            setUserAgent: setUserAgent,
-            useUserAgentDefault: useUserAgentDefault,
-            getUserAgent: getUserAgent,
-        },
-        utility: {
-            createError: createError,
-            resolveError: resolveError,
-        },
+        links: { createLink: createLink, deleteLink: deleteLink },
+        text: { createPaste: createPaste, deletePaste: deletePaste },
+        userAgent: { setUserAgent: setUserAgent, useUserAgentDefault: useUserAgentDefault, getUserAgent: getUserAgent },
+        utility: { createError: createError, resolveError: resolveError },
     };
 }
 export { 
