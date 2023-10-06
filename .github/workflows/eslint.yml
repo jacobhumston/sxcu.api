@@ -28,7 +28,7 @@ jobs:
 
             - name: Run Eslint
               id: eslint-check
-              run: npm run eslint >> "$GITHUB_OUTPUT"
+              run: echo (npm run eslint) >> "$GITHUB_OUTPUT"
 
     eslint_result:
         runs-on: ubuntu-latest
