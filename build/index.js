@@ -49,12 +49,14 @@ export function categorizeImports() {
             createPaste: createPaste,
             deletePaste: deletePaste,
         },
-        utility: {
-            createError: createError,
-            resolveError: resolveError,
+        userAgent: {
             setUserAgent: setUserAgent,
             useUserAgentDefault: useUserAgentDefault,
             getUserAgent: getUserAgent,
+        },
+        utility: {
+            createError: createError,
+            resolveError: resolveError,
         },
     };
 }

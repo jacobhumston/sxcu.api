@@ -48,7 +48,7 @@ If you preferred categorized imports, then you can use `categorizeImports`.
 import { categorizeImports } from 'sxcu.api';
 const sxcu = categorizeImports();
 
-sxcu.utility.useUserAgentDefault();
+sxcu.userAgent.useUserAgentDefault();
 
 sxcu.files
     .uploadFile('image.png')

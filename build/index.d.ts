@@ -32,12 +32,14 @@ export declare function categorizeImports(): {
         createPaste: typeof createPaste;
         deletePaste: typeof deletePaste;
     };
-    utility: {
-        createError: typeof createError;
-        resolveError: typeof resolveError;
+    userAgent: {
         setUserAgent: typeof setUserAgent;
         useUserAgentDefault: typeof useUserAgentDefault;
         getUserAgent: typeof getUserAgent;
+    };
+    utility: {
+        createError: typeof createError;
+        resolveError: typeof resolveError;
     };
 };
 export { uploadFile, getFileMeta, deleteFile, createCollection, getCollectionMeta, checkSubdomain, getSubdomainMeta, listSubdomains, createLink, deleteLink, createPaste, deletePaste, createError, resolveError, setUserAgent, useUserAgentDefault, getUserAgent, ErrorObject, };
