@@ -40,7 +40,7 @@ jobs:
             - name: Comment PR
               uses: thollander/actions-comment-pull-request@v2
               with:
-                  message: Eslint failed on '$GITHUB_SHA'!
+                  message: Eslint failed! Please review before submitting for review.
 
             - name: add label
               uses: actions-ecosystem/action-add-labels@v1
