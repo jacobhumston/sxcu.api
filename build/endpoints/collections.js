@@ -1,2 +1,2 @@
-export async function createCollection() {}
-export async function getCollectionMeta() {}
+export async function createCollection() { }
+export async function getCollectionMeta() { }

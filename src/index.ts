@@ -47,6 +47,44 @@ import {
     getUserAgent,
 } from './user-agent.js';
 
+/**
+ * Categorize imports into their respective categories.
+ * This does not include types.
+ */
+export function categorizeImports() {
+    return {
+        files: {
+            uploadFile: uploadFile,
+            getFileMeta: getFileMeta,
+            deleteFile: deleteFile,
+        },
+        collections: {
+            createCollection: createCollection,
+            getCollectionMeta: getCollectionMeta,
+        },
+        subdomains: {
+            checkSubdomain: checkSubdomain,
+            getSubdomainMeta: getSubdomainMeta,
+            listSubdomains: listSubdomains,
+        },
+        links: {
+            createLink: createLink,
+            deleteLink: deleteLink,
+        },
+        text: {
+            createPaste: createPaste,
+            deletePaste: deletePaste,
+        },
+        utility: {
+            createError: createError,
+            resolveError: resolveError,
+            setUserAgent: setUserAgent,
+            useUserAgentDefault: useUserAgentDefault,
+            getUserAgent: getUserAgent,
+        },
+    };
+}
+
 export {
     // Endpoints
     uploadFile,

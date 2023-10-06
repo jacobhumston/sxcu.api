@@ -36,6 +36,7 @@
         "url": "https://github.com/Lovely-Experiences/sxcu.api/issues"
     },
     "homepage": "https://github.com/Lovely-Experiences/sxcu.api#readme",
+    "dependencies": {},
     "devDependencies": {
         "@types/node": "^20.8.2",
         "eslint": "^8.50.0",
