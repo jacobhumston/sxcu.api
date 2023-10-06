@@ -32,6 +32,12 @@ import {
     createError,
     resolveError,
 } from './error.js';
+import {
+    // Functions
+    setUserAgent,
+    useUserAgentDefault,
+    getUserAgent,
+} from './user-agent.js';
 export {
     // Endpoints
     uploadFile,
@@ -49,4 +55,7 @@ export {
     // Other Modules
     createError,
     resolveError,
+    setUserAgent,
+    useUserAgentDefault,
+    getUserAgent,
 };

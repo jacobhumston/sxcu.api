@@ -4,6 +4,7 @@ import { checkSubdomain, getSubdomainMeta, listSubdomains } from './endpoints/su
 import { createLink, deleteLink } from './endpoints/links.js';
 import { createPaste, deletePaste } from './endpoints/text.js';
 import { createError, resolveError, ErrorObject } from './error.js';
+import { setUserAgent, useUserAgentDefault, getUserAgent } from './user-agent.js';
 export {
     uploadFile,
     getFileMeta,
@@ -19,6 +20,9 @@ export {
     deletePaste,
     createError,
     resolveError,
+    setUserAgent,
+    useUserAgentDefault,
+    getUserAgent,
     ErrorObject,
 };
 //# sourceMappingURL=index.d.ts.map

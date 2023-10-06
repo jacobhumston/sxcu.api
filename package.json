@@ -7,10 +7,12 @@
     "type": "module",
     "scripts": {
         "test": "node test/index.js",
-        "build": "npx tsc --outDir build && prettier build/ --write",
+        "build": "npx tsc --outDir build",
         "format": "npx prettier src/ --write",
+        "format-build": "prettier build/ --write",
         "eslint": "npx eslint build/",
-        "gen-doc": "npx typedoc src/index.ts"
+        "gen-doc": "npx typedoc src/index.ts",
+        "compile": "npm run build && npm run format-build && npm run gen-doc && npm run eslint"
     },
     "files": [
         "build",
