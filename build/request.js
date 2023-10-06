@@ -16,12 +16,11 @@ export async function request(options) {
     });
     // Check for any of the predefined error status codes.
     options.statusErrors.forEach(async (error) => {
-        if (response.status === error) {
-            const json = await response.json().catch((error) => {
-                throw { message: error, code: -1 };
-            });
-            throw { message: json.error ?? 'Unknown', code: json.code ?? 0 };
-        }
+        if (response.status !== error) return;
+        const json = await response.json().catch((error) => {
+            throw { message: error, code: -1 };
+        });
+        throw { message: json.error ?? 'Unknown', code: json.code ?? 0 };
     });
     // If it's not an OK, we throw an unknown error.
     if (response.status !== 200) throw { message: 'Unknown', code: response.status };
