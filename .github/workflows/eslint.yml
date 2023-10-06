@@ -1,6 +1,7 @@
 name: 'Eslint Check (Latest Build)'
 on:
     - push
+    - pull_request
 
 jobs:
     eslint:
