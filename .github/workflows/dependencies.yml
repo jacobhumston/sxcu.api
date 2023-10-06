@@ -1,14 +1,15 @@
-name: Inspect dependencies
+name: "Deps: show new dependencies metadata"
 on:
-    - pull_request
+  - pull_request
 
 jobs:
-    check_new_dependencies:
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-
-            - name: Check for new dependencies.
-              uses: hiwelo/new-dependencies-action@1.0.1
-              with:
-                  token: ${{ secrets.GITHUB_TOKEN }}
+  deps_new_dependencies_advisor:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Checkout repo for a local instance"
+        uses: actions/checkout@v2
+        
+      - name: "Deps: show new dependencies metadata"
+        uses: lirantal/github-action-new-dependencies-advisor@v1.1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
