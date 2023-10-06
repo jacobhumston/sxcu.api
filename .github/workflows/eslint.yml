@@ -1,0 +1,27 @@
+name: 'Eslint Check (Latest Build)'
+
+on:
+    push:
+    pull_request:
+
+jobs:
+    build:
+        runs-on: 'ubuntu-latest'
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  cache: 'npm'
+
+            - name: Install Needed Dependencies
+              id: install-dependencies
+              run: npm install
+
+            - name: Build Source
+              id: build-source
+              run: npm run build
+
+            - name: Run Eslint
+              id: eslint-check
+              run: npm run eslint
