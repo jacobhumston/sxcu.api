@@ -1,8 +1,7 @@
 name: 'Eslint Check (Latest Build)'
-
 on:
-    push:
-    pull_request:
+    - push
+    - pull_request
 
 jobs:
     eslint:
@@ -46,4 +45,4 @@ jobs:
             - name: Comment PR
               uses: thollander/actions-comment-pull-request@v2
               with:
-                  message: "$OUTPUT"
+                  message: '$OUTPUT'
