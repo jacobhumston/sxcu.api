@@ -5,6 +5,12 @@
     "main": "build/index.js",
     "types": "build/index.d.ts",
     "type": "module",
+    "maintainers": [
+        {
+            "name": "Jacob Humston",
+            "email": "lovelyjacob@aol.com"
+        }
+    ],
     "scripts": {
         "test": "node test/index.js",
         "build": "npx tsc --outDir build",
