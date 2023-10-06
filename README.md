@@ -65,7 +65,7 @@ sxcu.files
 
 ## Contributors
 
-<!-- readme: collaborators,contributors -start -->
+<!-- readme: collaborators,contributors,<jacobhumston-school>/- -start -->
 <table>
 <tr>
     <td align="center">
@@ -83,4 +83,4 @@ sxcu.files
         </a>
     </td></tr>
 </table>
-<!-- readme: collaborators,contributors -end -->
+<!-- readme: collaborators,contributors,<jacobhumston-school>/- -end -->
