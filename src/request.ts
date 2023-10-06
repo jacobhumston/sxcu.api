@@ -19,5 +19,5 @@ export type RequestOptions = {
 
 /** Create an API request. */
 export async function request(options: RequestOptions): Promise<object> {
-    return options;
+    return {};
 }
