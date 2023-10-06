@@ -1,3 +1,4 @@
+import { ErrorObject } from './error.js';
 import { getUserAgent } from './user-agent.js';
 
 /** Status code and message. */
@@ -20,7 +21,10 @@ export type RequestOptions = {
     body?: any;
 };
 
-/** Create an API request. */
+/**
+ * Create an API request.
+ * @throws {ErrorObject}
+ */
 export async function request(options: RequestOptions): Promise<object> {
     const response = await fetch(`${options.baseUrl}${options.path}`, {
         method: options.type,
@@ -41,5 +45,7 @@ export async function request(options: RequestOptions): Promise<object> {
 
     if (response.status !== 200) throw { message: 'Unknown', code: response.status };
 
-    return {};
+    return await response.json().catch((error) => {
+        throw { message: error, code: -1 };
+    });
 }
