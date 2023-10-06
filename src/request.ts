@@ -22,9 +22,24 @@ export type RequestOptions = {
 
 /** Create an API request. */
 export async function request(options: RequestOptions): Promise<object> {
-    const response = await fetch(`${options.baseUrl}${options.path}`).catch((err) => {
-        return { message: err, code: 0 };
+    const response = await fetch(`${options.baseUrl}${options.path}`, {
+        method: options.type,
+        body: options.body ?? undefined,
+        headers: {
+            'User-Agent': getUserAgent() ?? '',
+            Accept: 'application/json',
+        },
+    }).catch((error) => {
+        throw { message: error, code: 0 };
     });
-    const codes = {};
+
+    options.statusErrors.forEach((error) => {
+        if (response.status === error.code) {
+            throw { message: error.message, code: response.status };
+        }
+    });
+
+    if (response.status !== 200) throw { message: 'Unknown', code: response.status };
+
     return {};
 }
