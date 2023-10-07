@@ -1,4 +1,3 @@
-import { ErrorObject } from './error.js';
 import { UserAgent } from './classes/user-agent.js';
 
 /** Request options. */
