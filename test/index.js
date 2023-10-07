@@ -13,7 +13,7 @@ for (const file of readdirSync('test/tests/')) {
     const test = await import(`./tests/${file}`);
     let successful = true;
     await test.execute().catch((error) => {
-        console.log(`[FAILED]: Test '${file}' failed: ${error}'`);
+        console.log(`[FAILED]: Test '${file}' failed: ${error}`);
         successful = false;
     });
     if (successful) {

@@ -1,7 +1,11 @@
 import * as sxcu from '../../build/index.js';
 
 export async function execute() {
-    sxcu.createError('err', 1);
-    sxcu.resolveError({ error: 'err', code: 1 });
-    sxcu.resolveError('err');
+    const r1 = sxcu.createError('err', 1);
+    const r2 = sxcu.resolveError({ error: 'err', code: 1 });
+    const r3 = sxcu.resolveError('err');
+    [r1, r2, r3].forEach((value, index) => {
+        if (value.error !== 'err') throw `r${index - 1} did not return the correct result -> ${value}`;
+        if (value.code !== 0 && value.code !== 1) throw `r${index - 1} did not return the correct result -> ${value}`;
+    });
 }
