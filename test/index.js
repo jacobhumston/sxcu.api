@@ -1,13 +1,6 @@
-import { categorizeImports, createPaste } from '../build/index.js';
-const sxcu = categorizeImports();
+import * as sxcu from '../build/index.js';
 
-sxcu.userAgent.useDefault();
+sxcu.UserAgent.useDefault();
 
-createPaste('helooooo').then((res) => {
-    console.log(res);
-    setTimeout(() => {
-        res.delete().then((res) => {
-            console.log(res);
-        });
-    }, 4000);
-});
+const data = await sxcu.createLink('https://google.com');
+console.log(data);

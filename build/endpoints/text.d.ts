@@ -17,6 +17,7 @@ export type Paste = {
 /**
  * Create a paste.
  * @param text The text to upload.
+ * @returns The created link.
  */
 export declare function createPaste(text: string): Promise<Paste>;
 /**

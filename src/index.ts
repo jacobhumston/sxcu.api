@@ -23,6 +23,8 @@ import {
     // Functions
     createLink,
     deleteLink,
+    // Types
+    Link,
 } from './endpoints/links.js';
 
 import {
@@ -90,6 +92,7 @@ export {
     // Types
     ErrorObject,
     Paste,
+    Link,
     DeletionToken,
     Url,
     Snowflake,

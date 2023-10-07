@@ -13,12 +13,12 @@
     ],
     "scripts": {
         "test": "node test/index.js",
-        "build": "npx tsc --outDir build",
+        "build": "npx del-cli build/ && npx tsc --outDir build",
         "format": "npx prettier src/ --write",
         "format-build": "npx prettier build/ --write",
         "format-test": "npx prettier test/ --write",
         "eslint": "npx eslint build/",
-        "gen-doc": "npx typedoc src/index.ts",
+        "gen-doc": "npx del-cli docs/ && npx typedoc src/index.ts",
         "compile": "npm run build && npm run format-build && npm run gen-doc && npm run eslint",
         "format-all": "npm run format && npm run format-build && npm run format-test"
     },
@@ -46,6 +46,7 @@
     "homepage": "https://github.com/Lovely-Experiences/sxcu.api#readme",
     "devDependencies": {
         "@types/node": "^20.8.2",
+        "del-cli": "^5.1.0",
         "eslint": "^8.50.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-prettier": "^5.0.0",

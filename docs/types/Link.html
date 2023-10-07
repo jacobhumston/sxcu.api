@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>createPaste | sxcu.api</title><meta name="description" content="Documentation for sxcu.api"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>Link | sxcu.api</title><meta name="description" content="Documentation for sxcu.api"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -13,27 +13,48 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">sxcu.api</a></li>
-<li><a href="createPaste.html">createPaste</a></li></ul>
-<h1>Function createPaste</h1></div>
-<section class="tsd-panel">
-<ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="createPaste"><span class="tsd-kind-call-signature">create<wbr/>Paste</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">text</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/Paste.html" class="tsd-signature-type tsd-kind-type-alias">Paste</a><span class="tsd-signature-symbol">&gt;</span><a href="#createPaste" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
-<li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Create a paste.</p>
+<li><a href="Link.html">Link</a></li></ul>
+<h1>Type alias Link</h1></div>
+<div class="tsd-signature"><span class="tsd-kind-type-alias">Link</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">delete</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">deletionToken</span><span class="tsd-signature-symbol">: </span><a href="DeletionToken.html" class="tsd-signature-type tsd-kind-type-alias">DeletionToken</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">deletionUrl</span><span class="tsd-signature-symbol">: </span><a href="Url.html" class="tsd-signature-type tsd-kind-type-alias">Url</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">: </span><a href="Snowflake.html" class="tsd-signature-type tsd-kind-type-alias">Snowflake</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">url</span><span class="tsd-signature-symbol">: </span><a href="Url.html" class="tsd-signature-type tsd-kind-type-alias">Url</a><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></div>
+<div class="tsd-comment tsd-typography"><p>A link object.</p>
 </div>
-<div class="tsd-parameters">
-<h4 class="tsd-parameters-title">Parameters</h4>
-<ul class="tsd-parameter-list">
-<li>
-<h5><span class="tsd-kind-parameter">text</span>: <span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>The text to upload.</p>
+<div class="tsd-type-declaration">
+<h4>Type declaration</h4>
+<ul class="tsd-parameters">
+<li class="tsd-parameter">
+<h5><span class="tsd-kind-property">delete</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span></h5>
+<ul class="tsd-parameters">
+<li class="tsd-parameter-signature">
+<ul class="tsd-signatures">
+<li class="tsd-signature" id="__type.delete.__type-1.__type-2"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></li>
+<li class="tsd-description">
+<div class="tsd-comment tsd-typography"><p>Function to delete this link.</p>
+</div>
+<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span></h4>
+<div class="tsd-comment tsd-typography"></div></li></ul></li></ul></li>
+<li class="tsd-parameter">
+<h5><span class="tsd-kind-property">deletion<wbr/>Token</span><span class="tsd-signature-symbol">: </span><a href="DeletionToken.html" class="tsd-signature-type tsd-kind-type-alias">DeletionToken</a></h5>
+<div class="tsd-comment tsd-typography"><p>The deletion token of this link.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li class="tsd-parameter">
+<h5><span class="tsd-kind-property">deletion<wbr/>Url</span><span class="tsd-signature-symbol">: </span><a href="Url.html" class="tsd-signature-type tsd-kind-type-alias">Url</a></h5>
+<div class="tsd-comment tsd-typography"><p>The deletion url of this link.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li class="tsd-parameter">
+<h5><span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">: </span><a href="Snowflake.html" class="tsd-signature-type tsd-kind-type-alias">Snowflake</a></h5>
+<div class="tsd-comment tsd-typography"><p>The id of this link.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li class="tsd-parameter">
+<h5><span class="tsd-kind-property">url</span><span class="tsd-signature-symbol">: </span><a href="Url.html" class="tsd-signature-type tsd-kind-type-alias">Url</a></h5>
+<div class="tsd-comment tsd-typography"><p>The url of this link.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/Paste.html" class="tsd-signature-type tsd-kind-type-alias">Paste</a><span class="tsd-signature-symbol">&gt;</span></h4><p>The created link.</p>
-
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Lovely-Experiences/sxcu.api/blob/e776845/src/endpoints/text.ts#L27">endpoints/text.ts:27</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/Lovely-Experiences/sxcu.api/blob/e776845/src/endpoints/links.ts#L7">endpoints/links.ts:7</a></li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -55,24 +76,24 @@
 <li><a href="../modules.html#createError"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg>createError</a></li>
 <li><a href="../modules.html#resolveError"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-4194304"></use></svg>resolveError</a></li>
 <li><a href="../classes/UserAgentClass.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>UserAgentClass</a></li>
-<li><a href="../types/DeletionToken.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>DeletionToken</a></li>
-<li><a href="../types/ErrorObject.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>ErrorObject</a></li>
-<li><a href="../types/Link.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>Link</a></li>
-<li><a href="../types/Paste.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>Paste</a></li>
-<li><a href="../types/Snowflake.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>Snowflake</a></li>
-<li><a href="../types/Url.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>Url</a></li>
+<li><a href="DeletionToken.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>DeletionToken</a></li>
+<li><a href="ErrorObject.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>ErrorObject</a></li>
+<li><a href="Link.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>Link</a></li>
+<li><a href="Paste.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>Paste</a></li>
+<li><a href="Snowflake.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>Snowflake</a></li>
+<li><a href="Url.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-2097152"></use></svg>Url</a></li>
 <li><a href="../variables/UserAgent.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg>UserAgent</a></li>
-<li><a href="categorizeImports.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>categorizeImports</a></li>
-<li><a href="checkSubdomain.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>checkSubdomain</a></li>
-<li><a href="createCollection.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createCollection</a></li>
-<li><a href="createLink.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createLink</a></li>
-<li><a href="createPaste.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createPaste</a></li>
-<li><a href="deleteFile.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deleteFile</a></li>
-<li><a href="deleteLink.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deleteLink</a></li>
-<li><a href="deletePaste.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deletePaste</a></li>
-<li><a href="getCollectionMeta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>getCollectionMeta</a></li>
-<li><a href="getFileMeta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>getFileMeta</a></li>
-<li><a href="getSubdomainMeta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>getSubdomainMeta</a></li>
+<li><a href="../functions/categorizeImports.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>categorizeImports</a></li>
+<li><a href="../functions/checkSubdomain.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>checkSubdomain</a></li>
+<li><a href="../functions/createCollection.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createCollection</a></li>
+<li><a href="../functions/createLink.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createLink</a></li>
+<li><a href="../functions/createPaste.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createPaste</a></li>
+<li><a href="../functions/deleteFile.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deleteFile</a></li>
+<li><a href="../functions/deleteLink.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deleteLink</a></li>
+<li><a href="../functions/deletePaste.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deletePaste</a></li>
+<li><a href="../functions/getCollectionMeta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>getCollectionMeta</a></li>
+<li><a href="../functions/getFileMeta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>getFileMeta</a></li>
+<li><a href="../functions/getSubdomainMeta.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>getSubdomainMeta</a></li>
 <li>Loading...</li></ul></nav></div></div></div>
 <div class="tsd-generator">
 <p>Generated using <a href="https://typedoc.org/" rel="noopener" target="_blank">TypeDoc</a></p></div>

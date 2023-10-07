@@ -19,13 +19,18 @@ export type Link = {
     delete: () => Promise<string>;
 };
 
-export async function createLink(link: Url): Promise<Link> {
+/**
+ * Create a link.
+ * @param url Url to create the link for.
+ * @returns The created link.
+ */
+export async function createLink(url: Url): Promise<Link> {
     const response = await request({
         type: 'POST',
         statusErrors: [400, 429],
         baseUrl: 'https://sxcu.net/api/',
         path: 'links/create',
-        body: new URLSearchParams({ text: link }),
+        body: new URLSearchParams({ link: url }),
     }).catch((error) => {
         throw resolveError(error);
     });
@@ -39,6 +44,12 @@ export async function createLink(link: Url): Promise<Link> {
     };
 }
 
+/**
+ * Delete a link.
+ * @param id The ID of the link.
+ * @param token The deletion token of the link.
+ * @returns The response message. (Success message.)
+ */
 export async function deleteLink(id: Snowflake, token: DeletionToken): Promise<string> {
     const response = await request({
         type: 'GET',

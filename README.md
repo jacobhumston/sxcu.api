@@ -21,7 +21,7 @@ Here is an example of uploading a file.
 import * as sxcu from 'sxcu.api';
 
 // Set the request user agent to the default.
-sxcu.useUserAgentDefault();
+sxcu.UserAgent.useDefault();
 
 // Upload the file and log the response.
 sxcu.uploadFile('image.png')
@@ -54,7 +54,7 @@ import { categorizeImports } from 'sxcu.api';
 const sxcu = categorizeImports();
 
 // Set the request user agent to the default.
-sxcu.userAgent.useUserAgentDefault();
+sxcu.userAgent.useDefault();
 
 // Upload the file and log the response.
 sxcu.files

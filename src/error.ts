@@ -28,7 +28,7 @@ export function resolveError(thing: any): ErrorObject {
 
     if (!Array.isArray(thing) && typeof thing === 'object') {
         // Check if thing is an object. (And not an array.)
-        return { error: thing.error ?? 'Unknown', code: thing.code ?? 0 };
+        return { error: thing.error ?? thing.message ?? 'Unknown', code: thing.code ?? 0 };
     } else if (typeof thing === 'string') {
         // Check if thing is a string.
         return { error: thing, code: 0 };

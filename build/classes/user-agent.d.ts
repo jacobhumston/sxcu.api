@@ -2,7 +2,7 @@
  * Web request user agent class.
  */
 export declare class UserAgentClass {
-    value: string;
+    #private;
     /**
      * Get the user agent.
      */
@@ -14,9 +14,10 @@ export declare class UserAgentClass {
     set(value: string): void;
     /**
      * Set the user agent to the default.
-     * May error if package.json is not found.
+     * Will error if sxcu.api's package.json is not present.
+     * @param pathOverride A path to a package.json to use instead of sxcu.api's package.json. The package.json needs to include `name`, `version`, and `homepage`.
      */
-    useDefault(): void;
+    useDefault(pathOverride?: string): void;
 }
 /** Web request user agent. */
 export declare const UserAgent: UserAgentClass;

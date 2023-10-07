@@ -4,6 +4,7 @@ import { resolveError } from '../error.js';
 /**
  * Create a paste.
  * @param text The text to upload.
+ * @returns The created link.
  */
 export async function createPaste(text) {
     const response = await request({

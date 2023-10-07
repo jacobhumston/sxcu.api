@@ -5,26 +5,28 @@ import { fileURLToPath } from 'node:url';
  * Web request user agent class.
  */
 export class UserAgentClass {
-    value = '';
+    #value = '';
     /**
      * Get the user agent.
      */
     get() {
-        return this.value;
+        return this.#value;
     }
     /**
      * Set the user agent.
      * @param value User agent to set.
      */
     set(value) {
-        this.value = value;
+        this.#value = value;
     }
     /**
      * Set the user agent to the default.
-     * May error if package.json is not found.
+     * Will error if sxcu.api's package.json is not present.
+     * @param pathOverride A path to a package.json to use instead of sxcu.api's package.json. The package.json needs to include `name`, `version`, and `homepage`.
      */
-    useDefault() {
-        const path = `${dirname(fileURLToPath(import.meta.url)).replaceAll('\\', '/')}/../../package.json`;
+    useDefault(pathOverride) {
+        const path =
+            pathOverride ?? `${dirname(fileURLToPath(import.meta.url)).replaceAll('\\', '/')}/../../package.json`;
         const packageData = JSON.parse(readFileSync(path).toString('utf-8'));
         this.set(`${packageData.name}/$${packageData.version} (+${packageData.homepage})`);
     }
