@@ -1,6 +1,31 @@
-import * as sxcu from '../build/index.js';
+import { readdirSync } from 'fs';
 
-sxcu.UserAgent.useDefault();
+let success = 0;
+let failed = 0;
 
-const data = await sxcu.createLink('https://google.com');
-console.log(data);
+console.log('Starting tests...');
+
+let startTime = new Date().getTime();
+
+console.log('----------------------------------------');
+
+for (const file of readdirSync('test/tests/')) {
+    const test = await import(`./tests/${file}`);
+    let successful = true;
+    await test.execute().catch((error) => {
+        console.log(`[FAILED]: Test '${file}' failed: ${error}'`);
+        successful = false;
+    });
+    if (successful) {
+        console.log(`[SUCCESS]: Test '${file}' succeeded!`);
+        success++;
+    } else {
+        failed++;
+    }
+}
+
+console.log(`[RESULT]: success: ${success} / failed: ${failed}`);
+
+console.log('----------------------------------------');
+
+console.log(`Finished in ${new Date().getTime() - startTime}ms.`);
