@@ -7,29 +7,5 @@ import { createError, resolveError, ErrorObject } from './error.js';
 import { UserAgent, UserAgentClass } from './classes/user-agent.js';
 import { categorizeImports } from './categorize.js';
 import { DeletionToken, Url, Snowflake } from './types.js';
-export {
-    uploadFile,
-    getFileMeta,
-    deleteFile,
-    createCollection,
-    getCollectionMeta,
-    checkSubdomain,
-    getSubdomainMeta,
-    listSubdomains,
-    createLink,
-    deleteLink,
-    createPaste,
-    deletePaste,
-    categorizeImports,
-    createError,
-    resolveError,
-    UserAgent,
-    UserAgentClass,
-    ErrorObject,
-    Paste,
-    Link,
-    DeletionToken,
-    Url,
-    Snowflake,
-};
+export { uploadFile, getFileMeta, deleteFile, createCollection, getCollectionMeta, checkSubdomain, getSubdomainMeta, listSubdomains, createLink, deleteLink, createPaste, deletePaste, categorizeImports, createError, resolveError, UserAgent, UserAgentClass, ErrorObject, Paste, Link, DeletionToken, Url, Snowflake, };
 //# sourceMappingURL=index.d.ts.map

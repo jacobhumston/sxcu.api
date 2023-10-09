@@ -1,5 +1,7 @@
 import * as sxcu from '../../build/index.js';
 
+export const active = true;
+
 export async function execute() {
     const r1 = sxcu.createError('err', 1);
     const r2 = sxcu.resolveError({ error: 'err', code: 1 });
