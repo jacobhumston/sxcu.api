@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>sxcu.api</title>
-        <meta property="og:title" content="sxcu.api - node.js library to interact with the sxcu.net api." />
+        <meta property="og:title" content="sxcu.api - Node.js library to interact with the sxcu.net api." />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://sxcu.api.lovelyjacob.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="styles.css" />
     </head>
     <body>
-        <br />
+        <br /><br /><br /><br />
         <div id="wrapper">
             <h1 id="first-header">sxcu.api</h1>
             <p id="first-paragraph">
@@ -25,12 +25,13 @@
             <div id="install-command">
                 npm install sxcu.api &nbsp;<span class="material-icons-round" id="copy">content_copy</span>
             </div>
-            <p id="doc">
-                View the documentation for version 1.2.5 <a href="1.2.5/index.html">here</a>.
-                <br />
-                Other: <a href="1.2.6/index.html">v1.2.6 (dev)</a>
-            </p>
-            <br /><br />
+            <br /><br /><br />
+            <a href="latest/" id="docs"><span class="material-icons-round">description</span> Documentation</a>
+            <br class="button-splitter" style="display: none" />
+            <br class="button-splitter" style="display: none" />
+            <br class="button-splitter" style="display: none" />
+            <a href="guides/" id="guide"><span class="material-icons-round">menu_book</span> Guides</a>
+            <br /><br /><br />
             <div id="code-block">
                 <c-function>import</c-function> { <c-const>categorizeImports</c-const> } <c-function>from</c-function>
                 <c-string>'sxcu.api'</c-string>;
@@ -39,6 +40,11 @@
                 <br />
                 <br />
                 <c-1></c-1><c-2></c-2><c-3></c-3><c-4></c-4><c-5></c-5><c-6></c-6><c-7></c-7><c-8></c-8>
+            </div>
+            <br /><br />
+            <div id="links">
+                <a href="https://github.com/Lovely-Experiences/sxcu.api"><img src="assets/github.svg" /></a>
+                <a href="https://www.npmjs.com/package/sxcu.api"><img src="assets/npm.svg" /></a>
             </div>
         </div>
         <script>
@@ -78,12 +84,12 @@
                 ['sxcu', '.', 'files', '.', 'uploadFile', '(', "'cool.png'", ');'],
                 ['sxcu', '.', 'files', '.', 'getFileMeta', '(', "'66CzGXRrQ'", ');'],
                 ['sxcu', '.', 'links', '.', 'createLink', '(', "'https://google.com'", ');'],
-                ['sxcu', '.', 'text', '.', 'createPaste', '(', "'function add(a, b) { return a + b }'", ');'],
+                ['sxcu', '.', 'text', '.', 'createPaste', '(', "'some cool text'", ');'],
                 ['sxcu', '.', 'subdomains', '.', 'checkSubdomain', '(', "'lovelyjacob-4463.shx.gg'", ');'],
                 ['sxcu', '.', 'subdomains', '.', 'getSubdomainMeta', '(', "'shx.gg'", ');'],
                 ['sxcu', '.', 'subdomains', '.', 'listSubdomains', '(', '', ');'],
                 ['sxcu', '.', 'utility', '.', 'convertSxcuFile', '(', "'uploader.sxcu'", ');'],
-                ['sxcu', '.', 'utility', '.', 'resolveError', '(', "'Missing ) after argument list'", ');'],
+                ['sxcu', '.', 'utility', '.', 'resolveError', '(', "'error!!!!'", ');'],
             ];
 
             async function wait(time) {
