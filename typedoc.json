@@ -1,0 +1,7 @@
+{
+    "entryPoints": ["src/index.ts"],
+    "out": "docs",
+    "navigationLinks": {
+        "GitHub": "https://github.com/Lovely-Experiences/sxcu.api"
+    }
+}

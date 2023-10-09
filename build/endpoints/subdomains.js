@@ -1,7 +1,22 @@
 import { request } from '../request.js';
 import { resolveError } from '../error.js';
-export async function checkSubdomain() { }
-export async function getSubdomainMeta() { }
+/**
+ * Check if a subdomain exists.
+ * @param subdomain The subdomain to check.
+ * @returns If the subdomain currently exists or not.
+ */
+export async function checkSubdomain(subdomain) {
+    const response = await request({
+        type: 'GET',
+        statusErrors: [400, 429],
+        baseUrl: 'https://sxcu.net/api/',
+        path: `subdomains/check/${subdomain}`,
+    }).catch((error) => {
+        throw resolveError(error);
+    });
+    return response.exists;
+}
+export async function getSubdomainMeta() {}
 /**
  * Get a list of all subdomains.
  * @returns A list of subdomains.

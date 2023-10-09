@@ -1,4 +1,4 @@
-<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>createPaste | sxcu.api</title><meta name="description" content="Documentation for sxcu.api"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
+<!DOCTYPE html><html class="default" lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>createError | sxcu.api</title><meta name="description" content="Documentation for sxcu.api"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="../assets/style.css"/><link rel="stylesheet" href="../assets/highlight.css"/><script defer src="../assets/main.js"></script><script async src="../assets/search.js" id="tsd-search-script"></script><script async src="../assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os"</script><header class="tsd-page-toolbar">
 <div class="tsd-toolbar-contents container">
 <div class="table-cell" id="tsd-search" data-base="..">
 <div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div>
@@ -13,27 +13,31 @@
 <div class="tsd-page-title">
 <ul class="tsd-breadcrumb">
 <li><a href="../modules.html">sxcu.api</a></li>
-<li><a href="createPaste.html">createPaste</a></li></ul>
-<h1>Function createPaste</h1></div>
+<li><a href="createError.html">createError</a></li></ul>
+<h1>Function createError</h1></div>
 <section class="tsd-panel">
 <ul class="tsd-signatures">
-<li class="tsd-signature tsd-anchor-link" id="createPaste"><span class="tsd-kind-call-signature">create<wbr/>Paste</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">text</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/Paste.html" class="tsd-signature-type tsd-kind-type-alias">Paste</a><span class="tsd-signature-symbol">&gt;</span><a href="#createPaste" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
+<li class="tsd-signature tsd-anchor-link" id="createError"><span class="tsd-kind-call-signature">create<wbr/>Error</span><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">message</span>, <span class="tsd-kind-parameter">code</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../types/ErrorObject.html" class="tsd-signature-type tsd-kind-type-alias">ErrorObject</a><a href="#createError" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg></a></li>
 <li class="tsd-description">
-<div class="tsd-comment tsd-typography"><p>Create a paste.</p>
+<div class="tsd-comment tsd-typography"><p>Create an error code.</p>
 </div>
 <div class="tsd-parameters">
 <h4 class="tsd-parameters-title">Parameters</h4>
 <ul class="tsd-parameter-list">
 <li>
-<h5><span class="tsd-kind-parameter">text</span>: <span class="tsd-signature-type">string</span></h5>
-<div class="tsd-comment tsd-typography"><p>The text to upload.</p>
+<h5><span class="tsd-kind-parameter">message</span>: <span class="tsd-signature-type">string</span></h5>
+<div class="tsd-comment tsd-typography"><p>Error message.</p>
+</div>
+<div class="tsd-comment tsd-typography"></div></li>
+<li>
+<h5><span class="tsd-kind-parameter">code</span>: <span class="tsd-signature-type">number</span></h5>
+<div class="tsd-comment tsd-typography"><p>Error code.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li></ul></div>
-<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type ">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../types/Paste.html" class="tsd-signature-type tsd-kind-type-alias">Paste</a><span class="tsd-signature-symbol">&gt;</span></h4><p>The created link.</p>
-
+<h4 class="tsd-returns-title">Returns <a href="../types/ErrorObject.html" class="tsd-signature-type tsd-kind-type-alias">ErrorObject</a></h4>
 <div class="tsd-comment tsd-typography"></div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/Lovely-Experiences/sxcu.api/blob/94c0beb/src/endpoints/text.ts#L27">endpoints/text.ts:27</a></li></ul></aside></li></ul></section></div>
+<li>Defined in <a href="https://github.com/Lovely-Experiences/sxcu.api/blob/94c0beb/src/error.ts#L17">error.ts:17</a></li></ul></aside></li></ul></section></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
@@ -64,9 +68,9 @@
 <li><a href="categorizeImports.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>categorizeImports</a></li>
 <li><a href="checkSubdomain.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>checkSubdomain</a></li>
 <li><a href="createCollection.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createCollection</a></li>
-<li><a href="createError.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createError</a></li>
+<li><a href="createError.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createError</a></li>
 <li><a href="createLink.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createLink</a></li>
-<li><a href="createPaste.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createPaste</a></li>
+<li><a href="createPaste.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>createPaste</a></li>
 <li><a href="deleteFile.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deleteFile</a></li>
 <li><a href="deleteLink.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deleteLink</a></li>
 <li><a href="deletePaste.html"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>deletePaste</a></li>

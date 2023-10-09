@@ -13,12 +13,13 @@
     ],
     "scripts": {
         "test": "node test/index.js",
+        "test-other": "node test/other.js",
         "build": "npx del-cli build/ && npx tsc --outDir build",
         "format": "npx prettier src/ --write",
         "format-build": "npx prettier build/ --write",
         "format-test": "npx prettier test/ --write",
         "eslint": "npx eslint build/",
-        "gen-doc": "npx del-cli docs/ && npx typedoc src/index.ts",
+        "gen-doc": "npx del-cli docs/ && npx typedoc --cname sxcu.api.lovelyjacob.com --searchInComments",
         "compile": "npm run build && npm run format-build && npm run gen-doc && npm run eslint",
         "format-all": "npm run format && npm run format-build && npm run format-test"
     },

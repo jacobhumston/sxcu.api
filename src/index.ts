@@ -17,6 +17,8 @@ import {
     checkSubdomain,
     getSubdomainMeta,
     listSubdomains,
+    // Types
+    SubdomainData,
 } from './endpoints/subdomains.js';
 
 import {
@@ -79,9 +81,9 @@ export {
     deletePaste,
 
     // Other Modules
-    categorizeImports,
     createError,
     resolveError,
+    categorizeImports,
 
     // Variables
     UserAgent,
@@ -91,6 +93,7 @@ export {
 
     // Types
     ErrorObject,
+    SubdomainData,
     Paste,
     Link,
     DeletionToken,
