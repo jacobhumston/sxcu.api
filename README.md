@@ -8,7 +8,7 @@ sxcu.api was created to allow any developer of any skill set to easily create im
 
 ## Links
 
-**sxcu.api:** [Docs](https://sxcu.api.lovelyjacob.com) / [Github](https://github.com/Lovely-Experiences/sxcu.api) / [NPM](https://www.npmjs.com/package/sxcu.api)
+**sxcu.api:** [Docs](https://sxcu.api.lovelyjacob.com) / [Github](https://github.com/Lovely-Experiences/sxcu.api) / [npm](https://www.npmjs.com/package/sxcu.api)
 
 **sxcu.net:** [Website](https://sxcu.net/) / [API Docs](https://sxcu.net/api/docs/) / [Discord](https://discord.gg/ZBcYQwMWTG) / [Donate](https://paypal.me/MisterFix)
 

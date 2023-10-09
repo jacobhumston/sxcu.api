@@ -15,17 +15,13 @@
         "test": "node test/index.js",
         "test-other": "node test/other.js",
         "build": "npx del-cli build/ && npx tsc --outDir build",
-        "format": "npx prettier src/ --write",
-        "format-build": "npx prettier build/ --write",
-        "format-test": "npx prettier test/ --write",
         "eslint": "npx eslint build/",
-        "gen-doc": "npx del-cli docs/ && npx typedoc --cname sxcu.api.lovelyjacob.com --searchInComments",
-        "compile": "npm run build && npm run format-build && npm run gen-doc && npm run eslint",
-        "format-all": "npm run format && npm run format-build && npm run format-test"
+        "gen-doc": "npx del-cli docs/ && npx typedoc --cname sxcu.api.lovelyjacob.com --searchInComments --hideGenerator && node tools/gen-web.cjs",
+        "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint",
+        "format": "npx prettier ./ --write"
     },
     "files": [
         "build",
-        "types",
         "LICENSE"
     ],
     "repository": {
@@ -51,6 +47,7 @@
         "eslint": "^8.50.0",
         "eslint-config-prettier": "^9.0.0",
         "eslint-plugin-prettier": "^5.0.0",
+        "markdown-it": "^13.0.2",
         "prettier": "^3.0.3",
         "typedoc": "^0.25.1",
         "typescript": "^5.2.2"

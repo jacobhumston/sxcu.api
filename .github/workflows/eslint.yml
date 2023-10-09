@@ -15,19 +15,11 @@ jobs:
 
             - name: Install Dependencies
               id: install-dependencies
-              run: npm install
+              run: npm ci
 
-            - name: Build Source
+            - name: Compile
               id: build-source
-              run: npm run build
-
-            - name: Format Build
-              id: format-build
-              run: npm run format-build
-
-            - name: Run Eslint
-              id: eslint-check
-              run: npm run eslint
+              run: npm run compile
 
     eslint_error:
         runs-on: ubuntu-latest

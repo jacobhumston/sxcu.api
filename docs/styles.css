@@ -1,0 +1,108 @@
+body,
+button,
+input,
+textarea {
+    font-family: 'Nunito', sans-serif;
+}
+
+body {
+    height: 100vh;
+    box-sizing: content-box;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+}
+
+#wrapper {
+    box-sizing: border-box;
+    text-align: center;
+    max-width: 90%;
+    height: 70%;
+    margin-top: 5%;
+    /*margin-bottom: auto;*/
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#first-header,
+#first-paragraph {
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+h1 {
+    font-size: xx-large;
+}
+
+p {
+    font-size: large;
+}
+
+#install-command {
+    display: inline-block;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: large;
+    background-color: rgb(236, 236, 236);
+    border-radius: 15px;
+}
+
+.material-icons-round {
+    vertical-align: text-top !important;
+    cursor: pointer;
+}
+
+a {
+    color: rgb(81, 107, 255);
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(48, 56, 107);
+}
+
+#copy:hover {
+    color: rgb(81, 107, 255);
+}
+
+#code-block {
+    display: inline-block;
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: large;
+    background-color: rgb(54, 54, 54);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    font-family: 'Source Code Pro', monospace;
+    font-size: medium;
+    text-align: left;
+    max-width: 80%;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+c-const {
+    color: rgb(103, 139, 255);
+}
+
+c-return {
+    color: rgb(255, 194, 103);
+}
+
+c-5,
+c-function {
+    color: rgb(255, 112, 112);
+}
+
+c-7,
+c-string {
+    color: rgb(105, 255, 143);
+}
+
+c-3,
+c-property {
+    color: rgb(203, 250, 127);
+}

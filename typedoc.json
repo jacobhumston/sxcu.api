@@ -1,7 +1,10 @@
 {
     "entryPoints": ["src/index.ts"],
-    "out": "docs",
+    "out": "docs/latest/",
     "navigationLinks": {
-        "GitHub": "https://github.com/Lovely-Experiences/sxcu.api"
+        "Home": "../index.html",
+        "Guides": "../guides/welcome.html",
+        "GitHub": "https://github.com/Lovely-Experiences/sxcu.api",
+        "npm": "https://www.npmjs.com/package/sxcu.api"
     }
 }
