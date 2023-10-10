@@ -16,7 +16,7 @@
         "test-other": "node test/other.js",
         "build": "npx del-cli build/ && npx tsc --outDir build",
         "eslint": "npx eslint build/",
-        "gen-doc": "npx del-cli docs/ && npx typedoc --cname sxcu.api.lovelyjacob.com --searchInComments --hideGenerator && node tools/gen-web.cjs",
+        "gen-doc": "npx del-cli docs/ && npx typedoc --searchInComments --hideGenerator --githubPages false && node tools/gen-web.cjs",
         "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint",
         "format": "npx prettier ./ --write"
     },

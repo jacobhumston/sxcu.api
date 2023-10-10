@@ -4,3 +4,6 @@ node_modules/
 # Test directory 
 # test/
 test/other.js
+
+# VSCode Config
+.vscode/

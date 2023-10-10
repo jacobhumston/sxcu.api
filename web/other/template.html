@@ -21,9 +21,37 @@
             <a href="../">Home</a>
             <a href="../latest/">Docs</a>
         </div>
+        <div id="side-nav-bar-darken"></div>
+        <div id="side-nav-bar">
+            <nav-links />
+        </div>
         <br />
-        <div id="wrapper">
+        <div id="guide-wrapper">
             <content />
         </div>
+        <br />
+        <br />
+        <script>
+            const menu = document.getElementById('menu');
+
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach((block) => {
+                if (block.childElementCount === 0) {
+                    block.classList.add('inline-code');
+                }
+            });
+
+            const sideNavBar = document.getElementById('side-nav-bar');
+            const sideNavBarDarken = document.getElementById('side-nav-bar-darken');
+
+            let enabled = true;
+            menu.addEventListener('click', () => {
+                enabled = enabled ? null : true;
+                console.log(enabled);
+                sideNavBar.style.display = enabled ? 'none' : 'block';
+                sideNavBarDarken.style.display = enabled ? 'none' : 'block';
+                document.body.style.overflowY = enabled ? 'auto' : 'hidden';
+            });
+        </script>
     </body>
 </html>

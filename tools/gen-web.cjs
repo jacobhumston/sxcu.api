@@ -5,8 +5,10 @@ const md = require('markdown-it')({
     highlight: function (str, lang) {
         if (lang && hljs.getLanguage(lang)) {
             try {
-                return hljs.highlight(str, { language: lang }).value;
-            } catch (_) {}
+                return hljs.highlight(str, { language: lang }).value.replaceAll('\n', '<br>');
+            } catch (_) {
+                // eslint-disable-line no-empty
+            }
         }
         return '';
     },
@@ -17,8 +19,21 @@ fs.mkdirSync('docs/guides/');
 fs.mkdirSync('docs/assets/');
 
 console.log(`Writing and copying files...`);
-fs.writeFileSync('docs/index.html', fs.readFileSync('web/index.html', 'utf-8'));
+fs.copyFileSync('web/index.html', 'docs/index.html');
 fs.copyFileSync(`web/styles.css`, `docs/styles.css`);
+fs.copyFileSync(`web/favicon.ico`, `docs/favicon.ico`);
+fs.copyFileSync(`web/CNAME`, `docs/CNAME`);
+fs.copyFileSync(`web/.nojekyll`, `docs/.nojekyll`);
+
+console.log(`Generating guide list...`);
+const guideList = [];
+for (const file of fs.readdirSync('web/guides/')) {
+    if (file.endsWith('.md')) {
+        const content = fs.readFileSync(`web/guides/${file}`, 'utf-8');
+        const title = content.split('\n')[0].replace('# ', '');
+        guideList.push(`<a href="${file.replace('.md', '.html')}" class="side-nav-bar-link">${title}</a>`);
+    }
+}
 
 for (const file of fs.readdirSync('web/guides/')) {
     if (file.endsWith('.md')) {
@@ -26,7 +41,10 @@ for (const file of fs.readdirSync('web/guides/')) {
         const content = fs.readFileSync(`web/guides/${file}`, 'utf-8');
         const templateContent = fs.readFileSync('web/other/template.html', 'utf-8');
         const html = md.render(content);
-        fs.writeFileSync(`docs/guides/${file.replace('.md', '.html')}`, templateContent.replace('<content />', html));
+        fs.writeFileSync(
+            `docs/guides/${file.replace('.md', '.html')}`,
+            templateContent.replace('<content />', html).replace('<nav-links />', guideList.join('<br>'))
+        );
     } else {
         console.log(`Copying... ${file}`);
         fs.copyFileSync(`web/guides/${file}`, `docs/guides/${file}`);
