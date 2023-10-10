@@ -19,6 +19,6 @@ export declare class UserAgentClass {
      */
     useDefault(pathOverride?: string): void;
 }
-/** Web request user agent. */
+/** User agent used for all requests. */
 export declare const UserAgent: UserAgentClass;
 //# sourceMappingURL=user-agent.d.ts.map

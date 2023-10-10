@@ -31,5 +31,5 @@ export class UserAgentClass {
         this.set(`${packageData.name}/$${packageData.version} (+${packageData.homepage})`);
     }
 }
-/** Web request user agent. */
+/** User agent used for all requests. */
 export const UserAgent = new UserAgentClass();
