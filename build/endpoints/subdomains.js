@@ -16,7 +16,7 @@ export async function checkSubdomain(subdomain) {
     });
     return response.exists;
 }
-export async function getSubdomainMeta() {}
+export async function getSubdomainMeta() { }
 /**
  * Get a list of all subdomains.
  * @returns A list of subdomains.

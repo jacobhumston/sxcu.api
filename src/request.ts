@@ -21,6 +21,13 @@ export type RequestOptions = {
  * Create an API request.
  */
 export async function request(options: RequestOptions): Promise<any> {
+    // Check if the User Agent is set. Throw an error if it isn't.
+    if (UserAgent.get() === '')
+        throw {
+            error: 'User agent is not set! Learn more: https://sxcu.api.lovelyjacob.com/guides/user-agent.html',
+            code: -1,
+        };
+
     // Make a request to the API.
     const response = await fetch(`${options.baseUrl}${options.path}`, {
         method: options.type,
