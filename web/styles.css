@@ -166,8 +166,7 @@ c-property {
     margin-top: 6px;
 }
 
-#nav-bar #menu
-{
+#nav-bar #menu {
     background: none;
     border: none;
     color: rgba(255, 255, 255, 0.857);
@@ -175,8 +174,7 @@ c-property {
     margin-right: 0px;
 }
 
-#nav-bar #menu .material-icons-round
-{
+#nav-bar #menu .material-icons-round {
     font-size: 34px;
 }
 

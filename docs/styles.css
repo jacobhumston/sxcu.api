@@ -154,7 +154,8 @@ c-property {
 }
 
 #nav-bar p,
-#nav-bar a {
+#nav-bar a,
+#nav-bar button {
     display: inline;
     float: left;
     margin: 0px;
@@ -163,6 +164,18 @@ c-property {
     margin-left: 10px;
     font-size: 20px;
     margin-top: 6px;
+}
+
+#nav-bar #menu {
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.857);
+    margin-top: 3px;
+    margin-right: 0px;
+}
+
+#nav-bar #menu .material-icons-round {
+    font-size: 34px;
 }
 
 #links {
