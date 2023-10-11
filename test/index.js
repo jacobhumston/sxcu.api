@@ -1,5 +1,5 @@
 import { readdirSync } from 'fs';
-import { UserAgent } from '../build/index.js';
+import { UserAgent } from 'sxcu.api';
 
 UserAgent.useDefault();
 

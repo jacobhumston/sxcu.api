@@ -1,4 +1,5 @@
-import { DeletionToken, Url, Snowflake, SubdomainUrl } from '../types.js';
+import { DeletionToken, Url, Snowflake } from '../types.js';
+import { SubdomainUrl } from './subdomains.js';
 /** A link object. */
 export type Link = {
     /** The id of this link. */

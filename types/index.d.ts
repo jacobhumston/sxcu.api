@@ -7,6 +7,7 @@ import { createError, resolveError, ErrorObject } from './error.js';
 import { UserAgent, UserAgentClass } from './classes/user-agent.js';
 import { categorizeImports } from './categorize.js';
 import { DeletionToken, Url, Snowflake } from './types.js';
+import { extractToken, parseSnowflake } from './utility.js';
 export {
     uploadFile,
     getFileMeta,
@@ -22,6 +23,8 @@ export {
     deletePaste,
     createError,
     resolveError,
+    extractToken,
+    parseSnowflake,
     categorizeImports,
     UserAgent,
     UserAgentClass,

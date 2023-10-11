@@ -1,7 +1,8 @@
 import { request } from '../request.js';
 import { extractToken } from '../utility.js';
-import { DeletionToken, Url, Snowflake, SubdomainUrl } from '../types.js';
+import { DeletionToken, Url, Snowflake } from '../types.js';
 import { resolveError } from '../error.js';
+import { SubdomainUrl } from './subdomains.js';
 
 /** A link object. */
 export type Link = {

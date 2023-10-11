@@ -65,6 +65,12 @@ import {
     Snowflake,
 } from './types.js';
 
+import {
+    // Functions
+    extractToken,
+    parseSnowflake,
+} from './utility.js';
+
 export {
     // Endpoints
     uploadFile,
@@ -83,6 +89,8 @@ export {
     // Other Modules
     createError,
     resolveError,
+    extractToken,
+    parseSnowflake,
     categorizeImports,
 
     // Variables

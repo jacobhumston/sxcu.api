@@ -141,10 +141,11 @@
                             ><span class="tsd-signature-symbol">; </span><br /><span>        </span
                             ><span class="tsd-kind-property">getSubdomainMeta</span
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
-                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
-                            ><span class="tsd-signature-symbol"> =&gt; </span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">subdomain</span
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
                             ><span class="tsd-signature-type">Promise</span
-                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
+                            ><span class="tsd-signature-symbol">&lt;</span
+                            ><span class="tsd-signature-type">Subdomain</span
                             ><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span
                             ><span class="tsd-signature-symbol">; </span><br /><span>        </span
                             ><span class="tsd-kind-property">listSubdomains</span
@@ -308,11 +309,13 @@
                                 ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
                                 ><br /><span>        </span><span class="tsd-kind-property">getSubdomainMeta</span
                                 ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
-                                ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-kind-parameter">subdomain</span
+                                ><span class="tsd-signature-symbol">)</span
                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                 ><span class="tsd-signature-type">Promise</span
                                 ><span class="tsd-signature-symbol">&lt;</span
-                                ><span class="tsd-signature-type">void</span
+                                ><span class="tsd-signature-type">Subdomain</span
                                 ><span class="tsd-signature-symbol">&gt;</span
                                 ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
                                 ><br /><span>        </span><span class="tsd-kind-property">listSubdomains</span
@@ -912,11 +915,12 @@
                                         ><span class="tsd-signature-symbol">: </span
                                         ><span class="tsd-signature-symbol">(</span
                                         ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">subdomain</span
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol"> =&gt; </span
                                         ><span class="tsd-signature-type">Promise</span
                                         ><span class="tsd-signature-symbol">&lt;</span
-                                        ><span class="tsd-signature-type">void</span
+                                        ><span class="tsd-signature-type">Subdomain</span
                                         ><span class="tsd-signature-symbol">&gt;</span
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol">; </span><br /><span>    </span
@@ -1015,11 +1019,12 @@
                                                 ><span class="tsd-signature-symbol">: </span
                                                 ><span class="tsd-signature-symbol">(</span
                                                 ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">subdomain</span
                                                 ><span class="tsd-signature-symbol">)</span
                                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                                 ><span class="tsd-signature-type">Promise</span
                                                 ><span class="tsd-signature-symbol">&lt;</span
-                                                ><span class="tsd-signature-type">void</span
+                                                ><span class="tsd-signature-type">Subdomain</span
                                                 ><span class="tsd-signature-symbol">&gt;</span
                                                 ><span class="tsd-signature-symbol">)</span>
                                             </h5>
@@ -1031,20 +1036,48 @@
                                                             id="categorizeImports.__type.subdomains.__type-18.getSubdomainMeta.__type-21.__type-22"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">subdomain</span
                                                             ><span class="tsd-signature-symbol">)</span
                                                             ><span class="tsd-signature-symbol">: </span
                                                             ><span class="tsd-signature-type">Promise</span
                                                             ><span class="tsd-signature-symbol">&lt;</span
-                                                            ><span class="tsd-signature-type">void</span
+                                                            ><span class="tsd-signature-type">Subdomain</span
                                                             ><span class="tsd-signature-symbol">&gt;</span>
                                                         </li>
                                                         <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>Get the meta data of a subdomain.</p>
+                                                            </div>
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter"
+                                                                                >subdomain</span
+                                                                            >:
+                                                                            <span class="tsd-signature-type"
+                                                                                >string</span
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>
+                                                                                The subdomain to get the meta data of.
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                             <h4 class="tsd-returns-title">
                                                                 Returns <span class="tsd-signature-type">Promise</span
                                                                 ><span class="tsd-signature-symbol">&lt;</span
-                                                                ><span class="tsd-signature-type">void</span
+                                                                ><span class="tsd-signature-type">Subdomain</span
                                                                 ><span class="tsd-signature-symbol">&gt;</span>
                                                             </h4>
+                                                            <p>The meta data of the subdomain.</p>
+
+                                                            <div class="tsd-comment tsd-typography"></div>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -1519,7 +1552,7 @@
                                     <li>
                                         Defined in
                                         <a
-                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/95bb076/src/categorize.ts#L28"
+                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/a87fa67/src/categorize.ts#L28"
                                             >categorize.ts:28</a
                                         >
                                     </li>

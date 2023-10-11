@@ -1,4 +1,4 @@
-import * as sxcu from '../../build/index.js';
+import * as sxcu from 'sxcu.api';
 
 export const active = true;
 
