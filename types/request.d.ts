@@ -17,5 +17,7 @@ export type RequestOptions = {
 /**
  * Create an API request.
  */
-export declare function request(options: RequestOptions): Promise<any>;
+export declare function request(options: RequestOptions): Promise<{
+    [key: string]: any;
+}>;
 //# sourceMappingURL=request.d.ts.map

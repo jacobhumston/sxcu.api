@@ -1,6 +1,6 @@
 import { request } from '../request.js';
 import { extractToken } from '../utility.js';
-import { DeletionToken, Url, Snowflake } from '../types.js';
+import { DeletionToken, Url, Snowflake, SubdomainUrl } from '../types.js';
 import { resolveError } from '../error.js';
 
 /** A link object. */
@@ -22,9 +22,10 @@ export type Link = {
 /**
  * Create a link.
  * @param url Url to create the link for.
+ * @param subdomain Subdomain to create the link on.
  * @returns The created link.
  */
-export async function createLink(url: Url): Promise<Link> {
+export async function createLink(url: Url, subdomain?: SubdomainUrl): Promise<Link> {
     const response = await request({
         type: 'POST',
         statusErrors: [400, 429],

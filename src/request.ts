@@ -9,6 +9,12 @@ export type RequestOptions = {
     statusErrors: number[];
     /** Base url of the request. */
     baseUrl: 'https://sxcu.net/api/' | 'https://cancer-co.de/';
+    /** 
+     * The subdomain to make the request too. (If applicable.)
+     * This option will override baseUrl. 
+     * Example; "example.shx.gg" 
+     */
+    subdomain?: string;
     /**
      * Request path to append to the base url.
      * Do not include the first slash.
@@ -24,12 +30,16 @@ const guideUrl: string = 'https://sxcu.api.lovelyjacob.com/guides/user-agent.htm
 /**
  * Create an API request.
  */
-export async function request(options: RequestOptions): Promise<any> {
+export async function request(options: RequestOptions): Promise<{ [key: string]: any }> {
     // Check if the User Agent is set. Throw an error if it isn't.
     if (UserAgent.get() === '') throw createError(`User agent is not set! Learn more: ${guideUrl}`, -1);
 
     // Make a request to the API.
-    const response = await fetch(`${options.baseUrl}${options.path}`, {
+    const url = options.subdomain
+        ? `https://${options.subdomain}/api/${options.path}`
+        : `${options.baseUrl}${options.path}`;
+    
+    const response = await fetch(url, {
         method: options.type,
         body: options.body ?? undefined,
         headers: {
