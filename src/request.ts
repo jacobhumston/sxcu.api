@@ -9,10 +9,10 @@ export type RequestOptions = {
     statusErrors: number[];
     /** Base url of the request. */
     baseUrl: 'https://sxcu.net/api/' | 'https://cancer-co.de/';
-    /** 
+    /**
      * The subdomain to make the request too. (If applicable.)
-     * This option will override baseUrl. 
-     * Example; "example.shx.gg" 
+     * This option will override baseUrl.
+     * Example; `example.shx.gg`
      */
     subdomain?: string;
     /**
@@ -38,7 +38,7 @@ export async function request(options: RequestOptions): Promise<{ [key: string]:
     const url = options.subdomain
         ? `https://${options.subdomain}/api/${options.path}`
         : `${options.baseUrl}${options.path}`;
-    
+
     const response = await fetch(url, {
         method: options.type,
         body: options.body ?? undefined,

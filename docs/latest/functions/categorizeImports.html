@@ -110,7 +110,8 @@
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span
                             ><br /><span>        </span><span class="tsd-kind-property">createLink</span
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
-                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">url</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">url</span>,
+                            <span class="tsd-kind-parameter">subdomain</span><span class="tsd-signature-symbol">?</span
                             ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
                             ><span class="tsd-signature-type">Promise</span
                             ><span class="tsd-signature-symbol">&lt;</span
@@ -271,8 +272,9 @@
                                 ><span class="tsd-signature-symbol">{ </span><br /><span>        </span
                                 ><span class="tsd-kind-property">createLink</span
                                 ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
-                                ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">url</span
-                                ><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">url</span>,
+                                <span class="tsd-kind-parameter">subdomain</span
+                                ><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span
                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                 ><span class="tsd-signature-type">Promise</span
                                 ><span class="tsd-signature-symbol">&lt;</span
@@ -678,7 +680,9 @@
                                         ><span class="tsd-signature-symbol">: </span
                                         ><span class="tsd-signature-symbol">(</span
                                         ><span class="tsd-signature-symbol">(</span
-                                        ><span class="tsd-kind-parameter">url</span
+                                        ><span class="tsd-kind-parameter">url</span>,
+                                        <span class="tsd-kind-parameter">subdomain</span
+                                        ><span class="tsd-signature-symbol">?</span
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol"> =&gt; </span
                                         ><span class="tsd-signature-type">Promise</span
@@ -713,7 +717,9 @@
                                                 ><span class="tsd-signature-symbol">: </span
                                                 ><span class="tsd-signature-symbol">(</span
                                                 ><span class="tsd-signature-symbol">(</span
-                                                ><span class="tsd-kind-parameter">url</span
+                                                ><span class="tsd-kind-parameter">url</span>,
+                                                <span class="tsd-kind-parameter">subdomain</span
+                                                ><span class="tsd-signature-symbol">?</span
                                                 ><span class="tsd-signature-symbol">)</span
                                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                                 ><span class="tsd-signature-type">Promise</span
@@ -733,7 +739,9 @@
                                                             id="categorizeImports.__type.links.__type-13.createLink.__type-14.__type-15"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
-                                                            ><span class="tsd-kind-parameter">url</span
+                                                            ><span class="tsd-kind-parameter">url</span>,
+                                                            <span class="tsd-kind-parameter">subdomain</span
+                                                            ><span class="tsd-signature-symbol">?</span
                                                             ><span class="tsd-signature-symbol">)</span
                                                             ><span class="tsd-signature-symbol">: </span
                                                             ><span class="tsd-signature-type">Promise</span
@@ -760,6 +768,23 @@
                                                                         </h5>
                                                                         <div class="tsd-comment tsd-typography">
                                                                             <p>Url to create the link for.</p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h5>
+                                                                            <code class="tsd-tag ts-flagOptional"
+                                                                                >Optional</code
+                                                                            >
+                                                                            <span class="tsd-kind-parameter"
+                                                                                >subdomain</span
+                                                                            >:
+                                                                            <span class="tsd-signature-type"
+                                                                                >string</span
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>Subdomain to create the link on.</p>
                                                                         </div>
                                                                         <div class="tsd-comment tsd-typography"></div>
                                                                     </li>
@@ -1494,7 +1519,7 @@
                                     <li>
                                         Defined in
                                         <a
-                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/96e51e5/src/categorize.ts#L28"
+                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/95bb076/src/categorize.ts#L28"
                                             >categorize.ts:28</a
                                         >
                                     </li>

@@ -4,14 +4,16 @@ import { resolveError } from '../error.js';
 /**
  * Create a link.
  * @param url Url to create the link for.
+ * @param subdomain Subdomain to create the link on.
  * @returns The created link.
  */
-export async function createLink(url) {
+export async function createLink(url, subdomain) {
     const response = await request({
         type: 'POST',
         statusErrors: [400, 429],
         baseUrl: 'https://sxcu.net/api/',
         path: 'links/create',
+        subdomain: subdomain ?? undefined,
         body: new URLSearchParams({ link: url }),
     }).catch((error) => {
         throw resolveError(error);

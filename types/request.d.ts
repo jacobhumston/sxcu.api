@@ -7,6 +7,12 @@ export type RequestOptions = {
     /** Base url of the request. */
     baseUrl: 'https://sxcu.net/api/' | 'https://cancer-co.de/';
     /**
+     * The subdomain to make the request too. (If applicable.)
+     * This option will override baseUrl.
+     * Example; `example.shx.gg`
+     */
+    subdomain?: string;
+    /**
      * Request path to append to the base url.
      * Do not include the first slash.
      */

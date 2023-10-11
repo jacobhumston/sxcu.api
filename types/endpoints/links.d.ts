@@ -1,4 +1,4 @@
-import { DeletionToken, Url, Snowflake } from '../types.js';
+import { DeletionToken, Url, Snowflake, SubdomainUrl } from '../types.js';
 /** A link object. */
 export type Link = {
     /** The id of this link. */
@@ -17,9 +17,10 @@ export type Link = {
 /**
  * Create a link.
  * @param url Url to create the link for.
+ * @param subdomain Subdomain to create the link on.
  * @returns The created link.
  */
-export declare function createLink(url: Url): Promise<Link>;
+export declare function createLink(url: Url, subdomain?: SubdomainUrl): Promise<Link>;
 /**
  * Delete a link.
  * @param id The ID of the link.

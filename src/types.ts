@@ -1,4 +1,3 @@
-
 /** A deletion token which is required when deleting something. */
 export type DeletionToken = string;
 
@@ -8,5 +7,8 @@ export type Url = string;
 /** Represents a snowflake. */
 export type Snowflake = string;
 
-/** Represents a subdomain's url. */
+/**
+ * Represents a subdomain's url.
+ * Example; `example.shx.gg`
+ */
 export type SubdomainUrl = Url;

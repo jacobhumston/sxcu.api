@@ -9,7 +9,10 @@ export async function request(options) {
     // Check if the User Agent is set. Throw an error if it isn't.
     if (UserAgent.get() === '') throw createError(`User agent is not set! Learn more: ${guideUrl}`, -1);
     // Make a request to the API.
-    const response = await fetch(`${options.baseUrl}${options.path}`, {
+    const url = options.subdomain
+        ? `https://${options.subdomain}/api/${options.path}`
+        : `${options.baseUrl}${options.path}`;
+    const response = await fetch(url, {
         method: options.type,
         body: options.body ?? undefined,
         headers: {

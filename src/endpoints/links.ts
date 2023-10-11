@@ -31,6 +31,7 @@ export async function createLink(url: Url, subdomain?: SubdomainUrl): Promise<Li
         statusErrors: [400, 429],
         baseUrl: 'https://sxcu.net/api/',
         path: 'links/create',
+        subdomain: subdomain ?? undefined,
         body: new URLSearchParams({ link: url }),
     }).catch((error) => {
         throw resolveError(error);
