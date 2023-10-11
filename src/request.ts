@@ -18,13 +18,15 @@ export type RequestOptions = {
     body?: any;
 };
 
+/** The URL to learn more about setting the User Agent. */
+const guideUrl: string = 'https://sxcu.api.lovelyjacob.com/guides/user-agent.html';
+
 /**
  * Create an API request.
  */
 export async function request(options: RequestOptions): Promise<any> {
     // Check if the User Agent is set. Throw an error if it isn't.
-    if (UserAgent.get() === '')
-        createError('User agent is not set! Learn more: https://sxcu.api.lovelyjacob.com/guides/user-agent.html', -1);
+    if (UserAgent.get() === '') throw createError(`User agent is not set! Learn more: ${guideUrl}`, -1);
 
     // Make a request to the API.
     const response = await fetch(`${options.baseUrl}${options.path}`, {
