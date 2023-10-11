@@ -23,29 +23,18 @@
         </div>
         <div id="side-nav-bar-darken"></div>
         <div id="side-nav-bar">
-            <a href="example.html" class="side-nav-bar-link">Example </a><br /><a
-                href="welcome.html"
-                class="side-nav-bar-link"
-                >Welcome!</a
-            >
+            <a href="example.html" class="side-nav-bar-link">Example </a>
+            <hr />
+            <a href="user-agent.html" class="side-nav-bar-link">Setting/Modifying the User Agent </a>
+            <hr />
+            <a href="welcome.html" class="side-nav-bar-link">Welcome! </a>
         </div>
         <br />
         <div id="guide-wrapper">
             <h1>Example</h1>
+            <hr />
             <p>Here is some examples of using sxcu.api to help you get started:</p>
-            <pre><code class="language-js"><span class="hljs-comment">// Import the package.</span><br><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> sxcu <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-comment">// Set the request user agent to the default.</span><br>sxcu.<span class="hljs-property">UserAgent</span>.<span class="hljs-title function_">useDefault</span>();<br><br><span class="hljs-comment">// Upload the file and log the response.</span><br>sxcu.<span class="hljs-title function_">uploadFile</span>(<span class="hljs-string">&#x27;image.png&#x27;</span>)<br>    .<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">response</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(response))<br>    .<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err));<br></code></pre>
-            <p>
-                On <code>v1.3.0</code> we made the switch to ESM and TypeScript. If you need to use commonjs, then you
-                can use the import function.
-            </p>
-            <p>
-                Please view
-                <a href="https://github.com/Lovely-Experiences/sxcu.api/tree/commonjs-latest">commonjs-latest</a> for
-                the latest commonjs version of sxcu.api.
-            </p>
-            <pre><code class="language-js"><span class="hljs-comment">// Wrap code in an async function due to commonjs not having top-level await.</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">main</span>(<span class="hljs-params"></span>) {<br>    <span class="hljs-keyword">const</span> sxcu = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;sxcu.api&#x27;</span>);<br>    <span class="hljs-comment">// Use the package as normal...</span><br>}<br><br><span class="hljs-title function_">main</span>();<br></code></pre>
-            <p>If you preferred categorized imports, then you can use <strong>categorizeImports</strong>.</p>
-            <pre><code class="language-js"><span class="hljs-comment">// Import the package.</span><br><span class="hljs-keyword">import</span> { categorizeImports } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-comment">// Categorize imports.</span><br><span class="hljs-keyword">const</span> sxcu = <span class="hljs-title function_">categorizeImports</span>();<br><br><span class="hljs-comment">// Set the request user agent to the default.</span><br>sxcu.<span class="hljs-property">userAgent</span>.<span class="hljs-title function_">useDefault</span>();<br><br><span class="hljs-comment">// Upload the file and log the response.</span><br>sxcu.<span class="hljs-property">files</span><br>    .<span class="hljs-title function_">uploadFile</span>(<span class="hljs-string">&#x27;image.png&#x27;</span>)<br>    .<span class="hljs-title function_">then</span>(<span class="hljs-function">(<span class="hljs-params">response</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(response))<br>    .<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(err));<br></code></pre>
+            <p><em>Coming soon...</em></p>
         </div>
         <br />
         <br />

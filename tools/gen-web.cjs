@@ -43,7 +43,11 @@ for (const file of fs.readdirSync('web/guides/')) {
         const html = md.render(content);
         fs.writeFileSync(
             `docs/guides/${file.replace('.md', '.html')}`,
-            templateContent.replace('<content />', html).replace('<nav-links />', guideList.join('<br>'))
+            templateContent
+                .replace('<content />', html)
+                .replace('<nav-links />', guideList.join('<hr>'))
+                .replaceAll('</h1>', '</h1><hr>')
+                .replaceAll('</h2>', '</h2><hr>')
         );
     } else {
         console.log(`Copying... ${file}`);

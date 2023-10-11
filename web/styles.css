@@ -30,7 +30,7 @@ body {
 
 #guide-wrapper {
     box-sizing: border-box;
-    text-align: center;
+    text-align: left;
     height: fit-content;
     max-width: 80%;
     margin-left: auto;
@@ -139,7 +139,7 @@ code {
 }
 
 .side-nav-bar-link {
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
     display: inline-block;
 }
 
@@ -152,6 +152,11 @@ code {
     background-color: rgba(0, 0, 0, 0.4);
     display: none;
     z-index: 4;
+}
+
+hr {
+    color: rgba(255, 255, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 c-const {
