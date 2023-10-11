@@ -40,5 +40,11 @@ export function convertBase(value: string, from_base: number, to_base: number) {
 }
 
 export function parseSnowflake(snowflake: Snowflake): any {
-    console.log(convertBase(snowflake, 63, 10));
+    const binary = Number(convertBase(snowflake, 63, 2));
+    return {
+      timestamp: (binary >> 22) + 1326466131,
+      objectType: (binary >> 18 & 15),
+      objectFlag: (binary >> 14 & 15),
+      sequence: binary & 16383
+    }
 }

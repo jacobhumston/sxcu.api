@@ -6,8 +6,15 @@
 export function extractToken(url) {
     return url.split('/').pop() ?? '';
 }
-// 539SYFuIC to base 10 1253213101899776
-function convertBase(value, from_base, to_base) {
+/**
+ * Convert a number from one base to another.
+ * SOURCE: https://stackoverflow.com/questions/1337419/
+ * @param value The value to convert.
+ * @param from_base The base to convert from.
+ * @param to_base The base to convert to.
+ * @returns The converted value.
+ */
+export function convertBase(value, from_base, to_base) {
     var range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
     var from_range = range.slice(0, from_base);
     var to_range = range.slice(0, to_base);
@@ -15,10 +22,10 @@ function convertBase(value, from_base, to_base) {
         .split('')
         .reverse()
         .reduce(function (carry, digit, index) {
-            if (from_range.indexOf(digit) === -1)
-                throw new Error('Invalid digit `' + digit + '` for base ' + from_base + '.');
-            return (carry += from_range.indexOf(digit) * Math.pow(from_base, index));
-        }, 0);
+        if (from_range.indexOf(digit) === -1)
+            throw new Error('Invalid digit `' + digit + '` for base ' + from_base + '.');
+        return (carry += from_range.indexOf(digit) * Math.pow(from_base, index));
+    }, 0);
     var new_value = '';
     while (dec_value > 0) {
         new_value = to_range[dec_value % to_base] + new_value;
@@ -27,5 +34,11 @@ function convertBase(value, from_base, to_base) {
     return new_value || '0';
 }
 export function parseSnowflake(snowflake) {
-    console.log(convertBase(snowflake, 63, 10));
+    const binary = Number(convertBase(snowflake, 63, 2));
+    return {
+        timestamp: (binary >> 22) + 1326466131,
+        objectType: (binary >> 18 & 15),
+        objectFlag: (binary >> 14 & 15),
+        sequence: binary & 16383
+    };
 }
