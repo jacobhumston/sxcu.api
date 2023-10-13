@@ -64,5 +64,10 @@ export type ParsedSnowflake = {
         sequence: number;
     };
 };
+/**
+ * Get the data associated with a snowflake.
+ * @param snowflake The snowflake to parse.
+ * @returns The snowflake's data.
+ */
 export declare function parseSnowflake(snowflake: Snowflake): ParsedSnowflake;
 //# sourceMappingURL=utility.d.ts.map

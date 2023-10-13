@@ -10,5 +10,6 @@
     "$schema": "https://typedoc.org/schema.json",
     "plugin": ["@mxssfd/typedoc-theme"],
     "theme": "my-theme",
-    "includeVersion": true
+    "includeVersion": true,
+    "json": "docs/latest/docs.json"
 }

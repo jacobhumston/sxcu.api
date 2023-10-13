@@ -10,6 +10,7 @@ export type SubdomainUrl = Url;
  * @returns If the subdomain currently exists or not.
  */
 export declare function checkSubdomain(subdomain: SubdomainUrl): Promise<boolean>;
+/** Represents a subdomain. */
 export type Subdomain = {
     /** The ID of this subdomain. */
     id: Snowflake;

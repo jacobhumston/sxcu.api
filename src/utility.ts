@@ -100,6 +100,11 @@ export type ParsedSnowflake = {
     };
 };
 
+/**
+ * Get the data associated with a snowflake.
+ * @param snowflake The snowflake to parse.
+ * @returns The snowflake's data.
+ */
 export function parseSnowflake(snowflake: Snowflake): ParsedSnowflake {
     const binaryString = convertBase(snowflake, 63, 10);
     const binary = BigInt(binaryString);

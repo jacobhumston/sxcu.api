@@ -26,6 +26,7 @@ export async function checkSubdomain(subdomain: SubdomainUrl): Promise<boolean> 
     return response.exists;
 }
 
+/** Represents a subdomain. */
 export type Subdomain = {
     /** The ID of this subdomain. */
     id: Snowflake;

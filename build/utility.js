@@ -69,6 +69,11 @@ export var SnowflakeObjectFlag;
     /** The WEBP file format. */
     SnowflakeObjectFlag[(SnowflakeObjectFlag['WEBP'] = 8)] = 'WEBP';
 })(SnowflakeObjectFlag || (SnowflakeObjectFlag = {}));
+/**
+ * Get the data associated with a snowflake.
+ * @param snowflake The snowflake to parse.
+ * @returns The snowflake's data.
+ */
 export function parseSnowflake(snowflake) {
     const binaryString = convertBase(snowflake, 63, 10);
     const binary = BigInt(binaryString);
