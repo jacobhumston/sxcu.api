@@ -52,6 +52,8 @@ export type ParsedSnowflake = {
      * This can be null if the snowflake was not an uploaded file.
      */
     flag: keyof typeof SnowflakeObjectFlag | null;
+    /** The snowflake in string form. */
+    id: Snowflake;
     /** The raw data of this snowflake. */
     raw: {
         /** The epoch timestamp of when this snowflake was created. */
@@ -66,6 +68,7 @@ export type ParsedSnowflake = {
 };
 /**
  * Get the data associated with a snowflake.
+ * This will attempt to parse the snowflake if it is a number. However, its unlikely that it will return accurate results.
  * @param snowflake The snowflake to parse.
  * @returns The snowflake's data.
  */

@@ -19,8 +19,8 @@ export function extractToken(url: string): string {
  */
 function convertBase(value: string, fromBase: number, toBase: number) {
     const range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
-    const fromRange = range.slice(0, fromBase);
-    const toRange = range.slice(0, toBase);
+    const fromRange = range.slice(0, fromBase),
+        toRange = range.slice(0, toBase);
     let decValue = value
         .split('')
         .reverse()
@@ -87,6 +87,8 @@ export type ParsedSnowflake = {
      * This can be null if the snowflake was not an uploaded file.
      */
     flag: keyof typeof SnowflakeObjectFlag | null;
+    /** The snowflake in string form. */
+    id: Snowflake;
     /** The raw data of this snowflake. */
     raw: {
         /** The epoch timestamp of when this snowflake was created. */
@@ -102,12 +104,15 @@ export type ParsedSnowflake = {
 
 /**
  * Get the data associated with a snowflake.
+ * This will attempt to parse the snowflake if it is a number. However, its unlikely that it will return accurate results.
  * @param snowflake The snowflake to parse.
  * @returns The snowflake's data.
  */
 export function parseSnowflake(snowflake: Snowflake): ParsedSnowflake {
-    const binaryString = convertBase(snowflake, 63, 10);
-    const binary = BigInt(binaryString);
+    if (typeof snowflake === 'number') snowflake = convertBase(snowflake.toString(), 10, 63);
+
+    const binaryString = convertBase(snowflake, 63, 10),
+        binary = BigInt(binaryString);
 
     const data = {
         timestamp: Number((binary >> 22n) + 1326466131n),
@@ -142,6 +147,7 @@ export function parseSnowflake(snowflake: Snowflake): ParsedSnowflake {
         created: new Date(data.timestamp * 1000),
         type: types[data.objectType],
         flag: flags[data.objectFlag],
+        id: snowflake,
         raw: data,
     };
 }
