@@ -13,6 +13,8 @@ import {
     deletePaste,
     createError,
     resolveError,
+    extractToken,
+    parseSnowflake,
 } from './index.js';
 /**
  * Categorize imports into their respective categories.
@@ -45,6 +47,8 @@ export declare function categorizeImports(): {
     utility: {
         createError: typeof createError;
         resolveError: typeof resolveError;
+        extractToken: typeof extractToken;
+        parseSnowflake: typeof parseSnowflake;
     };
 };
 //# sourceMappingURL=categorize.d.ts.map

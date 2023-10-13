@@ -298,6 +298,19 @@
                             ><a href="../types/ErrorObject.html" class="tsd-signature-type tsd-kind-type-alias"
                                 >ErrorObject</a
                             ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
+                            ><br /><span>        </span><span class="tsd-kind-property">extractToken</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">url</span
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
+                            ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                            ><span class="tsd-kind-property">parseSnowflake</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">snowflake</span
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
+                            ><a href="../types/ParsedSnowflake.html" class="tsd-signature-type tsd-kind-type-alias"
+                                >ParsedSnowflake</a
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
                             ><br /><span>        </span><span class="tsd-kind-property">resolveError</span
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
                             ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">thing</span
@@ -473,6 +486,22 @@
                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                 ><a href="../types/ErrorObject.html" class="tsd-signature-type tsd-kind-type-alias"
                                     >ErrorObject</a
+                                ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
+                                ><br /><span>        </span><span class="tsd-kind-property">extractToken</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">url</span
+                                ><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><span class="tsd-signature-type">string</span
+                                ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
+                                ><br /><span>        </span><span class="tsd-kind-property">parseSnowflake</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-kind-parameter">snowflake</span
+                                ><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><a href="../types/ParsedSnowflake.html" class="tsd-signature-type tsd-kind-type-alias"
+                                    >ParsedSnowflake</a
                                 ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
                                 ><br /><span>        </span><span class="tsd-kind-property">resolveError</span
                                 ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
@@ -1486,6 +1515,29 @@
                                             >ErrorObject</a
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">extractToken</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">url</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><span class="tsd-signature-type">string</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">parseSnowflake</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">snowflake</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><a
+                                            href="../types/ParsedSnowflake.html"
+                                            class="tsd-signature-type tsd-kind-type-alias"
+                                            >ParsedSnowflake</a
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                                         ><span class="tsd-kind-property">resolveError</span
                                         ><span class="tsd-signature-symbol">: </span
                                         ><span class="tsd-signature-symbol">(</span
@@ -1590,6 +1642,124 @@
                                         </li>
                                         <li class="tsd-parameter">
                                             <h5>
+                                                <span class="tsd-kind-property">extract<wbr />Token</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">url</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><span class="tsd-signature-type">string</span
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.extractToken.__type-33.__type-34"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">url</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><span class="tsd-signature-type">string</span>
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>Extracts the token or id from a url or path.</p>
+                                                            </div>
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter">url</span>:
+                                                                            <span class="tsd-signature-type"
+                                                                                >string</span
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>Url to extract the token from.</p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns <span class="tsd-signature-type">string</span>
+                                                            </h4>
+                                                            <p>The token.</p>
+
+                                                            <div class="tsd-comment tsd-typography"></div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
+                                                <span class="tsd-kind-property">parse<wbr />Snowflake</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">snowflake</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><a
+                                                    href="../types/ParsedSnowflake.html"
+                                                    class="tsd-signature-type tsd-kind-type-alias"
+                                                    >ParsedSnowflake</a
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.parseSnowflake.__type-35.__type-36"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">snowflake</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><a
+                                                                href="../types/ParsedSnowflake.html"
+                                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                                >ParsedSnowflake</a
+                                                            >
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter"
+                                                                                >snowflake</span
+                                                                            >:
+                                                                            <span class="tsd-signature-type"
+                                                                                >string</span
+                                                                            >
+                                                                        </h5>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns
+                                                                <a
+                                                                    href="../types/ParsedSnowflake.html"
+                                                                    class="tsd-signature-type tsd-kind-type-alias"
+                                                                    >ParsedSnowflake</a
+                                                                >
+                                                            </h4>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
                                                 <span class="tsd-kind-property">resolve<wbr />Error</span
                                                 ><span class="tsd-signature-symbol">: </span
                                                 ><span class="tsd-signature-symbol">(</span
@@ -1608,7 +1778,7 @@
                                                     <ul class="tsd-signatures">
                                                         <li
                                                             class="tsd-signature"
-                                                            id="categorizeImports.__type.utility.__type-30.resolveError.__type-33.__type-34"
+                                                            id="categorizeImports.__type.utility.__type-30.resolveError.__type-37.__type-38"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
                                                             ><span class="tsd-kind-parameter">thing</span
@@ -1667,8 +1837,8 @@
                                     <li>
                                         Defined in
                                         <a
-                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/6e7ace1/src/categorize.ts#L28"
-                                            >categorize.ts:28</a
+                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/0e2c1aa/src/categorize.ts#L30"
+                                            >categorize.ts:30</a
                                         >
                                     </li>
                                 </ul>

@@ -16,6 +16,8 @@ import {
     // Other Modules
     createError,
     resolveError,
+    extractToken,
+    parseSnowflake,
 
     // Variables
     UserAgent,
@@ -37,6 +39,11 @@ export function categorizeImports() {
         links: { createLink: createLink, deleteLink: deleteLink },
         text: { createPaste: createPaste, deletePaste: deletePaste },
         userAgent: UserAgent,
-        utility: { createError: createError, resolveError: resolveError },
+        utility: {
+            createError: createError,
+            resolveError: resolveError,
+            extractToken: extractToken,
+            parseSnowflake: parseSnowflake,
+        },
     };
 }
