@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>uploadFile | sxcu.api</title>
+        <title>ParsedSnowflake | sxcu.api</title>
         <meta name="description" content="Documentation for sxcu.api" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../assets/style.css" />
@@ -50,43 +50,171 @@
                 <div class="tsd-page-title">
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">sxcu.api</a></li>
-                        <li><a href="uploadFile.html">uploadFile</a></li>
+                        <li><a href="ParsedSnowflake.html">ParsedSnowflake</a></li>
                     </ul>
-                    <h1>Function uploadFile</h1>
+                    <h1>Type alias ParsedSnowflake</h1>
                 </div>
-                <section class="tsd-panel">
-                    <ul class="tsd-signatures">
-                        <li class="tsd-signature tsd-anchor-link" id="uploadFile">
-                            <span class="tsd-kind-call-signature">upload<wbr />File</span
-                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
-                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span
-                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
-                            ><span class="tsd-signature-symbol">&gt;</span
-                            ><a href="#uploadFile" aria-label="Permalink" class="tsd-anchor-icon"
-                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                            ></a>
+                <div class="tsd-signature">
+                    <span class="tsd-kind-type-alias">Parsed<wbr />Snowflake</span
+                    ><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span><br /><span
+                        >    </span
+                    ><span class="tsd-kind-property">created</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-type">Date</span><span class="tsd-signature-symbol">; </span><br /><span
+                        >    </span
+                    ><span class="tsd-kind-property">flag</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">typeof </span
+                    ><a href="../enums/SnowflakeObjectFlag.html" class="tsd-signature-type tsd-kind-enum"
+                        >SnowflakeObjectFlag</a
+                    ><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span
+                    ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                    ><span class="tsd-kind-property">raw</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-symbol">{ </span><br /><span>        </span
+                    ><span class="tsd-kind-property">objectFlag</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span
+                    ><br /><span>        </span><span class="tsd-kind-property">objectType</span
+                    ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span
+                    ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                    ><span class="tsd-kind-property">sequence</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span
+                    ><br /><span>        </span><span class="tsd-kind-property">timestamp</span
+                    ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span
+                    ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                    ><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">; </span><br /><span
+                        >    </span
+                    ><span class="tsd-kind-property">type</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">typeof </span
+                    ><a href="../enums/SnowflakeObjectType.html" class="tsd-signature-type tsd-kind-enum"
+                        >SnowflakeObjectType</a
+                    ><span class="tsd-signature-symbol">; </span><br /><span class="tsd-signature-symbol">}</span>
+                </div>
+                <div class="tsd-comment tsd-typography"><p>The data extracted from a snowflake.</p></div>
+                <div class="tsd-type-declaration">
+                    <h4>Type declaration</h4>
+                    <ul class="tsd-parameters">
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">created</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">Date</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography"><p>When this snowflake was created.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
-                        <li class="tsd-description">
-                            <h4 class="tsd-returns-title">
-                                Returns <span class="tsd-signature-type">Promise</span
-                                ><span class="tsd-signature-symbol">&lt;</span
-                                ><span class="tsd-signature-type">void</span
-                                ><span class="tsd-signature-symbol">&gt;</span>
-                            </h4>
-                            <aside class="tsd-sources">
-                                <ul>
-                                    <li>
-                                        Defined in
-                                        <a
-                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/7e1fe86/src/endpoints/files.ts#L3"
-                                            >endpoints/files.ts:3</a
-                                        >
-                                    </li>
-                                </ul>
-                            </aside>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">flag</span><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-symbol">keyof </span
+                                ><span class="tsd-signature-symbol">typeof </span
+                                ><a href="../enums/SnowflakeObjectFlag.html" class="tsd-signature-type tsd-kind-enum"
+                                    >SnowflakeObjectFlag</a
+                                ><span class="tsd-signature-symbol"> | </span
+                                ><span class="tsd-signature-type">null</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography">
+                                <p>
+                                    The object flag of this snowflake. This can be null if the snowflake was not an
+                                    uploaded file.
+                                </p>
+                            </div>
+                            <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">raw</span><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-symbol">{ </span><br /><span>    </span
+                                ><span class="tsd-kind-property">objectFlag</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span
+                                ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                ><span class="tsd-kind-property">objectType</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span
+                                ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                ><span class="tsd-kind-property">sequence</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span
+                                ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                ><span class="tsd-kind-property">timestamp</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span
+                                ><span class="tsd-signature-symbol">; </span><br /><span class="tsd-signature-symbol"
+                                    >}</span
+                                >
+                            </h5>
+                            <div class="tsd-comment tsd-typography"><p>The raw data of this snowflake.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
+                            <ul class="tsd-parameters">
+                                <li class="tsd-parameter">
+                                    <h5>
+                                        <span class="tsd-kind-property">object<wbr />Flag</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-type">number</span>
+                                    </h5>
+                                    <div class="tsd-comment tsd-typography">
+                                        <p>The numbered version of this snowflake&#39;s object flag.</p>
+                                    </div>
+                                    <div class="tsd-comment tsd-typography"></div>
+                                </li>
+                                <li class="tsd-parameter">
+                                    <h5>
+                                        <span class="tsd-kind-property">object<wbr />Type</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-type">number</span>
+                                    </h5>
+                                    <div class="tsd-comment tsd-typography">
+                                        <p>The numbered version of this snowflake&#39;s object type.</p>
+                                    </div>
+                                    <div class="tsd-comment tsd-typography"></div>
+                                </li>
+                                <li class="tsd-parameter">
+                                    <h5>
+                                        <span class="tsd-kind-property">sequence</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-type">number</span>
+                                    </h5>
+                                    <div class="tsd-comment tsd-typography">
+                                        <p>The numbered version of this snowflake&#39;s object type.</p>
+                                    </div>
+                                    <div class="tsd-comment tsd-typography"></div>
+                                </li>
+                                <li class="tsd-parameter">
+                                    <h5>
+                                        <span class="tsd-kind-property">timestamp</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-type">number</span>
+                                    </h5>
+                                    <div class="tsd-comment tsd-typography">
+                                        <p>The epoch timestamp of when this snowflake was created.</p>
+                                    </div>
+                                    <div class="tsd-comment tsd-typography"></div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">type</span><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-symbol">keyof </span
+                                ><span class="tsd-signature-symbol">typeof </span
+                                ><a href="../enums/SnowflakeObjectType.html" class="tsd-signature-type tsd-kind-enum"
+                                    >SnowflakeObjectType</a
+                                >
+                            </h5>
+                            <div class="tsd-comment tsd-typography"><p>The object type of this snowflake.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
                     </ul>
-                </section>
+                </div>
+                <div class="tsd-comment tsd-typography"></div>
+                <aside class="tsd-sources">
+                    <ul>
+                        <li>
+                            Defined in
+                            <a href="https://github.com/Lovely-Experiences/sxcu.api/blob/7e1fe86/src/utility.ts#L78"
+                                >utility.ts:78</a
+                            >
+                        </li>
+                    </ul>
+                </aside>
             </div>
             <div class="col-sidebar">
                 <div class="page-menu">
@@ -210,63 +338,63 @@
                                 >
                             </li>
                             <li>
-                                <a href="../types/DeletionToken.html"
+                                <a href="DeletionToken.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >DeletionToken</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/ErrorObject.html"
+                                <a href="ErrorObject.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >ErrorObject</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Link.html"
+                                <a href="Link.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Link</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/ParsedSnowflake.html"
+                                <a href="ParsedSnowflake.html" class="current"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >ParsedSnowflake</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Paste.html"
+                                <a href="Paste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Paste</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Snowflake.html"
+                                <a href="Snowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Snowflake</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Subdomain.html"
+                                <a href="Subdomain.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Subdomain</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/SubdomainData.html"
+                                <a href="SubdomainData.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >SubdomainData</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Url.html"
+                                <a href="Url.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Url</a
@@ -279,49 +407,49 @@
                                 >
                             </li>
                             <li>
-                                <a href="categorizeImports.html"
+                                <a href="../functions/categorizeImports.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >categorizeImports</a
                                 >
                             </li>
                             <li>
-                                <a href="checkSubdomain.html"
+                                <a href="../functions/checkSubdomain.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >checkSubdomain</a
                                 >
                             </li>
                             <li>
-                                <a href="createCollection.html"
+                                <a href="../functions/createCollection.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >createCollection</a
                                 >
                             </li>
                             <li>
-                                <a href="createError.html"
+                                <a href="../functions/createError.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >createError</a
                                 >
                             </li>
                             <li>
-                                <a href="createLink.html"
+                                <a href="../functions/createLink.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >createLink</a
                                 >
                             </li>
                             <li>
-                                <a href="createPaste.html"
+                                <a href="../functions/createPaste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >createPaste</a
                                 >
                             </li>
                             <li>
-                                <a href="deleteFile.html"
+                                <a href="../functions/deleteFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >deleteFile</a
                                 >
                             </li>
                             <li>
-                                <a href="deleteLink.html"
+                                <a href="../functions/deleteLink.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >deleteLink</a
                                 >

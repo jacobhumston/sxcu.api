@@ -19,6 +19,7 @@ import {
     listSubdomains,
     // Types
     SubdomainData,
+    Subdomain,
 } from './endpoints/subdomains.js';
 
 import {
@@ -69,6 +70,10 @@ import {
     // Functions
     extractToken,
     parseSnowflake,
+    // Types
+    ParsedSnowflake,
+    SnowflakeObjectType,
+    SnowflakeObjectFlag,
 } from './utility.js';
 
 export {
@@ -102,9 +107,13 @@ export {
     // Types
     ErrorObject,
     SubdomainData,
+    Subdomain,
     Paste,
     Link,
     DeletionToken,
     Url,
     Snowflake,
+    ParsedSnowflake,
+    SnowflakeObjectType,
+    SnowflakeObjectFlag,
 };

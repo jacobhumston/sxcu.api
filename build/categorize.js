@@ -1,10 +1,23 @@
-import { 
-// Endpoints
-uploadFile, getFileMeta, deleteFile, createCollection, getCollectionMeta, checkSubdomain, getSubdomainMeta, listSubdomains, createLink, deleteLink, createPaste, deletePaste, 
-// Other Modules
-createError, resolveError, 
-// Variables
-UserAgent, } from './index.js';
+import {
+    // Endpoints
+    uploadFile,
+    getFileMeta,
+    deleteFile,
+    createCollection,
+    getCollectionMeta,
+    checkSubdomain,
+    getSubdomainMeta,
+    listSubdomains,
+    createLink,
+    deleteLink,
+    createPaste,
+    deletePaste,
+    // Other Modules
+    createError,
+    resolveError,
+    // Variables
+    UserAgent,
+} from './index.js';
 /**
  * Categorize imports into their respective categories.
  * This does not include types.

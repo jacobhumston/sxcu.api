@@ -14,31 +14,83 @@ export function extractToken(url) {
  * @param to_base The base to convert to.
  * @returns The converted value.
  */
-export function convertBase(value, from_base, to_base) {
-    var range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
-    var from_range = range.slice(0, from_base);
-    var to_range = range.slice(0, to_base);
-    var dec_value = value
+function convertBase(value, fromBase, toBase) {
+    const range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
+    const fromRange = range.slice(0, fromBase);
+    const toRange = range.slice(0, toBase);
+    let decValue = value
         .split('')
         .reverse()
         .reduce(function (carry, digit, index) {
-        if (from_range.indexOf(digit) === -1)
-            throw new Error('Invalid digit `' + digit + '` for base ' + from_base + '.');
-        return (carry += from_range.indexOf(digit) * Math.pow(from_base, index));
-    }, 0);
-    var new_value = '';
-    while (dec_value > 0) {
-        new_value = to_range[dec_value % to_base] + new_value;
-        dec_value = (dec_value - (dec_value % to_base)) / to_base;
+            if (fromRange.indexOf(digit) === -1)
+                throw new Error('Invalid digit `' + digit + '` for base ' + fromBase + '.');
+            return (carry += fromRange.indexOf(digit) * Math.pow(fromBase, index));
+        }, 0);
+    let newValue = '';
+    while (decValue > 0) {
+        newValue = toRange[decValue % toBase] + newValue;
+        decValue = (decValue - (decValue % toBase)) / toBase;
     }
-    return new_value || '0';
+    return newValue || '0';
 }
+/** All possible strings of a snowflake object type.  */
+export var SnowflakeObjectType;
+(function (SnowflakeObjectType) {
+    /** This snowflake is an uploaded file. */
+    SnowflakeObjectType[(SnowflakeObjectType['Uploaded File'] = 1)] = 'Uploaded File';
+    /** This snowflake is a redirect link. */
+    SnowflakeObjectType[(SnowflakeObjectType['Redirect Link'] = 2)] = 'Redirect Link';
+    /* This snowflake is a collection. */
+    SnowflakeObjectType[(SnowflakeObjectType['Collection'] = 3)] = 'Collection';
+    /** This snowflake is a paste. */
+    SnowflakeObjectType[(SnowflakeObjectType['Paste'] = 4)] = 'Paste';
+    /** This snowflake is a subdomain/domain. */
+    SnowflakeObjectType[(SnowflakeObjectType['Subdomain/Domain'] = 5)] = 'Subdomain/Domain';
+    /** This snowflake is a self-destructing file. */
+    SnowflakeObjectType[(SnowflakeObjectType['Self-Destructing File'] = 6)] = 'Self-Destructing File';
+})(SnowflakeObjectType || (SnowflakeObjectType = {}));
+/** All possible strings of a snowflake object flag.  */
+export var SnowflakeObjectFlag;
+(function (SnowflakeObjectFlag) {
+    /** The PNG file format. */
+    SnowflakeObjectFlag[(SnowflakeObjectFlag['PNG'] = 1)] = 'PNG';
+    /** The JPEG file format. */
+    SnowflakeObjectFlag[(SnowflakeObjectFlag['JPEG'] = 2)] = 'JPEG';
+    /** The GIF file format. */
+    SnowflakeObjectFlag[(SnowflakeObjectFlag['GIF'] = 3)] = 'GIF';
+    /** The ICO file format. */
+    SnowflakeObjectFlag[(SnowflakeObjectFlag['ICO'] = 4)] = 'ICO';
+    /** The BMP file format. */
+    SnowflakeObjectFlag[(SnowflakeObjectFlag['BMP'] = 5)] = 'BMP';
+    /** The TIFF file format. */
+    SnowflakeObjectFlag[(SnowflakeObjectFlag['TIFF'] = 6)] = 'TIFF';
+    /** The WEBM file format. */
+    SnowflakeObjectFlag[(SnowflakeObjectFlag['WEBM'] = 7)] = 'WEBM';
+    /** The WEBP file format. */
+    SnowflakeObjectFlag[(SnowflakeObjectFlag['WEBP'] = 8)] = 'WEBP';
+})(SnowflakeObjectFlag || (SnowflakeObjectFlag = {}));
 export function parseSnowflake(snowflake) {
-    const binary = Number(convertBase(snowflake, 63, 2));
+    const binaryString = convertBase(snowflake, 63, 10);
+    const binary = BigInt(binaryString);
+    const data = {
+        timestamp: Number((binary >> 22n) + 1326466131n),
+        objectType: Number((binary >> 18n) & 15n),
+        objectFlag: Number((binary >> 14n) & 15n),
+        sequence: Number(binary & 16383n),
+    };
+    const types = [
+        'Uploaded File',
+        'Redirect Link',
+        'Collection',
+        'Paste',
+        'Subdomain/Domain',
+        'Self-Destructing File',
+    ];
+    const flags = [null, 'PNG', 'JPEG', 'GIF', 'ICO', 'BMP', 'TIFF', 'WEBM', 'WEBP'];
     return {
-        timestamp: (binary >> 22) + 1326466131,
-        objectType: (binary >> 18 & 15),
-        objectFlag: (binary >> 14 & 15),
-        sequence: binary & 16383
+        created: new Date(data.timestamp * 1000),
+        type: types[data.objectType],
+        flag: flags[data.objectFlag],
+        raw: data,
     };
 }

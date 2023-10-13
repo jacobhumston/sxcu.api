@@ -1,4 +1,19 @@
-import { uploadFile, getFileMeta, deleteFile, createCollection, getCollectionMeta, checkSubdomain, getSubdomainMeta, listSubdomains, createLink, deleteLink, createPaste, deletePaste, createError, resolveError } from './index.js';
+import {
+    uploadFile,
+    getFileMeta,
+    deleteFile,
+    createCollection,
+    getCollectionMeta,
+    checkSubdomain,
+    getSubdomainMeta,
+    listSubdomains,
+    createLink,
+    deleteLink,
+    createPaste,
+    deletePaste,
+    createError,
+    resolveError,
+} from './index.js';
 /**
  * Categorize imports into their respective categories.
  * This does not include types.
@@ -26,7 +41,7 @@ export declare function categorizeImports(): {
         createPaste: typeof createPaste;
         deletePaste: typeof deletePaste;
     };
-    userAgent: import("./index.js").UserAgentClass;
+    userAgent: import('./index.js').UserAgentClass;
     utility: {
         createError: typeof createError;
         resolveError: typeof resolveError;

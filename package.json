@@ -19,7 +19,7 @@
         "gen-doc": "npx del-cli docs/ && npx typedoc --searchInComments --hideGenerator --githubPages false && node tools/gen-web.cjs",
         "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint",
         "format": "npx prettier ./ --write",
-        "link": "npm link ./"
+        "link": "npm link ./ && npm link sxcu.api"
     },
     "files": [
         "build",

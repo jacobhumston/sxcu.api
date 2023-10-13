@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>uploadFile | sxcu.api</title>
+        <title>Subdomain | sxcu.api</title>
         <meta name="description" content="Documentation for sxcu.api" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../assets/style.css" />
@@ -50,43 +50,124 @@
                 <div class="tsd-page-title">
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">sxcu.api</a></li>
-                        <li><a href="uploadFile.html">uploadFile</a></li>
+                        <li><a href="Subdomain.html">Subdomain</a></li>
                     </ul>
-                    <h1>Function uploadFile</h1>
+                    <h1>Type alias Subdomain</h1>
                 </div>
-                <section class="tsd-panel">
-                    <ul class="tsd-signatures">
-                        <li class="tsd-signature tsd-anchor-link" id="uploadFile">
-                            <span class="tsd-kind-call-signature">upload<wbr />File</span
-                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
-                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span
-                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
-                            ><span class="tsd-signature-symbol">&gt;</span
-                            ><a href="#uploadFile" aria-label="Permalink" class="tsd-anchor-icon"
-                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                            ></a>
+                <div class="tsd-signature">
+                    <span class="tsd-kind-type-alias">Subdomain</span><span class="tsd-signature-symbol">:</span>
+                    <span class="tsd-signature-symbol">{ </span><br /><span>    </span
+                    ><span class="tsd-kind-property">fileViews</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span
+                    ><br /><span>    </span><span class="tsd-kind-property">files</span
+                    ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span
+                    ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                    ><span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">: </span
+                    ><a href="Snowflake.html" class="tsd-signature-type tsd-kind-type-alias">Snowflake</a
+                    ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                    ><span class="tsd-kind-property">lastActivity</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span
+                    ><br /><span>    </span><span class="tsd-kind-property">lastActivityDate</span
+                    ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Date</span
+                    ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                    ><span class="tsd-kind-property">links</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span
+                    ><br /><span>    </span><span class="tsd-kind-property">public</span
+                    ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span
+                    ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                    ><span class="tsd-kind-property">root</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">; </span
+                    ><br /><span class="tsd-signature-symbol">}</span>
+                </div>
+                <div class="tsd-type-declaration">
+                    <h4>Type declaration</h4>
+                    <ul class="tsd-parameters">
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">file<wbr />Views</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography">
+                                <p>The total number of views of all files associated with this subdomain.</p>
+                            </div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
-                        <li class="tsd-description">
-                            <h4 class="tsd-returns-title">
-                                Returns <span class="tsd-signature-type">Promise</span
-                                ><span class="tsd-signature-symbol">&lt;</span
-                                ><span class="tsd-signature-type">void</span
-                                ><span class="tsd-signature-symbol">&gt;</span>
-                            </h4>
-                            <aside class="tsd-sources">
-                                <ul>
-                                    <li>
-                                        Defined in
-                                        <a
-                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/7e1fe86/src/endpoints/files.ts#L3"
-                                            >endpoints/files.ts:3</a
-                                        >
-                                    </li>
-                                </ul>
-                            </aside>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">files</span><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography"><p>The amount of files on this subdomain.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">: </span
+                                ><a href="Snowflake.html" class="tsd-signature-type tsd-kind-type-alias">Snowflake</a>
+                            </h5>
+                            <div class="tsd-comment tsd-typography"><p>The ID of this subdomain.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">last<wbr />Activity</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography">
+                                <p>Timestamp of the last interaction with this subdomain.</p>
+                            </div>
+                            <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">last<wbr />Activity<wbr />Date</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">Date</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography">
+                                <p>The date of the last interaction with this subdomain.</p>
+                            </div>
+                            <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">links</span><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography"><p>The amount of links on this subdomain.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">public</span><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">boolean</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography"><p>If this subdomain is public or not.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">root</span><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">boolean</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography"><p>If this subdomain is a root domain.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
                     </ul>
-                </section>
+                </div>
+                <aside class="tsd-sources">
+                    <ul>
+                        <li>
+                            Defined in
+                            <a
+                                href="https://github.com/Lovely-Experiences/sxcu.api/blob/7e1fe86/src/endpoints/subdomains.ts#L29"
+                                >endpoints/subdomains.ts:29</a
+                            >
+                        </li>
+                    </ul>
+                </aside>
             </div>
             <div class="col-sidebar">
                 <div class="page-menu">
@@ -210,63 +291,63 @@
                                 >
                             </li>
                             <li>
-                                <a href="../types/DeletionToken.html"
+                                <a href="DeletionToken.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >DeletionToken</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/ErrorObject.html"
+                                <a href="ErrorObject.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >ErrorObject</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Link.html"
+                                <a href="Link.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Link</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/ParsedSnowflake.html"
+                                <a href="ParsedSnowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >ParsedSnowflake</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Paste.html"
+                                <a href="Paste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Paste</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Snowflake.html"
+                                <a href="Snowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Snowflake</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Subdomain.html"
+                                <a href="Subdomain.html" class="current"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Subdomain</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/SubdomainData.html"
+                                <a href="SubdomainData.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >SubdomainData</a
                                 >
                             </li>
                             <li>
-                                <a href="../types/Url.html"
+                                <a href="Url.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
                                     >Url</a
@@ -279,49 +360,49 @@
                                 >
                             </li>
                             <li>
-                                <a href="categorizeImports.html"
+                                <a href="../functions/categorizeImports.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >categorizeImports</a
                                 >
                             </li>
                             <li>
-                                <a href="checkSubdomain.html"
+                                <a href="../functions/checkSubdomain.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >checkSubdomain</a
                                 >
                             </li>
                             <li>
-                                <a href="createCollection.html"
+                                <a href="../functions/createCollection.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >createCollection</a
                                 >
                             </li>
                             <li>
-                                <a href="createError.html"
+                                <a href="../functions/createError.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >createError</a
                                 >
                             </li>
                             <li>
-                                <a href="createLink.html"
+                                <a href="../functions/createLink.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >createLink</a
                                 >
                             </li>
                             <li>
-                                <a href="createPaste.html"
+                                <a href="../functions/createPaste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >createPaste</a
                                 >
                             </li>
                             <li>
-                                <a href="deleteFile.html"
+                                <a href="../functions/deleteFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >deleteFile</a
                                 >
                             </li>
                             <li>
-                                <a href="deleteLink.html"
+                                <a href="../functions/deleteLink.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     >deleteLink</a
                                 >
