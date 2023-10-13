@@ -78,8 +78,11 @@ export enum SnowflakeObjectFlag {
 export type ParsedSnowflake = {
     /** When this snowflake was created. */
     created: Date;
-    /** The object type of this snowflake. */
-    type: keyof typeof SnowflakeObjectType;
+    /**
+     * The object type of this snowflake.
+     * This can be null if the snowflake does not have a type.
+     */
+    type: keyof typeof SnowflakeObjectType | null;
     /**
      * The object flag of this snowflake.
      * This can be null if the snowflake was not an uploaded file.
@@ -109,8 +112,8 @@ export function parseSnowflake(snowflake: Snowflake): ParsedSnowflake {
         sequence: Number(binary & 16383n),
     };
 
-    const types: (keyof typeof SnowflakeObjectType)[] = [
-        undefined,
+    const types: (keyof typeof SnowflakeObjectType | null)[] = [
+        null,
         'Uploaded File',
         'Redirect Link',
         'Collection',

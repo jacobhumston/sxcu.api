@@ -42,8 +42,11 @@ export declare enum SnowflakeObjectFlag {
 export type ParsedSnowflake = {
     /** When this snowflake was created. */
     created: Date;
-    /** The object type of this snowflake. */
-    type: keyof typeof SnowflakeObjectType;
+    /**
+     * The object type of this snowflake.
+     * This can be null if the snowflake does not have a type.
+     */
+    type: keyof typeof SnowflakeObjectType | null;
     /**
      * The object flag of this snowflake.
      * This can be null if the snowflake was not an uploaded file.

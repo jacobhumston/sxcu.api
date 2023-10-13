@@ -79,6 +79,7 @@ export function parseSnowflake(snowflake) {
         sequence: Number(binary & 16383n),
     };
     const types = [
+        null,
         'Uploaded File',
         'Redirect Link',
         'Collection',

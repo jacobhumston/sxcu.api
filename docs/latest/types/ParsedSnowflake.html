@@ -85,6 +85,7 @@
                     ><span class="tsd-signature-symbol">keyof </span><span class="tsd-signature-symbol">typeof </span
                     ><a href="../enums/SnowflakeObjectType.html" class="tsd-signature-type tsd-kind-enum"
                         >SnowflakeObjectType</a
+                    ><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span
                     ><span class="tsd-signature-symbol">; </span><br /><span class="tsd-signature-symbol">}</span>
                 </div>
                 <div class="tsd-comment tsd-typography"><p>The data extracted from a snowflake.</p></div>
@@ -197,9 +198,15 @@
                                 ><span class="tsd-signature-symbol">typeof </span
                                 ><a href="../enums/SnowflakeObjectType.html" class="tsd-signature-type tsd-kind-enum"
                                     >SnowflakeObjectType</a
-                                >
+                                ><span class="tsd-signature-symbol"> | </span
+                                ><span class="tsd-signature-type">null</span>
                             </h5>
-                            <div class="tsd-comment tsd-typography"><p>The object type of this snowflake.</p></div>
+                            <div class="tsd-comment tsd-typography">
+                                <p>
+                                    The object type of this snowflake. This can be null if the snowflake does not have a
+                                    type.
+                                </p>
+                            </div>
                             <div class="tsd-comment tsd-typography"></div>
                         </li>
                     </ul>
@@ -209,7 +216,7 @@
                     <ul>
                         <li>
                             Defined in
-                            <a href="https://github.com/Lovely-Experiences/sxcu.api/blob/7e1fe86/src/utility.ts#L78"
+                            <a href="https://github.com/Lovely-Experiences/sxcu.api/blob/e57c60a/src/utility.ts#L78"
                                 >utility.ts:78</a
                             >
                         </li>
