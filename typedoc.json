@@ -6,5 +6,9 @@
         "Guides": "../guides/welcome.html",
         "GitHub": "https://github.com/Lovely-Experiences/sxcu.api",
         "npm": "https://www.npmjs.com/package/sxcu.api"
-    }
+    },
+    "$schema": "https://typedoc.org/schema.json",
+    "plugin": ["@mxssfd/typedoc-theme"],
+    "theme": "my-theme",
+    "includeVersion": true
 }
