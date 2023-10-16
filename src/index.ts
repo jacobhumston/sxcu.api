@@ -7,6 +7,7 @@ import {
     // Types,
     FileOptions,
     FileData,
+    UploadableFile,
 } from './endpoints/files.js';
 
 import {
@@ -111,6 +112,7 @@ export {
     // Types
     FileOptions,
     FileData,
+    UploadableFile,
     ErrorObject,
     SubdomainData,
     Subdomain,

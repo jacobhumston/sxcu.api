@@ -1,4 +1,4 @@
-import { uploadFile, getFileMeta, deleteFile, FileOptions, FileData } from './endpoints/files.js';
+import { uploadFile, getFileMeta, deleteFile, FileOptions, FileData, UploadableFile } from './endpoints/files.js';
 import { createCollection, getCollectionMeta } from './endpoints/collections.js';
 import { checkSubdomain, getSubdomainMeta, listSubdomains, SubdomainData, Subdomain } from './endpoints/subdomains.js';
 import { createLink, deleteLink, Link } from './endpoints/links.js';
@@ -30,6 +30,7 @@ export {
     UserAgentClass,
     FileOptions,
     FileData,
+    UploadableFile,
     ErrorObject,
     SubdomainData,
     Subdomain,

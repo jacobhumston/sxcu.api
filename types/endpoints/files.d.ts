@@ -41,6 +41,7 @@ export type FileOptions = {
         discordHideUrl?: boolean;
     };
 };
+/** A file but with less data associated with it. */
 export type FileData = {
     id: Snowflake;
     url: Url;
@@ -48,8 +49,17 @@ export type FileData = {
     deletionToken: DeletionToken;
     thumbnail: Url;
 };
+/** Represents what is considered an uploadable file. */
+export type UploadableFile = string | Buffer | Blob;
+/**
+ * Upload a file.
+ * @param file The file to upload.
+ * @param options File options.
+ * @param subdomain Subdomain to upload to.
+ * @returns The uploaded file.
+ */
 export declare function uploadFile(
-    file: string | Buffer | Blob,
+    file: UploadableFile,
     options?: FileOptions,
     subdomain?: SubdomainUrl
 ): Promise<FileData>;

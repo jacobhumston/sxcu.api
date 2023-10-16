@@ -46,6 +46,7 @@ export type FileOptions = {
     };
 };
 
+/** A file but with less data associated with it. */
 export type FileData = {
     id: Snowflake;
     url: Url;
@@ -54,31 +55,54 @@ export type FileData = {
     thumbnail: Url;
 };
 
+/** Represents what is considered an uploadable file. */
+export type UploadableFile = string | Buffer | Blob;
+
 /**
  * Convert a file to a blob.
  * @param file The file to convert.
+ * @returns The created blob.
  */
-function convertFileToBlob(file: string | Buffer | Blob): Blob {
+function convertFileToBlob(file: UploadableFile): Blob {
     if (file instanceof Blob) return file;
     if (file instanceof Buffer) return new Blob([file]);
     if (!existsSync(file)) throw { error: 'File does not exist.', code: -1 };
     return new Blob([readFileSync(file)]);
 }
 
+/**
+ * Converts the options to a FormData object.
+ * @param file The uploadable file.
+ * @param options The file options.
+ * @returns The created form data.
+ */
+function convertOptionsToFormData(file: UploadableFile, options?: FileOptions): FormData {
+    const formData = new FormData();
+    formData.set('file', convertFileToBlob(file));
+    if (options) {
+        console.log(options);
+    }
+    return formData;
+}
+
+/**
+ * Upload a file.
+ * @param file The file to upload.
+ * @param options File options.
+ * @param subdomain Subdomain to upload to.
+ * @returns The uploaded file.
+ */
 export async function uploadFile(
-    file: string | Buffer | Blob,
+    file: UploadableFile,
     options?: FileOptions,
     subdomain?: SubdomainUrl
 ): Promise<FileData> {
-    const formData = new FormData();
-    formData.set('file', convertFileToBlob(file));
-
     const response = await request({
         type: 'POST',
         statusErrors: [400, 429],
         baseUrl: 'https://sxcu.net/api/',
         path: 'files/create',
-        body: formData,
+        body: convertOptionsToFormData(file, options),
         subdomain: subdomain ?? undefined,
     }).catch((error) => {
         throw resolveError(error);

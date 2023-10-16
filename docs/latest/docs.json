@@ -6,7 +6,7 @@
     "flags": {},
     "children": [
         {
-            "id": 226,
+            "id": 227,
             "name": "SnowflakeObjectFlag",
             "variant": "declaration",
             "kind": 8,
@@ -21,7 +21,7 @@
             },
             "children": [
                 {
-                    "id": 231,
+                    "id": 232,
                     "name": "BMP",
                     "variant": "declaration",
                     "kind": 16,
@@ -39,7 +39,7 @@
                             "fileName": "utility.ts",
                             "line": 40,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L40"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L40"
                         }
                     ],
                     "type": {
@@ -48,7 +48,7 @@
                     }
                 },
                 {
-                    "id": 229,
+                    "id": 230,
                     "name": "GIF",
                     "variant": "declaration",
                     "kind": 16,
@@ -66,7 +66,7 @@
                             "fileName": "utility.ts",
                             "line": 36,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L36"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L36"
                         }
                     ],
                     "type": {
@@ -75,7 +75,7 @@
                     }
                 },
                 {
-                    "id": 230,
+                    "id": 231,
                     "name": "ICO",
                     "variant": "declaration",
                     "kind": 16,
@@ -93,7 +93,7 @@
                             "fileName": "utility.ts",
                             "line": 38,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L38"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L38"
                         }
                     ],
                     "type": {
@@ -102,7 +102,7 @@
                     }
                 },
                 {
-                    "id": 228,
+                    "id": 229,
                     "name": "JPEG",
                     "variant": "declaration",
                     "kind": 16,
@@ -120,7 +120,7 @@
                             "fileName": "utility.ts",
                             "line": 34,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L34"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L34"
                         }
                     ],
                     "type": {
@@ -129,7 +129,7 @@
                     }
                 },
                 {
-                    "id": 227,
+                    "id": 228,
                     "name": "PNG",
                     "variant": "declaration",
                     "kind": 16,
@@ -147,7 +147,7 @@
                             "fileName": "utility.ts",
                             "line": 32,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L32"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L32"
                         }
                     ],
                     "type": {
@@ -156,7 +156,7 @@
                     }
                 },
                 {
-                    "id": 232,
+                    "id": 233,
                     "name": "TIFF",
                     "variant": "declaration",
                     "kind": 16,
@@ -174,7 +174,7 @@
                             "fileName": "utility.ts",
                             "line": 42,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L42"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L42"
                         }
                     ],
                     "type": {
@@ -183,7 +183,7 @@
                     }
                 },
                 {
-                    "id": 233,
+                    "id": 234,
                     "name": "WEBM",
                     "variant": "declaration",
                     "kind": 16,
@@ -201,7 +201,7 @@
                             "fileName": "utility.ts",
                             "line": 44,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L44"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L44"
                         }
                     ],
                     "type": {
@@ -210,7 +210,7 @@
                     }
                 },
                 {
-                    "id": 234,
+                    "id": 235,
                     "name": "WEBP",
                     "variant": "declaration",
                     "kind": 16,
@@ -228,7 +228,7 @@
                             "fileName": "utility.ts",
                             "line": 46,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L46"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L46"
                         }
                     ],
                     "type": {
@@ -240,7 +240,7 @@
             "groups": [
                 {
                     "title": "Enumeration Members",
-                    "children": [231, 229, 230, 228, 227, 232, 233, 234]
+                    "children": [232, 230, 231, 229, 228, 233, 234, 235]
                 }
             ],
             "sources": [
@@ -248,12 +248,12 @@
                     "fileName": "utility.ts",
                     "line": 30,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L30"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L30"
                 }
             ]
         },
         {
-            "id": 219,
+            "id": 220,
             "name": "SnowflakeObjectType",
             "variant": "declaration",
             "kind": 8,
@@ -268,7 +268,7 @@
             },
             "children": [
                 {
-                    "id": 222,
+                    "id": 223,
                     "name": "Collection",
                     "variant": "declaration",
                     "kind": 16,
@@ -278,7 +278,7 @@
                             "fileName": "utility.ts",
                             "line": 20,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L20"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L20"
                         }
                     ],
                     "type": {
@@ -287,7 +287,7 @@
                     }
                 },
                 {
-                    "id": 223,
+                    "id": 224,
                     "name": "Paste",
                     "variant": "declaration",
                     "kind": 16,
@@ -305,7 +305,7 @@
                             "fileName": "utility.ts",
                             "line": 22,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L22"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L22"
                         }
                     ],
                     "type": {
@@ -314,7 +314,7 @@
                     }
                 },
                 {
-                    "id": 221,
+                    "id": 222,
                     "name": "Redirect Link",
                     "variant": "declaration",
                     "kind": 16,
@@ -332,7 +332,7 @@
                             "fileName": "utility.ts",
                             "line": 18,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L18"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L18"
                         }
                     ],
                     "type": {
@@ -341,7 +341,7 @@
                     }
                 },
                 {
-                    "id": 225,
+                    "id": 226,
                     "name": "Self-Destructing File",
                     "variant": "declaration",
                     "kind": 16,
@@ -359,7 +359,7 @@
                             "fileName": "utility.ts",
                             "line": 26,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L26"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L26"
                         }
                     ],
                     "type": {
@@ -368,7 +368,7 @@
                     }
                 },
                 {
-                    "id": 224,
+                    "id": 225,
                     "name": "Subdomain/Domain",
                     "variant": "declaration",
                     "kind": 16,
@@ -386,7 +386,7 @@
                             "fileName": "utility.ts",
                             "line": 24,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L24"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L24"
                         }
                     ],
                     "type": {
@@ -395,7 +395,7 @@
                     }
                 },
                 {
-                    "id": 220,
+                    "id": 221,
                     "name": "Uploaded File",
                     "variant": "declaration",
                     "kind": 16,
@@ -413,7 +413,7 @@
                             "fileName": "utility.ts",
                             "line": 16,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L16"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L16"
                         }
                     ],
                     "type": {
@@ -425,7 +425,7 @@
             "groups": [
                 {
                     "title": "Enumeration Members",
-                    "children": [222, 223, 221, 225, 224, 220]
+                    "children": [223, 224, 222, 226, 225, 221]
                 }
             ],
             "sources": [
@@ -433,7 +433,7 @@
                     "fileName": "utility.ts",
                     "line": 14,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L14"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L14"
                 }
             ]
         },
@@ -487,7 +487,7 @@
                             "fileName": "classes/user-agent.ts",
                             "line": 9,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L9"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L9"
                         }
                     ],
                     "type": {
@@ -507,7 +507,7 @@
                             "fileName": "classes/user-agent.ts",
                             "line": 14,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L14"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L14"
                         }
                     ],
                     "signatures": [
@@ -530,7 +530,7 @@
                                     "fileName": "classes/user-agent.ts",
                                     "line": 14,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L14"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L14"
                                 }
                             ],
                             "type": {
@@ -551,7 +551,7 @@
                             "fileName": "classes/user-agent.ts",
                             "line": 22,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L22"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L22"
                         }
                     ],
                     "signatures": [
@@ -574,7 +574,7 @@
                                     "fileName": "classes/user-agent.ts",
                                     "line": 22,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L22"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L22"
                                 }
                             ],
                             "parameters": [
@@ -616,7 +616,7 @@
                             "fileName": "classes/user-agent.ts",
                             "line": 31,
                             "character": 4,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L31"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L31"
                         }
                     ],
                     "signatures": [
@@ -639,7 +639,7 @@
                                     "fileName": "classes/user-agent.ts",
                                     "line": 31,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L31"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L31"
                                 }
                             ],
                             "parameters": [
@@ -716,12 +716,12 @@
                     "fileName": "classes/user-agent.ts",
                     "line": 8,
                     "character": 13,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L8"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L8"
                 }
             ]
         },
         {
-            "id": 203,
+            "id": 204,
             "name": "DeletionToken",
             "variant": "declaration",
             "kind": 2097152,
@@ -739,7 +739,7 @@
                     "fileName": "types.ts",
                     "line": 2,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/types.ts#L2"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/types.ts#L2"
                 }
             ],
             "type": {
@@ -748,7 +748,7 @@
             }
         },
         {
-            "id": 165,
+            "id": 166,
             "name": "ErrorObject",
             "variant": "declaration",
             "kind": 2097152,
@@ -766,20 +766,20 @@
                     "fileName": "error.ts",
                     "line": 2,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L2"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L2"
                 }
             ],
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 166,
+                    "id": 167,
                     "name": "__type",
                     "variant": "declaration",
                     "kind": 65536,
                     "flags": {},
                     "children": [
                         {
-                            "id": 168,
+                            "id": 169,
                             "name": "code",
                             "variant": "declaration",
                             "kind": 1024,
@@ -797,7 +797,7 @@
                                     "fileName": "error.ts",
                                     "line": 9,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L9"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L9"
                                 }
                             ],
                             "type": {
@@ -806,7 +806,7 @@
                             }
                         },
                         {
-                            "id": 167,
+                            "id": 168,
                             "name": "error",
                             "variant": "declaration",
                             "kind": 1024,
@@ -824,7 +824,7 @@
                                     "fileName": "error.ts",
                                     "line": 4,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L4"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L4"
                                 }
                             ],
                             "type": {
@@ -836,7 +836,7 @@
                     "groups": [
                         {
                             "title": "Properties",
-                            "children": [168, 167]
+                            "children": [169, 168]
                         }
                     ],
                     "sources": [
@@ -844,7 +844,7 @@
                             "fileName": "error.ts",
                             "line": 2,
                             "character": 26,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L2"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L2"
                         }
                     ]
                 }
@@ -856,12 +856,20 @@
             "variant": "declaration",
             "kind": 2097152,
             "flags": {},
+            "comment": {
+                "summary": [
+                    {
+                        "kind": "text",
+                        "text": "A file but with less data associated with it."
+                    }
+                ]
+            },
             "sources": [
                 {
                     "fileName": "endpoints/files.ts",
-                    "line": 49,
+                    "line": 50,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L49"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L50"
                 }
             ],
             "type": {
@@ -882,14 +890,14 @@
                             "sources": [
                                 {
                                     "fileName": "endpoints/files.ts",
-                                    "line": 53,
+                                    "line": 54,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L53"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L54"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 203,
+                                "target": 204,
                                 "name": "DeletionToken",
                                 "package": "sxcu.api"
                             }
@@ -903,14 +911,14 @@
                             "sources": [
                                 {
                                     "fileName": "endpoints/files.ts",
-                                    "line": 52,
+                                    "line": 53,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L52"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L53"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 205,
+                                "target": 206,
                                 "name": "Url",
                                 "package": "sxcu.api"
                             }
@@ -924,14 +932,14 @@
                             "sources": [
                                 {
                                     "fileName": "endpoints/files.ts",
-                                    "line": 50,
+                                    "line": 51,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L50"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L51"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
@@ -945,14 +953,14 @@
                             "sources": [
                                 {
                                     "fileName": "endpoints/files.ts",
-                                    "line": 54,
+                                    "line": 55,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L54"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L55"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 205,
+                                "target": 206,
                                 "name": "Url",
                                 "package": "sxcu.api"
                             }
@@ -966,14 +974,14 @@
                             "sources": [
                                 {
                                     "fileName": "endpoints/files.ts",
-                                    "line": 51,
+                                    "line": 52,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L51"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L52"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 205,
+                                "target": 206,
                                 "name": "Url",
                                 "package": "sxcu.api"
                             }
@@ -988,9 +996,9 @@
                     "sources": [
                         {
                             "fileName": "endpoints/files.ts",
-                            "line": 49,
+                            "line": 50,
                             "character": 23,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L49"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L50"
                         }
                     ]
                 }
@@ -1023,7 +1031,7 @@
                     "fileName": "endpoints/files.ts",
                     "line": 9,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L9"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L9"
                 }
             ],
             "type": {
@@ -1056,12 +1064,12 @@
                                     "fileName": "endpoints/files.ts",
                                     "line": 13,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L13"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L13"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
@@ -1087,12 +1095,12 @@
                                     "fileName": "endpoints/files.ts",
                                     "line": 17,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L17"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L17"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 204,
+                                "target": 205,
                                 "name": "Token",
                                 "package": "sxcu.api"
                             }
@@ -1118,7 +1126,7 @@
                                     "fileName": "endpoints/files.ts",
                                     "line": 19,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L19"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L19"
                                 }
                             ],
                             "type": {
@@ -1147,7 +1155,7 @@
                                     "fileName": "endpoints/files.ts",
                                     "line": 23,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L23"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L23"
                                 }
                             ],
                             "type": {
@@ -1171,7 +1179,7 @@
                                                 "summary": [
                                                     {
                                                         "kind": "text",
-                                                        "text": "Configures the value for the 'theme-color' OpenGraph meta tag. \r\nIf set to false, the tag will be omitted entirely."
+                                                        "text": "Configures the value for the 'theme-color' OpenGraph meta tag.\r\nIf set to false, the tag will be omitted entirely."
                                                     }
                                                 ]
                                             },
@@ -1180,7 +1188,7 @@
                                                     "fileName": "endpoints/files.ts",
                                                     "line": 38,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L38"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L38"
                                                 }
                                             ],
                                             "type": {
@@ -1209,7 +1217,7 @@
                                                 "summary": [
                                                     {
                                                         "kind": "text",
-                                                        "text": "Configures the value for the 'description' OpenGraph meta tag. \r\nIf set to false, the tag will be omitted entirely."
+                                                        "text": "Configures the value for the 'description' OpenGraph meta tag.\r\nIf set to false, the tag will be omitted entirely."
                                                     }
                                                 ]
                                             },
@@ -1218,7 +1226,7 @@
                                                     "fileName": "endpoints/files.ts",
                                                     "line": 33,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L33"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L33"
                                                 }
                                             ],
                                             "type": {
@@ -1256,7 +1264,7 @@
                                                     "fileName": "endpoints/files.ts",
                                                     "line": 45,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L45"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L45"
                                                 }
                                             ],
                                             "type": {
@@ -1276,7 +1284,7 @@
                                                 "summary": [
                                                     {
                                                         "kind": "text",
-                                                        "text": "Configures the value for the 'site-name' OpenGraph meta tag. \r\nIf set to false, the tag will be omitted entirely."
+                                                        "text": "Configures the value for the 'site-name' OpenGraph meta tag.\r\nIf set to false, the tag will be omitted entirely."
                                                     }
                                                 ]
                                             },
@@ -1285,7 +1293,7 @@
                                                     "fileName": "endpoints/files.ts",
                                                     "line": 43,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L43"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L43"
                                                 }
                                             ],
                                             "type": {
@@ -1314,7 +1322,7 @@
                                                 "summary": [
                                                     {
                                                         "kind": "text",
-                                                        "text": "Configures the value for the 'title' OpenGraph meta tag. \r\nIf set to false, the tag will be omitted entirely."
+                                                        "text": "Configures the value for the 'title' OpenGraph meta tag.\r\nIf set to false, the tag will be omitted entirely."
                                                     }
                                                 ]
                                             },
@@ -1323,7 +1331,7 @@
                                                     "fileName": "endpoints/files.ts",
                                                     "line": 28,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L28"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L28"
                                                 }
                                             ],
                                             "type": {
@@ -1352,7 +1360,7 @@
                                             "fileName": "endpoints/files.ts",
                                             "line": 23,
                                             "character": 26,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L23"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L23"
                                         }
                                     ]
                                 }
@@ -1379,7 +1387,7 @@
                                     "fileName": "endpoints/files.ts",
                                     "line": 21,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L21"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L21"
                                 }
                             ],
                             "type": {
@@ -1408,12 +1416,12 @@
                                     "fileName": "endpoints/files.ts",
                                     "line": 11,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L11"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L11"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 204,
+                                "target": 205,
                                 "name": "Token",
                                 "package": "sxcu.api"
                             }
@@ -1430,14 +1438,14 @@
                             "fileName": "endpoints/files.ts",
                             "line": 9,
                             "character": 26,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L9"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L9"
                         }
                     ]
                 }
             }
         },
         {
-            "id": 194,
+            "id": 195,
             "name": "Link",
             "variant": "declaration",
             "kind": 2097152,
@@ -1455,20 +1463,20 @@
                     "fileName": "endpoints/links.ts",
                     "line": 8,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L8"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L8"
                 }
             ],
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 195,
+                    "id": 196,
                     "name": "__type",
                     "variant": "declaration",
                     "kind": 65536,
                     "flags": {},
                     "children": [
                         {
-                            "id": 200,
+                            "id": 201,
                             "name": "delete",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1478,13 +1486,13 @@
                                     "fileName": "endpoints/links.ts",
                                     "line": 20,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L20"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L20"
                                 }
                             ],
                             "type": {
                                 "type": "reflection",
                                 "declaration": {
-                                    "id": 201,
+                                    "id": 202,
                                     "name": "__type",
                                     "variant": "declaration",
                                     "kind": 65536,
@@ -1494,12 +1502,12 @@
                                             "fileName": "endpoints/links.ts",
                                             "line": 20,
                                             "character": 12,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L20"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L20"
                                         }
                                     ],
                                     "signatures": [
                                         {
-                                            "id": 202,
+                                            "id": 203,
                                             "name": "__type",
                                             "variant": "signature",
                                             "kind": 4096,
@@ -1533,7 +1541,7 @@
                             }
                         },
                         {
-                            "id": 199,
+                            "id": 200,
                             "name": "deletionToken",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1551,18 +1559,18 @@
                                     "fileName": "endpoints/links.ts",
                                     "line": 16,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L16"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L16"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 203,
+                                "target": 204,
                                 "name": "DeletionToken",
                                 "package": "sxcu.api"
                             }
                         },
                         {
-                            "id": 198,
+                            "id": 199,
                             "name": "deletionUrl",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1580,18 +1588,18 @@
                                     "fileName": "endpoints/links.ts",
                                     "line": 14,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L14"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L14"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 205,
+                                "target": 206,
                                 "name": "Url",
                                 "package": "sxcu.api"
                             }
                         },
                         {
-                            "id": 196,
+                            "id": 197,
                             "name": "id",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1609,18 +1617,18 @@
                                     "fileName": "endpoints/links.ts",
                                     "line": 10,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L10"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L10"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
                         },
                         {
-                            "id": 197,
+                            "id": 198,
                             "name": "url",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1638,12 +1646,12 @@
                                     "fileName": "endpoints/links.ts",
                                     "line": 12,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L12"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L12"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 205,
+                                "target": 206,
                                 "name": "Url",
                                 "package": "sxcu.api"
                             }
@@ -1652,7 +1660,7 @@
                     "groups": [
                         {
                             "title": "Properties",
-                            "children": [200, 199, 198, 196, 197]
+                            "children": [201, 200, 199, 197, 198]
                         }
                     ],
                     "sources": [
@@ -1660,14 +1668,14 @@
                             "fileName": "endpoints/links.ts",
                             "line": 8,
                             "character": 19,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L8"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L8"
                         }
                     ]
                 }
             }
         },
         {
-            "id": 207,
+            "id": 208,
             "name": "ParsedSnowflake",
             "variant": "declaration",
             "kind": 2097152,
@@ -1685,20 +1693,20 @@
                     "fileName": "utility.ts",
                     "line": 50,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L50"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L50"
                 }
             ],
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 208,
+                    "id": 209,
                     "name": "__type",
                     "variant": "declaration",
                     "kind": 65536,
                     "flags": {},
                     "children": [
                         {
-                            "id": 209,
+                            "id": 210,
                             "name": "created",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1716,7 +1724,7 @@
                                     "fileName": "utility.ts",
                                     "line": 52,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L52"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L52"
                                 }
                             ],
                             "type": {
@@ -1730,7 +1738,7 @@
                             }
                         },
                         {
-                            "id": 211,
+                            "id": 212,
                             "name": "flag",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1748,7 +1756,7 @@
                                     "fileName": "utility.ts",
                                     "line": 62,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L62"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L62"
                                 }
                             ],
                             "type": {
@@ -1761,7 +1769,7 @@
                                             "type": "query",
                                             "queryType": {
                                                 "type": "reference",
-                                                "target": 226,
+                                                "target": 227,
                                                 "name": "SnowflakeObjectFlag",
                                                 "package": "sxcu.api"
                                             }
@@ -1775,7 +1783,7 @@
                             }
                         },
                         {
-                            "id": 212,
+                            "id": 213,
                             "name": "id",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1793,18 +1801,18 @@
                                     "fileName": "utility.ts",
                                     "line": 64,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L64"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L64"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
                         },
                         {
-                            "id": 213,
+                            "id": 214,
                             "name": "raw",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1822,20 +1830,20 @@
                                     "fileName": "utility.ts",
                                     "line": 66,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L66"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L66"
                                 }
                             ],
                             "type": {
                                 "type": "reflection",
                                 "declaration": {
-                                    "id": 214,
+                                    "id": 215,
                                     "name": "__type",
                                     "variant": "declaration",
                                     "kind": 65536,
                                     "flags": {},
                                     "children": [
                                         {
-                                            "id": 217,
+                                            "id": 218,
                                             "name": "objectFlag",
                                             "variant": "declaration",
                                             "kind": 1024,
@@ -1853,7 +1861,7 @@
                                                     "fileName": "utility.ts",
                                                     "line": 72,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L72"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L72"
                                                 }
                                             ],
                                             "type": {
@@ -1862,7 +1870,7 @@
                                             }
                                         },
                                         {
-                                            "id": 216,
+                                            "id": 217,
                                             "name": "objectType",
                                             "variant": "declaration",
                                             "kind": 1024,
@@ -1880,7 +1888,7 @@
                                                     "fileName": "utility.ts",
                                                     "line": 70,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L70"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L70"
                                                 }
                                             ],
                                             "type": {
@@ -1889,7 +1897,7 @@
                                             }
                                         },
                                         {
-                                            "id": 218,
+                                            "id": 219,
                                             "name": "sequence",
                                             "variant": "declaration",
                                             "kind": 1024,
@@ -1907,7 +1915,7 @@
                                                     "fileName": "utility.ts",
                                                     "line": 74,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L74"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L74"
                                                 }
                                             ],
                                             "type": {
@@ -1916,7 +1924,7 @@
                                             }
                                         },
                                         {
-                                            "id": 215,
+                                            "id": 216,
                                             "name": "timestamp",
                                             "variant": "declaration",
                                             "kind": 1024,
@@ -1934,7 +1942,7 @@
                                                     "fileName": "utility.ts",
                                                     "line": 68,
                                                     "character": 8,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L68"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L68"
                                                 }
                                             ],
                                             "type": {
@@ -1946,7 +1954,7 @@
                                     "groups": [
                                         {
                                             "title": "Properties",
-                                            "children": [217, 216, 218, 215]
+                                            "children": [218, 217, 219, 216]
                                         }
                                     ],
                                     "sources": [
@@ -1954,14 +1962,14 @@
                                             "fileName": "utility.ts",
                                             "line": 66,
                                             "character": 9,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L66"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L66"
                                         }
                                     ]
                                 }
                             }
                         },
                         {
-                            "id": 210,
+                            "id": 211,
                             "name": "type",
                             "variant": "declaration",
                             "kind": 1024,
@@ -1979,7 +1987,7 @@
                                     "fileName": "utility.ts",
                                     "line": 57,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L57"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L57"
                                 }
                             ],
                             "type": {
@@ -1992,7 +2000,7 @@
                                             "type": "query",
                                             "queryType": {
                                                 "type": "reference",
-                                                "target": 219,
+                                                "target": 220,
                                                 "name": "SnowflakeObjectType",
                                                 "package": "sxcu.api"
                                             }
@@ -2009,7 +2017,7 @@
                     "groups": [
                         {
                             "title": "Properties",
-                            "children": [209, 211, 212, 213, 210]
+                            "children": [210, 212, 213, 214, 211]
                         }
                     ],
                     "sources": [
@@ -2017,14 +2025,14 @@
                             "fileName": "utility.ts",
                             "line": 50,
                             "character": 30,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L50"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L50"
                         }
                     ]
                 }
             }
         },
         {
-            "id": 185,
+            "id": 186,
             "name": "Paste",
             "variant": "declaration",
             "kind": 2097152,
@@ -2042,20 +2050,20 @@
                     "fileName": "endpoints/text.ts",
                     "line": 7,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L7"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L7"
                 }
             ],
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 186,
+                    "id": 187,
                     "name": "__type",
                     "variant": "declaration",
                     "kind": 65536,
                     "flags": {},
                     "children": [
                         {
-                            "id": 191,
+                            "id": 192,
                             "name": "delete",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2065,13 +2073,13 @@
                                     "fileName": "endpoints/text.ts",
                                     "line": 19,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L19"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L19"
                                 }
                             ],
                             "type": {
                                 "type": "reflection",
                                 "declaration": {
-                                    "id": 192,
+                                    "id": 193,
                                     "name": "__type",
                                     "variant": "declaration",
                                     "kind": 65536,
@@ -2081,12 +2089,12 @@
                                             "fileName": "endpoints/text.ts",
                                             "line": 19,
                                             "character": 12,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L19"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L19"
                                         }
                                     ],
                                     "signatures": [
                                         {
-                                            "id": 193,
+                                            "id": 194,
                                             "name": "__type",
                                             "variant": "signature",
                                             "kind": 4096,
@@ -2120,7 +2128,7 @@
                             }
                         },
                         {
-                            "id": 190,
+                            "id": 191,
                             "name": "deletionToken",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2138,18 +2146,18 @@
                                     "fileName": "endpoints/text.ts",
                                     "line": 15,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L15"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L15"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 203,
+                                "target": 204,
                                 "name": "DeletionToken",
                                 "package": "sxcu.api"
                             }
                         },
                         {
-                            "id": 189,
+                            "id": 190,
                             "name": "deletionUrl",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2167,18 +2175,18 @@
                                     "fileName": "endpoints/text.ts",
                                     "line": 13,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L13"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L13"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 205,
+                                "target": 206,
                                 "name": "Url",
                                 "package": "sxcu.api"
                             }
                         },
                         {
-                            "id": 187,
+                            "id": 188,
                             "name": "id",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2196,18 +2204,18 @@
                                     "fileName": "endpoints/text.ts",
                                     "line": 9,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L9"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L9"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
                         },
                         {
-                            "id": 188,
+                            "id": 189,
                             "name": "url",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2225,12 +2233,12 @@
                                     "fileName": "endpoints/text.ts",
                                     "line": 11,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L11"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L11"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 205,
+                                "target": 206,
                                 "name": "Url",
                                 "package": "sxcu.api"
                             }
@@ -2239,7 +2247,7 @@
                     "groups": [
                         {
                             "title": "Properties",
-                            "children": [191, 190, 189, 187, 188]
+                            "children": [192, 191, 190, 188, 189]
                         }
                     ],
                     "sources": [
@@ -2247,14 +2255,14 @@
                             "fileName": "endpoints/text.ts",
                             "line": 7,
                             "character": 20,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L7"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L7"
                         }
                     ]
                 }
             }
         },
         {
-            "id": 206,
+            "id": 207,
             "name": "Snowflake",
             "variant": "declaration",
             "kind": 2097152,
@@ -2272,7 +2280,7 @@
                     "fileName": "types.ts",
                     "line": 14,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/types.ts#L14"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/types.ts#L14"
                 }
             ],
             "type": {
@@ -2290,7 +2298,7 @@
             }
         },
         {
-            "id": 175,
+            "id": 176,
             "name": "Subdomain",
             "variant": "declaration",
             "kind": 2097152,
@@ -2308,20 +2316,20 @@
                     "fileName": "endpoints/subdomains.ts",
                     "line": 30,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L30"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L30"
                 }
             ],
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 176,
+                    "id": 177,
                     "name": "__type",
                     "variant": "declaration",
                     "kind": 65536,
                     "flags": {},
                     "children": [
                         {
-                            "id": 180,
+                            "id": 181,
                             "name": "fileViews",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2339,7 +2347,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 38,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L38"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L38"
                                 }
                             ],
                             "type": {
@@ -2348,7 +2356,7 @@
                             }
                         },
                         {
-                            "id": 178,
+                            "id": 179,
                             "name": "files",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2366,7 +2374,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 34,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L34"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L34"
                                 }
                             ],
                             "type": {
@@ -2375,7 +2383,7 @@
                             }
                         },
                         {
-                            "id": 177,
+                            "id": 178,
                             "name": "id",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2393,18 +2401,18 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 32,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L32"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L32"
                                 }
                             ],
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
                         },
                         {
-                            "id": 183,
+                            "id": 184,
                             "name": "lastActivity",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2422,7 +2430,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 44,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L44"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L44"
                                 }
                             ],
                             "type": {
@@ -2431,7 +2439,7 @@
                             }
                         },
                         {
-                            "id": 184,
+                            "id": 185,
                             "name": "lastActivityDate",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2449,7 +2457,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 46,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L46"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L46"
                                 }
                             ],
                             "type": {
@@ -2463,7 +2471,7 @@
                             }
                         },
                         {
-                            "id": 179,
+                            "id": 180,
                             "name": "links",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2481,7 +2489,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 36,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L36"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L36"
                                 }
                             ],
                             "type": {
@@ -2490,7 +2498,7 @@
                             }
                         },
                         {
-                            "id": 181,
+                            "id": 182,
                             "name": "public",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2508,7 +2516,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 40,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L40"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L40"
                                 }
                             ],
                             "type": {
@@ -2517,7 +2525,7 @@
                             }
                         },
                         {
-                            "id": 182,
+                            "id": 183,
                             "name": "root",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2535,7 +2543,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 42,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L42"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L42"
                                 }
                             ],
                             "type": {
@@ -2547,7 +2555,7 @@
                     "groups": [
                         {
                             "title": "Properties",
-                            "children": [180, 178, 177, 183, 184, 179, 181, 182]
+                            "children": [181, 179, 178, 184, 185, 180, 182, 183]
                         }
                     ],
                     "sources": [
@@ -2555,14 +2563,14 @@
                             "fileName": "endpoints/subdomains.ts",
                             "line": 30,
                             "character": 24,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L30"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L30"
                         }
                     ]
                 }
             }
         },
         {
-            "id": 169,
+            "id": 170,
             "name": "SubdomainData",
             "variant": "declaration",
             "kind": 2097152,
@@ -2580,20 +2588,20 @@
                     "fileName": "endpoints/subdomains.ts",
                     "line": 77,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L77"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L77"
                 }
             ],
             "type": {
                 "type": "reflection",
                 "declaration": {
-                    "id": 170,
+                    "id": 171,
                     "name": "__type",
                     "variant": "declaration",
                     "kind": 65536,
                     "flags": {},
                     "children": [
                         {
-                            "id": 171,
+                            "id": 172,
                             "name": "domain",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2611,7 +2619,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 79,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L79"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L79"
                                 }
                             ],
                             "type": {
@@ -2620,7 +2628,7 @@
                             }
                         },
                         {
-                            "id": 174,
+                            "id": 175,
                             "name": "fileViews",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2638,7 +2646,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 85,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L85"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L85"
                                 }
                             ],
                             "type": {
@@ -2647,7 +2655,7 @@
                             }
                         },
                         {
-                            "id": 173,
+                            "id": 174,
                             "name": "public",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2665,7 +2673,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 83,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L83"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L83"
                                 }
                             ],
                             "type": {
@@ -2674,7 +2682,7 @@
                             }
                         },
                         {
-                            "id": 172,
+                            "id": 173,
                             "name": "uploadCount",
                             "variant": "declaration",
                             "kind": 1024,
@@ -2692,7 +2700,7 @@
                                     "fileName": "endpoints/subdomains.ts",
                                     "line": 81,
                                     "character": 4,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L81"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L81"
                                 }
                             ],
                             "type": {
@@ -2704,7 +2712,7 @@
                     "groups": [
                         {
                             "title": "Properties",
-                            "children": [171, 174, 173, 172]
+                            "children": [172, 175, 174, 173]
                         }
                     ],
                     "sources": [
@@ -2712,14 +2720,14 @@
                             "fileName": "endpoints/subdomains.ts",
                             "line": 77,
                             "character": 28,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L77"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L77"
                         }
                     ]
                 }
             }
         },
         {
-            "id": 204,
+            "id": 205,
             "name": "Token",
             "variant": "declaration",
             "kind": 2097152,
@@ -2737,7 +2745,7 @@
                     "fileName": "types.ts",
                     "line": 5,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/types.ts#L5"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/types.ts#L5"
                 }
             ],
             "type": {
@@ -2746,7 +2754,58 @@
             }
         },
         {
-            "id": 205,
+            "id": 165,
+            "name": "UploadableFile",
+            "variant": "declaration",
+            "kind": 2097152,
+            "flags": {},
+            "comment": {
+                "summary": [
+                    {
+                        "kind": "text",
+                        "text": "Represents what is considered an uploadable file."
+                    }
+                ]
+            },
+            "sources": [
+                {
+                    "fileName": "endpoints/files.ts",
+                    "line": 59,
+                    "character": 12,
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L59"
+                }
+            ],
+            "type": {
+                "type": "union",
+                "types": [
+                    {
+                        "type": "intrinsic",
+                        "name": "string"
+                    },
+                    {
+                        "type": "reference",
+                        "target": {
+                            "sourceFileName": "node_modules/@types/node/buffer.d.ts",
+                            "qualifiedName": "__global.Buffer"
+                        },
+                        "name": "Buffer",
+                        "package": "@types/node",
+                        "qualifiedName": "__global.Buffer"
+                    },
+                    {
+                        "type": "reference",
+                        "target": {
+                            "sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
+                            "qualifiedName": "Blob"
+                        },
+                        "name": "Blob",
+                        "package": "typescript"
+                    }
+                ]
+            }
+        },
+        {
+            "id": 206,
             "name": "Url",
             "variant": "declaration",
             "kind": 2097152,
@@ -2764,7 +2823,7 @@
                     "fileName": "types.ts",
                     "line": 8,
                     "character": 12,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/types.ts#L8"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/types.ts#L8"
                 }
             ],
             "type": {
@@ -2793,7 +2852,7 @@
                     "fileName": "classes/user-agent.ts",
                     "line": 40,
                     "character": 13,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/classes/user-agent.ts#L40"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/classes/user-agent.ts#L40"
                 }
             ],
             "type": {
@@ -2815,7 +2874,7 @@
                     "fileName": "categorize.ts",
                     "line": 30,
                     "character": 16,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L30"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L30"
                 }
             ],
             "signatures": [
@@ -2838,7 +2897,7 @@
                             "fileName": "categorize.ts",
                             "line": 30,
                             "character": 16,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L30"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L30"
                         }
                     ],
                     "type": {
@@ -2861,7 +2920,7 @@
                                             "fileName": "categorize.ts",
                                             "line": 33,
                                             "character": 8,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L33"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L33"
                                         }
                                     ],
                                     "type": {
@@ -2884,7 +2943,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 33,
                                                             "character": 23,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L33"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L33"
                                                         }
                                                     ],
                                                     "type": {
@@ -2900,7 +2959,7 @@
                                                                     "fileName": "endpoints/collections.ts",
                                                                     "line": 3,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/collections.ts#L3"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/collections.ts#L3"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -2915,7 +2974,7 @@
                                                                             "fileName": "endpoints/collections.ts",
                                                                             "line": 3,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/collections.ts#L3"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/collections.ts#L3"
                                                                         }
                                                                     ],
                                                                     "type": {
@@ -2950,7 +3009,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 33,
                                                             "character": 59,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L33"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L33"
                                                         }
                                                     ],
                                                     "type": {
@@ -2966,7 +3025,7 @@
                                                                     "fileName": "endpoints/collections.ts",
                                                                     "line": 5,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/collections.ts#L5"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/collections.ts#L5"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -2981,7 +3040,7 @@
                                                                             "fileName": "endpoints/collections.ts",
                                                                             "line": 5,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/collections.ts#L5"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/collections.ts#L5"
                                                                         }
                                                                     ],
                                                                     "type": {
@@ -3017,7 +3076,7 @@
                                                     "fileName": "categorize.ts",
                                                     "line": 33,
                                                     "character": 21,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L33"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L33"
                                                 }
                                             ]
                                         }
@@ -3035,7 +3094,7 @@
                                             "fileName": "categorize.ts",
                                             "line": 32,
                                             "character": 8,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L32"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L32"
                                         }
                                     ],
                                     "type": {
@@ -3058,7 +3117,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 32,
                                                             "character": 67,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L32"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L32"
                                                         }
                                                     ],
                                                     "type": {
@@ -3072,9 +3131,9 @@
                                                             "sources": [
                                                                 {
                                                                     "fileName": "endpoints/files.ts",
-                                                                    "line": 98,
+                                                                    "line": 122,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L98"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L122"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -3087,9 +3146,9 @@
                                                                     "sources": [
                                                                         {
                                                                             "fileName": "endpoints/files.ts",
-                                                                            "line": 98,
+                                                                            "line": 122,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L98"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L122"
                                                                         }
                                                                     ],
                                                                     "type": {
@@ -3124,7 +3183,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 32,
                                                             "character": 41,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L32"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L32"
                                                         }
                                                     ],
                                                     "type": {
@@ -3138,9 +3197,9 @@
                                                             "sources": [
                                                                 {
                                                                     "fileName": "endpoints/files.ts",
-                                                                    "line": 96,
+                                                                    "line": 120,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L96"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L120"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -3153,9 +3212,9 @@
                                                                     "sources": [
                                                                         {
                                                                             "fileName": "endpoints/files.ts",
-                                                                            "line": 96,
+                                                                            "line": 120,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L96"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L120"
                                                                         }
                                                                     ],
                                                                     "type": {
@@ -3190,7 +3249,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 32,
                                                             "character": 17,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L32"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L32"
                                                         }
                                                     ],
                                                     "type": {
@@ -3204,9 +3263,9 @@
                                                             "sources": [
                                                                 {
                                                                     "fileName": "endpoints/files.ts",
-                                                                    "line": 68,
+                                                                    "line": 95,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L68"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L95"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -3216,12 +3275,31 @@
                                                                     "variant": "signature",
                                                                     "kind": 4096,
                                                                     "flags": {},
+                                                                    "comment": {
+                                                                        "summary": [
+                                                                            {
+                                                                                "kind": "text",
+                                                                                "text": "Upload a file."
+                                                                            }
+                                                                        ],
+                                                                        "blockTags": [
+                                                                            {
+                                                                                "tag": "@returns",
+                                                                                "content": [
+                                                                                    {
+                                                                                        "kind": "text",
+                                                                                        "text": "The uploaded file."
+                                                                                    }
+                                                                                ]
+                                                                            }
+                                                                        ]
+                                                                    },
                                                                     "sources": [
                                                                         {
                                                                             "fileName": "endpoints/files.ts",
-                                                                            "line": 68,
+                                                                            "line": 95,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L68"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L95"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -3231,33 +3309,19 @@
                                                                             "variant": "param",
                                                                             "kind": 32768,
                                                                             "flags": {},
-                                                                            "type": {
-                                                                                "type": "union",
-                                                                                "types": [
+                                                                            "comment": {
+                                                                                "summary": [
                                                                                     {
-                                                                                        "type": "intrinsic",
-                                                                                        "name": "string"
-                                                                                    },
-                                                                                    {
-                                                                                        "type": "reference",
-                                                                                        "target": {
-                                                                                            "sourceFileName": "node_modules/@types/node/buffer.d.ts",
-                                                                                            "qualifiedName": "__global.Buffer"
-                                                                                        },
-                                                                                        "name": "Buffer",
-                                                                                        "package": "@types/node",
-                                                                                        "qualifiedName": "__global.Buffer"
-                                                                                    },
-                                                                                    {
-                                                                                        "type": "reference",
-                                                                                        "target": {
-                                                                                            "sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-                                                                                            "qualifiedName": "Blob"
-                                                                                        },
-                                                                                        "name": "Blob",
-                                                                                        "package": "typescript"
+                                                                                        "kind": "text",
+                                                                                        "text": "The file to upload."
                                                                                     }
                                                                                 ]
+                                                                            },
+                                                                            "type": {
+                                                                                "type": "reference",
+                                                                                "target": 165,
+                                                                                "name": "UploadableFile",
+                                                                                "package": "sxcu.api"
                                                                             }
                                                                         },
                                                                         {
@@ -3267,6 +3331,14 @@
                                                                             "kind": 32768,
                                                                             "flags": {
                                                                                 "isOptional": true
+                                                                            },
+                                                                            "comment": {
+                                                                                "summary": [
+                                                                                    {
+                                                                                        "kind": "text",
+                                                                                        "text": "File options."
+                                                                                    }
+                                                                                ]
                                                                             },
                                                                             "type": {
                                                                                 "type": "reference",
@@ -3282,6 +3354,14 @@
                                                                             "kind": 32768,
                                                                             "flags": {
                                                                                 "isOptional": true
+                                                                            },
+                                                                            "comment": {
+                                                                                "summary": [
+                                                                                    {
+                                                                                        "kind": "text",
+                                                                                        "text": "Subdomain to upload to."
+                                                                                    }
+                                                                                ]
                                                                             },
                                                                             "type": {
                                                                                 "type": "intrinsic",
@@ -3324,7 +3404,7 @@
                                                     "fileName": "categorize.ts",
                                                     "line": 32,
                                                     "character": 15,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L32"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L32"
                                                 }
                                             ]
                                         }
@@ -3342,7 +3422,7 @@
                                             "fileName": "categorize.ts",
                                             "line": 39,
                                             "character": 8,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L39"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L39"
                                         }
                                     ],
                                     "type": {
@@ -3365,7 +3445,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 39,
                                                             "character": 17,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L39"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L39"
                                                         }
                                                     ],
                                                     "type": {
@@ -3381,7 +3461,7 @@
                                                                     "fileName": "endpoints/links.ts",
                                                                     "line": 29,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L29"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L29"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -3415,7 +3495,7 @@
                                                                             "fileName": "endpoints/links.ts",
                                                                             "line": 29,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L29"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L29"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -3469,7 +3549,7 @@
                                                                         "typeArguments": [
                                                                             {
                                                                                 "type": "reference",
-                                                                                "target": 194,
+                                                                                "target": 195,
                                                                                 "name": "Link",
                                                                                 "package": "sxcu.api"
                                                                             }
@@ -3494,7 +3574,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 39,
                                                             "character": 41,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L39"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L39"
                                                         }
                                                     ],
                                                     "type": {
@@ -3510,7 +3590,7 @@
                                                                     "fileName": "endpoints/links.ts",
                                                                     "line": 56,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L56"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L56"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -3544,7 +3624,7 @@
                                                                             "fileName": "endpoints/links.ts",
                                                                             "line": 56,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L56"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L56"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -3564,7 +3644,7 @@
                                                                             },
                                                                             "type": {
                                                                                 "type": "reference",
-                                                                                "target": 206,
+                                                                                "target": 207,
                                                                                 "name": "Snowflake",
                                                                                 "package": "sxcu.api"
                                                                             }
@@ -3622,7 +3702,7 @@
                                                     "fileName": "categorize.ts",
                                                     "line": 39,
                                                     "character": 15,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L39"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L39"
                                                 }
                                             ]
                                         }
@@ -3640,7 +3720,7 @@
                                             "fileName": "categorize.ts",
                                             "line": 34,
                                             "character": 8,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L34"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L34"
                                         }
                                     ],
                                     "type": {
@@ -3663,7 +3743,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 35,
                                                             "character": 12,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L35"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L35"
                                                         }
                                                     ],
                                                     "type": {
@@ -3679,7 +3759,7 @@
                                                                     "fileName": "endpoints/subdomains.ts",
                                                                     "line": 16,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L16"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L16"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -3713,7 +3793,7 @@
                                                                             "fileName": "endpoints/subdomains.ts",
                                                                             "line": 16,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L16"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L16"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -3769,7 +3849,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 36,
                                                             "character": 12,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L36"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L36"
                                                         }
                                                     ],
                                                     "type": {
@@ -3785,7 +3865,7 @@
                                                                     "fileName": "endpoints/subdomains.ts",
                                                                     "line": 54,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L54"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L54"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -3819,7 +3899,7 @@
                                                                             "fileName": "endpoints/subdomains.ts",
                                                                             "line": 54,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L54"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L54"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -3852,7 +3932,7 @@
                                                                         "typeArguments": [
                                                                             {
                                                                                 "type": "reference",
-                                                                                "target": 175,
+                                                                                "target": 176,
                                                                                 "name": "Subdomain",
                                                                                 "package": "sxcu.api"
                                                                             }
@@ -3877,7 +3957,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 37,
                                                             "character": 12,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L37"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L37"
                                                         }
                                                     ],
                                                     "type": {
@@ -3893,7 +3973,7 @@
                                                                     "fileName": "endpoints/subdomains.ts",
                                                                     "line": 104,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L104"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L104"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -3927,7 +4007,7 @@
                                                                             "fileName": "endpoints/subdomains.ts",
                                                                             "line": 104,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L104"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L104"
                                                                         }
                                                                     ],
                                                                     "type": {
@@ -3941,7 +4021,7 @@
                                                                                 "type": "array",
                                                                                 "elementType": {
                                                                                     "type": "reference",
-                                                                                    "target": 169,
+                                                                                    "target": 170,
                                                                                     "name": "SubdomainData",
                                                                                     "package": "sxcu.api"
                                                                                 }
@@ -3968,7 +4048,7 @@
                                                     "fileName": "categorize.ts",
                                                     "line": 34,
                                                     "character": 20,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L34"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L34"
                                                 }
                                             ]
                                         }
@@ -3986,7 +4066,7 @@
                                             "fileName": "categorize.ts",
                                             "line": 40,
                                             "character": 8,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L40"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L40"
                                         }
                                     ],
                                     "type": {
@@ -4009,7 +4089,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 40,
                                                             "character": 16,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L40"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L40"
                                                         }
                                                     ],
                                                     "type": {
@@ -4025,7 +4105,7 @@
                                                                     "fileName": "endpoints/text.ts",
                                                                     "line": 27,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L27"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L27"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -4059,7 +4139,7 @@
                                                                             "fileName": "endpoints/text.ts",
                                                                             "line": 27,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L27"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L27"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -4092,7 +4172,7 @@
                                                                         "typeArguments": [
                                                                             {
                                                                                 "type": "reference",
-                                                                                "target": 185,
+                                                                                "target": 186,
                                                                                 "name": "Paste",
                                                                                 "package": "sxcu.api"
                                                                             }
@@ -4117,7 +4197,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 40,
                                                             "character": 42,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L40"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L40"
                                                         }
                                                     ],
                                                     "type": {
@@ -4133,7 +4213,7 @@
                                                                     "fileName": "endpoints/text.ts",
                                                                     "line": 53,
                                                                     "character": 22,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L53"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L53"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -4167,7 +4247,7 @@
                                                                             "fileName": "endpoints/text.ts",
                                                                             "line": 53,
                                                                             "character": 22,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L53"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L53"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -4187,7 +4267,7 @@
                                                                             },
                                                                             "type": {
                                                                                 "type": "reference",
-                                                                                "target": 206,
+                                                                                "target": 207,
                                                                                 "name": "Snowflake",
                                                                                 "package": "sxcu.api"
                                                                             }
@@ -4245,7 +4325,7 @@
                                                     "fileName": "categorize.ts",
                                                     "line": 40,
                                                     "character": 14,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L40"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L40"
                                                 }
                                             ]
                                         }
@@ -4263,7 +4343,7 @@
                                             "fileName": "categorize.ts",
                                             "line": 41,
                                             "character": 8,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L41"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L41"
                                         }
                                     ],
                                     "type": {
@@ -4285,7 +4365,7 @@
                                             "fileName": "categorize.ts",
                                             "line": 42,
                                             "character": 8,
-                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L42"
+                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L42"
                                         }
                                     ],
                                     "type": {
@@ -4308,7 +4388,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 43,
                                                             "character": 12,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L43"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L43"
                                                         }
                                                     ],
                                                     "type": {
@@ -4324,7 +4404,7 @@
                                                                     "fileName": "error.ts",
                                                                     "line": 17,
                                                                     "character": 16,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L17"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L17"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -4347,7 +4427,7 @@
                                                                             "fileName": "error.ts",
                                                                             "line": 17,
                                                                             "character": 16,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L17"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L17"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -4392,7 +4472,7 @@
                                                                     ],
                                                                     "type": {
                                                                         "type": "reference",
-                                                                        "target": 165,
+                                                                        "target": 166,
                                                                         "name": "ErrorObject",
                                                                         "package": "sxcu.api"
                                                                     }
@@ -4413,7 +4493,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 45,
                                                             "character": 12,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L45"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L45"
                                                         }
                                                     ],
                                                     "type": {
@@ -4429,7 +4509,7 @@
                                                                     "fileName": "utility.ts",
                                                                     "line": 9,
                                                                     "character": 16,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L9"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L9"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -4463,7 +4543,7 @@
                                                                             "fileName": "utility.ts",
                                                                             "line": 9,
                                                                             "character": 16,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L9"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L9"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -4508,7 +4588,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 46,
                                                             "character": 12,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L46"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L46"
                                                         }
                                                     ],
                                                     "type": {
@@ -4524,7 +4604,7 @@
                                                                     "fileName": "utility.ts",
                                                                     "line": 108,
                                                                     "character": 16,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L108"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L108"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -4558,7 +4638,7 @@
                                                                             "fileName": "utility.ts",
                                                                             "line": 108,
                                                                             "character": 16,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L108"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L108"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -4578,7 +4658,7 @@
                                                                             },
                                                                             "type": {
                                                                                 "type": "reference",
-                                                                                "target": 206,
+                                                                                "target": 207,
                                                                                 "name": "Snowflake",
                                                                                 "package": "sxcu.api"
                                                                             }
@@ -4586,7 +4666,7 @@
                                                                     ],
                                                                     "type": {
                                                                         "type": "reference",
-                                                                        "target": 207,
+                                                                        "target": 208,
                                                                         "name": "ParsedSnowflake",
                                                                         "package": "sxcu.api"
                                                                     }
@@ -4607,7 +4687,7 @@
                                                             "fileName": "categorize.ts",
                                                             "line": 44,
                                                             "character": 12,
-                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L44"
+                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L44"
                                                         }
                                                     ],
                                                     "type": {
@@ -4623,7 +4703,7 @@
                                                                     "fileName": "error.ts",
                                                                     "line": 25,
                                                                     "character": 16,
-                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L25"
+                                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L25"
                                                                 }
                                                             ],
                                                             "signatures": [
@@ -4646,7 +4726,7 @@
                                                                             "fileName": "error.ts",
                                                                             "line": 25,
                                                                             "character": 16,
-                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L25"
+                                                                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L25"
                                                                         }
                                                                     ],
                                                                     "parameters": [
@@ -4672,7 +4752,7 @@
                                                                     ],
                                                                     "type": {
                                                                         "type": "reference",
-                                                                        "target": 165,
+                                                                        "target": 166,
                                                                         "name": "ErrorObject",
                                                                         "package": "sxcu.api"
                                                                     }
@@ -4694,7 +4774,7 @@
                                                     "fileName": "categorize.ts",
                                                     "line": 42,
                                                     "character": 17,
-                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L42"
+                                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L42"
                                                 }
                                             ]
                                         }
@@ -4713,7 +4793,7 @@
                                     "fileName": "categorize.ts",
                                     "line": 31,
                                     "character": 11,
-                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/categorize.ts#L31"
+                                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/categorize.ts#L31"
                                 }
                             ]
                         }
@@ -4732,7 +4812,7 @@
                     "fileName": "endpoints/subdomains.ts",
                     "line": 16,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L16"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L16"
                 }
             ],
             "signatures": [
@@ -4766,7 +4846,7 @@
                             "fileName": "endpoints/subdomains.ts",
                             "line": 16,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L16"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L16"
                         }
                     ],
                     "parameters": [
@@ -4819,7 +4899,7 @@
                     "fileName": "endpoints/collections.ts",
                     "line": 3,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/collections.ts#L3"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/collections.ts#L3"
                 }
             ],
             "signatures": [
@@ -4834,7 +4914,7 @@
                             "fileName": "endpoints/collections.ts",
                             "line": 3,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/collections.ts#L3"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/collections.ts#L3"
                         }
                     ],
                     "type": {
@@ -4866,7 +4946,7 @@
                     "fileName": "error.ts",
                     "line": 17,
                     "character": 16,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L17"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L17"
                 }
             ],
             "signatures": [
@@ -4889,7 +4969,7 @@
                             "fileName": "error.ts",
                             "line": 17,
                             "character": 16,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L17"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L17"
                         }
                     ],
                     "parameters": [
@@ -4934,7 +5014,7 @@
                     ],
                     "type": {
                         "type": "reference",
-                        "target": 165,
+                        "target": 166,
                         "name": "ErrorObject",
                         "package": "sxcu.api"
                     }
@@ -4952,7 +5032,7 @@
                     "fileName": "endpoints/links.ts",
                     "line": 29,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L29"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L29"
                 }
             ],
             "signatures": [
@@ -4986,7 +5066,7 @@
                             "fileName": "endpoints/links.ts",
                             "line": 29,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L29"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L29"
                         }
                     ],
                     "parameters": [
@@ -5040,7 +5120,7 @@
                         "typeArguments": [
                             {
                                 "type": "reference",
-                                "target": 194,
+                                "target": 195,
                                 "name": "Link",
                                 "package": "sxcu.api"
                             }
@@ -5062,7 +5142,7 @@
                     "fileName": "endpoints/text.ts",
                     "line": 27,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L27"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L27"
                 }
             ],
             "signatures": [
@@ -5096,7 +5176,7 @@
                             "fileName": "endpoints/text.ts",
                             "line": 27,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L27"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L27"
                         }
                     ],
                     "parameters": [
@@ -5129,7 +5209,7 @@
                         "typeArguments": [
                             {
                                 "type": "reference",
-                                "target": 185,
+                                "target": 186,
                                 "name": "Paste",
                                 "package": "sxcu.api"
                             }
@@ -5149,9 +5229,9 @@
             "sources": [
                 {
                     "fileName": "endpoints/files.ts",
-                    "line": 98,
+                    "line": 122,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L98"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L122"
                 }
             ],
             "signatures": [
@@ -5164,9 +5244,9 @@
                     "sources": [
                         {
                             "fileName": "endpoints/files.ts",
-                            "line": 98,
+                            "line": 122,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L98"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L122"
                         }
                     ],
                     "type": {
@@ -5198,7 +5278,7 @@
                     "fileName": "endpoints/links.ts",
                     "line": 56,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L56"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L56"
                 }
             ],
             "signatures": [
@@ -5232,7 +5312,7 @@
                             "fileName": "endpoints/links.ts",
                             "line": 56,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/links.ts#L56"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/links.ts#L56"
                         }
                     ],
                     "parameters": [
@@ -5252,7 +5332,7 @@
                             },
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
@@ -5306,7 +5386,7 @@
                     "fileName": "endpoints/text.ts",
                     "line": 53,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L53"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L53"
                 }
             ],
             "signatures": [
@@ -5340,7 +5420,7 @@
                             "fileName": "endpoints/text.ts",
                             "line": 53,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/text.ts#L53"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/text.ts#L53"
                         }
                     ],
                     "parameters": [
@@ -5360,7 +5440,7 @@
                             },
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
@@ -5414,7 +5494,7 @@
                     "fileName": "utility.ts",
                     "line": 9,
                     "character": 16,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L9"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L9"
                 }
             ],
             "signatures": [
@@ -5448,7 +5528,7 @@
                             "fileName": "utility.ts",
                             "line": 9,
                             "character": 16,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L9"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L9"
                         }
                     ],
                     "parameters": [
@@ -5490,7 +5570,7 @@
                     "fileName": "endpoints/collections.ts",
                     "line": 5,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/collections.ts#L5"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/collections.ts#L5"
                 }
             ],
             "signatures": [
@@ -5505,7 +5585,7 @@
                             "fileName": "endpoints/collections.ts",
                             "line": 5,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/collections.ts#L5"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/collections.ts#L5"
                         }
                     ],
                     "type": {
@@ -5535,9 +5615,9 @@
             "sources": [
                 {
                     "fileName": "endpoints/files.ts",
-                    "line": 96,
+                    "line": 120,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L96"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L120"
                 }
             ],
             "signatures": [
@@ -5550,9 +5630,9 @@
                     "sources": [
                         {
                             "fileName": "endpoints/files.ts",
-                            "line": 96,
+                            "line": 120,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L96"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L120"
                         }
                     ],
                     "type": {
@@ -5584,7 +5664,7 @@
                     "fileName": "endpoints/subdomains.ts",
                     "line": 54,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L54"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L54"
                 }
             ],
             "signatures": [
@@ -5618,7 +5698,7 @@
                             "fileName": "endpoints/subdomains.ts",
                             "line": 54,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L54"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L54"
                         }
                     ],
                     "parameters": [
@@ -5651,7 +5731,7 @@
                         "typeArguments": [
                             {
                                 "type": "reference",
-                                "target": 175,
+                                "target": 176,
                                 "name": "Subdomain",
                                 "package": "sxcu.api"
                             }
@@ -5673,7 +5753,7 @@
                     "fileName": "endpoints/subdomains.ts",
                     "line": 104,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L104"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L104"
                 }
             ],
             "signatures": [
@@ -5707,7 +5787,7 @@
                             "fileName": "endpoints/subdomains.ts",
                             "line": 104,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/subdomains.ts#L104"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/subdomains.ts#L104"
                         }
                     ],
                     "type": {
@@ -5721,7 +5801,7 @@
                                 "type": "array",
                                 "elementType": {
                                     "type": "reference",
-                                    "target": 169,
+                                    "target": 170,
                                     "name": "SubdomainData",
                                     "package": "sxcu.api"
                                 }
@@ -5744,7 +5824,7 @@
                     "fileName": "utility.ts",
                     "line": 108,
                     "character": 16,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L108"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L108"
                 }
             ],
             "signatures": [
@@ -5778,7 +5858,7 @@
                             "fileName": "utility.ts",
                             "line": 108,
                             "character": 16,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/utility.ts#L108"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/utility.ts#L108"
                         }
                     ],
                     "parameters": [
@@ -5798,7 +5878,7 @@
                             },
                             "type": {
                                 "type": "reference",
-                                "target": 206,
+                                "target": 207,
                                 "name": "Snowflake",
                                 "package": "sxcu.api"
                             }
@@ -5806,7 +5886,7 @@
                     ],
                     "type": {
                         "type": "reference",
-                        "target": 207,
+                        "target": 208,
                         "name": "ParsedSnowflake",
                         "package": "sxcu.api"
                     }
@@ -5824,7 +5904,7 @@
                     "fileName": "error.ts",
                     "line": 25,
                     "character": 16,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L25"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L25"
                 }
             ],
             "signatures": [
@@ -5847,7 +5927,7 @@
                             "fileName": "error.ts",
                             "line": 25,
                             "character": 16,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/error.ts#L25"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/error.ts#L25"
                         }
                     ],
                     "parameters": [
@@ -5873,7 +5953,7 @@
                     ],
                     "type": {
                         "type": "reference",
-                        "target": 165,
+                        "target": 166,
                         "name": "ErrorObject",
                         "package": "sxcu.api"
                     }
@@ -5889,9 +5969,9 @@
             "sources": [
                 {
                     "fileName": "endpoints/files.ts",
-                    "line": 68,
+                    "line": 95,
                     "character": 22,
-                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L68"
+                    "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L95"
                 }
             ],
             "signatures": [
@@ -5901,12 +5981,31 @@
                     "variant": "signature",
                     "kind": 4096,
                     "flags": {},
+                    "comment": {
+                        "summary": [
+                            {
+                                "kind": "text",
+                                "text": "Upload a file."
+                            }
+                        ],
+                        "blockTags": [
+                            {
+                                "tag": "@returns",
+                                "content": [
+                                    {
+                                        "kind": "text",
+                                        "text": "The uploaded file."
+                                    }
+                                ]
+                            }
+                        ]
+                    },
                     "sources": [
                         {
                             "fileName": "endpoints/files.ts",
-                            "line": 68,
+                            "line": 95,
                             "character": 22,
-                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L68"
+                            "url": "https://github.com/Lovely-Experiences/sxcu.api/blob/4f712a7/src/endpoints/files.ts#L95"
                         }
                     ],
                     "parameters": [
@@ -5916,33 +6015,19 @@
                             "variant": "param",
                             "kind": 32768,
                             "flags": {},
-                            "type": {
-                                "type": "union",
-                                "types": [
+                            "comment": {
+                                "summary": [
                                     {
-                                        "type": "intrinsic",
-                                        "name": "string"
-                                    },
-                                    {
-                                        "type": "reference",
-                                        "target": {
-                                            "sourceFileName": "node_modules/@types/node/buffer.d.ts",
-                                            "qualifiedName": "__global.Buffer"
-                                        },
-                                        "name": "Buffer",
-                                        "package": "@types/node",
-                                        "qualifiedName": "__global.Buffer"
-                                    },
-                                    {
-                                        "type": "reference",
-                                        "target": {
-                                            "sourceFileName": "node_modules/typescript/lib/lib.dom.d.ts",
-                                            "qualifiedName": "Blob"
-                                        },
-                                        "name": "Blob",
-                                        "package": "typescript"
+                                        "kind": "text",
+                                        "text": "The file to upload."
                                     }
                                 ]
+                            },
+                            "type": {
+                                "type": "reference",
+                                "target": 165,
+                                "name": "UploadableFile",
+                                "package": "sxcu.api"
                             }
                         },
                         {
@@ -5952,6 +6037,14 @@
                             "kind": 32768,
                             "flags": {
                                 "isOptional": true
+                            },
+                            "comment": {
+                                "summary": [
+                                    {
+                                        "kind": "text",
+                                        "text": "File options."
+                                    }
+                                ]
                             },
                             "type": {
                                 "type": "reference",
@@ -5967,6 +6060,14 @@
                             "kind": 32768,
                             "flags": {
                                 "isOptional": true
+                            },
+                            "comment": {
+                                "summary": [
+                                    {
+                                        "kind": "text",
+                                        "text": "Subdomain to upload to."
+                                    }
+                                ]
                             },
                             "type": {
                                 "type": "intrinsic",
@@ -5998,7 +6099,7 @@
     "groups": [
         {
             "title": "Enumerations",
-            "children": [226, 219]
+            "children": [227, 220]
         },
         {
             "title": "Classes",
@@ -6006,7 +6107,7 @@
         },
         {
             "title": "Type Aliases",
-            "children": [203, 165, 158, 144, 194, 207, 185, 206, 175, 169, 204, 205]
+            "children": [204, 166, 158, 144, 195, 208, 186, 207, 176, 170, 205, 165, 206]
         },
         {
             "title": "Variables",
@@ -6719,282 +6820,286 @@
             "qualifiedName": "__type.thumbnail"
         },
         "165": {
-            "sourceFileName": "src/error.ts",
-            "qualifiedName": "ErrorObject"
+            "sourceFileName": "src/endpoints/files.ts",
+            "qualifiedName": "UploadableFile"
         },
         "166": {
             "sourceFileName": "src/error.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "ErrorObject"
         },
         "167": {
             "sourceFileName": "src/error.ts",
-            "qualifiedName": "__type.error"
+            "qualifiedName": "__type"
         },
         "168": {
             "sourceFileName": "src/error.ts",
-            "qualifiedName": "__type.code"
+            "qualifiedName": "__type.error"
         },
         "169": {
-            "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "SubdomainData"
+            "sourceFileName": "src/error.ts",
+            "qualifiedName": "__type.code"
         },
         "170": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "SubdomainData"
         },
         "171": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.domain"
+            "qualifiedName": "__type"
         },
         "172": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.uploadCount"
+            "qualifiedName": "__type.domain"
         },
         "173": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.public"
+            "qualifiedName": "__type.uploadCount"
         },
         "174": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.fileViews"
+            "qualifiedName": "__type.public"
         },
         "175": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "Subdomain"
+            "qualifiedName": "__type.fileViews"
         },
         "176": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "Subdomain"
         },
         "177": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.id"
+            "qualifiedName": "__type"
         },
         "178": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.files"
+            "qualifiedName": "__type.id"
         },
         "179": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.links"
+            "qualifiedName": "__type.files"
         },
         "180": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.fileViews"
+            "qualifiedName": "__type.links"
         },
         "181": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.public"
+            "qualifiedName": "__type.fileViews"
         },
         "182": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.root"
+            "qualifiedName": "__type.public"
         },
         "183": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.lastActivity"
+            "qualifiedName": "__type.root"
         },
         "184": {
             "sourceFileName": "src/endpoints/subdomains.ts",
-            "qualifiedName": "__type.lastActivityDate"
+            "qualifiedName": "__type.lastActivity"
         },
         "185": {
-            "sourceFileName": "src/endpoints/text.ts",
-            "qualifiedName": "Paste"
+            "sourceFileName": "src/endpoints/subdomains.ts",
+            "qualifiedName": "__type.lastActivityDate"
         },
         "186": {
             "sourceFileName": "src/endpoints/text.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "Paste"
         },
         "187": {
             "sourceFileName": "src/endpoints/text.ts",
-            "qualifiedName": "__type.id"
+            "qualifiedName": "__type"
         },
         "188": {
             "sourceFileName": "src/endpoints/text.ts",
-            "qualifiedName": "__type.url"
+            "qualifiedName": "__type.id"
         },
         "189": {
             "sourceFileName": "src/endpoints/text.ts",
-            "qualifiedName": "__type.deletionUrl"
+            "qualifiedName": "__type.url"
         },
         "190": {
             "sourceFileName": "src/endpoints/text.ts",
-            "qualifiedName": "__type.deletionToken"
+            "qualifiedName": "__type.deletionUrl"
         },
         "191": {
             "sourceFileName": "src/endpoints/text.ts",
-            "qualifiedName": "__type.delete"
+            "qualifiedName": "__type.deletionToken"
         },
         "192": {
             "sourceFileName": "src/endpoints/text.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "__type.delete"
         },
         "193": {
             "sourceFileName": "src/endpoints/text.ts",
             "qualifiedName": "__type"
         },
         "194": {
-            "sourceFileName": "src/endpoints/links.ts",
-            "qualifiedName": "Link"
+            "sourceFileName": "src/endpoints/text.ts",
+            "qualifiedName": "__type"
         },
         "195": {
             "sourceFileName": "src/endpoints/links.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "Link"
         },
         "196": {
             "sourceFileName": "src/endpoints/links.ts",
-            "qualifiedName": "__type.id"
+            "qualifiedName": "__type"
         },
         "197": {
             "sourceFileName": "src/endpoints/links.ts",
-            "qualifiedName": "__type.url"
+            "qualifiedName": "__type.id"
         },
         "198": {
             "sourceFileName": "src/endpoints/links.ts",
-            "qualifiedName": "__type.deletionUrl"
+            "qualifiedName": "__type.url"
         },
         "199": {
             "sourceFileName": "src/endpoints/links.ts",
-            "qualifiedName": "__type.deletionToken"
+            "qualifiedName": "__type.deletionUrl"
         },
         "200": {
             "sourceFileName": "src/endpoints/links.ts",
-            "qualifiedName": "__type.delete"
+            "qualifiedName": "__type.deletionToken"
         },
         "201": {
             "sourceFileName": "src/endpoints/links.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "__type.delete"
         },
         "202": {
             "sourceFileName": "src/endpoints/links.ts",
             "qualifiedName": "__type"
         },
         "203": {
-            "sourceFileName": "src/types.ts",
-            "qualifiedName": "DeletionToken"
+            "sourceFileName": "src/endpoints/links.ts",
+            "qualifiedName": "__type"
         },
         "204": {
             "sourceFileName": "src/types.ts",
-            "qualifiedName": "Token"
+            "qualifiedName": "DeletionToken"
         },
         "205": {
             "sourceFileName": "src/types.ts",
-            "qualifiedName": "Url"
+            "qualifiedName": "Token"
         },
         "206": {
             "sourceFileName": "src/types.ts",
-            "qualifiedName": "Snowflake"
+            "qualifiedName": "Url"
         },
         "207": {
-            "sourceFileName": "src/utility.ts",
-            "qualifiedName": "ParsedSnowflake"
+            "sourceFileName": "src/types.ts",
+            "qualifiedName": "Snowflake"
         },
         "208": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "ParsedSnowflake"
         },
         "209": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.created"
+            "qualifiedName": "__type"
         },
         "210": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.type"
+            "qualifiedName": "__type.created"
         },
         "211": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.flag"
+            "qualifiedName": "__type.type"
         },
         "212": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.id"
+            "qualifiedName": "__type.flag"
         },
         "213": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.raw"
+            "qualifiedName": "__type.id"
         },
         "214": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type"
+            "qualifiedName": "__type.raw"
         },
         "215": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.timestamp"
+            "qualifiedName": "__type"
         },
         "216": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.objectType"
+            "qualifiedName": "__type.timestamp"
         },
         "217": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.objectFlag"
+            "qualifiedName": "__type.objectType"
         },
         "218": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "__type.sequence"
+            "qualifiedName": "__type.objectFlag"
         },
         "219": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectType"
+            "qualifiedName": "__type.sequence"
         },
         "220": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectType.Uploaded File"
+            "qualifiedName": "SnowflakeObjectType"
         },
         "221": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectType.Redirect Link"
+            "qualifiedName": "SnowflakeObjectType.Uploaded File"
         },
         "222": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectType.Collection"
+            "qualifiedName": "SnowflakeObjectType.Redirect Link"
         },
         "223": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectType.Paste"
+            "qualifiedName": "SnowflakeObjectType.Collection"
         },
         "224": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectType.Subdomain/Domain"
+            "qualifiedName": "SnowflakeObjectType.Paste"
         },
         "225": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectType.Self-Destructing File"
+            "qualifiedName": "SnowflakeObjectType.Subdomain/Domain"
         },
         "226": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectFlag"
+            "qualifiedName": "SnowflakeObjectType.Self-Destructing File"
         },
         "227": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectFlag.PNG"
+            "qualifiedName": "SnowflakeObjectFlag"
         },
         "228": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectFlag.JPEG"
+            "qualifiedName": "SnowflakeObjectFlag.PNG"
         },
         "229": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectFlag.GIF"
+            "qualifiedName": "SnowflakeObjectFlag.JPEG"
         },
         "230": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectFlag.ICO"
+            "qualifiedName": "SnowflakeObjectFlag.GIF"
         },
         "231": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectFlag.BMP"
+            "qualifiedName": "SnowflakeObjectFlag.ICO"
         },
         "232": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectFlag.TIFF"
+            "qualifiedName": "SnowflakeObjectFlag.BMP"
         },
         "233": {
             "sourceFileName": "src/utility.ts",
-            "qualifiedName": "SnowflakeObjectFlag.WEBM"
+            "qualifiedName": "SnowflakeObjectFlag.TIFF"
         },
         "234": {
+            "sourceFileName": "src/utility.ts",
+            "qualifiedName": "SnowflakeObjectFlag.WEBM"
+        },
+        "235": {
             "sourceFileName": "src/utility.ts",
             "qualifiedName": "SnowflakeObjectFlag.WEBP"
         }
