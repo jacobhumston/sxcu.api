@@ -1,4 +1,5 @@
 import { Snowflake } from './types';
+import { convertBase } from './modules/convert-base.js';
 
 /**
  * Extracts the token or id from a url or path.
@@ -7,34 +8,6 @@ import { Snowflake } from './types';
  */
 export function extractToken(url: string): string {
     return url.split('/').pop() ?? '';
-}
-
-/**
- * Convert a number from one base to another.
- * SOURCE: https://stackoverflow.com/questions/1337419/
- * @param value The value to convert.
- * @param from_base The base to convert from.
- * @param to_base The base to convert to.
- * @returns The converted value.
- */
-function convertBase(value: string, fromBase: number, toBase: number) {
-    const range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
-    const fromRange = range.slice(0, fromBase),
-        toRange = range.slice(0, toBase);
-    let decValue = value
-        .split('')
-        .reverse()
-        .reduce(function (carry, digit, index) {
-            if (fromRange.indexOf(digit) === -1)
-                throw new Error('Invalid digit `' + digit + '` for base ' + fromBase + '.');
-            return (carry += fromRange.indexOf(digit) * Math.pow(fromBase, index));
-        }, 0);
-    let newValue = '';
-    while (decValue > 0) {
-        newValue = toRange[decValue % toBase] + newValue;
-        decValue = (decValue - (decValue % toBase)) / toBase;
-    }
-    return newValue || '0';
 }
 
 /** All possible strings of a snowflake object type.  */
@@ -102,6 +75,30 @@ export type ParsedSnowflake = {
     };
 };
 
+/** Am array of snowflake types. */
+const snowflakeTypes: (keyof typeof SnowflakeObjectType | null)[] = [
+    null,
+    'Uploaded File',
+    'Redirect Link',
+    'Collection',
+    'Paste',
+    'Subdomain/Domain',
+    'Self-Destructing File',
+];
+
+/** An array of snowflake flags. */
+const snowflakeFlags: (keyof typeof SnowflakeObjectFlag | null)[] = [
+    null,
+    'PNG',
+    'JPEG',
+    'GIF',
+    'ICO',
+    'BMP',
+    'TIFF',
+    'WEBM',
+    'WEBP',
+];
+
 /**
  * Get the data associated with a snowflake.
  * This will attempt to parse the snowflake if it is a number. However, its unlikely that it will return accurate results.
@@ -121,32 +118,10 @@ export function parseSnowflake(snowflake: Snowflake): ParsedSnowflake {
         sequence: Number(binary & 16383n),
     };
 
-    const types: (keyof typeof SnowflakeObjectType | null)[] = [
-        null,
-        'Uploaded File',
-        'Redirect Link',
-        'Collection',
-        'Paste',
-        'Subdomain/Domain',
-        'Self-Destructing File',
-    ];
-
-    const flags: (keyof typeof SnowflakeObjectFlag | null)[] = [
-        null,
-        'PNG',
-        'JPEG',
-        'GIF',
-        'ICO',
-        'BMP',
-        'TIFF',
-        'WEBM',
-        'WEBP',
-    ];
-
     return {
         created: new Date(data.timestamp * 1000),
-        type: types[data.objectType],
-        flag: flags[data.objectFlag],
+        type: snowflakeTypes[data.objectType],
+        flag: snowflakeFlags[data.objectFlag],
         id: snowflake,
         raw: data,
     };

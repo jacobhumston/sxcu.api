@@ -28,6 +28,16 @@ export type RequestOptions = {
 const guideUrl: string = 'https://sxcu.api.lovelyjacob.com/guides/user-agent.html';
 
 /**
+ * Attempts to get the JSON from a response.
+ * @param response The response to get the JSON from.
+ */
+async function getJSON(response: Response): Promise<{ [key: string]: any }> {
+    return await response.json().catch((error) => {
+        throw { error: error.toString(), code: -1 };
+    });
+}
+
+/**
  * Create an API request.
  */
 export async function request(options: RequestOptions): Promise<{ [key: string]: any }> {
@@ -53,16 +63,12 @@ export async function request(options: RequestOptions): Promise<{ [key: string]:
     // Check for any of the predefined error status codes.
     for (const error of options.statusErrors) {
         if (response.status !== error) continue;
-        const json = await response.json().catch((error) => {
-            throw { error: error.toString(), code: -1 };
-        });
+        const json = await getJSON(response);
         throw { error: json.error ?? 'Unknown', code: json.code ?? 0 };
     }
 
     // Try to parse the response as JSON.
-    const json = await response.json().catch((error) => {
-        throw { error: error.toString(), code: -1 };
-    });
+    const json = await getJSON(response);
 
     // If it's not an OK, we throw an unknown error.
     if (response.status !== 200) throw { error: json.error ?? 'Unknown', code: response.status };
