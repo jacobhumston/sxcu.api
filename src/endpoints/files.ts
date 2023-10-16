@@ -21,14 +21,26 @@ export type FileOptions = {
     selfDestruct?: boolean;
     /** Open Graph properties for this file. */
     openGraphProperties?: {
-        /** Configures the value for the 'title' OpenGraph meta tag. */
-        title?: string;
-        /** Configures the value for the 'description' OpenGraph meta tag. */
-        description?: string;
-        /** Configures the value for the 'theme-color' OpenGraph meta tag. */
-        color?: string;
-        /** Configures the value for the 'site-name' OpenGraph meta tag. */
-        siteName?: string;
+        /**
+         * Configures the value for the 'title' OpenGraph meta tag.
+         * If set to false, the tag will be omitted entirely.
+         * */
+        title?: string | false;
+        /**
+         * Configures the value for the 'description' OpenGraph meta tag.
+         * If set to false, the tag will be omitted entirely.
+         * */
+        description?: string | false;
+        /**
+         * Configures the value for the 'theme-color' OpenGraph meta tag.
+         * If set to false, the tag will be omitted entirely.
+         * */
+        color?: string | false;
+        /**
+         * Configures the value for the 'site-name' OpenGraph meta tag.
+         * If set to false, the tag will be omitted entirely.
+         * */
+        siteName?: string | false;
         /** If false, discord will not hide the url of the file when sent as a direct link. */
         discordHideUrl?: boolean;
     };

@@ -171,16 +171,20 @@
                     ><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-symbol">{ </span
                     ><br /><span>        </span><span class="tsd-kind-property">color</span
                     ><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span
+                    ><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span
                     ><span class="tsd-signature-symbol">; </span><br /><span>        </span
                     ><span class="tsd-kind-property">description</span><span class="tsd-signature-symbol">?: </span
-                    ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span
+                    ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span
+                    ><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">; </span
                     ><br /><span>        </span><span class="tsd-kind-property">discordHideUrl</span
                     ><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span
                     ><span class="tsd-signature-symbol">; </span><br /><span>        </span
                     ><span class="tsd-kind-property">siteName</span><span class="tsd-signature-symbol">?: </span
-                    ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span
+                    ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span
+                    ><span class="tsd-signature-type">false</span><span class="tsd-signature-symbol">; </span
                     ><br /><span>        </span><span class="tsd-kind-property">title</span
                     ><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span
+                    ><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">false</span
                     ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                     ><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">; </span><br /><span
                         >    </span
@@ -242,10 +246,14 @@
                                 ><span class="tsd-kind-property">color</span
                                 ><span class="tsd-signature-symbol">?: </span
                                 ><span class="tsd-signature-type">string</span
+                                ><span class="tsd-signature-symbol"> | </span
+                                ><span class="tsd-signature-type">false</span
                                 ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                                 ><span class="tsd-kind-property">description</span
                                 ><span class="tsd-signature-symbol">?: </span
                                 ><span class="tsd-signature-type">string</span
+                                ><span class="tsd-signature-symbol"> | </span
+                                ><span class="tsd-signature-type">false</span
                                 ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                                 ><span class="tsd-kind-property">discordHideUrl</span
                                 ><span class="tsd-signature-symbol">?: </span
@@ -254,10 +262,14 @@
                                 ><span class="tsd-kind-property">siteName</span
                                 ><span class="tsd-signature-symbol">?: </span
                                 ><span class="tsd-signature-type">string</span
+                                ><span class="tsd-signature-symbol"> | </span
+                                ><span class="tsd-signature-type">false</span
                                 ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                                 ><span class="tsd-kind-property">title</span
                                 ><span class="tsd-signature-symbol">?: </span
                                 ><span class="tsd-signature-type">string</span
+                                ><span class="tsd-signature-symbol"> | </span
+                                ><span class="tsd-signature-type">false</span
                                 ><span class="tsd-signature-symbol">; </span><br /><span class="tsd-signature-symbol"
                                     >}</span
                                 >
@@ -270,10 +282,15 @@
                                         <code class="tsd-tag ts-flagOptional">Optional</code>
                                         <span class="tsd-kind-property">color</span
                                         ><span class="tsd-signature-symbol">?: </span
-                                        ><span class="tsd-signature-type">string</span>
+                                        ><span class="tsd-signature-type">string</span
+                                        ><span class="tsd-signature-symbol"> | </span
+                                        ><span class="tsd-signature-type">false</span>
                                     </h5>
                                     <div class="tsd-comment tsd-typography">
-                                        <p>Configures the value for the &#39;theme-color&#39; OpenGraph meta tag.</p>
+                                        <p>
+                                            Configures the value for the &#39;theme-color&#39; OpenGraph meta tag. If
+                                            set to false, the tag will be omitted entirely.
+                                        </p>
                                     </div>
                                     <div class="tsd-comment tsd-typography"></div>
                                 </li>
@@ -282,10 +299,15 @@
                                         <code class="tsd-tag ts-flagOptional">Optional</code>
                                         <span class="tsd-kind-property">description</span
                                         ><span class="tsd-signature-symbol">?: </span
-                                        ><span class="tsd-signature-type">string</span>
+                                        ><span class="tsd-signature-type">string</span
+                                        ><span class="tsd-signature-symbol"> | </span
+                                        ><span class="tsd-signature-type">false</span>
                                     </h5>
                                     <div class="tsd-comment tsd-typography">
-                                        <p>Configures the value for the &#39;description&#39; OpenGraph meta tag.</p>
+                                        <p>
+                                            Configures the value for the &#39;description&#39; OpenGraph meta tag. If
+                                            set to false, the tag will be omitted entirely.
+                                        </p>
                                     </div>
                                     <div class="tsd-comment tsd-typography"></div>
                                 </li>
@@ -309,10 +331,15 @@
                                         <code class="tsd-tag ts-flagOptional">Optional</code>
                                         <span class="tsd-kind-property">site<wbr />Name</span
                                         ><span class="tsd-signature-symbol">?: </span
-                                        ><span class="tsd-signature-type">string</span>
+                                        ><span class="tsd-signature-type">string</span
+                                        ><span class="tsd-signature-symbol"> | </span
+                                        ><span class="tsd-signature-type">false</span>
                                     </h5>
                                     <div class="tsd-comment tsd-typography">
-                                        <p>Configures the value for the &#39;site-name&#39; OpenGraph meta tag.</p>
+                                        <p>
+                                            Configures the value for the &#39;site-name&#39; OpenGraph meta tag. If set
+                                            to false, the tag will be omitted entirely.
+                                        </p>
                                     </div>
                                     <div class="tsd-comment tsd-typography"></div>
                                 </li>
@@ -321,10 +348,15 @@
                                         <code class="tsd-tag ts-flagOptional">Optional</code>
                                         <span class="tsd-kind-property">title</span
                                         ><span class="tsd-signature-symbol">?: </span
-                                        ><span class="tsd-signature-type">string</span>
+                                        ><span class="tsd-signature-type">string</span
+                                        ><span class="tsd-signature-symbol"> | </span
+                                        ><span class="tsd-signature-type">false</span>
                                     </h5>
                                     <div class="tsd-comment tsd-typography">
-                                        <p>Configures the value for the &#39;title&#39; OpenGraph meta tag.</p>
+                                        <p>
+                                            Configures the value for the &#39;title&#39; OpenGraph meta tag. If set to
+                                            false, the tag will be omitted entirely.
+                                        </p>
                                     </div>
                                     <div class="tsd-comment tsd-typography"></div>
                                 </li>
@@ -359,7 +391,7 @@
                         <li>
                             Defined in
                             <a
-                                href="https://github.com/Lovely-Experiences/sxcu.api/blob/97471ae/src/endpoints/files.ts#L9"
+                                href="https://github.com/Lovely-Experiences/sxcu.api/blob/9a29c72/src/endpoints/files.ts#L9"
                                 >endpoints/files.ts:9</a
                             >
                         </li>
