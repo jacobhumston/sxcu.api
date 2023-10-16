@@ -1,6 +1,9 @@
 /** A deletion token which is required when deleting something. */
 export type DeletionToken = string;
 
+/** A token which is required when performing an action. */
+export type Token = string;
+
 /** Represents a url. */
 export type Url = string;
 

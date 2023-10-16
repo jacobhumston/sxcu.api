@@ -4,6 +4,9 @@ import {
     uploadFile,
     getFileMeta,
     deleteFile,
+    // Types,
+    FileOptions,
+    FileData,
 } from './endpoints/files.js';
 
 import {
@@ -62,6 +65,7 @@ import {
 import {
     // Types
     DeletionToken,
+    Token,
     Url,
     Snowflake,
 } from './types.js';
@@ -105,12 +109,15 @@ export {
     UserAgentClass,
 
     // Types
+    FileOptions,
+    FileData,
     ErrorObject,
     SubdomainData,
     Subdomain,
     Paste,
     Link,
     DeletionToken,
+    Token,
     Url,
     Snowflake,
     ParsedSnowflake,
