@@ -1,3 +1,5 @@
+import { createError } from '../error.js';
+
 /**
  * Convert a number from one base to another.
  * SOURCE: https://stackoverflow.com/questions/1337419/
@@ -15,7 +17,7 @@ export function convertBase(value: string, fromBase: number, toBase: number) {
         .reverse()
         .reduce(function (carry, digit, index) {
             if (fromRange.indexOf(digit) === -1)
-                throw new Error('Invalid digit `' + digit + '` for base ' + fromBase + '.');
+                throw createError('Invalid digit `' + digit + '` for base ' + fromBase + '.', -1);
             return (carry += fromRange.indexOf(digit) * Math.pow(fromBase, index));
         }, 0);
     let newValue = '';
