@@ -12,8 +12,8 @@
         }
     ],
     "scripts": {
-        "test": "node test/index.js",
-        "test-other": "node test/other.js",
+        "test": "node test/index.js --trace-uncaught --trace-warnings --trace-exit",
+        "test-other": "node test/other.js --trace-uncaught --trace-warnings --trace-exit",
         "build": "npx del-cli build/ types/ && npx tsc --outDir build --declarationDir types",
         "eslint": "npx eslint build/",
         "gen-doc": "npx del-cli docs/ && npx typedoc --hideGenerator --githubPages false && node tools/gen-web.cjs",

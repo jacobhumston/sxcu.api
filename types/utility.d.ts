@@ -68,7 +68,8 @@ export type ParsedSnowflake = {
 };
 /**
  * Get the data associated with a snowflake.
- * This will attempt to parse the snowflake if it is a number. However, its unlikely that it will return accurate results.
+ * This will attempt to parse the snowflake even if it is a number.
+ * However, numbers are unlikely to return accurate results.
  * @param snowflake The snowflake to parse.
  * @returns The snowflake's data.
  */
