@@ -8,6 +8,7 @@ import { createError } from '../error.js';
  * @returns The converted value.
  */
 export function convertBase(value, fromBase, toBase) {
+    value = value.replaceAll('_', '+');
     const range = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ+/'.split('');
     const fromRange = range.slice(0, fromBase),
         toRange = range.slice(0, toBase);
