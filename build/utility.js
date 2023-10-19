@@ -64,7 +64,7 @@ const snowflakeFlags = [null, 'PNG', 'JPEG', 'GIF', 'ICO', 'BMP', 'TIFF', 'WEBM'
  */
 export function parseSnowflake(snowflake) {
     if (typeof snowflake === 'number') snowflake = convertBase(snowflake.toString(), 10, 63);
-    const binaryString = convertBase(snowflake, 63, 10),
+    const binaryString = convertBase(snowflake.replaceAll('_', '+'), 63, 10),
         binary = BigInt(binaryString);
     const data = {
         timestamp: Number((binary >> 22n) + 1326466131n),
