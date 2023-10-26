@@ -1,4 +1,4 @@
-import { Snowflake } from './types';
+import { Snowflake } from './types.js';
 import { convertBase } from './modules/convert-base.js';
 
 /**

@@ -1,4 +1,4 @@
-import { Snowflake } from './types';
+import { Snowflake } from './types.js';
 /**
  * Extracts the token or id from a url or path.
  * @param url Url to extract the token from.

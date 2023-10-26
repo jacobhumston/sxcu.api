@@ -1,4 +1,4 @@
-/// <reference types="node" />
+/// <reference types="node" resolution-mode="require"/>
 import { SubdomainUrl } from './subdomains.js';
 import { DeletionToken, Snowflake, Token, Url } from '../types.js';
 /** Represents file options which can be utilized in `uploadFile`. */

@@ -14,7 +14,7 @@
     "scripts": {
         "test": "node test/index.js --trace-uncaught --trace-warnings --trace-exit",
         "test-other": "node test/other.js --trace-uncaught --trace-warnings --trace-exit",
-        "build": "npx del-cli build/ types/ && npx tsc --outDir build --declarationDir types",
+        "build": "make -f Makefile",
         "eslint": "npx eslint build/",
         "gen-doc": "npx del-cli docs/ && npx typedoc --hideGenerator --githubPages false && node tools/gen-web.cjs",
         "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint",
