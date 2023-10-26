@@ -17,9 +17,9 @@ jobs:
               id: install-dependencies
               run: npm ci
 
-            - name: Compile
-              id: build-source
-              run: npm run compile
+            - name: Eslint
+              id: rui
+              run: npm run eslint
 
     eslint_error:
         runs-on: ubuntu-latest
