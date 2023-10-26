@@ -4,13 +4,19 @@ Node.js library to interact with the sxcu.net API.
 
 sxcu.api was created to allow any developer of any skill set to easily create images, links, etc on sxcu.net without the hassle of learning the sxcu.net documentation directly.
 
-> This module has **0** dependencies. _(excluding dev)_ [Check for yourself!](https://github.com/Lovely-Experiences/sxcu.api/blob/main/package.json)
+> This module has **0** dependencies. _(excluding dev)_ [Check for yourself!](package.json)
 
 ## Links
 
 **sxcu.api:** [Docs](https://sxcu.api.lovelyjacob.com) / [Github](https://github.com/Lovely-Experiences/sxcu.api) / [npm](https://www.npmjs.com/package/sxcu.api)
 
 **sxcu.net:** [Website](https://sxcu.net/) / [API Docs](https://sxcu.net/api/docs/) / [Discord](https://discord.gg/ZBcYQwMWTG) / [Donate](https://paypal.me/MisterFix)
+
+## Updating to v2.0.0 from v1.x.x
+
+The guide for doing so can be found [here](web/guides/updating-to-v2.md).
+
+If you run into any issues, please let us know [here](https://github.com/Lovely-Experiences/sxcu.api/issues/new).
 
 ## Example Usage
 
@@ -29,19 +35,20 @@ sxcu.uploadFile('image.png')
     .catch((err) => console.log(err));
 ```
 
-On `v1.3.0` we made the switch to ESM and TypeScript.
-If you need to use commonjs, then you can use the import function.
-
-Please view [commonjs-latest](https://github.com/Lovely-Experiences/sxcu.api/tree/commonjs-latest) for the latest commonjs version of sxcu.api.
+In `v2.0.0` we made the switch to ESM and TypeScript. **However, we still support CommonJS.**
 
 ```js
-// Wrap code in an async function due to commonjs not having top-level await.
-async function main() {
-    const sxcu = await import('sxcu.api');
-    // Use the package as normal...
-}
+// Use CommonJS require.
+const { uploadFile, UserAgent, categorizeImports } = require('sxcu.api');
 
-main();
+UserAgent.useDefault();
+
+uploadFile('your-img').then((res) => {
+    console.log(res);
+});
+
+// It's important to note that you will need to use `categorizeImports`
+// if you want the previous method categories. (ex; files.uploadFile())
 ```
 
 If you preferred categorized imports, then you can use `categorizeImports`.

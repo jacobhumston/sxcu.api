@@ -1,6 +1,4 @@
-import { readFileSync } from 'node:fs';
-import { dirname } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { readFileSync, existsSync } from 'node:fs';
 /**
  * Web request user agent class.
  */
@@ -25,8 +23,9 @@ export class UserAgentClass {
      * @param pathOverride A path to a package.json to use instead of sxcu.api's package.json. The package.json needs to include `name`, `version`, and `homepage`.
      */
     useDefault(pathOverride) {
-        const path =
-            pathOverride ?? `${dirname(fileURLToPath(import.meta.url)).replaceAll('\\', '/')}/../../package.json`;
+        if (!existsSync('node_modules/sxcu.api/package.json'))
+            throw { error: 'node_modules/sxcu.api/package.json does not exists!', code: -1 };
+        const path = pathOverride ?? `node_modules/sxcu.api/package.json`;
         const packageData = JSON.parse(readFileSync(path).toString('utf-8'));
         this.set(`${packageData.name}/$${packageData.version} (+${packageData.homepage})`);
     }

@@ -3,6 +3,10 @@
     "version": "2.0.0",
     "description": "Node.js library to interact with the sxcu.net API.",
     "main": "build/index.js",
+    "exports": {
+        "import": "./build/esm/index.js",
+        "require": "./build/cjs/index.js"
+    },
     "types": "types/index.d.ts",
     "type": "module",
     "maintainers": [
@@ -14,8 +18,9 @@
     "scripts": {
         "test": "node test/index.js --trace-uncaught --trace-warnings --trace-exit",
         "test-other": "node test/other.js --trace-uncaught --trace-warnings --trace-exit",
-        "build": "make -f Makefile",
-        "eslint": "npx eslint build/",
+        "test-other-cjs": "node test/other.cjs --trace-uncaught --trace-warnings --trace-exit",
+        "build": "npx del-cli build/ types/ && npx tsc --module commonjs --outDir build/cjs/ --declaration false --declarationMap false --esModuleInterop true && echo {\"type\": \"commonjs\"} > build/cjs/package.json && npx tsc --module es2022 --outDir build/esm/ --declarationDir types --declaration true --declarationMap true && echo {\"type\": \"module\"} > build/esm/package.json",
+        "eslint": "npx eslint build/esm/",
         "gen-doc": "npx del-cli docs/ && npx typedoc --hideGenerator --githubPages false && node tools/gen-web.cjs",
         "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint",
         "format": "npx prettier ./ --write",
