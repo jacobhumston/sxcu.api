@@ -43,11 +43,18 @@ export type FileOptions = {
 };
 /** A file but with less data associated with it. */
 export type FileData = {
+    /** The ID of this file. */
     id: Snowflake;
+    /** The url of this file. */
     url: Url;
+    /** The deletion url of this file. */
     deletionUrl: Url;
+    /** The deletion token of this file. */
     deletionToken: DeletionToken;
+    /** Thumbnail url of the uploaded file. */
     thumbnail: Url;
+    /** Function to delete this file. */
+    delete: () => Promise<string>;
 };
 /** Represents what is considered an uploadable file. */
 export type UploadableFile = string | Buffer | Blob;
@@ -64,5 +71,11 @@ export declare function uploadFile(
     subdomain?: SubdomainUrl
 ): Promise<FileData>;
 export declare function getFileMeta(): Promise<void>;
-export declare function deleteFile(): Promise<void>;
+/**
+ * Delete a file.
+ * @param id The ID of the file.
+ * @param token The deletion token of the file.
+ * @returns The response message. (Success message.)
+ */
+export declare function deleteFile(id: Snowflake, token: DeletionToken): Promise<string>;
 //# sourceMappingURL=files.d.ts.map

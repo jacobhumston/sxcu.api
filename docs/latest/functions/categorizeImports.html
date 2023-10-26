@@ -248,10 +248,11 @@
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span
                             ><br /><span>        </span><span class="tsd-kind-property">deleteFile</span
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
-                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">id</span>,
+                            <span class="tsd-kind-parameter">token</span><span class="tsd-signature-symbol">)</span
                             ><span class="tsd-signature-symbol"> =&gt; </span
                             ><span class="tsd-signature-type">Promise</span
-                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
+                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span
                             ><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span
                             ><span class="tsd-signature-symbol">; </span><br /><span>        </span
                             ><span class="tsd-kind-property">getFileMeta</span
@@ -424,11 +425,12 @@
                                 ><span class="tsd-signature-symbol">{ </span><br /><span>        </span
                                 ><span class="tsd-kind-property">deleteFile</span
                                 ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
-                                ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">id</span>,
+                                <span class="tsd-kind-parameter">token</span><span class="tsd-signature-symbol">)</span
                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                 ><span class="tsd-signature-type">Promise</span
                                 ><span class="tsd-signature-symbol">&lt;</span
-                                ><span class="tsd-signature-type">void</span
+                                ><span class="tsd-signature-type">string</span
                                 ><span class="tsd-signature-symbol">&gt;</span
                                 ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
                                 ><br /><span>        </span><span class="tsd-kind-property">getFileMeta</span
@@ -717,11 +719,13 @@
                                         ><span class="tsd-signature-symbol">: </span
                                         ><span class="tsd-signature-symbol">(</span
                                         ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">id</span>,
+                                        <span class="tsd-kind-parameter">token</span
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol"> =&gt; </span
                                         ><span class="tsd-signature-type">Promise</span
                                         ><span class="tsd-signature-symbol">&lt;</span
-                                        ><span class="tsd-signature-type">void</span
+                                        ><span class="tsd-signature-type">string</span
                                         ><span class="tsd-signature-symbol">&gt;</span
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol">; </span><br /><span>    </span
@@ -766,11 +770,13 @@
                                                 ><span class="tsd-signature-symbol">: </span
                                                 ><span class="tsd-signature-symbol">(</span
                                                 ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">id</span>,
+                                                <span class="tsd-kind-parameter">token</span
                                                 ><span class="tsd-signature-symbol">)</span
                                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                                 ><span class="tsd-signature-type">Promise</span
                                                 ><span class="tsd-signature-symbol">&lt;</span
-                                                ><span class="tsd-signature-type">void</span
+                                                ><span class="tsd-signature-type">string</span
                                                 ><span class="tsd-signature-symbol">&gt;</span
                                                 ><span class="tsd-signature-symbol">)</span>
                                             </h5>
@@ -782,20 +788,60 @@
                                                             id="categorizeImports.__type.files.__type-6.deleteFile.__type-7.__type-8"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">id</span>,
+                                                            <span class="tsd-kind-parameter">token</span
                                                             ><span class="tsd-signature-symbol">)</span
                                                             ><span class="tsd-signature-symbol">: </span
                                                             ><span class="tsd-signature-type">Promise</span
                                                             ><span class="tsd-signature-symbol">&lt;</span
-                                                            ><span class="tsd-signature-type">void</span
+                                                            ><span class="tsd-signature-type">string</span
                                                             ><span class="tsd-signature-symbol">&gt;</span>
                                                         </li>
                                                         <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>Delete a file.</p>
+                                                            </div>
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter">id</span>:
+                                                                            <a
+                                                                                href="../types/Snowflake.html"
+                                                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                                                >Snowflake</a
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>The ID of the file.</p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter">token</span
+                                                                            >:
+                                                                            <span class="tsd-signature-type"
+                                                                                >string</span
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>The deletion token of the file.</p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
                                                             <h4 class="tsd-returns-title">
                                                                 Returns <span class="tsd-signature-type">Promise</span
                                                                 ><span class="tsd-signature-symbol">&lt;</span
-                                                                ><span class="tsd-signature-type">void</span
+                                                                ><span class="tsd-signature-type">string</span
                                                                 ><span class="tsd-signature-symbol">&gt;</span>
                                                             </h4>
+                                                            <p>The response message. (Success message.)</p>
+
+                                                            <div class="tsd-comment tsd-typography"></div>
                                                         </li>
                                                     </ul>
                                                 </li>
@@ -2018,7 +2064,7 @@
                                     <li>
                                         Defined in
                                         <a
-                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/90d925d/src/categorize.ts#L30"
+                                            href="https://github.com/Lovely-Experiences/sxcu.api/blob/11a38a5/src/categorize.ts#L30"
                                             >categorize.ts:30</a
                                         >
                                     </li>
@@ -2286,7 +2332,10 @@
                             <li>
                                 <a href="deleteFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
-                                    <div>delete<wbr />File</div></a
+                                    <div>
+                                        delete<wbr />File
+                                        <div class="menu-item-desc">Delete a file.</div>
+                                    </div></a
                                 >
                             </li>
                             <li>

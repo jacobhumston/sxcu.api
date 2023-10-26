@@ -222,6 +222,13 @@
                 <div class="tsd-signature">
                     <span class="tsd-kind-type-alias">File<wbr />Data</span><span class="tsd-signature-symbol">:</span>
                     <span class="tsd-signature-symbol">{ </span><br /><span>    </span
+                    ><span class="tsd-kind-property">delete</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span
+                    ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
+                    ><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span
+                    ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">&gt;</span
+                    ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span><br /><span
+                        >    </span
                     ><span class="tsd-kind-property">deletionToken</span><span class="tsd-signature-symbol">: </span
                     ><a href="DeletionToken.html" class="tsd-signature-type tsd-kind-type-alias">DeletionToken</a
                     ><span class="tsd-signature-symbol">; </span><br /><span>    </span
@@ -244,12 +251,54 @@
                     <ul class="tsd-parameters">
                         <li class="tsd-parameter">
                             <h5>
+                                <span class="tsd-kind-property">delete</span><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><span class="tsd-signature-type">Promise</span
+                                ><span class="tsd-signature-symbol">&lt;</span
+                                ><span class="tsd-signature-type">string</span
+                                ><span class="tsd-signature-symbol">&gt;</span
+                                ><span class="tsd-signature-symbol">)</span>
+                            </h5>
+                            <ul class="tsd-parameters">
+                                <li class="tsd-parameter-signature">
+                                    <ul class="tsd-signatures">
+                                        <li class="tsd-signature" id="__type.delete.__type-1.__type-2">
+                                            <span class="tsd-signature-symbol">(</span
+                                            ><span class="tsd-signature-symbol">)</span
+                                            ><span class="tsd-signature-symbol">: </span
+                                            ><span class="tsd-signature-type">Promise</span
+                                            ><span class="tsd-signature-symbol">&lt;</span
+                                            ><span class="tsd-signature-type">string</span
+                                            ><span class="tsd-signature-symbol">&gt;</span>
+                                        </li>
+                                        <li class="tsd-description">
+                                            <div class="tsd-comment tsd-typography">
+                                                <p>Function to delete this file.</p>
+                                            </div>
+                                            <h4 class="tsd-returns-title">
+                                                Returns <span class="tsd-signature-type">Promise</span
+                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                ><span class="tsd-signature-type">string</span
+                                                ><span class="tsd-signature-symbol">&gt;</span>
+                                            </h4>
+                                            <div class="tsd-comment tsd-typography"></div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
                                 <span class="tsd-kind-property">deletion<wbr />Token</span
                                 ><span class="tsd-signature-symbol">: </span
                                 ><a href="DeletionToken.html" class="tsd-signature-type tsd-kind-type-alias"
                                     >DeletionToken</a
                                 >
                             </h5>
+                            <div class="tsd-comment tsd-typography"><p>The deletion token of this file.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
                         <li class="tsd-parameter">
                             <h5>
@@ -257,12 +306,16 @@
                                 ><span class="tsd-signature-symbol">: </span
                                 ><a href="Url.html" class="tsd-signature-type tsd-kind-type-alias">Url</a>
                             </h5>
+                            <div class="tsd-comment tsd-typography"><p>The deletion url of this file.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
                         <li class="tsd-parameter">
                             <h5>
                                 <span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">: </span
                                 ><a href="Snowflake.html" class="tsd-signature-type tsd-kind-type-alias">Snowflake</a>
                             </h5>
+                            <div class="tsd-comment tsd-typography"><p>The ID of this file.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
                         <li class="tsd-parameter">
                             <h5>
@@ -270,12 +323,16 @@
                                 ><span class="tsd-signature-symbol">: </span
                                 ><a href="Url.html" class="tsd-signature-type tsd-kind-type-alias">Url</a>
                             </h5>
+                            <div class="tsd-comment tsd-typography"><p>Thumbnail url of the uploaded file.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
                         <li class="tsd-parameter">
                             <h5>
                                 <span class="tsd-kind-property">url</span><span class="tsd-signature-symbol">: </span
                                 ><a href="Url.html" class="tsd-signature-type tsd-kind-type-alias">Url</a>
                             </h5>
+                            <div class="tsd-comment tsd-typography"><p>The url of this file.</p></div>
+                            <div class="tsd-comment tsd-typography"></div>
                         </li>
                     </ul>
                 </div>
@@ -285,7 +342,7 @@
                         <li>
                             Defined in
                             <a
-                                href="https://github.com/Lovely-Experiences/sxcu.api/blob/90d925d/src/endpoints/files.ts#L50"
+                                href="https://github.com/Lovely-Experiences/sxcu.api/blob/11a38a5/src/endpoints/files.ts#L50"
                                 >endpoints/files.ts:50</a
                             >
                         </li>
@@ -550,7 +607,10 @@
                             <li>
                                 <a href="../functions/deleteFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
-                                    <div>delete<wbr />File</div></a
+                                    <div>
+                                        delete<wbr />File
+                                        <div class="menu-item-desc">Delete a file.</div>
+                                    </div></a
                                 >
                             </li>
                             <li>

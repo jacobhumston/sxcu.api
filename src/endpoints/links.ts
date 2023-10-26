@@ -14,9 +14,7 @@ export type Link = {
     deletionUrl: Url;
     /** The deletion token of this link. */
     deletionToken: DeletionToken;
-    /**
-     * Function to delete this link.
-     */
+    /** Function to delete this link. */
     delete: () => Promise<string>;
 };
 
