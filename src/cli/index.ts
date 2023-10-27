@@ -1,3 +1,5 @@
 #! /usr/bin/env node
 
-console.log('hey... this is a cli');
+const sxcu = require('sxcu.api');
+
+console.log(sxcu);
