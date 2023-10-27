@@ -1577,14 +1577,7 @@
         if (!r.index || !r.data) return;
         e.textContent = '';
         let i = n.value.trim(),
-            s;
-        if (i) {
-            let o = i
-                .split(' ')
-                .map((a) => (a.length ? `*${a}*` : ''))
-                .join(' ');
-            s = r.index.search(o);
-        } else s = [];
+            s = i ? r.index.search(`*${i}*`) : [];
         for (let o = 0; o < s.length; o++) {
             let a = s[o],
                 l = r.data.rows[Number(a.ref)],
