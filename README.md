@@ -1,6 +1,6 @@
 # sxcu.api
 
-Node.js library to interact with the sxcu.net API.
+Node.js library to interact with the sxcu.net API. _([A cli is also included!](src/cli/README.md))_
 
 sxcu.api was created to allow any developer of any skill set to easily create images, links, etc on sxcu.net without the hassle of learning the sxcu.net documentation directly.
 
@@ -17,6 +17,14 @@ sxcu.api was created to allow any developer of any skill set to easily create im
 The guide for doing so can be found [here](web/guides/updating-to-v2.md).
 
 If you run into any issues, please let us know [here](https://github.com/Lovely-Experiences/sxcu.api/issues/new).
+
+## Installation
+
+You can install sxcu.api using npm.
+
+```bash
+npm install sxcu.api
+```
 
 ## Example Usage
 

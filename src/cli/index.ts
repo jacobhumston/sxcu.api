@@ -1,5 +1,4 @@
 #! /usr/bin/env node
-
-const sxcu = require('sxcu.api');
+import * as sxcu from 'sxcu.api';
 
 console.log(sxcu);

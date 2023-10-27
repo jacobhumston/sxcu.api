@@ -5,7 +5,8 @@
     "main": "build/index.js",
     "exports": {
         "import": "./build/esm/index.js",
-        "require": "./build/cjs/index.js"
+        "require": "./build/cjs/index.js",
+        "types": "./types/index.d.ts"
     },
     "bin": {
         "sxcu": "build/cli/index.js"
@@ -22,12 +23,12 @@
         "test": "node test/index.js --trace-uncaught --trace-warnings --trace-exit",
         "test-other": "node test/other.js --trace-uncaught --trace-warnings --trace-exit",
         "test-other-cjs": "node test/other.cjs --trace-uncaught --trace-warnings --trace-exit",
-        "build": "./build.sh",
+        "build": "bash build.sh",
         "eslint": "npx eslint build/esm/",
         "gen-doc": "npx del-cli docs/ && npx typedoc --hideGenerator --githubPages false && node tools/gen-web.cjs",
         "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint",
         "format": "npx prettier ./ --write",
-        "link": "npm link ./ && npm link sxcu.api"
+        "link": "npm link ./ --force && npm link sxcu.api --force"
     },
     "files": [
         "build",
