@@ -14,6 +14,7 @@ export default createCommand(
     async function () {
         const dir = dirname(import.meta.url.replace('file:///', ''));
         const commands = [];
+        const tab = '    ';
         for (const file of readdirSync(`${dir}/`)) {
             const command = (await import(`./${file}`)).default;
             commands.push(command);
@@ -21,7 +22,7 @@ export default createCommand(
         for (const command of Object.values(commands)) {
             console.log(`\n${command.name} - ${command.description}`);
             for (const option of command.options) {
-                console.log(`\t--${option.name} - ${option.description}`);
+                console.log(`${tab}--${option.name} - ${option.description}`);
             }
         }
     }
