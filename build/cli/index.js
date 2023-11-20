@@ -7,7 +7,7 @@ UserAgent.useDefault();
 const commandString = process.argv.slice(2).join(' ');
 const commands = {};
 const dir = dirname(import.meta.url.replace('file:///', ''));
-for (const file of readdirSync(`${dir}/commands`)) {
+for (const file of readdirSync(`/${dir}/commands`)) {
     const command = (await import(`./commands/${file}`)).default;
     commands[command.name] = command;
 }

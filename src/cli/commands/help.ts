@@ -18,7 +18,7 @@ export default createCommand(
         const commands: Command[] = [];
         const tab = '    ';
 
-        for (const file of readdirSync(`${dir}/`)) {
+        for (const file of readdirSync(`/${dir}/`)) {
             const command: Command = (await import(`./${file}`)).default;
             commands.push(command);
         }

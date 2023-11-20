@@ -15,7 +15,7 @@ export default createCommand(
         const dir = dirname(import.meta.url.replace('file:///', ''));
         const commands = [];
         const tab = '    ';
-        for (const file of readdirSync(`${dir}/`)) {
+        for (const file of readdirSync(`/${dir}/`)) {
             const command = (await import(`./${file}`)).default;
             commands.push(command);
         }

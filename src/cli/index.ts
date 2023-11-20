@@ -12,7 +12,7 @@ const commands: { [key: string]: Command } = {};
 
 const dir: string = dirname(import.meta.url.replace('file:///', ''));
 
-for (const file of readdirSync(`${dir}/commands`)) {
+for (const file of readdirSync(`/${dir}/commands`)) {
     const command: Command = (await import(`./commands/${file}`)).default;
     commands[command.name] = command;
 }
