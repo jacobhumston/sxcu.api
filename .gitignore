@@ -8,3 +8,7 @@ test/other.cjs
 
 # VSCode Config
 .vscode/
+
+# Build Directories
+build/
+types/
