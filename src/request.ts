@@ -21,7 +21,7 @@ export type RequestOptions = {
      */
     path: string;
     /** Body of the request. (If needed.) */
-    body?: any;
+    body?: BodyInit | null | undefined;
 };
 
 /** The URL to learn more about setting the User Agent. */

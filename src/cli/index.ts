@@ -30,8 +30,7 @@ for (const commandString of commandsToExecute) {
 
     if (command === undefined) {
         console.log(`Command "${commandName}" not found! Please use "sxcu help" for a list of commands.`);
-        exit(0);
+    } else {
+        await command.execute(command);
     }
-
-    await command.execute(command);
 }

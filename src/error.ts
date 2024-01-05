@@ -22,7 +22,7 @@ export function createError(message: string, code: number): ErrorObject {
  * Attempt to resolve an error from "thing".
  * @param thing Thing to attempt to convert to an error.
  */
-export function resolveError(thing: any): ErrorObject {
+export function resolveError(thing: string | { error?: string; message?: string; code?: number }): ErrorObject {
     // Check if thing is null or undefined.
     if (thing === null || thing === undefined) return { error: 'Unknown', code: 0 };
 

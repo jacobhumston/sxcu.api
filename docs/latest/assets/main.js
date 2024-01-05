@@ -124,8 +124,8 @@
                     return e === t.Set.complete
                         ? t.Set.complete
                         : e === t.Set.empty
-                        ? this
-                        : new t.Set(Object.keys(this.elements).concat(Object.keys(e.elements)));
+                          ? this
+                          : new t.Set(Object.keys(this.elements).concat(Object.keys(e.elements)));
                 }),
                 (t.idf = function (e, n) {
                     var r = 0;
@@ -306,8 +306,8 @@
                             a < l
                                 ? (u += 2)
                                 : a > l
-                                ? (d += 2)
-                                : a == l && ((n += r[u + 1] * i[d + 1]), (u += 2), (d += 2));
+                                  ? (d += 2)
+                                  : a == l && ((n += r[u + 1] * i[d + 1]), (u += 2), (d += 2));
                     return n;
                 }),
                 (t.Vector.prototype.similarity = function (e) {
@@ -406,8 +406,8 @@
                                     x.test(c)
                                         ? (c = c + 'e')
                                         : O.test(c)
-                                        ? ((h = w), (c = c.replace(h, '')))
-                                        : M.test(c) && (c = c + 'e'));
+                                          ? ((h = w), (c = c.replace(h, '')))
+                                          : M.test(c) && (c = c + 'e'));
                         }
                         if (((h = A), h.test(c))) {
                             var E = h.exec(c);
@@ -1420,8 +1420,8 @@
                     typeof define == 'function' && define.amd
                         ? define(n)
                         : typeof se == 'object'
-                        ? (oe.exports = n())
-                        : (e.lunr = n());
+                          ? (oe.exports = n())
+                          : (e.lunr = n());
                 })(this, function () {
                     return t;
                 });
@@ -1556,12 +1556,12 @@
                 s.key == 'Enter'
                     ? Ve(e, n)
                     : s.key == 'Escape'
-                    ? n.blur()
-                    : s.key == 'ArrowUp'
-                    ? ue(e, -1)
-                    : s.key === 'ArrowDown'
-                    ? ue(e, 1)
-                    : (i = !1);
+                      ? n.blur()
+                      : s.key == 'ArrowUp'
+                        ? ue(e, -1)
+                        : s.key === 'ArrowDown'
+                          ? ue(e, 1)
+                          : (i = !1);
         }),
             n.addEventListener('keypress', (s) => {
                 i && s.preventDefault();
@@ -1689,39 +1689,39 @@
         fe && (t.preventDefault(), t.stopImmediatePropagation(), (fe = !1));
     });
     var X = class extends C {
-        constructor(n) {
-            super(n);
-            (this.className = this.el.dataset.toggle || ''),
-                this.el.addEventListener(B, (r) => this.onPointerUp(r)),
-                this.el.addEventListener('click', (r) => r.preventDefault()),
-                document.addEventListener(F, (r) => this.onDocumentPointerDown(r)),
-                document.addEventListener(B, (r) => this.onDocumentPointerUp(r));
+        constructor(e) {
+            super(e),
+                (this.className = this.el.dataset.toggle || ''),
+                this.el.addEventListener(B, (n) => this.onPointerUp(n)),
+                this.el.addEventListener('click', (n) => n.preventDefault()),
+                document.addEventListener(F, (n) => this.onDocumentPointerDown(n)),
+                document.addEventListener(B, (n) => this.onDocumentPointerUp(n));
         }
-        setActive(n) {
-            if (this.active == n) return;
-            (this.active = n),
-                document.documentElement.classList.toggle('has-' + this.className, n),
-                this.el.classList.toggle('active', n);
-            let r = (this.active ? 'to-has-' : 'from-has-') + this.className;
-            document.documentElement.classList.add(r),
-                setTimeout(() => document.documentElement.classList.remove(r), 500);
+        setActive(e) {
+            if (this.active == e) return;
+            (this.active = e),
+                document.documentElement.classList.toggle('has-' + this.className, e),
+                this.el.classList.toggle('active', e);
+            let n = (this.active ? 'to-has-' : 'from-has-') + this.className;
+            document.documentElement.classList.add(n),
+                setTimeout(() => document.documentElement.classList.remove(n), 500);
         }
-        onPointerUp(n) {
-            D || (this.setActive(!0), n.preventDefault());
+        onPointerUp(e) {
+            D || (this.setActive(!0), e.preventDefault());
         }
-        onDocumentPointerDown(n) {
+        onDocumentPointerDown(e) {
             if (this.active) {
-                if (n.target.closest('.col-sidebar, .tsd-filter-group')) return;
+                if (e.target.closest('.col-sidebar, .tsd-filter-group')) return;
                 this.setActive(!1);
             }
         }
-        onDocumentPointerUp(n) {
-            if (!D && this.active && n.target.closest('.col-sidebar')) {
-                let r = n.target.closest('a');
-                if (r) {
-                    let i = window.location.href;
-                    i.indexOf('#') != -1 && (i = i.substring(0, i.indexOf('#'))),
-                        r.href.substring(0, i.length) == i && setTimeout(() => this.setActive(!1), 250);
+        onDocumentPointerUp(e) {
+            if (!D && this.active && e.target.closest('.col-sidebar')) {
+                let n = e.target.closest('a');
+                if (n) {
+                    let r = window.location.href;
+                    r.indexOf('#') != -1 && (r = r.substring(0, r.indexOf('#'))),
+                        n.href.substring(0, r.length) == r && setTimeout(() => this.setActive(!1), 250);
                 }
             }
         }
@@ -1741,49 +1741,50 @@
     var ve = document.head.appendChild(document.createElement('style'));
     ve.dataset.for = 'filters';
     var Y = class extends C {
-        constructor(n) {
-            super(n);
-            (this.key = `filter-${this.el.name}`),
+        constructor(e) {
+            super(e),
+                (this.key = `filter-${this.el.name}`),
                 (this.value = this.el.checked),
                 this.el.addEventListener('change', () => {
                     this.setLocalStorage(this.el.checked);
                 }),
                 this.setLocalStorage(this.fromLocalStorage()),
                 (ve.innerHTML += `html:not(.${this.key}) .tsd-is-${this.el.name} { display: none; }
-`);
+`),
+                this.handleValueChange();
         }
         fromLocalStorage() {
-            let n = Q.getItem(this.key);
-            return n ? n === 'true' : this.el.checked;
+            let e = Q.getItem(this.key);
+            return e ? e === 'true' : this.el.checked;
         }
-        setLocalStorage(n) {
-            Q.setItem(this.key, n.toString()), (this.value = n), this.handleValueChange();
+        setLocalStorage(e) {
+            Q.setItem(this.key, e.toString()), (this.value = e), this.handleValueChange();
         }
         handleValueChange() {
             (this.el.checked = this.value),
                 document.documentElement.classList.toggle(this.key, this.value),
                 this.app.filterChanged(),
-                document.querySelectorAll('.tsd-index-section').forEach((n) => {
-                    n.style.display = 'block';
-                    let r = Array.from(n.querySelectorAll('.tsd-index-link')).every((i) => i.offsetParent == null);
-                    n.style.display = r ? 'none' : 'block';
+                document.querySelectorAll('.tsd-index-section').forEach((e) => {
+                    e.style.display = 'block';
+                    let n = Array.from(e.querySelectorAll('.tsd-index-link')).every((r) => r.offsetParent == null);
+                    e.style.display = n ? 'none' : 'block';
                 });
         }
     };
     var Z = class extends C {
-        constructor(n) {
-            super(n);
-            (this.summary = this.el.querySelector('.tsd-accordion-summary')),
+        constructor(e) {
+            super(e),
+                (this.summary = this.el.querySelector('.tsd-accordion-summary')),
                 (this.icon = this.summary.querySelector('svg')),
                 (this.key = `tsd-accordion-${
                     this.summary.dataset.key ?? this.summary.textContent.trim().replace(/\s+/g, '-').toLowerCase()
                 }`);
-            let r = Q.getItem(this.key);
-            (this.el.open = r ? r === 'true' : this.el.open), this.el.addEventListener('toggle', () => this.update());
-            let i = this.summary.querySelector('a');
-            i &&
-                i.addEventListener('click', () => {
-                    location.assign(i.href);
+            let n = Q.getItem(this.key);
+            (this.el.open = n ? n === 'true' : this.el.open), this.el.addEventListener('toggle', () => this.update());
+            let r = this.summary.querySelector('a');
+            r &&
+                r.addEventListener('click', () => {
+                    location.assign(r.href);
                 }),
                 this.update();
         }

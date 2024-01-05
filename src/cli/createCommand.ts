@@ -10,14 +10,14 @@ export type Option = {
      * Function to validate the option.
      * Can be undefined if the option requires no value.
      */
-    result?: (value: string) => any;
+    result?: (value: string) => boolean;
 };
 
 export type Command = {
     name: string;
     description: string;
     options: Option[];
-    execute: (command: Command) => void;
+    execute: (command: Command) => Promise<void>;
 };
 
 /**
@@ -31,7 +31,7 @@ export default function createCommand(
     name: string,
     description: string,
     options: Option[],
-    execute: (command: Command) => void
+    execute: (command: Command) => Promise<void>
 ): Command {
     return {
         name,

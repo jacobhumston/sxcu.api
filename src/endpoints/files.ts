@@ -90,7 +90,7 @@ function parseFileOptions(options: FileOptions, formData: FormData): null {
     if (options.selfDestruct) formData.set('self_destruct', 'true');
     if (options.openGraphProperties) {
         const { title, description, color, siteName, discordHideUrl } = options.openGraphProperties;
-        const data: any = {};
+        const data: { [key: string]: string | boolean } = {};
         if (title) data.title = title;
         if (description) data.description = description;
         if (color) data.color = color;
