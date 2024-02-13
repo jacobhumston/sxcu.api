@@ -1,5 +1,4 @@
 import { UserAgent } from './classes/user-agent.js';
-import { createError } from './error.js';
 
 /** Request options. */
 export type RequestOptions = {
@@ -25,7 +24,7 @@ export type RequestOptions = {
 };
 
 /** The URL to learn more about setting the User Agent. */
-const guideUrl: string = 'https://sxcu.api.lovelyjacob.com/guides/user-agent.html';
+// const guideUrl: string = 'https://sxcu.api.lovelyjacob.com/guides/user-agent.html';
 
 /**
  * Attempts to get the JSON from a response.
@@ -41,8 +40,8 @@ async function getJSON(response: Response): Promise<{ [key: string]: any }> {
  * Create an API request.
  */
 export async function request(options: RequestOptions): Promise<{ [key: string]: any }> {
-    // Check if the User Agent is set. Throw an error if it isn't.
-    if (UserAgent.get() === '') throw createError(`User agent is not set! Learn more: ${guideUrl}`, -1);
+    // Check if the User Agent is set, if it isn't then we will set it for them.
+    if (UserAgent.get() === '') UserAgent.useDefault();
 
     // Make a request to the API.
     const url = options.subdomain

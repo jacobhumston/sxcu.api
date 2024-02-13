@@ -35,6 +35,7 @@ Here is an example of uploading a file.
 import * as sxcu from 'sxcu.api';
 
 // Set the request user agent to the default.
+// This will be done for you on the first request if you don't do it yourself.
 sxcu.UserAgent.useDefault();
 
 // Upload the file and log the response.
