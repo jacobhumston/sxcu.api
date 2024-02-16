@@ -1,9 +1,9 @@
 #! /usr/bin/env node
 import { UserAgent } from 'sxcu.api';
 import { Command } from './createCommand.js';
-import { dirname } from 'node:path';
+//import { dirname } from 'node:path';
 import { exit } from 'node:process';
-import { readdirSync } from 'node:fs';
+//import { readdirSync } from 'node:fs';
 
 UserAgent.useDefault();
 

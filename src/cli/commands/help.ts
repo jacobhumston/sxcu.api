@@ -1,7 +1,7 @@
 import { Command } from '../createCommand.js';
 import createCommand from '../createCommand.js';
-import { readdirSync } from 'node:fs';
-import { dirname } from 'node:path';
+//import { readdirSync } from 'node:fs';
+//import { dirname } from 'node:path';
 
 export default createCommand(
     'help',
@@ -14,11 +14,11 @@ export default createCommand(
         },
     ],
     async function () {
-        const dir: string = dirname(import.meta.url.replace('file:///', ''));
+        // const dir: string = dirname(import.meta.url.replace('file:///', ''));
         const commands: Command[] = [];
         const tab = '    ';
 
-        for (const file of readdirSync(`/${dir}/`)) {
+        for (const file of ['help.js', 'userAgent.js']) {
             const command: Command = (await import(`./${file}`)).default;
             commands.push(command);
         }
