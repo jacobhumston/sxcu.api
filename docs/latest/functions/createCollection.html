@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>UserAgentClass | sxcu.api - v2.0.0</title>
+        <title>createCollection | sxcu.api - v2.0.0</title>
         <meta name="description" content="Documentation for sxcu.api" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="stylesheet" href="../assets/style.css" />
@@ -215,355 +215,47 @@
                 <div class="tsd-page-title">
                     <ul class="tsd-breadcrumb">
                         <li><a href="../modules.html">sxcu.api</a></li>
-                        <li><a href="UserAgentClass.html">UserAgentClass</a></li>
+                        <li><a href="createCollection.html">createCollection</a></li>
                     </ul>
-                    <h1>Class UserAgentClass</h1>
+                    <h1>Function createCollection</h1>
                 </div>
-                <section class="tsd-panel tsd-comment">
-                    <div class="tsd-comment tsd-typography"><p>Web request user agent class.</p></div>
-                    <div class="tsd-comment tsd-typography"></div>
-                </section>
-                <aside class="tsd-sources">
-                    <ul>
-                        <li>
-                            Defined in
-                            <a href="https://github.com/jacobhumston/sxcu.api/blob/8861a1f/src/classes/user-agent.ts#L6"
-                                >classes/user-agent.ts:6</a
-                            >
+                <section class="tsd-panel">
+                    <ul class="tsd-signatures">
+                        <li class="tsd-signature tsd-anchor-link">
+                            <a id="createCollection" class="tsd-anchor"></a
+                            ><span class="tsd-kind-call-signature">create<wbr />Collection</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span
+                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
+                            ><span class="tsd-signature-symbol">&gt;</span
+                            ><a href="#createCollection" aria-label="Permalink" class="tsd-anchor-icon"
+                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
+                            ></a>
+                        </li>
+                        <li class="tsd-description">
+                            <h4 class="tsd-returns-title">
+                                Returns <span class="tsd-signature-type">Promise</span
+                                ><span class="tsd-signature-symbol">&lt;</span
+                                ><span class="tsd-signature-type">void</span
+                                ><span class="tsd-signature-symbol">&gt;</span>
+                            </h4>
+                            <aside class="tsd-sources">
+                                <ul>
+                                    <li>
+                                        Defined in
+                                        <a
+                                            href="https://github.com/jacobhumston/sxcu.api/blob/8861a1f/src/endpoints/collections.ts#L3"
+                                            >endpoints/collections.ts:3</a
+                                        >
+                                    </li>
+                                </ul>
+                            </aside>
                         </li>
                     </ul>
-                </aside>
-                <section class="tsd-panel-group tsd-index-group">
-                    <section class="tsd-panel tsd-index-panel">
-                        <details class="tsd-index-content tsd-index-accordion" open>
-                            <summary class="tsd-accordion-summary tsd-index-summary">
-                                <h5
-                                    class="tsd-index-heading uppercase"
-                                    role="button"
-                                    aria-expanded="false"
-                                    tabindex="0"
-                                >
-                                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                        <use href="#icon-chevronSmall"></use>
-                                    </svg>
-                                    Index
-                                </h5>
-                            </summary>
-                            <div class="tsd-accordion-details">
-                                <section class="tsd-index-section">
-                                    <h3 class="tsd-index-heading">Constructors</h3>
-                                    <div class="tsd-index-list">
-                                        <a href="UserAgentClass.html#constructor" class="tsd-index-link"
-                                            ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                                <use href="#icon-512"></use></svg
-                                            ><span>constructor</span></a
-                                        >
-                                    </div>
-                                </section>
-                                <section class="tsd-index-section">
-                                    <h3 class="tsd-index-heading">Properties</h3>
-                                    <div class="tsd-index-list">
-                                        <a href="UserAgentClass.html#_value" class="tsd-index-link tsd-is-private"
-                                            ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                                <use href="#icon-1024"></use></svg
-                                            ><span>#value</span></a
-                                        >
-                                    </div>
-                                </section>
-                                <section class="tsd-index-section">
-                                    <h3 class="tsd-index-heading">Methods</h3>
-                                    <div class="tsd-index-list">
-                                        <a href="UserAgentClass.html#get" class="tsd-index-link"
-                                            ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                                <use href="#icon-2048"></use></svg
-                                            ><span>get</span></a
-                                        >
-                                        <a href="UserAgentClass.html#set" class="tsd-index-link"
-                                            ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                                <use href="#icon-2048"></use></svg
-                                            ><span>set</span></a
-                                        >
-                                        <a href="UserAgentClass.html#useDefault" class="tsd-index-link"
-                                            ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                                <use href="#icon-2048"></use></svg
-                                            ><span>use<wbr />Default</span></a
-                                        >
-                                    </div>
-                                </section>
-                            </div>
-                        </details>
-                    </section>
-                </section>
-                <section class="tsd-panel-group tsd-member-group">
-                    <h2>Constructors</h2>
-                    <section class="tsd-panel tsd-member">
-                        <a id="constructor" class="tsd-anchor"></a>
-                        <h3 class="tsd-anchor-link">
-                            <span>constructor</span
-                            ><a href="#constructor" aria-label="Permalink" class="tsd-anchor-icon"
-                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                            ></a>
-                        </h3>
-                        <ul class="tsd-signatures">
-                            <li class="tsd-signature tsd-anchor-link">
-                                <a id="constructor.new_UserAgentClass" class="tsd-anchor"></a
-                                ><span class="tsd-kind-constructor-signature"
-                                    >new <wbr />User<wbr />Agent<wbr />Class</span
-                                ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
-                                ><span class="tsd-signature-symbol">: </span
-                                ><a href="UserAgentClass.html" class="tsd-signature-type tsd-kind-class"
-                                    >UserAgentClass</a
-                                ><a
-                                    href="#constructor.new_UserAgentClass"
-                                    aria-label="Permalink"
-                                    class="tsd-anchor-icon"
-                                    ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                                ></a>
-                            </li>
-                            <li class="tsd-description">
-                                <h4 class="tsd-returns-title">
-                                    Returns
-                                    <a href="UserAgentClass.html" class="tsd-signature-type tsd-kind-class"
-                                        >UserAgentClass</a
-                                    >
-                                </h4>
-                            </li>
-                        </ul>
-                    </section>
-                </section>
-                <section class="tsd-panel-group tsd-member-group">
-                    <h2>Properties</h2>
-                    <section class="tsd-panel tsd-member tsd-is-private">
-                        <a id="_value" class="tsd-anchor"></a>
-                        <h3 class="tsd-anchor-link">
-                            <code class="tsd-tag ts-flagPrivate">Private</code> <span>#value</span
-                            ><a href="#_value" aria-label="Permalink" class="tsd-anchor-icon"
-                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                            ></a>
-                        </h3>
-                        <div class="tsd-signature">
-                            <span class="tsd-kind-property">#value</span><span class="tsd-signature-symbol">:</span>
-                            <span class="tsd-signature-type">string</span
-                            ><span class="tsd-signature-symbol"> = &#39;&#39;</span>
-                        </div>
-                        <aside class="tsd-sources">
-                            <ul>
-                                <li>
-                                    Defined in
-                                    <a
-                                        href="https://github.com/jacobhumston/sxcu.api/blob/8861a1f/src/classes/user-agent.ts#L7"
-                                        >classes/user-agent.ts:7</a
-                                    >
-                                </li>
-                            </ul>
-                        </aside>
-                    </section>
-                </section>
-                <section class="tsd-panel-group tsd-member-group">
-                    <h2>Methods</h2>
-                    <section class="tsd-panel tsd-member">
-                        <a id="get" class="tsd-anchor"></a>
-                        <h3 class="tsd-anchor-link">
-                            <span>get</span
-                            ><a href="#get" aria-label="Permalink" class="tsd-anchor-icon"
-                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                            ></a>
-                        </h3>
-                        <ul class="tsd-signatures">
-                            <li class="tsd-signature tsd-anchor-link">
-                                <a id="get.get-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">get</span
-                                ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
-                                ><span class="tsd-signature-symbol">: </span
-                                ><span class="tsd-signature-type">string</span
-                                ><a href="#get.get-1" aria-label="Permalink" class="tsd-anchor-icon"
-                                    ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                                ></a>
-                            </li>
-                            <li class="tsd-description">
-                                <div class="tsd-comment tsd-typography"><p>Get the user agent.</p></div>
-                                <h4 class="tsd-returns-title">
-                                    Returns <span class="tsd-signature-type">string</span>
-                                </h4>
-                                <div class="tsd-comment tsd-typography"></div>
-                                <aside class="tsd-sources">
-                                    <ul>
-                                        <li>
-                                            Defined in
-                                            <a
-                                                href="https://github.com/jacobhumston/sxcu.api/blob/8861a1f/src/classes/user-agent.ts#L12"
-                                                >classes/user-agent.ts:12</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </aside>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="tsd-panel tsd-member">
-                        <a id="set" class="tsd-anchor"></a>
-                        <h3 class="tsd-anchor-link">
-                            <span>set</span
-                            ><a href="#set" aria-label="Permalink" class="tsd-anchor-icon"
-                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                            ></a>
-                        </h3>
-                        <ul class="tsd-signatures">
-                            <li class="tsd-signature tsd-anchor-link">
-                                <a id="set.set-1" class="tsd-anchor"></a><span class="tsd-kind-call-signature">set</span
-                                ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">value</span
-                                ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
-                                ><span class="tsd-signature-type">void</span
-                                ><a href="#set.set-1" aria-label="Permalink" class="tsd-anchor-icon"
-                                    ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                                ></a>
-                            </li>
-                            <li class="tsd-description">
-                                <div class="tsd-comment tsd-typography"><p>Set the user agent.</p></div>
-                                <div class="tsd-parameters">
-                                    <h4 class="tsd-parameters-title">Parameters</h4>
-                                    <ul class="tsd-parameter-list">
-                                        <li>
-                                            <h5>
-                                                <span class="tsd-kind-parameter">value</span>:
-                                                <span class="tsd-signature-type">string</span>
-                                            </h5>
-                                            <div class="tsd-comment tsd-typography"><p>User agent to set.</p></div>
-                                            <div class="tsd-comment tsd-typography"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-                                <div class="tsd-comment tsd-typography"></div>
-                                <aside class="tsd-sources">
-                                    <ul>
-                                        <li>
-                                            Defined in
-                                            <a
-                                                href="https://github.com/jacobhumston/sxcu.api/blob/8861a1f/src/classes/user-agent.ts#L20"
-                                                >classes/user-agent.ts:20</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </aside>
-                            </li>
-                        </ul>
-                    </section>
-                    <section class="tsd-panel tsd-member">
-                        <a id="useDefault" class="tsd-anchor"></a>
-                        <h3 class="tsd-anchor-link">
-                            <span>use<wbr />Default</span
-                            ><a href="#useDefault" aria-label="Permalink" class="tsd-anchor-icon"
-                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                            ></a>
-                        </h3>
-                        <ul class="tsd-signatures">
-                            <li class="tsd-signature tsd-anchor-link">
-                                <a id="useDefault.useDefault-1" class="tsd-anchor"></a
-                                ><span class="tsd-kind-call-signature">use<wbr />Default</span
-                                ><span class="tsd-signature-symbol">(</span
-                                ><span class="tsd-kind-parameter">pathOverride</span
-                                ><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span
-                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span
-                                ><a href="#useDefault.useDefault-1" aria-label="Permalink" class="tsd-anchor-icon"
-                                    ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
-                                ></a>
-                            </li>
-                            <li class="tsd-description">
-                                <div class="tsd-comment tsd-typography">
-                                    <p>
-                                        Set the user agent to the default. Will error if sxcu.api&#39;s package.json is
-                                        not present.
-                                    </p>
-                                </div>
-                                <div class="tsd-parameters">
-                                    <h4 class="tsd-parameters-title">Parameters</h4>
-                                    <ul class="tsd-parameter-list">
-                                        <li>
-                                            <h5>
-                                                <code class="tsd-tag ts-flagOptional">Optional</code>
-                                                <span class="tsd-kind-parameter">pathOverride</span>:
-                                                <span class="tsd-signature-type">string</span>
-                                            </h5>
-                                            <div class="tsd-comment tsd-typography">
-                                                <p>
-                                                    A path to a package.json to use instead of sxcu.api&#39;s
-                                                    package.json. The package.json needs to include <code>name</code>,
-                                                    <code>version</code>, and <code>homepage</code>.
-                                                </p>
-                                            </div>
-                                            <div class="tsd-comment tsd-typography"></div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-                                <div class="tsd-comment tsd-typography"></div>
-                                <aside class="tsd-sources">
-                                    <ul>
-                                        <li>
-                                            Defined in
-                                            <a
-                                                href="https://github.com/jacobhumston/sxcu.api/blob/8861a1f/src/classes/user-agent.ts#L29"
-                                                >classes/user-agent.ts:29</a
-                                            >
-                                        </li>
-                                    </ul>
-                                </aside>
-                            </li>
-                        </ul>
-                    </section>
                 </section>
             </div>
             <div class="col-sidebar">
-                <div class="page-menu">
-                    <details open class="tsd-index-accordion tsd-page-navigation">
-                        <summary class="tsd-accordion-summary">
-                            <h3>
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                    <use href="#icon-chevronDown"></use></svg
-                                >On This Page
-                            </h3>
-                        </summary>
-                        <div class="tsd-accordion-details">
-                            <ul>
-                                <li>
-                                    <a href="#constructor" class=""
-                                        ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                            <use href="#icon-512"></use></svg
-                                        ><span>constructor</span></a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#_value" class="tsd-is-private"
-                                        ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                            <use href="#icon-1024"></use></svg
-                                        ><span>#value</span></a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#get" class=""
-                                        ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                            <use href="#icon-2048"></use></svg
-                                        ><span>get</span></a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#set" class=""
-                                        ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                            <use href="#icon-2048"></use></svg
-                                        ><span>set</span></a
-                                    >
-                                </li>
-                                <li>
-                                    <a href="#useDefault" class=""
-                                        ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                            <use href="#icon-2048"></use></svg
-                                        ><span>use<wbr />Default</span></a
-                                    >
-                                </li>
-                            </ul>
-                        </div>
-                    </details>
-                </div>
+                <div class="page-menu"></div>
                 <div class="site-menu">
                     <nav class="tsd-navigation">
                         <a href="../modules.html"
@@ -594,7 +286,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="UserAgentClass.html" class="current"
+                                <a href="../classes/UserAgentClass.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>
                                     <div>
                                         User<wbr />Agent<wbr />Class
@@ -765,7 +457,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/categorizeImports.html"
+                                <a href="categorizeImports.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         categorize<wbr />Imports
@@ -776,7 +468,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/checkSubdomain.html"
+                                <a href="checkSubdomain.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         check<wbr />Subdomain
@@ -785,13 +477,13 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/createCollection.html"
+                                <a href="createCollection.html" class="current"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>create<wbr />Collection</div></a
                                 >
                             </li>
                             <li>
-                                <a href="../functions/createError.html"
+                                <a href="createError.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         create<wbr />Error
@@ -800,7 +492,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/createLink.html"
+                                <a href="createLink.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         create<wbr />Link
@@ -809,7 +501,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/createPaste.html"
+                                <a href="createPaste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         create<wbr />Paste
@@ -818,7 +510,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/deleteFile.html"
+                                <a href="deleteFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         delete<wbr />File
@@ -827,7 +519,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/deleteLink.html"
+                                <a href="deleteLink.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         delete<wbr />Link
@@ -836,7 +528,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/deletePaste.html"
+                                <a href="deletePaste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         delete<wbr />Paste
@@ -845,7 +537,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/extractToken.html"
+                                <a href="extractToken.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         extract<wbr />Token
@@ -854,19 +546,19 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/getCollectionMeta.html"
+                                <a href="getCollectionMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>get<wbr />Collection<wbr />Meta</div></a
                                 >
                             </li>
                             <li>
-                                <a href="../functions/getFileMeta.html"
+                                <a href="getFileMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>get<wbr />File<wbr />Meta</div></a
                                 >
                             </li>
                             <li>
-                                <a href="../functions/getSubdomainMeta.html"
+                                <a href="getSubdomainMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         get<wbr />Subdomain<wbr />Meta
@@ -875,7 +567,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/listSubdomains.html"
+                                <a href="listSubdomains.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         list<wbr />Subdomains
@@ -884,7 +576,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/parseSnowflake.html"
+                                <a href="parseSnowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         parse<wbr />Snowflake
@@ -893,7 +585,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/resolveError.html"
+                                <a href="resolveError.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         resolve<wbr />Error
@@ -904,7 +596,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="../functions/uploadFile.html"
+                                <a href="uploadFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         upload<wbr />File

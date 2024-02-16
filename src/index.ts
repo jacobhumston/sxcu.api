@@ -65,32 +65,3 @@ export {
     SnowflakeObjectType,
     SnowflakeObjectFlag,
 };
-
-export default {
-    // Endpoints
-    uploadFile,
-    getFileMeta,
-    deleteFile,
-    createCollection,
-    getCollectionMeta,
-    checkSubdomain,
-    getSubdomainMeta,
-    listSubdomains,
-    createLink,
-    deleteLink,
-    createPaste,
-    deletePaste,
-
-    // Other Modules
-    createError,
-    resolveError,
-    extractToken,
-    parseSnowflake,
-    categorizeImports,
-
-    // Variables
-    UserAgent,
-
-    // Classes
-    UserAgentClass,
-};
