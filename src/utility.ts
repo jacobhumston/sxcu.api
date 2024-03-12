@@ -169,7 +169,6 @@ export function convertSxcuFile(file: string): ConvertedSxcuFile {
         openGraphProperties.color = convertedJson.color;
         openGraphProperties.siteName = convertedJson.site_name;
         openGraphProperties.discordHideUrl = convertedJson.discord_hide_url;
-        uploadFileOptions.openGraphProperties = openGraphProperties;
     }
     return {
         domain: convertedJson.RequestURL.split('/')[2],
