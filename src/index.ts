@@ -18,7 +18,15 @@ import { categorizeImports } from './categorize.js';
 
 import { DeletionToken, Token, Url, Snowflake } from './types.js';
 
-import { extractToken, parseSnowflake, ParsedSnowflake, SnowflakeObjectType, SnowflakeObjectFlag } from './utility.js';
+import {
+    extractToken,
+    parseSnowflake,
+    convertSxcuFile,
+    ParsedSnowflake,
+    SnowflakeObjectType,
+    SnowflakeObjectFlag,
+    ConvertedSxcuFile,
+} from './utility.js';
 
 export {
     // Endpoints
@@ -40,6 +48,7 @@ export {
     resolveError,
     extractToken,
     parseSnowflake,
+    convertSxcuFile,
     categorizeImports,
 
     // Variables
@@ -64,4 +73,5 @@ export {
     ParsedSnowflake,
     SnowflakeObjectType,
     SnowflakeObjectFlag,
+    ConvertedSxcuFile,
 };

@@ -1,5 +1,8 @@
 import { Snowflake } from './types.js';
 import { convertBase } from './modules/convert-base.js';
+import { readFileSync } from 'node:fs';
+import { FileOptions } from './endpoints/files.js';
+import { createError } from './error.js';
 
 /**
  * Extracts the token or id from a url or path.
@@ -125,5 +128,51 @@ export function parseSnowflake(snowflake: Snowflake): ParsedSnowflake {
         flag: snowflakeFlags[data.objectFlag] ?? null,
         id: snowflake,
         raw: data,
+    };
+}
+
+/**
+ * Represents a converted sxcu file.
+ */
+export type ConvertedSxcuFile = {
+    /** Domain resolved from the file. */
+    domain: string;
+    /** Options resolved from the file. */
+    options: FileOptions;
+};
+
+/**
+ * Convert an sxcu file to a useable object.
+ * @param file Path of the file to convert.
+ * @returns The converted object.
+ */
+export function convertSxcuFile(file: string): ConvertedSxcuFile {
+    if (file.split('.').pop() !== 'sxcu') throw { error: 'File must be an sxcu file.', code: -1 };
+    const fileString = readFileSync(file).toString();
+    const convertedJson = JSON.parse(fileString);
+    if (!convertedJson) throw createError('Could not convert file content to JSON.', -1);
+    if (convertedJson.Version !== '13.6.1')
+        throw createError(`Expected version ${convertedJson.Version} does not equal 13.6.1!`, -1);
+    const uploadFileOptions: FileOptions = {};
+    const data = convertedJson.Arguments;
+    uploadFileOptions.token = data.token;
+    uploadFileOptions.collection = data.collection;
+    uploadFileOptions.collectionToken = data.collection_token;
+    uploadFileOptions.noEmbed = data.noembed;
+    uploadFileOptions.selfDestruct = data.self_destruct;
+    if (data.og_properties !== undefined) {
+        const convertedJson = JSON.parse(data.og_properties);
+        uploadFileOptions.openGraphProperties = {};
+        const openGraphProperties = uploadFileOptions.openGraphProperties;
+        openGraphProperties.title = convertedJson.title;
+        openGraphProperties.description = convertedJson.description;
+        openGraphProperties.color = convertedJson.color;
+        openGraphProperties.siteName = convertedJson.site_name;
+        openGraphProperties.discordHideUrl = convertedJson.discord_hide_url;
+        uploadFileOptions.openGraphProperties = openGraphProperties;
+    }
+    return {
+        domain: convertedJson.RequestURL.split('/')[2],
+        options: uploadFileOptions,
     };
 }
