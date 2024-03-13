@@ -18,7 +18,7 @@ jobs:
               run: npm ci
 
             - name: Eslint
-              id: rui
+              id: run-eslint
               run: npm run eslint
 
     eslint_error:
