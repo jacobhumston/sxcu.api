@@ -3,7 +3,7 @@ import { UserAgent } from 'sxcu.api';
 import colors from '@colors/colors/safe.js';
 import fs from 'node:fs';
 import util from 'node:util';
-import { exit } from 'process';
+import { exit } from 'node:process';
 
 UserAgent.useDefault();
 
@@ -49,4 +49,7 @@ console.log(`${colors.blue(`[RESULT]   : Success: ${success} / Failed: ${failed}
 console.log(`${colors.blue(`[TIME]     : Finished in ${colors.yellow(new Date().getTime() - startTime + 'ms')}`)}`);
 console.log('\n----------------------------------------');
 
-if (failed > 0) exit(1);
+if (failed > 0) {
+    console.log(`${failed} test(s) failed... exiting process with exit code 1.`);
+    exit(1);
+}

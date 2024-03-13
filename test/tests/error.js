@@ -3,7 +3,6 @@ import * as sxcu from 'sxcu.api';
 export const active = true;
 
 export async function execute() {
-    throw "failed??"
     const r1 = sxcu.createError('err', 1);
     const r2 = sxcu.resolveError({ error: 'err', code: 1 });
     const r3 = sxcu.resolveError('err');
