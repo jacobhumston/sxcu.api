@@ -4,7 +4,7 @@ on:
     - pull_request
 
 jobs:
-    eslint:
+    test:
         runs-on: 'ubuntu-latest'
         steps:
             - uses: actions/checkout@v3
@@ -17,18 +17,18 @@ jobs:
               id: install-dependencies
               run: npm ci
 
-            - name: Link Package
-              id: link-package
-              run: npm run link
+            - name: Compile Package
+              id: build-package
+              run: npm run compile
 
-            - name: Run Test
+            - name: Run Tests
               id: run-tests
               run: npm test
 
     eslint_error:
         runs-on: ubuntu-latest
         if: failure() && github.event_name == 'pull_request'
-        needs: eslint
+        needs: test
         steps:
             - name: Checkout
               uses: actions/checkout@v3
@@ -46,7 +46,7 @@ jobs:
     eslint_success:
         runs-on: ubuntu-latest
         if: success() && github.event_name == 'pull_request'
-        needs: eslint
+        needs: test
         steps:
             - uses: actions/checkout@v2
             - uses: actions-ecosystem/action-remove-labels@v1
