@@ -3,6 +3,7 @@ import { UserAgent } from 'sxcu.api';
 import colors from '@colors/colors/safe.js';
 import fs from 'node:fs';
 import util from 'node:util';
+import { exit } from 'process';
 
 UserAgent.useDefault();
 
@@ -47,3 +48,5 @@ for (const file of readdirSync('test/tests/')) {
 console.log(`${colors.blue(`[RESULT]   : Success: ${success} / Failed: ${failed} / Skipped: ${skipped}`)}`);
 console.log(`${colors.blue(`[TIME]     : Finished in ${colors.yellow(new Date().getTime() - startTime + 'ms')}`)}`);
 console.log('\n----------------------------------------');
+
+if (failed > 0) exit(1);
