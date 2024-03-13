@@ -17,7 +17,7 @@ jobs:
               id: install-dependencies
               run: npm ci
 
-            - name: Eslint
+            - name: Run Eslint
               id: run-eslint
               run: npm run eslint
 
