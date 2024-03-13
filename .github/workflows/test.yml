@@ -1,0 +1,50 @@
+name: 'Test (Latest Build)'
+on:
+    - push
+    - pull_request
+
+jobs:
+    eslint:
+        runs-on: 'ubuntu-latest'
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  cache: 'npm'
+
+            - name: Install Dependencies
+              id: install-dependencies
+              run: npm ci
+
+            - name: Test
+              id: run-tests
+              run: npm test
+
+    eslint_error:
+        runs-on: ubuntu-latest
+        if: failure() && github.event_name == 'pull_request'
+        needs: eslint
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Comment PR
+              uses: thollander/actions-comment-pull-request@v2
+              with:
+                  message: '⚠️ **Test(s) failed!** Please fix before requesting a review.'
+
+            - name: add label
+              uses: actions-ecosystem/action-add-labels@v1
+              with:
+                  labels: tests-failed
+
+    eslint_success:
+        runs-on: ubuntu-latest
+        if: success() && github.event_name == 'pull_request'
+        needs: eslint
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions-ecosystem/action-remove-labels@v1
+              with:
+                  labels: tests-failed
