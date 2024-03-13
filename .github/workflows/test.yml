@@ -17,7 +17,11 @@ jobs:
               id: install-dependencies
               run: npm ci
 
-            - name: Test
+            - name: Link Package
+              id: link-package
+              run: npm run link
+
+            - name: Run Test
               id: run-tests
               run: npm test
 
