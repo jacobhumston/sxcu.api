@@ -1,5 +1,13 @@
 // Endpoints
-import { uploadFile, getFileMeta, deleteFile, FileOptions, FileData, UploadableFile } from './endpoints/files.js';
+import {
+    uploadFile,
+    getFileMeta,
+    deleteFile,
+    FileOptions,
+    FileData,
+    UploadableFile,
+    FileMeta,
+} from './endpoints/files.js';
 
 import { createCollection, getCollectionMeta } from './endpoints/collections.js';
 
@@ -61,6 +69,7 @@ export {
     FileOptions,
     FileData,
     UploadableFile,
+    FileMeta,
     ErrorObject,
     SubdomainData,
     Subdomain,

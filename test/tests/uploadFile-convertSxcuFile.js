@@ -1,6 +1,6 @@
 import { convertSxcuFile, uploadFile } from 'sxcu.api';
 
-export const active = false;
+export const active = true;
 
 export async function execute() {
     const sxcuFile = convertSxcuFile('test/assets/test.sxcu');

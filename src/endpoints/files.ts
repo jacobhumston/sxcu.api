@@ -66,6 +66,31 @@ export type FileData = {
 export type UploadableFile = string | Buffer | Blob;
 
 /**
+ * Represents the meta data of a file.
+ * It's similar to FileData but contains more information.
+ */
+export type FileMeta = {
+    /** ID of the file. */
+    id: Snowflake;
+    /** URL of the file. */
+    url: Url;
+    /** The amount of views this file has. */
+    views: number;
+    /** If this file is viewable or not. */
+    viewable: boolean;
+    /** ID of the collection this file belongs to. */
+    collection?: Snowflake;
+    /** Size of the file in bytes. */
+    size: number;
+    /** Unix timestamp of when this file was created. */
+    creationTime: number;
+    /** Date object of which represents when this file was created. */
+    creationTimeDate: Date;
+    /** Open Graph Properties for this file. */
+    openGraphProperties?: FileOptions['openGraphProperties'];
+};
+
+/**
  * Convert a file to a blob.
  * @param file The file to convert.
  * @returns The created blob.
@@ -149,7 +174,40 @@ export async function uploadFile(
     };
 }
 
-export async function getFileMeta() {}
+/**
+ * Get the meta information of a file.
+ * @param id The ID of the file.
+ * @returns The meta information.
+ */
+export async function getFileMeta(id: Snowflake): Promise<FileMeta> {
+    const response = await request({
+        type: 'GET',
+        statusErrors: [400, 429],
+        baseUrl: 'https://sxcu.net/api/',
+        path: `files/${id}`,
+    }).catch((error) => {
+        throw resolveError(error);
+    });
+
+    const openGraphProperties: any = response.og_properties ?? {};
+
+    return {
+        id: response.id,
+        url: response.url,
+        views: response.views,
+        viewable: response.viewable,
+        collection: response.collection,
+        size: response.size,
+        creationTime: response.creation_time,
+        creationTimeDate: new Date(response.creation_time * 1000),
+        openGraphProperties: {
+            color: openGraphProperties.color,
+            title: openGraphProperties.title,
+            description: openGraphProperties.description,
+            discordHideUrl: openGraphProperties.hide_discord_url,
+        },
+    };
+}
 
 /**
  * Delete a file.
