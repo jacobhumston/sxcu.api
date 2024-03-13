@@ -5,6 +5,7 @@ node_modules/
 # test/
 test/other.js
 test/other.cjs
+test/output.txt
 
 # VSCode Config
 .vscode/

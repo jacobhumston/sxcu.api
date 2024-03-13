@@ -153,25 +153,24 @@ export function convertSxcuFile(file: string): ConvertedSxcuFile {
     if (!convertedJson) throw createError('Could not convert file content to JSON.', -1);
     if (convertedJson.Version !== '13.6.1')
         throw createError(`Expected version ${convertedJson.Version} does not equal 13.6.1!`, -1);
-    const uploadFileOptions: FileOptions = {};
-    const data = convertedJson.Arguments;
-    uploadFileOptions.token = data.token;
-    uploadFileOptions.collection = data.collection;
-    uploadFileOptions.collectionToken = data.collection_token;
-    uploadFileOptions.noEmbed = data.noembed;
-    uploadFileOptions.selfDestruct = data.self_destruct;
-    if (data.og_properties !== undefined) {
-        const convertedJson = JSON.parse(data.og_properties);
-        uploadFileOptions.openGraphProperties = {};
-        const openGraphProperties = uploadFileOptions.openGraphProperties;
-        openGraphProperties.title = convertedJson.title;
-        openGraphProperties.description = convertedJson.description;
-        openGraphProperties.color = convertedJson.color;
-        openGraphProperties.siteName = convertedJson.site_name;
-        openGraphProperties.discordHideUrl = convertedJson.discord_hide_url;
-    }
+    let dataOpenGraph: any = {};
+    if (convertedJson.Arguments.og_properties !== undefined)
+        dataOpenGraph = JSON.parse(convertedJson.Arguments.og_properties);
     return {
         domain: convertedJson.RequestURL.split('/')[2],
-        options: uploadFileOptions,
+        options: {
+            token: convertedJson.Arguments.token,
+            collection: convertedJson.Arguments.collection,
+            collectionToken: convertedJson.Arguments.collection_token,
+            noEmbed: convertedJson.Arguments.noembed,
+            selfDestruct: convertedJson.Arguments.self_destruct,
+            openGraphProperties: {
+                title: dataOpenGraph.title,
+                description: dataOpenGraph.description,
+                color: dataOpenGraph.color,
+                siteName: dataOpenGraph.site_name,
+                discordHideUrl: dataOpenGraph.discord_hide_url,
+            },
+        },
     };
 }

@@ -359,7 +359,14 @@
                             ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                             ><span class="tsd-kind-property">utility</span><span class="tsd-signature-symbol">: </span
                             ><span class="tsd-signature-symbol">{ </span><br /><span>        </span
-                            ><span class="tsd-kind-property">createError</span
+                            ><span class="tsd-kind-property">convertSxcuFile</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">file</span
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
+                            ><a href="../types/ConvertedSxcuFile.html" class="tsd-signature-type tsd-kind-type-alias"
+                                >ConvertedSxcuFile</a
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
+                            ><br /><span>        </span><span class="tsd-kind-property">createError</span
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
                             ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">message</span>,
                             <span class="tsd-kind-parameter">code</span><span class="tsd-signature-symbol">)</span
@@ -554,6 +561,16 @@
                                 ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                                 ><span class="tsd-kind-property">utility</span
                                 ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span
+                                ><br /><span>        </span><span class="tsd-kind-property">convertSxcuFile</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">file</span
+                                ><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><a
+                                    href="../types/ConvertedSxcuFile.html"
+                                    class="tsd-signature-type tsd-kind-type-alias"
+                                    >ConvertedSxcuFile</a
+                                ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
                                 ><br /><span>        </span><span class="tsd-kind-property">createError</span
                                 ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
                                 ><span class="tsd-signature-symbol">(</span
@@ -1703,6 +1720,19 @@
                                         <span class="tsd-kind-property">utility</span
                                         ><span class="tsd-signature-symbol">: </span
                                         ><span class="tsd-signature-symbol">{ </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">convertSxcuFile</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">file</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><a
+                                            href="../types/ConvertedSxcuFile.html"
+                                            class="tsd-signature-type tsd-kind-type-alias"
+                                            >ConvertedSxcuFile</a
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                                         ><span class="tsd-kind-property">createError</span
                                         ><span class="tsd-signature-symbol">: </span
                                         ><span class="tsd-signature-symbol">(</span
@@ -1760,6 +1790,75 @@
                                     <ul class="tsd-parameters">
                                         <li class="tsd-parameter">
                                             <h5>
+                                                <span class="tsd-kind-property">convert<wbr />Sxcu<wbr />File</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">file</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><a
+                                                    href="../types/ConvertedSxcuFile.html"
+                                                    class="tsd-signature-type tsd-kind-type-alias"
+                                                    >ConvertedSxcuFile</a
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.convertSxcuFile.__type-31.__type-32"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">file</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><a
+                                                                href="../types/ConvertedSxcuFile.html"
+                                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                                >ConvertedSxcuFile</a
+                                                            >
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>Convert an sxcu file to a useable object.</p>
+                                                            </div>
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter">file</span
+                                                                            >:
+                                                                            <span class="tsd-signature-type"
+                                                                                >string</span
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>Path of the file to convert.</p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns
+                                                                <a
+                                                                    href="../types/ConvertedSxcuFile.html"
+                                                                    class="tsd-signature-type tsd-kind-type-alias"
+                                                                    >ConvertedSxcuFile</a
+                                                                >
+                                                            </h4>
+                                                            <p>The converted object.</p>
+                                                            <div class="tsd-comment tsd-typography"></div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
                                                 <span class="tsd-kind-property">create<wbr />Error</span
                                                 ><span class="tsd-signature-symbol">: </span
                                                 ><span class="tsd-signature-symbol">(</span
@@ -1779,7 +1878,7 @@
                                                     <ul class="tsd-signatures">
                                                         <li
                                                             class="tsd-signature"
-                                                            id="categorizeImports.__type.utility.__type-30.createError.__type-31.__type-32"
+                                                            id="categorizeImports.__type.utility.__type-30.createError.__type-33.__type-34"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
                                                             ><span class="tsd-kind-parameter">message</span>,
@@ -1859,7 +1958,7 @@
                                                     <ul class="tsd-signatures">
                                                         <li
                                                             class="tsd-signature"
-                                                            id="categorizeImports.__type.utility.__type-30.extractToken.__type-33.__type-34"
+                                                            id="categorizeImports.__type.utility.__type-30.extractToken.__type-35.__type-36"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
                                                             ><span class="tsd-kind-parameter">url</span
@@ -1918,7 +2017,7 @@
                                                     <ul class="tsd-signatures">
                                                         <li
                                                             class="tsd-signature"
-                                                            id="categorizeImports.__type.utility.__type-30.parseSnowflake.__type-35.__type-36"
+                                                            id="categorizeImports.__type.utility.__type-30.parseSnowflake.__type-37.__type-38"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
                                                             ><span class="tsd-kind-parameter">snowflake</span
@@ -1995,7 +2094,7 @@
                                                     <ul class="tsd-signatures">
                                                         <li
                                                             class="tsd-signature"
-                                                            id="categorizeImports.__type.utility.__type-30.resolveError.__type-37.__type-38"
+                                                            id="categorizeImports.__type.utility.__type-30.resolveError.__type-39.__type-40"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
                                                             ><span class="tsd-kind-parameter">thing</span
@@ -2083,8 +2182,8 @@
                                     <li>
                                         Defined in
                                         <a
-                                            href="https://github.com/jacobhumston/sxcu.api/blob/f6fb6b3/src/categorize.ts#L30"
-                                            >categorize.ts:30</a
+                                            href="https://github.com/jacobhumston/sxcu.api/blob/0c75570/src/categorize.ts#L31"
+                                            >categorize.ts:31</a
                                         >
                                     </li>
                                 </ul>

@@ -119,7 +119,8 @@ code {
     text-align: left;
     overflow-x: auto;
     white-space: nowrap;
-    max-width: 80%;
+    max-width: 95%;
+    white-space: pre;
 }
 
 #side-nav-bar {

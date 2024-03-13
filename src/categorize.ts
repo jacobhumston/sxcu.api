@@ -18,6 +18,7 @@ import {
     resolveError,
     extractToken,
     parseSnowflake,
+    convertSxcuFile,
 
     // Variables
     UserAgent,
@@ -44,6 +45,7 @@ export function categorizeImports() {
             resolveError: resolveError,
             extractToken: extractToken,
             parseSnowflake: parseSnowflake,
+            convertSxcuFile: convertSxcuFile,
         },
     };
 }

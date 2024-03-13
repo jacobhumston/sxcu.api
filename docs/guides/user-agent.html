@@ -23,13 +23,13 @@
         </div>
         <div id="side-nav-bar-darken"></div>
         <div id="side-nav-bar">
-            <a href="example.html" class="side-nav-bar-link">Example</a>
+            <a href="testing.html" class="side-nav-bar-link">Testing </a>
             <hr />
-            <a href="updating-to-v2.html" class="side-nav-bar-link">Updating to v2.0.0</a>
+            <a href="updating-to-v2.html" class="side-nav-bar-link">Updating to v2.0.0 </a>
             <hr />
-            <a href="user-agent.html" class="side-nav-bar-link">Setting/Modifying the User Agent</a>
+            <a href="user-agent.html" class="side-nav-bar-link">Setting/Modifying the User Agent </a>
             <hr />
-            <a href="welcome.html" class="side-nav-bar-link">Welcome!</a>
+            <a href="welcome.html" class="side-nav-bar-link">Welcome! </a>
         </div>
         <br />
         <div id="guide-wrapper">
@@ -39,6 +39,12 @@
                 Setting your User Agent is very important, as this value is used to the set
                 <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent">User-Agent Header</a> on
                 all requests made to the API.
+            </p>
+            <p>
+                <strong
+                    >This is done for you on the first request automatically, however using a custom User Agent is
+                    usually recommended.</strong
+                >
             </p>
             <p>
                 <strong>Important note:</strong> The class <code>UserAgentClass</code> is not used by the request module
@@ -55,9 +61,9 @@
                 You can optionally set the <code>pathOverride</code> parameter of <code>useDefault</code> to the path of
                 a different package.json.
             </p>
-            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>(<span class="hljs-string">&#x27;path/to/package.json&#x27;</span>);<br></code></pre>
+            <pre><code class="language-js"><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>(<span class="hljs-string">&#x27;path/to/package.json&#x27;</span>);<br></code></pre>
             <p>If you want to set a custom User Agent, just use the <code>set</code> method.</p>
-            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;sxcuUploader/$versionNumber (+$url)&#x27;</span>);<br></code></pre>
+            <pre><code class="language-js"><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;sxcuUploader/$versionNumber (+$url)&#x27;</span>);<br></code></pre>
             <p>
                 The format for User Agents is listed as the following on
                 <a href="https://sxcu.net/api/docs/#overview">sxcu.net's API documentation</a>.
