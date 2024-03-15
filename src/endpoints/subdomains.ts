@@ -87,6 +87,7 @@ export type SubdomainData = {
 
 /**
  * Get a list of all subdomains.
+ * WARNING: The returned list includes NSFW domain names.
  * @returns A list of subdomains.
  */
 export async function listSubdomains(): Promise<SubdomainData[]> {
