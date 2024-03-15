@@ -17,9 +17,13 @@ jobs:
               id: install-dependencies
               run: npm ci
 
-            - name: Compile Package
+            - name: Build Package
               id: build-package
-              run: npm run compile
+              run: npm run build
+
+            - name: Format Package
+              id: format-package
+              run: npm run format
 
             - name: Run Tests
               id: run-tests
