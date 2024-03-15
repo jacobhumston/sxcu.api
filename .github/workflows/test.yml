@@ -27,7 +27,7 @@ jobs:
 
             - name: 'Link Package'
               id: link-package
-              run: npm run link-package
+              run: npm run link
 
             - name: Run Tests
               id: run-tests
