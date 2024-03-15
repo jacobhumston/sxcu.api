@@ -1,3 +1,9 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/jacobhumston/sxcu.api/blob/banner/banner.png?raw=true">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/jacobhumston/sxcu.api/blob/banner/banner-dark.png?raw=true">
+  <img alt="Banner">
+</picture>
+
 # sxcu.api
 
 Node.js library to interact with the sxcu.net API. _([A cli is also included!](src/cli/README.md))_
