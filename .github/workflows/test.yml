@@ -36,7 +36,7 @@ jobs:
             - name: Comment PR
               uses: thollander/actions-comment-pull-request@v2
               with:
-                  message: '⚠️ **Test(s) failed!** Please fix before requesting a review.'
+                  message: '⚠️ **Test(s) failed!** Please fix before requesting a review.\nRun: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
 
             - name: add label
               uses: actions-ecosystem/action-add-labels@v1
