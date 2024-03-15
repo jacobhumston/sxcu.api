@@ -46,25 +46,6 @@ export type FileOptions = {
     };
 };
 
-/** A file but with less data associated with it. */
-export type FileData = {
-    /** The ID of this file. */
-    id: Snowflake;
-    /** The url of this file. */
-    url: Url;
-    /** The deletion url of this file. */
-    deletionUrl: Url;
-    /** The deletion token of this file. */
-    deletionToken: DeletionToken;
-    /** Thumbnail url of the uploaded file. */
-    thumbnail: Url;
-    /** Function to delete this file. */
-    delete: () => Promise<string>;
-};
-
-/** Represents what is considered an uploadable file. */
-export type UploadableFile = string | Buffer | Blob;
-
 /**
  * Represents the meta data of a file.
  * It's similar to FileData but contains more information.
@@ -89,6 +70,27 @@ export type FileMeta = {
     /** Open Graph Properties for this file. */
     openGraphProperties?: FileOptions['openGraphProperties'];
 };
+
+/** A file but with less data associated with it. */
+export type FileData = {
+    /** The ID of this file. */
+    id: Snowflake;
+    /** The url of this file. */
+    url: Url;
+    /** The deletion url of this file. */
+    deletionUrl: Url;
+    /** The deletion token of this file. */
+    deletionToken: DeletionToken;
+    /** Thumbnail url of the uploaded file. */
+    thumbnail: Url;
+    /** Function to delete this file. */
+    delete: () => Promise<string>;
+    /** Function to get the meta data of this file. */
+    getMeta: () => Promise<FileMeta>;
+};
+
+/** Represents what is considered an uploadable file. */
+export type UploadableFile = string | Buffer | Blob;
 
 /**
  * Convert a file to a blob.
@@ -171,6 +173,7 @@ export async function uploadFile(
         deletionToken: extractToken(response.del_url),
         thumbnail: response.thumb,
         delete: async () => await deleteFile(response.id, extractToken(response.del_url)),
+        getMeta: async () => await getFileMeta(response.id),
     };
 }
 
