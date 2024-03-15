@@ -25,6 +25,10 @@ jobs:
               id: format-package
               run: npm run format
 
+            - name: 'Link Package'
+              id: link-package
+              run: npm run link-package
+
             - name: Run Tests
               id: run-tests
               run: npm test
