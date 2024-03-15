@@ -224,8 +224,9 @@
                         <li class="tsd-signature tsd-anchor-link">
                             <a id="getCollectionMeta" class="tsd-anchor"></a
                             ><span class="tsd-kind-call-signature">get<wbr />Collection<wbr />Meta</span
-                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
-                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Promise</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">id</span
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                            ><span class="tsd-signature-type">Promise</span
                             ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
                             ><span class="tsd-signature-symbol">&gt;</span
                             ><a href="#getCollectionMeta" aria-label="Permalink" class="tsd-anchor-icon"
@@ -233,19 +234,40 @@
                             ></a>
                         </li>
                         <li class="tsd-description">
+                            <div class="tsd-comment tsd-typography">
+                                <p>Get the meta information of a collection.</p>
+                            </div>
+                            <div class="tsd-parameters">
+                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                <ul class="tsd-parameter-list">
+                                    <li>
+                                        <h5>
+                                            <span class="tsd-kind-parameter">id</span>:
+                                            <a
+                                                href="../types/Snowflake.html"
+                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                >Snowflake</a
+                                            >
+                                        </h5>
+                                        <div class="tsd-comment tsd-typography"><p>The ID of the collection.</p></div>
+                                        <div class="tsd-comment tsd-typography"></div>
+                                    </li>
+                                </ul>
+                            </div>
                             <h4 class="tsd-returns-title">
                                 Returns <span class="tsd-signature-type">Promise</span
                                 ><span class="tsd-signature-symbol">&lt;</span
                                 ><span class="tsd-signature-type">void</span
                                 ><span class="tsd-signature-symbol">&gt;</span>
                             </h4>
+                            <div class="tsd-comment tsd-typography"></div>
                             <aside class="tsd-sources">
                                 <ul>
                                     <li>
                                         Defined in
                                         <a
-                                            href="https://github.com/jacobhumston/sxcu.api/blob/eb6d1bd/src/endpoints/collections.ts#L5"
-                                            >endpoints/collections.ts:5</a
+                                            href="https://github.com/jacobhumston/sxcu.api/blob/2fee024/src/endpoints/collections.ts#L28"
+                                            >endpoints/collections.ts:28</a
                                         >
                                     </li>
                                 </ul>
@@ -302,6 +324,19 @@
                                     <div>
                                         Converted<wbr />Sxcu<wbr />File
                                         <div class="menu-item-desc">Represents a converted sxcu file.</div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="../types/CreateCollectionOptions.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                                        <use href="#icon-2097152"></use>
+                                    </svg>
+                                    <div>
+                                        Create<wbr />Collection<wbr />Options
+                                        <div class="menu-item-desc">
+                                            Available options that can be provided when creating a collection.
+                                        </div>
                                     </div></a
                                 >
                             </li>
@@ -510,7 +545,10 @@
                             <li>
                                 <a href="createCollection.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
-                                    <div>create<wbr />Collection</div></a
+                                    <div>
+                                        create<wbr />Collection
+                                        <div class="menu-item-desc">Create a collection.</div>
+                                    </div></a
                                 >
                             </li>
                             <li>
@@ -579,7 +617,10 @@
                             <li>
                                 <a href="getCollectionMeta.html" class="current"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
-                                    <div>get<wbr />Collection<wbr />Meta</div></a
+                                    <div>
+                                        get<wbr />Collection<wbr />Meta
+                                        <div class="menu-item-desc">Get the meta information of a collection.</div>
+                                    </div></a
                                 >
                             </li>
                             <li>

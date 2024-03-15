@@ -9,7 +9,7 @@ import {
     FileMeta,
 } from './endpoints/files.js';
 
-import { createCollection, getCollectionMeta } from './endpoints/collections.js';
+import { createCollection, getCollectionMeta, CreateCollectionOptions } from './endpoints/collections.js';
 
 import { checkSubdomain, getSubdomainMeta, listSubdomains, SubdomainData, Subdomain } from './endpoints/subdomains.js';
 
@@ -70,6 +70,7 @@ export {
     FileData,
     UploadableFile,
     FileMeta,
+    CreateCollectionOptions,
     ErrorObject,
     SubdomainData,
     Subdomain,

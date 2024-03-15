@@ -11,7 +11,8 @@ export type FileOptions = {
     token?: Token;
     /** The ID of a collection to upload the image to. */
     collection?: Snowflake;
-    /** The upload token of the collection.
+    /**
+     * The upload token of the collection.
      * Only required if it's private.
      */
     collectionToken?: Token;
