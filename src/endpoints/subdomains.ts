@@ -85,18 +85,6 @@ export type SubdomainData = {
     fileViews: number;
 };
 
-/** The raw version of a subdomain but with less data associated with it.*/
-type SubdomainDataRaw = {
-    /** The name of the subdomain. */
-    domain: string;
-    /** Amount of files uploaded to this subdomain. */
-    upload_count: number;
-    /** Wether this subdomain is public or not. */
-    public: boolean;
-    /** The total number of views of all files associated with this subdomain. */
-    file_views: number;
-};
-
 /**
  * Get a list of all subdomains.
  * @returns A list of subdomains.
@@ -111,9 +99,9 @@ export async function listSubdomains(): Promise<SubdomainData[]> {
         throw resolveError(error);
     });
 
-    const array: SubdomainData[] = [];
+    const array: any[] = [];
 
-    response.forEach((subdomain: SubdomainDataRaw) => {
+    response.forEach((subdomain: any) => {
         array.push({
             domain: subdomain.domain,
             uploadCount: subdomain.upload_count,

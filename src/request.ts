@@ -4,7 +4,7 @@ import { UserAgent } from './classes/user-agent.js';
 export type RequestOptions = {
     /** Type of request. */
     type: 'GET' | 'POST';
-    /** Array of error status codes and messages. */
+    /** Array of error status codes. */
     statusErrors: number[];
     /** Base url of the request. */
     baseUrl: 'https://sxcu.net/api/' | 'https://cancer-co.de/';
