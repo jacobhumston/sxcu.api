@@ -23,8 +23,30 @@ export type RequestOptions = {
     body?: BodyInit | null | undefined;
 };
 
-/** The URL to learn more about setting the User Agent. */
-// const guideUrl: string = 'https://sxcu.api.lovelyjacob.com/guides/user-agent.html';
+/**
+ * Represents a rate limit.
+ */
+export type RateLimit = {
+    /** If true, this rate limit is global. */
+    isGlobal: boolean;
+    /**
+     * The path/url this rate limit belongs too.
+     * Will be null if isGlobal is true.
+     */
+    path: string | null;
+    /** The number of requests that can be made. */
+    limit: number;
+    /** The number of remaining requests that can be made. */
+    remaining: number;
+    /** Epoch time at which this rate limit resets. */
+    reset: number;
+    /** Date at which this rate limit resets. */
+    resetDate: Date;
+    /** Total time (in seconds) of when the current rate limit bucket will reset. */
+    resetAfter: number;
+    /** Date of when the current rate limit bucket resets. */
+    resetAfterDate: Date;
+};
 
 /**
  * Attempts to get the JSON from a response.
@@ -38,6 +60,7 @@ async function getJSON(response: Response): Promise<{ [key: string]: any }> {
 
 /**
  * Create an API request.
+ * @param options Options for this request.
  */
 export async function request(options: RequestOptions): Promise<{ [key: string]: any }> {
     // Check if the User Agent is set, if it isn't then we will set it for them.
