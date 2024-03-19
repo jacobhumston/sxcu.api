@@ -34,6 +34,15 @@ import { categorizeImports } from './categorize.js';
 import { DeletionToken, Token, Url, Snowflake } from './types.js';
 
 import {
+    request,
+    getRateLimits,
+    promisifyRateLimit,
+    promisifyGlobalRateLimit,
+    RequestOptions,
+    RateLimit,
+} from './request.js';
+
+import {
     extractToken,
     parseSnowflake,
     convertSxcuFile,
@@ -65,6 +74,10 @@ export {
     parseSnowflake,
     convertSxcuFile,
     categorizeImports,
+    request,
+    getRateLimits,
+    promisifyRateLimit,
+    promisifyGlobalRateLimit,
 
     // Variables
     UserAgent,
@@ -94,4 +107,6 @@ export {
     SnowflakeObjectType,
     SnowflakeObjectFlag,
     ConvertedSxcuFile,
+    RequestOptions,
+    RateLimit,
 };

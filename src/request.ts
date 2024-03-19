@@ -31,11 +31,6 @@ export type RequestOptions = {
 export type RateLimit = {
     /** If true, this rate limit is global. */
     isGlobal: boolean;
-    /**
-     * The path/url this rate limit belongs too.
-     * Will be null if isGlobal is true.
-     */
-    path: string | null;
     /** The number of requests that can be made. */
     limit: number;
     /** The number of remaining requests that can be made. */
@@ -46,9 +41,16 @@ export type RateLimit = {
     resetDate: Date;
     /** Total time (in seconds) of when the current rate limit bucket will reset. */
     resetAfter: number;
-    /** Date of when the current rate limit bucket resets. */
-    resetAfterDate: Date;
+    /** The bucket that this rate limit belongs to. */
+    bucket: string;
 };
+
+/**
+ * Rate limit storage.
+ * Key is the bucket id.
+ * The global rate limit has the key _Global.
+ */
+const RateLimits: { [key: string]: RateLimit } = {};
 
 /**
  * Attempts to get the JSON from a response.
@@ -86,6 +88,23 @@ export async function request(options: RequestOptions): Promise<{ [key: string]:
         throw { error: error.toString(), code: 0 };
     });
 
+    // Update rate limit data.
+    const foundRateLimit: RateLimit = {
+        isGlobal: response.headers.get('X-RateLimit-Global') ? true : false,
+        limit: parseInt(response.headers.get('X-RateLimit-Limit') ?? '0'),
+        remaining: parseInt(response.headers.get('X-RateLimit-Remaining') ?? '0'),
+        reset: parseInt(response.headers.get('X-RateLimit-Reset') ?? '0'),
+        resetDate: new Date(parseInt(response.headers.get('X-RateLimit-Reset') ?? '0') * 1000),
+        resetAfter: parseFloat(response.headers.get('X-RateLimit-Reset-After') ?? '0'),
+        bucket: response.headers.get('X-RateLimit-Bucket') ?? '?',
+    };
+
+    if (foundRateLimit.isGlobal) {
+        RateLimits['_Global'] = foundRateLimit;
+    } else {
+        RateLimits[foundRateLimit.bucket] = foundRateLimit;
+    }
+
     // Check for any of the predefined error status codes.
     for (const error of options.statusErrors) {
         if (response.status !== error) continue;
@@ -101,4 +120,40 @@ export async function request(options: RequestOptions): Promise<{ [key: string]:
 
     // If it's an OK, we return the JSON.
     return json;
+}
+
+/**
+ * Returns a copy of the object containing all stored rate limits.
+ */
+export function getRateLimits(): { [key: string]: RateLimit } {
+    return structuredClone(RateLimits);
+}
+
+/**
+ * Returns a copy of the global rate limit if it's available.
+ */
+export function getGlobalRateLimit(): RateLimit | null {
+    return RateLimits['_Global'] ? structuredClone(RateLimits['_Global']) : null;
+}
+
+/**
+ * Returns a promise that resolves once the rate limit is over.
+ * This will return instantly unless the rate limit has been exceeded.
+ */
+export function promisifyRateLimit(RateLimit: RateLimit): Promise<void> {
+    const rateLimit = RateLimit;
+    if (rateLimit.remaining > 0) return new Promise((r) => r());
+    return new Promise(function (resolve) {
+        setTimeout(resolve, rateLimit.resetAfter + 1); // Add an extra second as a precautionary measure.
+    });
+}
+
+/**
+ * A wrapper for promisifyRateLimit that uses the global rate limit as the first argument.
+ * Note that if the global rate limit isn't available, it will instantly resolve.
+ */
+export function promisifyGlobalRateLimit(): Promise<void> {
+    const rateLimit = getGlobalRateLimit();
+    if (rateLimit) return promisifyRateLimit(rateLimit);
+    return new Promise((r) => r());
 }

@@ -258,10 +258,6 @@
                     <a id="md:updating-to-v200-from-v1xx" class="tsd-anchor"></a>
                     <h2><a href="#md:updating-to-v200-from-v1xx">Updating to v2.0.0 from v1.x.x</a></h2>
                     <p>The guide for doing so can be found <a href="web/guides/updating-to-v2.md">here</a>.</p>
-                    <p>
-                        If you run into any issues, please let us know
-                        <a href="https://github.com/Lovely-Experiences/sxcu.api/issues/new">here</a>.
-                    </p>
                     <a id="md:installation" class="tsd-anchor"></a>
                     <h2><a href="#md:installation">Installation</a></h2>
                     <p>You can install sxcu.api using npm.</p>
@@ -276,9 +272,12 @@
                         In <code>v2.0.0</code> we made the switch to ESM and TypeScript.
                         <strong>However, we still support CommonJS.</strong>
                     </p>
-                    <pre><code class="language-js"><span class="hl-3">// Use CommonJS require.</span><br/><span class="hl-5">const</span><span class="hl-1"> { </span><span class="hl-7">uploadFile</span><span class="hl-1">, </span><span class="hl-7">UserAgent</span><span class="hl-1">, </span><span class="hl-7">categorizeImports</span><span class="hl-1"> } = </span><span class="hl-0">require</span><span class="hl-1">(</span><span class="hl-2">&#39;sxcu.api&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-6">UserAgent</span><span class="hl-1">.</span><span class="hl-0">useDefault</span><span class="hl-1">();</span><br/><br/><span class="hl-0">uploadFile</span><span class="hl-1">(</span><span class="hl-2">&#39;your-img&#39;</span><span class="hl-1">).</span><span class="hl-0">then</span><span class="hl-1">((</span><span class="hl-6">res</span><span class="hl-1">) </span><span class="hl-5">=&gt;</span><span class="hl-1"> {</span><br/><span class="hl-1">    </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-6">res</span><span class="hl-1">);</span><br/><span class="hl-1">});</span><br/><br/><span class="hl-3">// It&#39;s important to note that you will need to use `categorizeImports`</span><br/><span class="hl-3">// if you want the previous method categories. (ex; files.uploadFile())</span>
+                    <pre><code class="language-js"><span class="hl-3">// Use CommonJS&#39;s require method.</span><br/><span class="hl-5">const</span><span class="hl-1"> { </span><span class="hl-7">uploadFile</span><span class="hl-1">, </span><span class="hl-7">UserAgent</span><span class="hl-1">, </span><span class="hl-7">categorizeImports</span><span class="hl-1"> } = </span><span class="hl-0">require</span><span class="hl-1">(</span><span class="hl-2">&#39;sxcu.api&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-6">UserAgent</span><span class="hl-1">.</span><span class="hl-0">useDefault</span><span class="hl-1">();</span><br/><br/><span class="hl-0">uploadFile</span><span class="hl-1">(</span><span class="hl-2">&#39;your-img&#39;</span><span class="hl-1">)</span><br/><span class="hl-1">    .</span><span class="hl-0">then</span><span class="hl-1">((</span><span class="hl-6">response</span><span class="hl-1">) </span><span class="hl-5">=&gt;</span><span class="hl-1"> </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-6">response</span><span class="hl-1">))</span><br/><span class="hl-1">    .</span><span class="hl-0">catch</span><span class="hl-1">((</span><span class="hl-6">err</span><span class="hl-1">) </span><span class="hl-5">=&gt;</span><span class="hl-1"> </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-6">err</span><span class="hl-1">));</span>
 </code><button>Copy</button></pre>
-                    <p>If you preferred categorized imports, then you can use <code>categorizeImports</code>.</p>
+                    <p>
+                        If you preferred categorized imports, then you can use <code>categorizeImports</code>. This
+                        works with ESM and CommonJS.
+                    </p>
                     <pre><code class="language-js"><span class="hl-3">// Import the package.</span><br/><span class="hl-4">import</span><span class="hl-1"> { </span><span class="hl-6">categorizeImports</span><span class="hl-1"> } </span><span class="hl-4">from</span><span class="hl-1"> </span><span class="hl-2">&#39;sxcu.api&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-3">// Categorize imports.</span><br/><span class="hl-5">const</span><span class="hl-1"> </span><span class="hl-7">sxcu</span><span class="hl-1"> = </span><span class="hl-0">categorizeImports</span><span class="hl-1">();</span><br/><br/><span class="hl-3">// Set the request user agent to the default.</span><br/><span class="hl-6">sxcu</span><span class="hl-1">.</span><span class="hl-6">userAgent</span><span class="hl-1">.</span><span class="hl-0">useDefault</span><span class="hl-1">();</span><br/><br/><span class="hl-3">// Upload the file and log the response.</span><br/><span class="hl-6">sxcu</span><span class="hl-1">.</span><span class="hl-6">files</span><br/><span class="hl-1">    .</span><span class="hl-0">uploadFile</span><span class="hl-1">(</span><span class="hl-2">&#39;image.png&#39;</span><span class="hl-1">)</span><br/><span class="hl-1">    .</span><span class="hl-0">then</span><span class="hl-1">((</span><span class="hl-6">response</span><span class="hl-1">) </span><span class="hl-5">=&gt;</span><span class="hl-1"> </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-6">response</span><span class="hl-1">))</span><br/><span class="hl-1">    .</span><span class="hl-0">catch</span><span class="hl-1">((</span><span class="hl-6">err</span><span class="hl-1">) </span><span class="hl-5">=&gt;</span><span class="hl-1"> </span><span class="hl-6">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-6">err</span><span class="hl-1">));</span>
 </code><button>Copy</button></pre>
                     <a id="md:contributors" class="tsd-anchor"></a>
@@ -536,6 +535,28 @@
                                 >
                             </li>
                             <li>
+                                <a href="types/RateLimit.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                                        <use href="#icon-2097152"></use>
+                                    </svg>
+                                    <div>
+                                        Rate<wbr />Limit
+                                        <div class="menu-item-desc">Represents a rate limit.</div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="types/RequestOptions.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                                        <use href="#icon-2097152"></use>
+                                    </svg>
+                                    <div>
+                                        Request<wbr />Options
+                                        <div class="menu-item-desc">Request options.</div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
                                 <a href="types/Snowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
@@ -736,6 +757,17 @@
                                 >
                             </li>
                             <li>
+                                <a href="functions/getRateLimits.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        get<wbr />Rate<wbr />Limits
+                                        <div class="menu-item-desc">
+                                            Returns a copy of the object containing all stored rate limits.
+                                        </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
                                 <a href="functions/getSubdomainMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
@@ -759,6 +791,38 @@
                                     <div>
                                         parse<wbr />Snowflake
                                         <div class="menu-item-desc">Get the data associated with a snowflake.</div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="functions/promisifyGlobalRateLimit.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        promisify<wbr />Global<wbr />Rate<wbr />Limit
+                                        <div class="menu-item-desc">
+                                            A wrapper for promisifyRateLimit that uses the global rate limit as the
+                                            first argument.
+                                        </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="functions/promisifyRateLimit.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        promisify<wbr />Rate<wbr />Limit
+                                        <div class="menu-item-desc">
+                                            Returns a promise that resolves once the rate limit is over.
+                                        </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="functions/request.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        request
+                                        <div class="menu-item-desc">Create an API request.</div>
                                     </div></a
                                 >
                             </li>

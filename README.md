@@ -22,8 +22,6 @@ sxcu.api was created to allow any developer of any skill set to easily create im
 
 The guide for doing so can be found [here](web/guides/updating-to-v2.md).
 
-If you run into any issues, please let us know [here](https://github.com/Lovely-Experiences/sxcu.api/issues/new).
-
 ## Installation
 
 You can install sxcu.api using npm.
@@ -53,20 +51,17 @@ sxcu.uploadFile('image.png')
 In `v2.0.0` we made the switch to ESM and TypeScript. **However, we still support CommonJS.**
 
 ```js
-// Use CommonJS require.
+// Use CommonJS's require method.
 const { uploadFile, UserAgent, categorizeImports } = require('sxcu.api');
 
 UserAgent.useDefault();
 
-uploadFile('your-img').then((res) => {
-    console.log(res);
-});
-
-// It's important to note that you will need to use `categorizeImports`
-// if you want the previous method categories. (ex; files.uploadFile())
+uploadFile('your-img')
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
 ```
 
-If you preferred categorized imports, then you can use `categorizeImports`.
+If you preferred categorized imports, then you can use `categorizeImports`. This works with ESM and CommonJS.
 
 ```js
 // Import the package.

@@ -306,6 +306,16 @@
                                         <use href="#icon-2097152"></use></svg
                                     ><span>Paste</span></a
                                 >
+                                <a href="types/RateLimit.html" class="tsd-index-link"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                                        <use href="#icon-2097152"></use></svg
+                                    ><span>Rate<wbr />Limit</span></a
+                                >
+                                <a href="types/RequestOptions.html" class="tsd-index-link"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                                        <use href="#icon-2097152"></use></svg
+                                    ><span>Request<wbr />Options</span></a
+                                >
                                 <a href="types/Snowflake.html" class="tsd-index-link"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use></svg
@@ -402,6 +412,10 @@
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     ><span>get<wbr />File<wbr />Meta</span></a
                                 >
+                                <a href="functions/getRateLimits.html" class="tsd-index-link"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
+                                    ><span>get<wbr />Rate<wbr />Limits</span></a
+                                >
                                 <a href="functions/getSubdomainMeta.html" class="tsd-index-link"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     ><span>get<wbr />Subdomain<wbr />Meta</span></a
@@ -413,6 +427,18 @@
                                 <a href="functions/parseSnowflake.html" class="tsd-index-link"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
                                     ><span>parse<wbr />Snowflake</span></a
+                                >
+                                <a href="functions/promisifyGlobalRateLimit.html" class="tsd-index-link"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
+                                    ><span>promisify<wbr />Global<wbr />Rate<wbr />Limit</span></a
+                                >
+                                <a href="functions/promisifyRateLimit.html" class="tsd-index-link"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
+                                    ><span>promisify<wbr />Rate<wbr />Limit</span></a
+                                >
+                                <a href="functions/request.html" class="tsd-index-link"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
+                                    ><span>request</span></a
                                 >
                                 <a href="functions/resolveError.html" class="tsd-index-link"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
@@ -617,6 +643,28 @@
                                 >
                             </li>
                             <li>
+                                <a href="types/RateLimit.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                                        <use href="#icon-2097152"></use>
+                                    </svg>
+                                    <div>
+                                        Rate<wbr />Limit
+                                        <div class="menu-item-desc">Represents a rate limit.</div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="types/RequestOptions.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                                        <use href="#icon-2097152"></use>
+                                    </svg>
+                                    <div>
+                                        Request<wbr />Options
+                                        <div class="menu-item-desc">Request options.</div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
                                 <a href="types/Snowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
@@ -817,6 +865,17 @@
                                 >
                             </li>
                             <li>
+                                <a href="functions/getRateLimits.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        get<wbr />Rate<wbr />Limits
+                                        <div class="menu-item-desc">
+                                            Returns a copy of the object containing all stored rate limits.
+                                        </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
                                 <a href="functions/getSubdomainMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
@@ -840,6 +899,38 @@
                                     <div>
                                         parse<wbr />Snowflake
                                         <div class="menu-item-desc">Get the data associated with a snowflake.</div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="functions/promisifyGlobalRateLimit.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        promisify<wbr />Global<wbr />Rate<wbr />Limit
+                                        <div class="menu-item-desc">
+                                            A wrapper for promisifyRateLimit that uses the global rate limit as the
+                                            first argument.
+                                        </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="functions/promisifyRateLimit.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        promisify<wbr />Rate<wbr />Limit
+                                        <div class="menu-item-desc">
+                                            Returns a promise that resolves once the rate limit is over.
+                                        </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="functions/request.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        request
+                                        <div class="menu-item-desc">Create an API request.</div>
                                     </div></a
                                 >
                             </li>
