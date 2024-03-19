@@ -34,7 +34,8 @@ for (const file of readdirSync('test/tests/')) {
         continue;
     }
     await test.execute().catch((error) => {
-        console.log(`${colors.red(`[ERROR]    : Test '${file}' failed: ${error}`)}`);
+        console.log(error);
+        console.log(`${colors.red(`[ERROR]    : Test '${file}' failed!`)}`);
         successful = false;
     });
     if (successful) {

@@ -3,8 +3,8 @@ import * as sxcu from 'sxcu.api';
 export const active = false;
 
 export async function execute() {
-    const subdomains = await sxcu.listSubdomains().catch((err) => {
+    const collection = await sxcu.createCollection('test collection').catch((err) => {
         throw err;
     });
-    console.log(subdomains);
+    console.log(collection);
 }

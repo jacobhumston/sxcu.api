@@ -14,6 +14,8 @@ import {
     getCollectionMeta,
     CreateCollectionOptions,
     CreatedCollection,
+    FileCollectionMeta,
+    CollectionMeta,
 } from './endpoints/collections.js';
 
 import { checkSubdomain, getSubdomainMeta, listSubdomains, SubdomainData, Subdomain } from './endpoints/subdomains.js';
@@ -77,6 +79,8 @@ export {
     FileMeta,
     CreateCollectionOptions,
     CreatedCollection,
+    FileCollectionMeta,
+    CollectionMeta,
     ErrorObject,
     SubdomainData,
     Subdomain,

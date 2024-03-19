@@ -4,7 +4,7 @@ export const active = false;
 
 export async function execute() {
     const subdomains = await sxcu.checkSubdomain('sxcu.net').catch((err) => {
-        console.log(err);
+        throw err;
     });
     console.log(subdomains);
 }
