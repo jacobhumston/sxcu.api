@@ -80,6 +80,36 @@ sxcu.files
     .catch((err) => console.log(err));
 ```
 
+Respecting rate limits has been made extremely easy, all you need to do is enable the request queue.
+
+```js
+// Import methods.
+import { toggleRequestQueue } from 'sxcu.api';
+
+// Enable the request queue.
+toggleRequestQueue(true, true);
+```
+
+Need to make a custom request? It's pretty simple as well. The request method allows you to make requests that respect rate limits as well (as long as `toggleRequestQueue` is used beforehand).
+
+```js
+// Import methods.
+import { request, toggleRequestQueue } from 'sxcu.api';
+
+// Enable the request queue.
+toggleRequestQueue(true, true);
+
+// Create your own request.
+const response = await request({
+    type: 'GET',
+    statusErrors: [400, 429],
+    baseUrl: 'https://sxcu.net/api/',
+    path: `files/abc123`,
+}).catch((error) => {
+    throw resolveError(error);
+});
+```
+
 ## Contributors
 
 <!-- readme: collaborators,contributors,jacobhumston-school/- -start -->
