@@ -21,6 +21,8 @@ export type RequestOptions = {
     path: string;
     /** Body of the request. (If needed.) */
     body?: BodyInit | null | undefined;
+    /** URL parameters. (If needed.) */
+    params?: URLSearchParams;
 };
 
 /**
@@ -67,9 +69,11 @@ export async function request(options: RequestOptions): Promise<{ [key: string]:
     if (UserAgent.get() === '') UserAgent.useDefault();
 
     // Make a request to the API.
-    const url = options.subdomain
+    let url = options.subdomain
         ? `https://${options.subdomain}/api/${options.path}`
         : `${options.baseUrl}${options.path}`;
+
+    if (options.params) url = `${url}?${options.params.toString()}`;
 
     const response = await fetch(url, {
         method: options.type,
