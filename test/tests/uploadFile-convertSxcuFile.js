@@ -1,4 +1,4 @@
-import { convertSxcuFile, uploadFile, getRateLimits } from 'sxcu.api';
+import { convertSxcuFile, uploadFile } from 'sxcu.api';
 
 export const active = true;
 
