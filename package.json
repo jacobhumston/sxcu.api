@@ -1,22 +1,43 @@
 {
     "name": "sxcu.api",
-    "version": "1.2.6",
+    "version": "2.0.0",
     "description": "Node.js library to interact with the sxcu.net API.",
-    "main": "src/index.js",
+    "main": "build/index.js",
+    "exports": {
+        "import": "./build/esm/index.js",
+        "require": "./build/cjs/index.js",
+        "types": "./types/index.d.ts"
+    },
+    "bin": {
+        "sxcu": "build/cli/index.js"
+    },
+    "types": "types/index.d.ts",
+    "type": "module",
+    "maintainers": [
+        {
+            "name": "Jacob Humston",
+            "email": "lovelyjacob@aol.com"
+        }
+    ],
+    "scripts": {
+        "test": "node test/index.js --trace-uncaught --trace-warnings --trace-exit",
+        "test-other": "node test/other.js --trace-uncaught --trace-warnings --trace-exit",
+        "test-other-cjs": "node test/other.cjs --trace-uncaught --trace-warnings --trace-exit",
+        "build": "bash build.sh",
+        "eslint": "npx eslint src/",
+        "gen-doc": "npx del-cli docs/ && npx typedoc --hideGenerator --githubPages false && node tools/gen-web.cjs",
+        "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint && npm run link",
+        "format": "npx prettier ./ ./build ./types --write",
+        "link": "npm link ./ --force && npm link sxcu.api --force",
+        "fix-perms": "chmod +x node_modules/.bin/sxcu"
+    },
+    "files": [
+        "build",
+        "LICENSE"
+    ],
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/Lovely-Experiences/sxcu.api.git"
-    },
-    "types": "./dist/index.d.ts",
-    "scripts": {
-        "generate-doc": "./node_modules/.bin/jsdoc ./src/ -d ./docs/ -R ./README.md -c ./jsdoc.json -u ./tutorials/ -r --verbose -P ./package.json",
-        "test": "node ./test/index.js",
-        "local-node-test": "./node/bin/node ./test/index.js",
-        "check": "./node_modules/.bin/eslint src/",
-        "generate-types": "./node_modules/.bin/tsc",
-        "generate-doc-windows": ".\\node_modules\\.bin\\jsdoc .\\src\\ -d .\\docs\\ -R .\\README.md -c .\\jsdoc.json -u .\\tutorials\\ -r --verbose -P .\\package.json",
-        "check-windows": ".\\node_modules\\.bin\\eslint src\\",
-        "generate-types-windows": ".\\node_modules\\.bin\\tsc"
+        "url": "git+https://github.com/jacobhumston/sxcu.api.git"
     },
     "keywords": [
         "sxcu.net",
@@ -25,23 +46,26 @@
         "library",
         "api"
     ],
-    "directories": {
-        "lib": "/src",
-        "test": "/test"
-    },
-    "author": "Jacob Humston",
+    "author": "jacobhumston",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/Lovely-Experiences/sxcu.api/issues"
+        "url": "https://github.com/jacobhumston/sxcu.api/issues"
     },
-    "homepage": "https://sxcu.api.lovelyjacob.com",
+    "homepage": "https://sxcu.api.lovelyjacob.com/",
     "devDependencies": {
-        "clean-jsdoc-theme": "^4.2.5",
-        "eslint": "^8.32.0",
-        "eslint-config-prettier": "^8.6.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "jsdoc": "^4.0.0",
-        "prettier": "^2.8.3",
-        "typescript": "^4.9.4"
+        "@colors/colors": "^1.6.0",
+        "@mxssfd/typedoc-theme": "^1.1.3",
+        "@types/node": "^20.8.2",
+        "@typescript-eslint/eslint-plugin": "^6.17.0",
+        "@typescript-eslint/parser": "^6.17.0",
+        "del-cli": "^5.1.0",
+        "eslint": "^8.56.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "highlight.js": "^11.9.0",
+        "markdown-it": "^13.0.2",
+        "prettier": "^3.0.3",
+        "typedoc": "^0.25.1",
+        "typescript": "^5.3.3"
     }
 }

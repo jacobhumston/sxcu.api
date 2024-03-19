@@ -1,119 +1,96 @@
-# sxcu.api ![](https://img.shields.io/github/v/release/lovely-experiences/sxcu.api?style=flat-square) ![](https://img.shields.io/npm/v/sxcu.api?style=flat-square) ![](https://img.shields.io/github/package-json/v/lovely-experiences/sxcu.api?style=flat-square) ![](https://img.shields.io/github/license/lovely-experiences/sxcu.api?style=flat-square)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/jacobhumston/sxcu.api/blob/banner/banner.png?raw=true">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/jacobhumston/sxcu.api/blob/banner/banner-dark.png?raw=true">
+  <img alt="Banner">
+</picture>
 
-Node.js library to interact with the sxcu.net API.
+# sxcu.api
 
-Easily upload images with the sxcu.net API. Allowing you to get a publicly sharable URL for anyone you wish to view. You can learn more [here](https://sxcu.net/). This module has **no dependencies**.
+Node.js library to interact with the sxcu.net API. _([A cli is also included!](src/cli/README.md))_
 
-As of **version 1.2.0**, this module supports **all** endpoints. 100% API coverage.
+sxcu.api was created to allow any developer of any skill set to easily create images, links, etc on sxcu.net without the hassle of learning the sxcu.net documentation directly.
 
-Interested in a command line interface instead? Visit [sxcu.cli](https://github.com/Lovely-Experiences/sxcu.cli).
-
-## Installation
-
-To install, run the following command in your terminal of choice:
-
-```console
-npm i sxcu.api
-```
-
-**Important:** sxcu.api requires Node.js **v18** or above. Install the latest LTS version here: [https://nodejs.org/en/](https://nodejs.org/en/)
-
-## Usage
-
-You can find the documentation for sxcu.api [here](https://lovely-experiences.github.io/sxcu.api/). The documentation includes all type specifications as well as some tutorials. Please view the documentation before asking any questions.
-
-If you end up needing assistance, you can [create an issue on GitHub](https://github.com/Lovely-Experiences/sxcu.api/issues/new).
-
-### Examples
-
-_Getting information of a file..._
-
-```js
-const sxcu = require('sxcu.api');
-sxcu.files
-    .getFileMeta('1234abcd')
-    .then((metaData) => {
-        console.log(`File URL: ${metaData.url}`);
-    })
-    .catch((error) => {
-        // Always listen for errors!
-        console.log(sxcu.utility.resolveError(error));
-    });
-```
-
-_Uploading a file..._
-
-```js
-const sxcu = require('sxcu.api');
-const options = { openGraphProperties: { siteName: 'Test Image', discordHideUrl: false } };
-sxcu.files
-    .uploadFile('/a-test.png', options)
-    .then(function (data) {
-        console.log('URL:', data.url);
-    })
-    .catch(function (error) {
-        // resolveError allows us to guarantee an error object will always be received.
-        const errorObject = sxcu.utility.resolveError(error);
-        console.log(`Ran into the error '${errorObject.error}' with the code ${errorObject.code}!`);
-    });
-```
-
-> If you would like to test in your browser, use [RunKit](https://npm.runkit.com/sxcu.api). RunKit examples: [Creating a Paste](https://runkit.com/embed/h7h32ibjf5t5), [Creating a Link Redirect](https://runkit.com/embed/bivumop1mkbf)
-
-### Requiring Specific Endpoints
-
-Note that if you don't need all endpoint methods, you can require a specific one.
-
-```js
-const { files: sxcu } = require('sxcu.api');
-// OR: const { files } = require("sxcu.api");
-
-sxcu.getFileMeta('example');
-```
-
-### Handling Errors
-
-When handling errors, you will receive two values, `error` and `code`. Error is the error message, and code is the number associated with the error. If the error is local, then the error code will be `-1`. If the error is a unknown status code returned by the API, then the error code will be `0`. Any other error codes are provided by the API.
-
-```js
-{ error: "Something went wrong...", code: -1 }
-```
-
-It's important to note that those values may not be present for errors that revolve around providing incorrect method parameters. You can use the utility method `resolveError` if you want an error response 100% of the time.
-
-## Testing and/or Contributing
-
-After you have installed the repository, please install all needed dependence's using `npm ci`.
-
-You may create tests in the `test/index.js` file.
-
-### Commands
-
-We have a list of npm commands available in `package.json`.
-
-| Command       | Explanation                                                                                                                                                           | Usage                     |
-| ------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------- |
-| Documentation | Generate documentation.                                                                                                                                               | `npm run generate-doc`    |
-| Test          | Run the index.js file found in `test/index.js` using the global node command.                                                                                         | `npm run test`            |
-| Local Test    | Same as the test command, however it uses a local version of node. To use this command, you must install Node.js and place the folder inside the repository's folder. | `npm run local-node-test` |
-| Check         | Check for Eslint issues in all files under the source folder.                                                                                                         | `npm run check`           |
-| Types         | Generate type definitions.                                                                                                                                            | `npm run generate-types`  |
+> This module has **0** dependencies. _(excluding dev)_ [Check for yourself!](package.json)
 
 ## Links
 
-### sxcu.api
+**sxcu.api:** [Docs](https://sxcu.api.lovelyjacob.com) / [Github](https://github.com/Lovely-Experiences/sxcu.api) / [npm](https://www.npmjs.com/package/sxcu.api)
 
--   **Docs:** [https://lovely-experiences.github.io/sxcu.api/](https://lovely-experiences.github.io/sxcu.api/)
--   **GitHub:** [https://github.com/Lovely-Experiences/sxcu.api](https://github.com/Lovely-Experiences/sxcu.api)
--   **NPM:** [https://www.npmjs.com/package/sxcu.api](https://www.npmjs.com/package/sxcu.api)
+**sxcu.net:** [Website](https://sxcu.net/) / [API Docs](https://sxcu.net/api/docs/) / [Discord](https://discord.gg/ZBcYQwMWTG) / [Donate](https://paypal.me/MisterFix)
 
-### sxcu.net
+## Updating to v2.0.0 from v1.x.x
 
--   **Website:** [https://sxcu.net/](https://sxcu.net/)
--   **API Docs:** [https://sxcu.net/api/docs/](https://sxcu.net/api/docs/)
--   **Discord:** [https://discord.gg/ZBcYQwMWTG](https://discord.gg/ZBcYQwMWTG)
--   **Donate:** [https://paypal.me/MisterFix](https://paypal.me/MisterFix)
+The guide for doing so can be found [here](web/guides/updating-to-v2.md).
 
-## Releases
+## Installation
 
-You may view all available releases [here (GitHub)](https://github.com/Lovely-Experiences/sxcu.api/releases) and [here (NPM)](https://www.npmjs.com/package/sxcu.api?activeTab=versions). It's important to note that NPM releases do not contain the `/test` directory or the `/docs` directory, as well as the ignore files.
+You can install sxcu.api using npm.
+
+```bash
+npm install sxcu.api
+```
+
+## Example Usage
+
+Here is an example of uploading a file.
+
+```js
+// Import the package.
+import * as sxcu from 'sxcu.api';
+
+// Set the request user agent to the default.
+// This will be done for you on the first request if you don't do it yourself.
+sxcu.UserAgent.useDefault();
+
+// Upload the file and log the response.
+sxcu.uploadFile('image.png')
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
+```
+
+In `v2.0.0` we made the switch to ESM and TypeScript. **However, we still support CommonJS.**
+
+```js
+// Use CommonJS's require method.
+const { uploadFile, UserAgent, categorizeImports } = require('sxcu.api');
+
+UserAgent.useDefault();
+
+uploadFile('your-img')
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
+```
+
+If you preferred categorized imports, then you can use `categorizeImports`. This works with ESM and CommonJS.
+
+```js
+// Import the package.
+import { categorizeImports } from 'sxcu.api';
+
+// Categorize imports.
+const sxcu = categorizeImports();
+
+// Set the request user agent to the default.
+sxcu.userAgent.useDefault();
+
+// Upload the file and log the response.
+sxcu.files
+    .uploadFile('image.png')
+    .then((response) => console.log(response))
+    .catch((err) => console.log(err));
+```
+
+## Contributors
+
+<!-- readme: collaborators,contributors,jacobhumston-school/- -start -->
+<table>
+<tr>
+    <td align="center">
+        <a href="https://github.com/jacobhumston">
+            <img src="https://avatars.githubusercontent.com/u/57332486?v=4" width="100;" alt="jacobhumston"/>
+            <br />
+            <sub><b>Jacob Humston</b></sub>
+        </a>
+    </td></tr>
+</table>
+<!-- readme: collaborators,contributors,jacobhumston-school/- -end -->

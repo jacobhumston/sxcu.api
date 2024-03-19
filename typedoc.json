@@ -1,0 +1,15 @@
+{
+    "entryPoints": ["src/index.ts"],
+    "out": "docs/latest/",
+    "navigationLinks": {
+        "Home": "../index.html",
+        "Guides": "../guides/welcome.html",
+        "GitHub": "https://github.com/Lovely-Experiences/sxcu.api",
+        "npm": "https://www.npmjs.com/package/sxcu.api"
+    },
+    "$schema": "https://typedoc.org/schema.json",
+    "plugin": ["@mxssfd/typedoc-theme"],
+    "theme": "my-theme",
+    "includeVersion": true,
+    "json": "docs/latest/docs.json"
+}

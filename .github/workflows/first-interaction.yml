@@ -1,0 +1,13 @@
+on:
+    - pull_request
+    - issues
+
+jobs:
+    first-interaction:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/first-interaction@v1
+              with:
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}
+                  issue-message: '# Welcome!\nLooks like this is your first issue.\n\nMake sure to provide the following: (if you have not already)\n- Error messages\n- Steps to reproduce\n- Expected behavior\n- Actual behavior\n- Screenshots (if applicable)\n\n>**Make sure to format code and errors in [codeblocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)!'
+                  pr-message: '# Welcome!\nThank you for your first contribution! :D\n\nIt is important that you provide all the necessary information about your changes...\n- What is changes\n- What is the purpose of this change\n- Is this a bug fix or a new feature\n- Have you tested? What are the test results\n\n>**Make sure to format code and errors in [codeblocks](https://www.markdownguide.org/extended-syntax/#fenced-code-blocks)!'

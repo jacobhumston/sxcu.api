@@ -1,5 +1,15 @@
-node_modules
-secrets.json
-node
-.npmrc
-*.sxcu
+# Node dependencies
+node_modules/
+
+# Test directory 
+# test/
+test/other.js
+test/other.cjs
+test/output.txt
+
+# VSCode Config
+.vscode/
+
+# Build Directories
+build/
+types/

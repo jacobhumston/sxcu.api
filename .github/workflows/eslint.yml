@@ -1,0 +1,50 @@
+name: 'Eslint Check (Latest Build)'
+on:
+    - push
+    - pull_request
+
+jobs:
+    eslint:
+        runs-on: 'ubuntu-latest'
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 21
+                  cache: 'npm'
+
+            - name: Install Dependencies
+              id: install-dependencies
+              run: npm ci
+
+            - name: Run Eslint
+              id: run-eslint
+              run: npm run eslint
+
+    eslint_error:
+        runs-on: ubuntu-latest
+        if: failure() && github.event_name == 'pull_request'
+        needs: eslint
+        steps:
+            - name: Checkout
+              uses: actions/checkout@v3
+
+            - name: Comment PR
+              uses: thollander/actions-comment-pull-request@v2
+              with:
+                  message: '⚠️ **Eslint failed!** Please fix before requesting a review. ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}'
+
+            - name: add label
+              uses: actions-ecosystem/action-add-labels@v1
+              with:
+                  labels: eslint-failed
+
+    eslint_success:
+        runs-on: ubuntu-latest
+        if: success() && github.event_name == 'pull_request'
+        needs: eslint
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions-ecosystem/action-remove-labels@v1
+              with:
+                  labels: eslint-failed

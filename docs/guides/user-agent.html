@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>sxcu.api</title>
+        <meta property="og:title" content="sxcu.api - node.js library to interact with the sxcu.net api." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sxcu.api.lovelyjacob.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../styles.css" />
+    </head>
+    <body>
+        <div id="nav-bar">
+            <button id="menu" type="button"><span class="material-icons-round">menu</span></button>
+            <p>sxcu.api</p>
+            <a href="../">Home</a>
+            <a href="../latest/">Docs</a>
+        </div>
+        <div id="side-nav-bar-darken"></div>
+        <div id="side-nav-bar">
+            <a href="testing.html" class="side-nav-bar-link">Testing </a>
+            <hr />
+            <a href="updating-to-v2.html" class="side-nav-bar-link">Updating to v2.0.0 </a>
+            <hr />
+            <a href="user-agent.html" class="side-nav-bar-link">Setting/Modifying the User Agent </a>
+            <hr />
+            <a href="welcome.html" class="side-nav-bar-link">Welcome! </a>
+        </div>
+        <br />
+        <div id="guide-wrapper">
+            <h1>Setting/Modifying the User Agent</h1>
+            <hr />
+            <p>
+                Setting your User Agent is very important, as this value is used to the set
+                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent">User-Agent Header</a> on
+                all requests made to the API.
+            </p>
+            <p>
+                <strong
+                    >This is done for you on the first request automatically, however using a custom User Agent is
+                    usually recommended.</strong
+                >
+            </p>
+            <p>
+                <strong>Important note:</strong> The class <code>UserAgentClass</code> is not used by the request module
+                internally and is only intended for type checking. Please use the exported variable
+                <code>UserAgent</code> instead.
+            </p>
+            <p>Setting the User Agent is very straight forward.</p>
+            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>();<br></code></pre>
+            <p>
+                What exactly does <code>useDefault</code> do? - It simply uses data from the package.json file found in
+                sxcu.api as the User Agent.
+            </p>
+            <p>
+                You can optionally set the <code>pathOverride</code> parameter of <code>useDefault</code> to the path of
+                a different package.json.
+            </p>
+            <pre><code class="language-js"><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>(<span class="hljs-string">&#x27;path/to/package.json&#x27;</span>);<br></code></pre>
+            <p>If you want to set a custom User Agent, just use the <code>set</code> method.</p>
+            <pre><code class="language-js"><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;sxcuUploader/$versionNumber (+$url)&#x27;</span>);<br></code></pre>
+            <p>
+                The format for User Agents is listed as the following on
+                <a href="https://sxcu.net/api/docs/#overview">sxcu.net's API documentation</a>.
+            </p>
+            <p><code>sxcuUploader/$versionNumber (+$url)</code></p>
+            <p><strong>Keep in mind that invalid User Agents will likely result in errors!</strong></p>
+        </div>
+        <br />
+        <br />
+        <script>
+            const menu = document.getElementById('menu');
+
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach((block) => {
+                if (block.childElementCount === 0) {
+                    block.classList.add('inline-code');
+                }
+            });
+
+            const sideNavBar = document.getElementById('side-nav-bar');
+            const sideNavBarDarken = document.getElementById('side-nav-bar-darken');
+
+            let enabled = true;
+            menu.addEventListener('click', () => {
+                enabled = enabled ? null : true;
+                console.log(enabled);
+                sideNavBar.style.display = enabled ? 'none' : 'block';
+                sideNavBarDarken.style.display = enabled ? 'none' : 'block';
+                document.body.style.overflowY = enabled ? 'auto' : 'hidden';
+            });
+        </script>
+    </body>
+</html>
