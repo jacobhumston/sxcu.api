@@ -386,6 +386,20 @@
                             ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
                             ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span
                             ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                            ><span class="tsd-kind-property">getRateLimits</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol"> =&gt; </span
+                            ><span class="tsd-signature-symbol">{ </span><br /><span>            </span>[<span
+                                class="tsd-kind-index-signature"
+                                >key</span
+                            >: <span class="tsd-signature-type">string</span>]<span class="tsd-signature-symbol"
+                                >: </span
+                            ><a href="../types/RateLimit.html" class="tsd-signature-type tsd-kind-type-alias"
+                                >RateLimit</a
+                            ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                            ><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">; </span><br /><span>        </span
                             ><span class="tsd-kind-property">parseSnowflake</span
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
                             ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">snowflake</span
@@ -393,16 +407,59 @@
                             ><a href="../types/ParsedSnowflake.html" class="tsd-signature-type tsd-kind-type-alias"
                                 >ParsedSnowflake</a
                             ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
-                            ><br /><span>        </span><span class="tsd-kind-property">resolveError</span
+                            ><br /><span>        </span><span class="tsd-kind-property">promisifyEndpointRateLimit</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">endpoint</span
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
+                            ><span class="tsd-signature-type">Promise</span
+                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
+                            ><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                            ><span class="tsd-kind-property">promisifyGlobalRateLimit</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol"> =&gt; </span
+                            ><span class="tsd-signature-type">Promise</span
+                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
+                            ><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                            ><span class="tsd-kind-property">promisifyRateLimit</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">rateLimit</span
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
+                            ><span class="tsd-signature-type">Promise</span
+                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
+                            ><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                            ><span class="tsd-kind-property">request</span><span class="tsd-signature-symbol">: </span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-kind-parameter">options</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol"> =&gt; </span
+                            ><span class="tsd-signature-type">Promise</span
+                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">{ </span
+                            ><br /><span>            </span>[<span class="tsd-kind-index-signature">key</span>:
+                            <span class="tsd-signature-type">string</span>]<span class="tsd-signature-symbol">: </span
+                            ><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span
+                            ><br /><span>        </span><span class="tsd-signature-symbol">}</span
+                            ><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                            ><span class="tsd-kind-property">resolveError</span
                             ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
                             ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">thing</span
                             ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span
                             ><a href="../types/ErrorObject.html" class="tsd-signature-type tsd-kind-type-alias"
                                 >ErrorObject</a
                             ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
-                            ><br /><span>    </span><span class="tsd-signature-symbol">}</span
-                            ><span class="tsd-signature-symbol">; </span><br /><span class="tsd-signature-symbol"
-                                >}</span
+                            ><br /><span>        </span><span class="tsd-kind-property">toggleRequestQueue</span
+                            ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">enabled</span>,
+                            <span class="tsd-kind-parameter">retryEnabled</span
+                            ><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol"> =&gt; </span
+                            ><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span
+                            ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                            ><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">; </span
+                            ><br /><span class="tsd-signature-symbol">}</span
                             ><a href="#categorizeImports" aria-label="Permalink" class="tsd-anchor-icon"
                                 ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
                             ></a>
@@ -603,7 +660,21 @@
                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                 ><span class="tsd-signature-type">string</span
                                 ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
-                                ><br /><span>        </span><span class="tsd-kind-property">parseSnowflake</span
+                                ><br /><span>        </span><span class="tsd-kind-property">getRateLimits</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><span class="tsd-signature-symbol">{ </span><br /><span>            </span>[<span
+                                    class="tsd-kind-index-signature"
+                                    >key</span
+                                >: <span class="tsd-signature-type">string</span>]<span class="tsd-signature-symbol"
+                                    >: </span
+                                ><a href="../types/RateLimit.html" class="tsd-signature-type tsd-kind-type-alias"
+                                    >RateLimit</a
+                                ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                                ><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol">; </span><br /><span>        </span
+                                ><span class="tsd-kind-property">parseSnowflake</span
                                 ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
                                 ><span class="tsd-signature-symbol">(</span
                                 ><span class="tsd-kind-parameter">snowflake</span
@@ -611,6 +682,56 @@
                                 ><span class="tsd-signature-symbol"> =&gt; </span
                                 ><a href="../types/ParsedSnowflake.html" class="tsd-signature-type tsd-kind-type-alias"
                                     >ParsedSnowflake</a
+                                ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
+                                ><br /><span>        </span
+                                ><span class="tsd-kind-property">promisifyEndpointRateLimit</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-kind-parameter">endpoint</span
+                                ><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><span class="tsd-signature-type">Promise</span
+                                ><span class="tsd-signature-symbol">&lt;</span
+                                ><span class="tsd-signature-type">void</span
+                                ><span class="tsd-signature-symbol">&gt;</span
+                                ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
+                                ><br /><span>        </span
+                                ><span class="tsd-kind-property">promisifyGlobalRateLimit</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><span class="tsd-signature-type">Promise</span
+                                ><span class="tsd-signature-symbol">&lt;</span
+                                ><span class="tsd-signature-type">void</span
+                                ><span class="tsd-signature-symbol">&gt;</span
+                                ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
+                                ><br /><span>        </span><span class="tsd-kind-property">promisifyRateLimit</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-kind-parameter">rateLimit</span
+                                ><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><span class="tsd-signature-type">Promise</span
+                                ><span class="tsd-signature-symbol">&lt;</span
+                                ><span class="tsd-signature-type">void</span
+                                ><span class="tsd-signature-symbol">&gt;</span
+                                ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
+                                ><br /><span>        </span><span class="tsd-kind-property">request</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-kind-parameter">options</span
+                                ><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><span class="tsd-signature-type">Promise</span
+                                ><span class="tsd-signature-symbol">&lt;</span
+                                ><span class="tsd-signature-symbol">{ </span><br /><span>            </span>[<span
+                                    class="tsd-kind-index-signature"
+                                    >key</span
+                                >: <span class="tsd-signature-type">string</span>]<span class="tsd-signature-symbol"
+                                    >: </span
+                                ><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">; </span
+                                ><br /><span>        </span><span class="tsd-signature-symbol">}</span
+                                ><span class="tsd-signature-symbol">&gt;</span
                                 ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
                                 ><br /><span>        </span><span class="tsd-kind-property">resolveError</span
                                 ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
@@ -620,10 +741,17 @@
                                 ><a href="../types/ErrorObject.html" class="tsd-signature-type tsd-kind-type-alias"
                                     >ErrorObject</a
                                 ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">; </span
-                                ><br /><span>    </span><span class="tsd-signature-symbol">}</span
-                                ><span class="tsd-signature-symbol">; </span><br /><span class="tsd-signature-symbol"
-                                    >}</span
-                                >
+                                ><br /><span>        </span><span class="tsd-kind-property">toggleRequestQueue</span
+                                ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-signature-symbol">(</span
+                                ><span class="tsd-kind-parameter">enabled</span>,
+                                <span class="tsd-kind-parameter">retryEnabled</span
+                                ><span class="tsd-signature-symbol">?</span><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                ><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span
+                                ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                ><span class="tsd-signature-symbol">}</span><span class="tsd-signature-symbol">; </span
+                                ><br /><span class="tsd-signature-symbol">}</span>
                             </h4>
                             <ul class="tsd-parameters">
                                 <li class="tsd-parameter">
@@ -1913,6 +2041,26 @@
                                         ><span class="tsd-signature-type">string</span
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">getRateLimits</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><span class="tsd-signature-symbol">{ </span><br /><span>        </span>[<span
+                                            class="tsd-kind-index-signature"
+                                            >key</span
+                                        >: <span class="tsd-signature-type">string</span>]<span
+                                            class="tsd-signature-symbol"
+                                            >: </span
+                                        ><a
+                                            href="../types/RateLimit.html"
+                                            class="tsd-signature-type tsd-kind-type-alias"
+                                            >RateLimit</a
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-signature-symbol">}</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                                         ><span class="tsd-kind-property">parseSnowflake</span
                                         ><span class="tsd-signature-symbol">: </span
                                         ><span class="tsd-signature-symbol">(</span
@@ -1926,6 +2074,65 @@
                                             >ParsedSnowflake</a
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">promisifyEndpointRateLimit</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">endpoint</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><span class="tsd-signature-type">Promise</span
+                                        ><span class="tsd-signature-symbol">&lt;</span
+                                        ><span class="tsd-signature-type">void</span
+                                        ><span class="tsd-signature-symbol">&gt;</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">promisifyGlobalRateLimit</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><span class="tsd-signature-type">Promise</span
+                                        ><span class="tsd-signature-symbol">&lt;</span
+                                        ><span class="tsd-signature-type">void</span
+                                        ><span class="tsd-signature-symbol">&gt;</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">promisifyRateLimit</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">rateLimit</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><span class="tsd-signature-type">Promise</span
+                                        ><span class="tsd-signature-symbol">&lt;</span
+                                        ><span class="tsd-signature-type">void</span
+                                        ><span class="tsd-signature-symbol">&gt;</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">request</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">options</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><span class="tsd-signature-type">Promise</span
+                                        ><span class="tsd-signature-symbol">&lt;</span
+                                        ><span class="tsd-signature-symbol">{ </span><br /><span>        </span>[<span
+                                            class="tsd-kind-index-signature"
+                                            >key</span
+                                        >: <span class="tsd-signature-type">string</span>]<span
+                                            class="tsd-signature-symbol"
+                                            >: </span
+                                        ><span class="tsd-signature-type">any</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-signature-symbol">}</span
+                                        ><span class="tsd-signature-symbol">&gt;</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                                         ><span class="tsd-kind-property">resolveError</span
                                         ><span class="tsd-signature-symbol">: </span
                                         ><span class="tsd-signature-symbol">(</span
@@ -1937,6 +2144,18 @@
                                             href="../types/ErrorObject.html"
                                             class="tsd-signature-type tsd-kind-type-alias"
                                             >ErrorObject</a
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol">; </span><br /><span>    </span
+                                        ><span class="tsd-kind-property">toggleRequestQueue</span
+                                        ><span class="tsd-signature-symbol">: </span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-signature-symbol">(</span
+                                        ><span class="tsd-kind-parameter">enabled</span>,
+                                        <span class="tsd-kind-parameter">retryEnabled</span
+                                        ><span class="tsd-signature-symbol">?</span
+                                        ><span class="tsd-signature-symbol">)</span
+                                        ><span class="tsd-signature-symbol"> =&gt; </span
+                                        ><span class="tsd-signature-type">void</span
                                         ><span class="tsd-signature-symbol">)</span
                                         ><span class="tsd-signature-symbol">; </span><br /><span
                                             class="tsd-signature-symbol"
@@ -2155,6 +2374,98 @@
                                         </li>
                                         <li class="tsd-parameter">
                                             <h5>
+                                                <span class="tsd-kind-property">get<wbr />Rate<wbr />Limits</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><span class="tsd-signature-symbol">{ </span><br /><span>    </span
+                                                >[<span class="tsd-kind-index-signature">key</span>:
+                                                <span class="tsd-signature-type">string</span>]<span
+                                                    class="tsd-signature-symbol"
+                                                    >: </span
+                                                ><a
+                                                    href="../types/RateLimit.html"
+                                                    class="tsd-signature-type tsd-kind-type-alias"
+                                                    >RateLimit</a
+                                                ><span class="tsd-signature-symbol">; </span><br /><span
+                                                    class="tsd-signature-symbol"
+                                                    >}</span
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.getRateLimits.__type-37.__type-38"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><span class="tsd-signature-symbol">{ </span><br /><span
+                                                                >    </span
+                                                            >[<span class="tsd-kind-index-signature">key</span>:
+                                                            <span class="tsd-signature-type">string</span>]<span
+                                                                class="tsd-signature-symbol"
+                                                                >: </span
+                                                            ><a
+                                                                href="../types/RateLimit.html"
+                                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                                >RateLimit</a
+                                                            ><span class="tsd-signature-symbol">; </span><br /><span
+                                                                class="tsd-signature-symbol"
+                                                                >}</span
+                                                            >
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>
+                                                                    Returns a copy of the object containing all stored
+                                                                    rate limits.
+                                                                </p>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns <span class="tsd-signature-symbol">{ </span
+                                                                ><br /><span>    </span>[<span
+                                                                    class="tsd-kind-index-signature"
+                                                                    >key</span
+                                                                >: <span class="tsd-signature-type">string</span>]<span
+                                                                    class="tsd-signature-symbol"
+                                                                    >: </span
+                                                                ><a
+                                                                    href="../types/RateLimit.html"
+                                                                    class="tsd-signature-type tsd-kind-type-alias"
+                                                                    >RateLimit</a
+                                                                ><span class="tsd-signature-symbol">; </span><br /><span
+                                                                    class="tsd-signature-symbol"
+                                                                    >}</span
+                                                                >
+                                                            </h4>
+                                                            <ul class="tsd-parameters">
+                                                                <li class="tsd-parameter-index-signature">
+                                                                    <h5>
+                                                                        <span class="tsd-signature-symbol">[</span
+                                                                        ><span class="tsd-kind-parameter">key</span>:
+                                                                        <span class="tsd-signature-type">string</span
+                                                                        ><span class="tsd-signature-symbol">]: </span
+                                                                        ><a
+                                                                            href="../types/RateLimit.html"
+                                                                            class="tsd-signature-type tsd-kind-type-alias"
+                                                                            >RateLimit</a
+                                                                        >
+                                                                    </h5>
+                                                                </li>
+                                                            </ul>
+                                                            <div class="tsd-comment tsd-typography"></div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
                                                 <span class="tsd-kind-property">parse<wbr />Snowflake</span
                                                 ><span class="tsd-signature-symbol">: </span
                                                 ><span class="tsd-signature-symbol">(</span
@@ -2173,7 +2484,7 @@
                                                     <ul class="tsd-signatures">
                                                         <li
                                                             class="tsd-signature"
-                                                            id="categorizeImports.__type.utility.__type-30.parseSnowflake.__type-37.__type-38"
+                                                            id="categorizeImports.__type.utility.__type-30.parseSnowflake.__type-40.__type-41"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
                                                             ><span class="tsd-kind-parameter">snowflake</span
@@ -2232,6 +2543,299 @@
                                         </li>
                                         <li class="tsd-parameter">
                                             <h5>
+                                                <span class="tsd-kind-property"
+                                                    >promisify<wbr />Endpoint<wbr />Rate<wbr />Limit</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">endpoint</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><span class="tsd-signature-type">Promise</span
+                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                ><span class="tsd-signature-type">void</span
+                                                ><span class="tsd-signature-symbol">&gt;</span
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.promisifyEndpointRateLimit.__type-42.__type-43"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">endpoint</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><span class="tsd-signature-type">Promise</span
+                                                            ><span class="tsd-signature-symbol">&lt;</span
+                                                            ><span class="tsd-signature-type">void</span
+                                                            ><span class="tsd-signature-symbol">&gt;</span>
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>
+                                                                    A wrapper for promisifyRateLimit that uses an
+                                                                    endpoint&#39;s rate limit as the first argument.
+                                                                    Note that if rate limit data for said endpoint
+                                                                    isn&#39;t available then it will instantly resolve.
+                                                                </p>
+                                                            </div>
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter"
+                                                                                >endpoint</span
+                                                                            >:
+                                                                            <a
+                                                                                href="../types/Endpoint.html"
+                                                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                                                >Endpoint</a
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>
+                                                                                Endpoint to promisify the rate limit of.
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns <span class="tsd-signature-type">Promise</span
+                                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                                ><span class="tsd-signature-type">void</span
+                                                                ><span class="tsd-signature-symbol">&gt;</span>
+                                                            </h4>
+                                                            <div class="tsd-comment tsd-typography"></div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
+                                                <span class="tsd-kind-property"
+                                                    >promisify<wbr />Global<wbr />Rate<wbr />Limit</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><span class="tsd-signature-type">Promise</span
+                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                ><span class="tsd-signature-type">void</span
+                                                ><span class="tsd-signature-symbol">&gt;</span
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.promisifyGlobalRateLimit.__type-44.__type-45"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><span class="tsd-signature-type">Promise</span
+                                                            ><span class="tsd-signature-symbol">&lt;</span
+                                                            ><span class="tsd-signature-type">void</span
+                                                            ><span class="tsd-signature-symbol">&gt;</span>
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>
+                                                                    A wrapper for promisifyRateLimit that uses the
+                                                                    global rate limit as the first argument. Note that
+                                                                    if the global rate limit isn&#39;t available then it
+                                                                    will instantly resolve.
+                                                                </p>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns <span class="tsd-signature-type">Promise</span
+                                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                                ><span class="tsd-signature-type">void</span
+                                                                ><span class="tsd-signature-symbol">&gt;</span>
+                                                            </h4>
+                                                            <div class="tsd-comment tsd-typography"></div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
+                                                <span class="tsd-kind-property">promisify<wbr />Rate<wbr />Limit</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">rateLimit</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><span class="tsd-signature-type">Promise</span
+                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                ><span class="tsd-signature-type">void</span
+                                                ><span class="tsd-signature-symbol">&gt;</span
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.promisifyRateLimit.__type-46.__type-47"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">rateLimit</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><span class="tsd-signature-type">Promise</span
+                                                            ><span class="tsd-signature-symbol">&lt;</span
+                                                            ><span class="tsd-signature-type">void</span
+                                                            ><span class="tsd-signature-symbol">&gt;</span>
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>
+                                                                    Returns a promise that resolves once the rate limit
+                                                                    is over. This will return instantly unless the rate
+                                                                    limit has been exceeded.
+                                                                </p>
+                                                            </div>
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter"
+                                                                                >rateLimit</span
+                                                                            >:
+                                                                            <a
+                                                                                href="../types/RateLimit.html"
+                                                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                                                >RateLimit</a
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>The rate limit to promisify.</p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns <span class="tsd-signature-type">Promise</span
+                                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                                ><span class="tsd-signature-type">void</span
+                                                                ><span class="tsd-signature-symbol">&gt;</span>
+                                                            </h4>
+                                                            <div class="tsd-comment tsd-typography"></div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
+                                                <span class="tsd-kind-property">request</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">options</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><span class="tsd-signature-type">Promise</span
+                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                ><span class="tsd-signature-symbol">{ </span><br /><span>    </span
+                                                >[<span class="tsd-kind-index-signature">key</span>:
+                                                <span class="tsd-signature-type">string</span>]<span
+                                                    class="tsd-signature-symbol"
+                                                    >: </span
+                                                ><span class="tsd-signature-type">any</span
+                                                ><span class="tsd-signature-symbol">; </span><br /><span
+                                                    class="tsd-signature-symbol"
+                                                    >}</span
+                                                ><span class="tsd-signature-symbol">&gt;</span
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.request.__type-48.__type-49"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">options</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><span class="tsd-signature-type">Promise</span
+                                                            ><span class="tsd-signature-symbol">&lt;</span
+                                                            ><span class="tsd-signature-symbol">{ </span><br /><span
+                                                                >    </span
+                                                            >[<span class="tsd-kind-index-signature">key</span>:
+                                                            <span class="tsd-signature-type">string</span>]<span
+                                                                class="tsd-signature-symbol"
+                                                                >: </span
+                                                            ><span class="tsd-signature-type">any</span
+                                                            ><span class="tsd-signature-symbol">; </span><br /><span
+                                                                class="tsd-signature-symbol"
+                                                                >}</span
+                                                            ><span class="tsd-signature-symbol">&gt;</span>
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>Create an API request.</p>
+                                                            </div>
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter"
+                                                                                >options</span
+                                                                            >:
+                                                                            <a
+                                                                                href="../types/RequestOptions.html"
+                                                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                                                >RequestOptions</a
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>Options for this request.</p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns <span class="tsd-signature-type">Promise</span
+                                                                ><span class="tsd-signature-symbol">&lt;</span
+                                                                ><span class="tsd-signature-symbol">{ </span><br /><span
+                                                                    >    </span
+                                                                >[<span class="tsd-kind-index-signature">key</span>:
+                                                                <span class="tsd-signature-type">string</span>]<span
+                                                                    class="tsd-signature-symbol"
+                                                                    >: </span
+                                                                ><span class="tsd-signature-type">any</span
+                                                                ><span class="tsd-signature-symbol">; </span><br /><span
+                                                                    class="tsd-signature-symbol"
+                                                                    >}</span
+                                                                ><span class="tsd-signature-symbol">&gt;</span>
+                                                            </h4>
+                                                            <div class="tsd-comment tsd-typography"></div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
                                                 <span class="tsd-kind-property">resolve<wbr />Error</span
                                                 ><span class="tsd-signature-symbol">: </span
                                                 ><span class="tsd-signature-symbol">(</span
@@ -2250,7 +2854,7 @@
                                                     <ul class="tsd-signatures">
                                                         <li
                                                             class="tsd-signature"
-                                                            id="categorizeImports.__type.utility.__type-30.resolveError.__type-39.__type-40"
+                                                            id="categorizeImports.__type.utility.__type-30.resolveError.__type-50.__type-51"
                                                         >
                                                             <span class="tsd-signature-symbol">(</span
                                                             ><span class="tsd-kind-parameter">thing</span
@@ -2329,6 +2933,97 @@
                                                 </li>
                                             </ul>
                                         </li>
+                                        <li class="tsd-parameter">
+                                            <h5>
+                                                <span class="tsd-kind-property">toggle<wbr />Request<wbr />Queue</span
+                                                ><span class="tsd-signature-symbol">: </span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-signature-symbol">(</span
+                                                ><span class="tsd-kind-parameter">enabled</span>,
+                                                <span class="tsd-kind-parameter">retryEnabled</span
+                                                ><span class="tsd-signature-symbol">?</span
+                                                ><span class="tsd-signature-symbol">)</span
+                                                ><span class="tsd-signature-symbol"> =&gt; </span
+                                                ><span class="tsd-signature-type">void</span
+                                                ><span class="tsd-signature-symbol">)</span>
+                                            </h5>
+                                            <ul class="tsd-parameters">
+                                                <li class="tsd-parameter-signature">
+                                                    <ul class="tsd-signatures">
+                                                        <li
+                                                            class="tsd-signature"
+                                                            id="categorizeImports.__type.utility.__type-30.toggleRequestQueue.__type-52.__type-53"
+                                                        >
+                                                            <span class="tsd-signature-symbol">(</span
+                                                            ><span class="tsd-kind-parameter">enabled</span>,
+                                                            <span class="tsd-kind-parameter">retryEnabled</span
+                                                            ><span class="tsd-signature-symbol">?</span
+                                                            ><span class="tsd-signature-symbol">)</span
+                                                            ><span class="tsd-signature-symbol">: </span
+                                                            ><span class="tsd-signature-type">void</span>
+                                                        </li>
+                                                        <li class="tsd-description">
+                                                            <div class="tsd-comment tsd-typography">
+                                                                <p>
+                                                                    Toggle the request queue. The request queue enables
+                                                                    all requests to automatically respect rate limits.
+                                                                    It&#39;s important to note that this only handles
+                                                                    rate limit errors, nothing else. The request queue
+                                                                    does NOT keep the current process running
+                                                                    indefinitely.
+                                                                </p>
+                                                            </div>
+                                                            <div class="tsd-parameters">
+                                                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                                                <ul class="tsd-parameter-list">
+                                                                    <li>
+                                                                        <h5>
+                                                                            <span class="tsd-kind-parameter"
+                                                                                >enabled</span
+                                                                            >:
+                                                                            <span class="tsd-signature-type"
+                                                                                >boolean</span
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>
+                                                                                If the queue should be enabled or not.
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                    <li>
+                                                                        <h5>
+                                                                            <code class="tsd-tag ts-flagOptional"
+                                                                                >Optional</code
+                                                                            >
+                                                                            <span class="tsd-kind-parameter"
+                                                                                >retryEnabled</span
+                                                                            >:
+                                                                            <span class="tsd-signature-type"
+                                                                                >boolean</span
+                                                                            >
+                                                                        </h5>
+                                                                        <div class="tsd-comment tsd-typography">
+                                                                            <p>
+                                                                                If true, rate limit errors will
+                                                                                automatically be retried. Default is
+                                                                                false.
+                                                                            </p>
+                                                                        </div>
+                                                                        <div class="tsd-comment tsd-typography"></div>
+                                                                    </li>
+                                                                </ul>
+                                                            </div>
+                                                            <h4 class="tsd-returns-title">
+                                                                Returns <span class="tsd-signature-type">void</span>
+                                                            </h4>
+                                                            <div class="tsd-comment tsd-typography"></div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -2338,8 +3033,8 @@
                                     <li>
                                         Defined in
                                         <a
-                                            href="https://github.com/jacobhumston/sxcu.api/blob/851ef01/src/categorize.ts#L31"
-                                            >categorize.ts:31</a
+                                            href="https://github.com/jacobhumston/sxcu.api/blob/6d05342/src/categorize.ts#L37"
+                                            >categorize.ts:37</a
                                         >
                                     </li>
                                 </ul>
@@ -2444,6 +3139,17 @@
                                         <div class="menu-item-desc">
                                             A deletion token which is required when deleting something.
                                         </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="../types/Endpoint.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
+                                        <use href="#icon-2097152"></use>
+                                    </svg>
+                                    <div>
+                                        Endpoint
+                                        <div class="menu-item-desc">Available endpoints.</div>
                                     </div></a
                                 >
                             </li>
@@ -2798,6 +3504,18 @@
                                 >
                             </li>
                             <li>
+                                <a href="promisifyEndpointRateLimit.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        promisify<wbr />Endpoint<wbr />Rate<wbr />Limit
+                                        <div class="menu-item-desc">
+                                            A wrapper for promisifyRateLimit that uses an endpoint&#39;s rate limit as
+                                            the first argument.
+                                        </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
                                 <a href="promisifyGlobalRateLimit.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
@@ -2837,6 +3555,15 @@
                                         <div class="menu-item-desc">
                                             Attempt to resolve an error from &quot;thing&quot;.
                                         </div>
+                                    </div></a
+                                >
+                            </li>
+                            <li>
+                                <a href="toggleRequestQueue.html"
+                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
+                                    <div>
+                                        toggle<wbr />Request<wbr />Queue
+                                        <div class="menu-item-desc">Toggle the request queue.</div>
                                     </div></a
                                 >
                             </li>

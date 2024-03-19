@@ -29,8 +29,6 @@ import { createError, resolveError, ErrorObject } from './error.js';
 
 import { UserAgent, UserAgentClass } from './classes/user-agent.js';
 
-import { categorizeImports } from './categorize.js';
-
 import { DeletionToken, Token, Url, Snowflake } from './types.js';
 
 import {
@@ -38,8 +36,11 @@ import {
     getRateLimits,
     promisifyRateLimit,
     promisifyGlobalRateLimit,
+    promisifyEndpointRateLimit,
+    toggleRequestQueue,
     RequestOptions,
     RateLimit,
+    Endpoint,
 } from './request.js';
 
 import {
@@ -51,6 +52,8 @@ import {
     SnowflakeObjectFlag,
     ConvertedSxcuFile,
 } from './utility.js';
+
+import { categorizeImports } from './categorize.js';
 
 export {
     // Endpoints
@@ -73,11 +76,13 @@ export {
     extractToken,
     parseSnowflake,
     convertSxcuFile,
-    categorizeImports,
     request,
     getRateLimits,
     promisifyRateLimit,
     promisifyGlobalRateLimit,
+    promisifyEndpointRateLimit,
+    toggleRequestQueue,
+    categorizeImports,
 
     // Variables
     UserAgent,
@@ -109,4 +114,5 @@ export {
     ConvertedSxcuFile,
     RequestOptions,
     RateLimit,
+    Endpoint,
 };

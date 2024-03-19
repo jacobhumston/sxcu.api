@@ -3,15 +3,15 @@
     <head>
         <meta charset="utf-8" />
         <meta http-equiv="x-ua-compatible" content="IE=edge" />
-        <title>sxcu.api - v2.0.0</title>
+        <title>promisifyEndpointRateLimit | sxcu.api - v2.0.0</title>
         <meta name="description" content="Documentation for sxcu.api" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="stylesheet" href="assets/style.css" />
-        <link rel="stylesheet" href="assets/highlight.css" />
-        <link rel="stylesheet" href="assets/my-theme.css" />
-        <script defer src="assets/main.js"></script>
-        <script async src="assets/search.js" id="search-script"></script>
-        <script async src="assets/navigation.js" id="tsd-nav-script"></script>
+        <link rel="stylesheet" href="../assets/style.css" />
+        <link rel="stylesheet" href="../assets/highlight.css" />
+        <link rel="stylesheet" href="../assets/my-theme.css" />
+        <script defer src="../assets/main.js"></script>
+        <script async src="../assets/search.js" id="search-script"></script>
+        <script async src="../assets/navigation.js" id="tsd-nav-script"></script>
     </head>
     <body>
         <script>
@@ -22,7 +22,7 @@
         </script>
         <header class="tsd-page-toolbar">
             <div class="tsd-toolbar-contents container">
-                <div class="table-cell" id="tsd-search" data-base=".">
+                <div class="table-cell" id="tsd-search" data-base="..">
                     <div class="field">
                         <label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"
                             ><svg width="16" height="16" viewBox="0 0 16 16" fill="none">
@@ -40,7 +40,7 @@
                         <li class="state loading">Preparing search index...</li>
                         <li class="state failure">The search index is not available</li>
                     </ul>
-                    <a href="index.html" class="title">sxcu.api - v2.0.0</a>
+                    <a href="../index.html" class="title">sxcu.api - v2.0.0</a>
                     <div class="tsd-navigation settings">
                         <details class="tsd-index-accordion">
                             <summary class="tsd-accordion-summary">
@@ -212,271 +212,87 @@
         </header>
         <div class="container container-main">
             <div class="col-content">
-                <div class="tsd-page-title"><h2>sxcu.api - v2.0.0</h2></div>
-                <section class="tsd-panel-group tsd-index-group">
-                    <section class="tsd-panel tsd-index-panel">
-                        <h3 class="tsd-index-heading uppercase">Index</h3>
-                        <section class="tsd-index-section">
-                            <h3 class="tsd-index-heading">Enumerations</h3>
-                            <div class="tsd-index-list">
-                                <a href="enums/SnowflakeObjectFlag.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg
-                                    ><span>Snowflake<wbr />Object<wbr />Flag</span></a
-                                >
-                                <a href="enums/SnowflakeObjectType.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg
-                                    ><span>Snowflake<wbr />Object<wbr />Type</span></a
-                                >
+                <div class="tsd-page-title">
+                    <ul class="tsd-breadcrumb">
+                        <li><a href="../modules.html">sxcu.api</a></li>
+                        <li><a href="promisifyEndpointRateLimit.html">promisifyEndpointRateLimit</a></li>
+                    </ul>
+                    <h1>Function promisifyEndpointRateLimit</h1>
+                </div>
+                <section class="tsd-panel">
+                    <ul class="tsd-signatures">
+                        <li class="tsd-signature tsd-anchor-link">
+                            <a id="promisifyEndpointRateLimit" class="tsd-anchor"></a
+                            ><span class="tsd-kind-call-signature">promisify<wbr />Endpoint<wbr />Rate<wbr />Limit</span
+                            ><span class="tsd-signature-symbol">(</span><span class="tsd-kind-parameter">endpoint</span
+                            ><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span
+                            ><span class="tsd-signature-type">Promise</span
+                            ><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">void</span
+                            ><span class="tsd-signature-symbol">&gt;</span
+                            ><a href="#promisifyEndpointRateLimit" aria-label="Permalink" class="tsd-anchor-icon"
+                                ><svg viewBox="0 0 24 24"><use href="#icon-anchor"></use></svg
+                            ></a>
+                        </li>
+                        <li class="tsd-description">
+                            <div class="tsd-comment tsd-typography">
+                                <p>
+                                    A wrapper for promisifyRateLimit that uses an endpoint&#39;s rate limit as the first
+                                    argument. Note that if rate limit data for said endpoint isn&#39;t available then it
+                                    will instantly resolve.
+                                </p>
                             </div>
-                        </section>
-                        <section class="tsd-index-section">
-                            <h3 class="tsd-index-heading">Classes</h3>
-                            <div class="tsd-index-list">
-                                <a href="classes/UserAgentClass.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg
-                                    ><span>User<wbr />Agent<wbr />Class</span></a
-                                >
+                            <div class="tsd-parameters">
+                                <h4 class="tsd-parameters-title">Parameters</h4>
+                                <ul class="tsd-parameter-list">
+                                    <li>
+                                        <h5>
+                                            <span class="tsd-kind-parameter">endpoint</span>:
+                                            <a
+                                                href="../types/Endpoint.html"
+                                                class="tsd-signature-type tsd-kind-type-alias"
+                                                >Endpoint</a
+                                            >
+                                        </h5>
+                                        <div class="tsd-comment tsd-typography">
+                                            <p>Endpoint to promisify the rate limit of.</p>
+                                        </div>
+                                        <div class="tsd-comment tsd-typography"></div>
+                                    </li>
+                                </ul>
                             </div>
-                        </section>
-                        <section class="tsd-index-section">
-                            <h3 class="tsd-index-heading">Type Aliases</h3>
-                            <div class="tsd-index-list">
-                                <a href="types/CollectionMeta.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Collection<wbr />Meta</span></a
-                                >
-                                <a href="types/ConvertedSxcuFile.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Converted<wbr />Sxcu<wbr />File</span></a
-                                >
-                                <a href="types/CreateCollectionOptions.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Create<wbr />Collection<wbr />Options</span></a
-                                >
-                                <a href="types/CreatedCollection.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Created<wbr />Collection</span></a
-                                >
-                                <a href="types/DeletionToken.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Deletion<wbr />Token</span></a
-                                >
-                                <a href="types/Endpoint.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Endpoint</span></a
-                                >
-                                <a href="types/ErrorObject.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Error<wbr />Object</span></a
-                                >
-                                <a href="types/FileCollectionMeta.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>File<wbr />Collection<wbr />Meta</span></a
-                                >
-                                <a href="types/FileData.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>File<wbr />Data</span></a
-                                >
-                                <a href="types/FileMeta.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>File<wbr />Meta</span></a
-                                >
-                                <a href="types/FileOptions.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>File<wbr />Options</span></a
-                                >
-                                <a href="types/Link.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Link</span></a
-                                >
-                                <a href="types/ParsedSnowflake.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Parsed<wbr />Snowflake</span></a
-                                >
-                                <a href="types/Paste.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Paste</span></a
-                                >
-                                <a href="types/RateLimit.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Rate<wbr />Limit</span></a
-                                >
-                                <a href="types/RequestOptions.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Request<wbr />Options</span></a
-                                >
-                                <a href="types/Snowflake.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Snowflake</span></a
-                                >
-                                <a href="types/Subdomain.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Subdomain</span></a
-                                >
-                                <a href="types/SubdomainData.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Subdomain<wbr />Data</span></a
-                                >
-                                <a href="types/Token.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Token</span></a
-                                >
-                                <a href="types/UploadableFile.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Uploadable<wbr />File</span></a
-                                >
-                                <a href="types/Url.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
-                                        <use href="#icon-2097152"></use></svg
-                                    ><span>Url</span></a
-                                >
-                            </div>
-                        </section>
-                        <section class="tsd-index-section">
-                            <h3 class="tsd-index-heading">Variables</h3>
-                            <div class="tsd-index-list">
-                                <a href="variables/UserAgent.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg
-                                    ><span>User<wbr />Agent</span></a
-                                >
-                            </div>
-                        </section>
-                        <section class="tsd-index-section">
-                            <h3 class="tsd-index-heading">Functions</h3>
-                            <div class="tsd-index-list">
-                                <a href="functions/categorizeImports.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>categorize<wbr />Imports</span></a
-                                >
-                                <a href="functions/checkSubdomain.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>check<wbr />Subdomain</span></a
-                                >
-                                <a href="functions/convertSxcuFile.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>convert<wbr />Sxcu<wbr />File</span></a
-                                >
-                                <a href="functions/createCollection.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>create<wbr />Collection</span></a
-                                >
-                                <a href="functions/createError.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>create<wbr />Error</span></a
-                                >
-                                <a href="functions/createLink.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>create<wbr />Link</span></a
-                                >
-                                <a href="functions/createPaste.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>create<wbr />Paste</span></a
-                                >
-                                <a href="functions/deleteFile.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>delete<wbr />File</span></a
-                                >
-                                <a href="functions/deleteLink.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>delete<wbr />Link</span></a
-                                >
-                                <a href="functions/deletePaste.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>delete<wbr />Paste</span></a
-                                >
-                                <a href="functions/extractToken.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>extract<wbr />Token</span></a
-                                >
-                                <a href="functions/getCollectionMeta.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>get<wbr />Collection<wbr />Meta</span></a
-                                >
-                                <a href="functions/getFileMeta.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>get<wbr />File<wbr />Meta</span></a
-                                >
-                                <a href="functions/getRateLimits.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>get<wbr />Rate<wbr />Limits</span></a
-                                >
-                                <a href="functions/getSubdomainMeta.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>get<wbr />Subdomain<wbr />Meta</span></a
-                                >
-                                <a href="functions/listSubdomains.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>list<wbr />Subdomains</span></a
-                                >
-                                <a href="functions/parseSnowflake.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>parse<wbr />Snowflake</span></a
-                                >
-                                <a href="functions/promisifyEndpointRateLimit.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>promisify<wbr />Endpoint<wbr />Rate<wbr />Limit</span></a
-                                >
-                                <a href="functions/promisifyGlobalRateLimit.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>promisify<wbr />Global<wbr />Rate<wbr />Limit</span></a
-                                >
-                                <a href="functions/promisifyRateLimit.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>promisify<wbr />Rate<wbr />Limit</span></a
-                                >
-                                <a href="functions/request.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>request</span></a
-                                >
-                                <a href="functions/resolveError.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>resolve<wbr />Error</span></a
-                                >
-                                <a href="functions/toggleRequestQueue.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>toggle<wbr />Request<wbr />Queue</span></a
-                                >
-                                <a href="functions/uploadFile.html" class="tsd-index-link"
-                                    ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg
-                                    ><span>upload<wbr />File</span></a
-                                >
-                            </div>
-                        </section>
-                    </section>
+                            <h4 class="tsd-returns-title">
+                                Returns <span class="tsd-signature-type">Promise</span
+                                ><span class="tsd-signature-symbol">&lt;</span
+                                ><span class="tsd-signature-type">void</span
+                                ><span class="tsd-signature-symbol">&gt;</span>
+                            </h4>
+                            <div class="tsd-comment tsd-typography"></div>
+                            <aside class="tsd-sources">
+                                <ul>
+                                    <li>
+                                        Defined in
+                                        <a
+                                            href="https://github.com/jacobhumston/sxcu.api/blob/6d05342/src/request.ts#L213"
+                                            >request.ts:213</a
+                                        >
+                                    </li>
+                                </ul>
+                            </aside>
+                        </li>
+                    </ul>
                 </section>
             </div>
             <div class="col-sidebar">
                 <div class="page-menu"></div>
                 <div class="site-menu">
                     <nav class="tsd-navigation">
-                        <a href="modules.html" class="current"
+                        <a href="../modules.html"
                             ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-1"></use></svg>
                             <div>sxcu.api -<wbr /> v2.0.0</div></a
                         >
                         <ul class="tsd-small-nested-navigation">
                             <li>
-                                <a href="enums/SnowflakeObjectFlag.html"
+                                <a href="../enums/SnowflakeObjectFlag.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
                                     <div>
                                         Snowflake<wbr />Object<wbr />Flag
@@ -487,7 +303,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="enums/SnowflakeObjectType.html"
+                                <a href="../enums/SnowflakeObjectType.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-8"></use></svg>
                                     <div>
                                         Snowflake<wbr />Object<wbr />Type
@@ -498,7 +314,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="classes/UserAgentClass.html"
+                                <a href="../classes/UserAgentClass.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-128"></use></svg>
                                     <div>
                                         User<wbr />Agent<wbr />Class
@@ -507,7 +323,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/CollectionMeta.html"
+                                <a href="../types/CollectionMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -518,7 +334,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/ConvertedSxcuFile.html"
+                                <a href="../types/ConvertedSxcuFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -529,7 +345,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/CreateCollectionOptions.html"
+                                <a href="../types/CreateCollectionOptions.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -542,7 +358,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/CreatedCollection.html"
+                                <a href="../types/CreatedCollection.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -553,7 +369,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/DeletionToken.html"
+                                <a href="../types/DeletionToken.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -566,7 +382,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/Endpoint.html"
+                                <a href="../types/Endpoint.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -577,7 +393,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/ErrorObject.html"
+                                <a href="../types/ErrorObject.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -588,7 +404,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/FileCollectionMeta.html"
+                                <a href="../types/FileCollectionMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -599,7 +415,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/FileData.html"
+                                <a href="../types/FileData.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -610,7 +426,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/FileMeta.html"
+                                <a href="../types/FileMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -621,7 +437,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/FileOptions.html"
+                                <a href="../types/FileOptions.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -634,7 +450,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/Link.html"
+                                <a href="../types/Link.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -645,7 +461,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/ParsedSnowflake.html"
+                                <a href="../types/ParsedSnowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -656,7 +472,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/Paste.html"
+                                <a href="../types/Paste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -667,7 +483,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/RateLimit.html"
+                                <a href="../types/RateLimit.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -678,7 +494,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/RequestOptions.html"
+                                <a href="../types/RequestOptions.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -689,7 +505,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/Snowflake.html"
+                                <a href="../types/Snowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -700,7 +516,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/Subdomain.html"
+                                <a href="../types/Subdomain.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -711,7 +527,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/SubdomainData.html"
+                                <a href="../types/SubdomainData.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -724,7 +540,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/Token.html"
+                                <a href="../types/Token.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -737,7 +553,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/UploadableFile.html"
+                                <a href="../types/UploadableFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -750,7 +566,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="types/Url.html"
+                                <a href="../types/Url.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24">
                                         <use href="#icon-2097152"></use>
                                     </svg>
@@ -761,7 +577,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="variables/UserAgent.html"
+                                <a href="../variables/UserAgent.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-32"></use></svg>
                                     <div>
                                         User<wbr />Agent
@@ -770,7 +586,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/categorizeImports.html"
+                                <a href="categorizeImports.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         categorize<wbr />Imports
@@ -781,7 +597,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/checkSubdomain.html"
+                                <a href="checkSubdomain.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         check<wbr />Subdomain
@@ -790,7 +606,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/convertSxcuFile.html"
+                                <a href="convertSxcuFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         convert<wbr />Sxcu<wbr />File
@@ -799,7 +615,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/createCollection.html"
+                                <a href="createCollection.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         create<wbr />Collection
@@ -808,7 +624,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/createError.html"
+                                <a href="createError.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         create<wbr />Error
@@ -817,7 +633,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/createLink.html"
+                                <a href="createLink.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         create<wbr />Link
@@ -826,7 +642,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/createPaste.html"
+                                <a href="createPaste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         create<wbr />Paste
@@ -835,7 +651,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/deleteFile.html"
+                                <a href="deleteFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         delete<wbr />File
@@ -844,7 +660,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/deleteLink.html"
+                                <a href="deleteLink.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         delete<wbr />Link
@@ -853,7 +669,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/deletePaste.html"
+                                <a href="deletePaste.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         delete<wbr />Paste
@@ -862,7 +678,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/extractToken.html"
+                                <a href="extractToken.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         extract<wbr />Token
@@ -871,7 +687,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/getCollectionMeta.html"
+                                <a href="getCollectionMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         get<wbr />Collection<wbr />Meta
@@ -880,7 +696,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/getFileMeta.html"
+                                <a href="getFileMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         get<wbr />File<wbr />Meta
@@ -889,7 +705,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/getRateLimits.html"
+                                <a href="getRateLimits.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         get<wbr />Rate<wbr />Limits
@@ -900,7 +716,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/getSubdomainMeta.html"
+                                <a href="getSubdomainMeta.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         get<wbr />Subdomain<wbr />Meta
@@ -909,7 +725,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/listSubdomains.html"
+                                <a href="listSubdomains.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         list<wbr />Subdomains
@@ -918,7 +734,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/parseSnowflake.html"
+                                <a href="parseSnowflake.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         parse<wbr />Snowflake
@@ -927,7 +743,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/promisifyEndpointRateLimit.html"
+                                <a href="promisifyEndpointRateLimit.html" class="current"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         promisify<wbr />Endpoint<wbr />Rate<wbr />Limit
@@ -939,7 +755,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/promisifyGlobalRateLimit.html"
+                                <a href="promisifyGlobalRateLimit.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         promisify<wbr />Global<wbr />Rate<wbr />Limit
@@ -951,7 +767,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/promisifyRateLimit.html"
+                                <a href="promisifyRateLimit.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         promisify<wbr />Rate<wbr />Limit
@@ -962,7 +778,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/request.html"
+                                <a href="request.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         request
@@ -971,7 +787,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/resolveError.html"
+                                <a href="resolveError.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         resolve<wbr />Error
@@ -982,7 +798,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/toggleRequestQueue.html"
+                                <a href="toggleRequestQueue.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         toggle<wbr />Request<wbr />Queue
@@ -991,7 +807,7 @@
                                 >
                             </li>
                             <li>
-                                <a href="functions/uploadFile.html"
+                                <a href="uploadFile.html"
                                     ><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="#icon-64"></use></svg>
                                     <div>
                                         upload<wbr />File

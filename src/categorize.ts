@@ -19,6 +19,12 @@ import {
     extractToken,
     parseSnowflake,
     convertSxcuFile,
+    request,
+    getRateLimits,
+    promisifyRateLimit,
+    promisifyGlobalRateLimit,
+    promisifyEndpointRateLimit,
+    toggleRequestQueue,
 
     // Variables
     UserAgent,
@@ -46,6 +52,12 @@ export function categorizeImports() {
             extractToken: extractToken,
             parseSnowflake: parseSnowflake,
             convertSxcuFile: convertSxcuFile,
+            request: request,
+            getRateLimits: getRateLimits,
+            promisifyRateLimit: promisifyRateLimit,
+            promisifyGlobalRateLimit: promisifyGlobalRateLimit,
+            promisifyEndpointRateLimit: promisifyEndpointRateLimit,
+            toggleRequestQueue: toggleRequestQueue,
         },
     };
 }
