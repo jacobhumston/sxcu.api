@@ -33,7 +33,8 @@
     },
     "files": [
         "build",
-        "LICENSE"
+        "LICENSE",
+        "types"
     ],
     "repository": {
         "type": "git",
