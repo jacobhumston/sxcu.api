@@ -12,4 +12,5 @@ test/output.txt
 
 # Build Directories
 build/
-types/
+types/**/*.d.ts
+types/**/*.d.ts.map
