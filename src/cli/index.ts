@@ -5,7 +5,7 @@ import { Command } from './createCommand.js';
 import { exit } from 'node:process';
 //import { readdirSync } from 'node:fs';
 
-UserAgent.useDefault();
+UserAgent.set('sxcu.api/$v-cli (+$https://github.com/jacobhumston/sxcu.api)');
 
 const commandString: string = process.argv.slice(2).join(' ');
 const commands: { [key: string]: Command } = {};
