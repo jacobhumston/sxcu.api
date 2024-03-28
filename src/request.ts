@@ -191,7 +191,7 @@ function blankPromise(): Promise<void> {
 export function promisifyRateLimit(rateLimit: RateLimit): Promise<void> {
     if (rateLimit.remaining > 0) return blankPromise();
     return new Promise(function (resolve) {
-        setTimeout(resolve, rateLimit.resetAfter + 1); // Add an extra second as a precautionary measure.
+        setTimeout(resolve, (rateLimit.resetAfter + 1) * 1000); // Add an extra second as a precautionary measure.
     });
 }
 
