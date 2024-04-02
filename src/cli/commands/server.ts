@@ -15,8 +15,11 @@ export default createCommand(
             },
         },
     ],
+    // eslint-disable-line no-unused-vars
     async function (_, options) {
-        console.clear()
-        console.log('Thank you for using ')
+        console.clear();
+        console.log(
+            `sxcu.api cli server is starting with the following options... \n${options.map((value) => `${value.name} : ${value.value}`).join('\n')}`
+        );
     }
 );
