@@ -1,8 +1,9 @@
 import createCommand from '../createCommand.js';
+import http from 'node:http';
 
 export default createCommand(
     'server',
-    'Run a middleware server adds extra features to uploaded files.',
+    'Run a middleware server that adds extra features to uploaded files.',
     [
         {
             name: 'port',
@@ -18,8 +19,10 @@ export default createCommand(
     // eslint-disable-line no-unused-vars
     async function (_, options) {
         console.clear();
-        console.log(
-            `sxcu.api cli server is starting with the following options... \n${options.map((value) => `${value.name} : ${value.value}`).join('\n')}`
-        );
+        console.log('[Info]: sxcu.api cli server is starting...');
+
+        const server = http.createServer();
+        server.on('request', function () {});
+        server.listen(options[0].value);
     }
 );
