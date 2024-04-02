@@ -9,15 +9,35 @@ export type Option = {
     /**
      * Function to validate the option.
      * Can be undefined if the option requires no value.
+     *
+     * This function should throw an error if it fails
+     * or return the parsed value if it succeeds.
      */
-    result?: (value: string) => boolean;
+    result?: (value: string) => any;
 };
 
-export type Command = {
+/** Parsed command option. */
+export type ParsedOption = {
+    /** Name of the option. */
     name: string;
+    /** Description of the option. */
     description: string;
+    /** If this option is required. */
+    required: boolean;
+    /** Provided value of this option. */
+    value: any;
+};
+
+/** Represents a command. */
+export type Command = {
+    /** Name of the command. */
+    name: string;
+    /** Description of the command. */
+    description: string;
+    /** Options of the command. */
     options: Option[];
-    execute: (command: Command) => Promise<void>;
+    /** Execute function for the command. */
+    execute: (command: Command, options: ParsedOption[]) => Promise<void>;
 };
 
 /**
@@ -31,7 +51,7 @@ export default function createCommand(
     name: string,
     description: string,
     options: Option[],
-    execute: (command: Command) => Promise<void>
+    execute: (command: Command, options: ParsedOption[]) => Promise<void>
 ): Command {
     return {
         name,
