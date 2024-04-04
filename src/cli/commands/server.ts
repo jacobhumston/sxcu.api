@@ -1,5 +1,4 @@
 import createCommand from '../createCommand.js';
-import http from 'node:http';
 
 export default createCommand(
     'server',
@@ -18,11 +17,7 @@ export default createCommand(
     ],
     // eslint-disable-line no-unused-vars
     async function (_, options) {
-        console.clear();
-        console.log('[Info]: sxcu.api cli server is starting...');
-
-        const server = http.createServer();
-        server.on('request', function () {});
-        server.listen(options[0].value);
+        const server = await import('../server/index.js');
+        server.main(options);
     }
 );
