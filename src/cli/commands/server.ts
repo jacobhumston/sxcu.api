@@ -15,8 +15,7 @@ export default createCommand(
             },
         },
     ],
-    // eslint-disable-line no-unused-vars
-    async function (_, options) {
+    async function (options) {
         const server = await import('../server/index.js');
         server.main(options);
     }

@@ -1,18 +1,15 @@
 #! /usr/bin/env node
 import { UserAgent } from 'sxcu.api';
 import { Command, ParsedOption } from './createCommand.js';
-//import { dirname } from 'node:path';
 import { exit } from 'node:process';
-//import { readdirSync } from 'node:fs';
+import commandFileList from './commandFileList.js';
 
 UserAgent.set('sxcu.api/$v-cli (+$https://github.com/jacobhumston/sxcu.api)');
 
 const commandString: string = process.argv.slice(2).join(' ');
 const commands: { [key: string]: Command } = {};
 
-//const dir: string = dirname(import.meta.url.replace('file:///', ''));
-
-for (const file of ['help.js', 'userAgent.js', 'server.js']) {
+for (const file of commandFileList) {
     const command: Command = (await import(`./commands/${file}`)).default;
     commands[command.name] = command;
 }
@@ -20,7 +17,7 @@ for (const file of ['help.js', 'userAgent.js', 'server.js']) {
 const commandsToExecute: string[] = commandString.split(' + ');
 
 if (commandsToExecute[0] === '') {
-    console.log('Command not found! Please use "sxcu help" for a list of commands.');
+    console.log('Please use "sxcu help" for a list of commands.');
     exit(0);
 }
 
@@ -71,7 +68,7 @@ for (const commandString of commandsToExecute) {
                 `${errors.length} error(s) occurred when parsing the command. \n${errors.map((value, index) => `[${index + 1}]: ${value}`).join('\n')}`
             );
         } else {
-            await command.execute(command, commandArgs).catch(function (error) {
+            await command.execute(commandArgs).catch(function (error) {
                 console.log(`Command failed with an error: ${error}`);
             });
         }

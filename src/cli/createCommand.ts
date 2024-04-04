@@ -37,7 +37,7 @@ export type Command = {
     /** Options of the command. */
     options: Option[];
     /** Execute function for the command. */
-    execute: (command: Command, options: ParsedOption[]) => Promise<void>;
+    execute: (options: ParsedOption[]) => Promise<void>;
 };
 
 /**
@@ -51,7 +51,7 @@ export default function createCommand(
     name: string,
     description: string,
     options: Option[],
-    execute: (command: Command, options: ParsedOption[]) => Promise<void>
+    execute: (options: ParsedOption[]) => Promise<void>
 ): Command {
     return {
         name,
