@@ -6,4 +6,5 @@ export async function main(options: ParsedOption[]) {
     const port = options[0].value;
     console.log(logo);
     console.log(`Running on port ${port}...`);
+    console.log(`Currently a WIP, does not currently work.`);
 }
