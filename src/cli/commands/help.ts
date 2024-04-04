@@ -38,10 +38,13 @@ export default createCommand(
                     `Command '${options[0].value}' was not found. Please use "sxcu help" for a list of available commands.`
                 );
             } else {
+                console.log('');
                 console.log(
-                    `Viewing the information of "${foundCommand.name}".\n- The syntax for a command option is "sxcu <command> --<option> <value>".\nMultiple Options: "sxcu <command> --<option1> <value> --<option2> <value>"`
+                    `Viewing the information of "${foundCommand.name}".\n- The syntax for a command option is "--<option> <value>".`
                 );
                 if (options[1].value === true) {
+                    console.log('- Options that are not required can be omitted entirely.');
+                    console.log('');
                     console.table({ Name: foundCommand.name, Description: foundCommand.description });
                     console.table(
                         foundCommand.options.map((option) => ({
@@ -51,8 +54,12 @@ export default createCommand(
                         }))
                     );
                 } else {
+                    console.log('');
                     console.log(`$ ${foundCommand.name} - ${foundCommand.description}`);
-                    console.log('Options: <required> [optional] (Optional commands can be omitted entirely.)');
+                    console.log(
+                        '- Options: <required> [optional] (Options that are not required can be omitted entirely.)'
+                    );
+                    console.log('');
                     const tab = '    ';
                     for (const option of foundCommand.options) {
                         console.log(
@@ -62,10 +69,11 @@ export default createCommand(
                 }
             }
         } else {
+            console.log('');
             console.log(
-                'Viewing the list of available commands.\n- To view more information about a command, including available options, run: sxcu help --command [command]\nIf you would like a table view, you can run: sxcu help --table true'
+                'Viewing the list of available commands.\n- To view more information about a command, including available options, run: sxcu help --command [command]\n- If you would like a table view, you can run: sxcu help --table true'
             );
-
+            console.log('');
             if (options[1].value === true) {
                 console.table(commands.map((cmd) => ({ Name: cmd.name, Description: cmd.description })));
             } else {

@@ -1,16 +1,12 @@
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/jacobhumston/sxcu.api/blob/banner/banner.png?raw=true">
-  <source media="(prefers-color-scheme: light)" srcset="https://github.com/jacobhumston/sxcu.api/blob/banner/banner-dark.png?raw=true">
-  <img alt="Banner">
-</picture>
+<img src="https://raw.githubusercontent.com/jacobhumston/sxcu.api/banner/new-banner.png" alt="sxcu.api">
 
 # sxcu.api
 
-Node.js library to interact with the sxcu.net API. _([A cli is also included!](src/cli/README.md))_
+Node.js library to interact with the sxcu.net API. _([A cli is also included!](https://github.com/jacobhumston/sxcu.api/blob/main/src/cli/README.md))_
 
 sxcu.api was created to allow any developer of any skill set to easily create images, links, etc on sxcu.net without the hassle of learning the sxcu.net documentation directly.
 
-> This module has **0** dependencies. _(excluding dev)_ [Check for yourself!](package.json)
+> This module has **0** dependencies. _(excluding dev)_ [Check for yourself!](https://github.com/jacobhumston/sxcu.api/blob/main/package.json)
 
 ## Links
 
@@ -20,7 +16,7 @@ sxcu.api was created to allow any developer of any skill set to easily create im
 
 ## Updating to v2.0.0 from v1.x.x
 
-The guide for doing so can be found [here](web/guides/updating-to-v2.md).
+The guide for doing so can be found [here](https://sxcu.api.lovelyjacob.com/guides/updating-to-v2.html).
 
 ## Installation
 

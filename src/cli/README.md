@@ -11,5 +11,5 @@ _If you're testing with the repo, please do: `npm run link` instead. Then you ca
 ## Usage
 
 ```bash
-sxcu --help
+sxcu help
 ```
