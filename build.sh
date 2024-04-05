@@ -1,6 +1,6 @@
-echo "Deleting build/ and types/ ..."
+echo "Deleting build/ ..."
 
-npx del-cli build/ types/ 
+npx del-cli build/
 
 echo "Building CommonJS ..."
 
@@ -9,7 +9,7 @@ echo {\"type\": \"commonjs\"} > build/cjs/package.json
 
 echo "Building ESM and Type Definitions ..."
 
-npx tsc --module es2022 --outDir build/esm/ --declarationDir types --declaration true --declarationMap true --noEmitOnError true
+npx tsc --module es2022 --outDir build/esm/ --declarationDir build/types/ --declaration true --declarationMap true --noEmitOnError true
 echo {\"type\": \"module\"} > build/esm/package.json 
 
 echo "Building CLI ..."

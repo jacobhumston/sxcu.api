@@ -1,17 +1,17 @@
 {
     "name": "sxcu.api",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "description": "Node.js library to interact with the sxcu.net API.",
     "main": "./build/esm/index.js",
     "exports": {
         "import": "./build/esm/index.js",
         "require": "./build/cjs/index.js",
-        "types": "./types/index.d.ts"
+        "types": "./build/types/index.d.ts"
     },
     "bin": {
         "sxcu": "build/cli/index.js"
     },
-    "types": "types/index.d.ts",
+    "types": "build/types/index.d.ts",
     "type": "module",
     "maintainers": [
         {
@@ -27,7 +27,7 @@
         "eslint": "npx eslint src/",
         "gen-doc": "npx del-cli docs/ && npx typedoc --hideGenerator --githubPages false && node tools/gen-web.cjs",
         "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint && npm run link",
-        "format": "npx prettier ./ ./build ./types --write",
+        "format": "npx prettier ./ ./build --write",
         "link": "npm link ./ --force && npm link sxcu.api --force",
         "fix-perms": "chmod +x node_modules/.bin/sxcu"
     },
