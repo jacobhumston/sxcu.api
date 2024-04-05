@@ -26,10 +26,10 @@
         "build": "bash build.sh",
         "eslint": "npx eslint src/",
         "gen-doc": "npx del-cli docs/ && npx typedoc --hideGenerator --githubPages false && node tools/gen-web.cjs",
-        "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint && npm run link",
+        "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint && npm run link && npm run fix-perms",
         "format": "npx prettier ./ ./build --write",
         "link": "npm link ./ --force && npm link sxcu.api --force",
-        "fix-perms": "chmod +x node_modules/.bin/sxcu"
+        "fix-perms": "chmod +x node_modules/.bin/sxcu || echo 'Failed to fix permissions.'"
     },
     "files": [
         "build",

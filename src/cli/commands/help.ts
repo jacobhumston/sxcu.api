@@ -46,13 +46,17 @@ export default createCommand(
                     console.log('- Options that are not required can be omitted entirely.');
                     console.log('');
                     console.table({ Name: foundCommand.name, Description: foundCommand.description });
-                    console.table(
-                        foundCommand.options.map((option) => ({
-                            Name: option.name,
-                            Description: option.description,
-                            Required: option.required,
-                        }))
-                    );
+                    if (foundCommand.options.length > 0) {
+                        console.table(
+                            foundCommand.options.map((option) => ({
+                                Name: option.name,
+                                Description: option.description,
+                                Required: option.required,
+                            }))
+                        );
+                    } else {
+                        console.log('This command does not have any options.');
+                    }
                 } else {
                     console.log('');
                     console.log(`$ ${foundCommand.name} - ${foundCommand.description}`);
@@ -60,11 +64,15 @@ export default createCommand(
                         '- Options: <required> [optional] (Options that are not required can be omitted entirely.)'
                     );
                     console.log('');
-                    const tab = '    ';
-                    for (const option of foundCommand.options) {
-                        console.log(
-                            `${tab}--${option.name} ${option.required ? '<value>' : '[value]'} - ${option.description}`
-                        );
+                    if (foundCommand.options.length > 0) {
+                        const tab = '    ';
+                        for (const option of foundCommand.options) {
+                            console.log(
+                                `${tab}--${option.name} ${option.required ? '<value>' : '[value]'} - ${option.description}`
+                            );
+                        }
+                    } else {
+                        console.log('This command does not have any options.');
                     }
                 }
             }
