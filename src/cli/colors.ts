@@ -23,7 +23,7 @@ export const fgRed = '\x1b[31m';
 /** Green (foreground) color code. */
 export const fgGreen = '\x1b[32m';
 /** Yellow (foreground) color code. */
-export const FgYellow = '\x1b[33m';
+export const fgYellow = '\x1b[33m';
 /** Blue (foreground) color code. */
 export const fgBlue = '\x1b[34m';
 /** Magenta (foreground) color code. */
@@ -52,3 +52,59 @@ export const bgCyan = '\x1b[46m';
 export const bgWhite = '\x1b[47m';
 /** Gray (background) color code. */
 export const bgGray = '\x1b[100m';
+
+/**
+ * An array of all exposed color codes.
+ * This includes codes such as reset, etc.
+ */
+export const colorList: string[] = [
+    reset,
+    bright,
+    dim,
+    underscore,
+    blink,
+    reverse,
+    hidden,
+    fgBlack,
+    fgRed,
+    fgGreen,
+    fgYellow,
+    fgBlue,
+    fgMagenta,
+    fgCyan,
+    fgWhite,
+    fgGray,
+    bgBlack,
+    bgRed,
+    bgGreen,
+    bgYellow,
+    bgBlue,
+    bgMagenta,
+    bgCyan,
+    bgWhite,
+    bgGray,
+];
+
+/**
+ * Color text.
+ * @param color The color code to use.
+ * @param text The text to color.
+ * @returns The colored text.
+ */
+export function colorText(color: string, text: string): string {
+    return `${color}${text}${reset}`;
+}
+
+/**
+ * Removes all color codes from text.
+ * Includes color codes such as reset.
+ * @param text The text to remove the colors from.
+ * @returns The colorless text.
+ */
+export function removeColor(text: string): string {
+    let result = text;
+    for (const color of colorList) {
+        result = result.replaceAll(color, '');
+    }
+    return result;
+}
