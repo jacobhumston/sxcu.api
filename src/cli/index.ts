@@ -30,6 +30,7 @@ import { UserAgent } from 'sxcu.api';
 import { Command, ParsedOption } from './createCommand.js';
 import { exit } from 'node:process';
 import commandFileList from './commandFileList.js';
+import { logger } from './logger.js';
 
 UserAgent.set('sxcu.api/$v-cli (+$https://github.com/jacobhumston/sxcu.api)');
 
@@ -44,7 +45,7 @@ for (const file of commandFileList) {
 const commandsToExecute: string[] = commandString.split(' + ');
 
 if (commandsToExecute[0] === '') {
-    console.log('Please use "sxcu help" for a list of commands.');
+    logger.info('Please use "sxcu help" for a list of commands.');
     exit(0);
 }
 
@@ -56,7 +57,7 @@ for (const commandString of commandsToExecute) {
     const errors: string[] = [];
 
     if (command === undefined) {
-        console.log(`Command "${commandName}" not found! Please use "sxcu help" for a list of commands.`);
+        logger.error(`Command "${commandName}" not found! Please use "sxcu help" for a list of commands.`);
     } else {
         for (const option of command.options) {
             let commandMissing = false;
@@ -91,12 +92,12 @@ for (const commandString of commandsToExecute) {
             });
         }
         if (errors.length > 0) {
-            console.log(
+            logger.error(
                 `${errors.length} error(s) occurred when parsing the command. \n${errors.map((value, index) => `[${index + 1}]: ${value}`).join('\n')}`
             );
         } else {
             await command.execute(commandArgs).catch(function (error) {
-                console.log(`Command failed with an error: ${error}`);
+                logger.error(`Command failed with an error: ${error}`);
             });
         }
     }

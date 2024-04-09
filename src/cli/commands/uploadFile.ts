@@ -1,6 +1,7 @@
 import createCommand from '../createCommand.js';
 import { resolveError, uploadFile } from 'sxcu.api';
 import fs from 'node:fs';
+import { logger } from '../logger.js';
 
 export default createCommand(
     'upload',
@@ -22,11 +23,11 @@ export default createCommand(
         const path = options[0].value;
         const response = await uploadFile(path).catch(function (failedResult) {
             const error = resolveError(failedResult);
-            console.log(`Failed to upload file: ${error.error} (Code: ${error.code})`);
+            logger.error(`Failed to upload file: ${error.error} (Code: ${error.code})`);
         });
         if (response) {
-            console.log('Uploading was a success! Here is your URL:');
-            console.log(`\n${response.url}\n\n(ID: ${response.id}) Deletion URL: ${response.deletionUrl}`);
+            logger.success('Uploading was a success! Here is your URL:');
+            logger.info(`${response.url}\n\n(ID: ${response.id}) Deletion URL: ${response.deletionUrl}`);
         }
     }
 );

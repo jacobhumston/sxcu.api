@@ -34,7 +34,7 @@
     "files": [
         "build",
         "LICENSE",
-        "types"
+        "README.md"
     ],
     "repository": {
         "type": "git",

@@ -1,5 +1,6 @@
 import createCommand from '../createCommand.js';
 import { resolveError, createLink } from 'sxcu.api';
+import { logger } from '../logger.js';
 
 export default createCommand(
     'link',
@@ -14,11 +15,11 @@ export default createCommand(
     async function (options) {
         const response = await createLink(options[0].value).catch(function (failedResult) {
             const error = resolveError(failedResult);
-            console.log(`Failed to create link: ${error.error} (Code: ${error.code})`);
+            logger.error(`Failed to create link: ${error.error} (Code: ${error.code})`);
         });
         if (response) {
-            console.log('Link was created! Here is your URL:');
-            console.log(`\n${response.url}\n\n(ID: ${response.id}) Deletion URL: ${response.deletionUrl}`);
+            logger.success('Link was created! Here is your URL:');
+            logger.info(`${response.url}\n\n(ID: ${response.id}) Deletion URL: ${response.deletionUrl}`);
         }
     }
 );
