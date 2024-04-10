@@ -45,9 +45,9 @@ export default createCommand(
                 );
                 if (options[1].value === true) {
                     logger.blank();
-                    console.table({ Name: foundCommand.name, Description: foundCommand.description });
+                    logger.table([{ Name: foundCommand.name, Description: foundCommand.description }]);
                     if (foundCommand.options.length > 0) {
-                        console.table(
+                        logger.table(
                             foundCommand.options.map((option) => ({
                                 Name: option.name,
                                 Description: option.description,
@@ -82,7 +82,7 @@ export default createCommand(
             );
             logger.blank();
             if (options[1].value === true) {
-                console.table(commands.map((cmd) => ({ Name: cmd.name, Description: cmd.description })));
+                logger.table(commands.map((cmd) => ({ Name: cmd.name, Description: cmd.description })));
             } else {
                 for (const command of commands) {
                     logger.info(`$ ${command.name} - ${command.description}`);
