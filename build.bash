@@ -1,4 +1,4 @@
-# Defined as the current working directory. 
+# Defined as the current working directory.
 current_directory=$(pwd)
 
 # Function for formatted echo.
@@ -107,6 +107,7 @@ function eslint() {
 
     # Run eslint.
     echo_step "eslint" "start"
+    formatted_echo "Running eslint..."
     npx eslint src/
     echo_step "eslint" "end"
 }
@@ -118,6 +119,7 @@ function docs() {
 
     # Generate docs.
     echo_step "docs" "start"
+    formatted_echo "Generating docs..."
     delete_directory "docs"
     npx typedoc --hideGenerator --githubPages false
     node tools/gen-web.cjs
@@ -131,6 +133,7 @@ function link() {
 
     # Link the package.
     echo_step "link" "start"
+    formatted_echo "Linking package..."
     npm link ./ --force
     npm link sxcu.api --force
     echo_step "link" "end"
@@ -143,6 +146,59 @@ function fix_perms() {
 
     # Fix linked script permissions.
     echo_step "fix perms" "start"
+    formatted_echo "Fixing linked script's permissions..."
     chmod +x node_modules/.bin/sxcu || echo "Failed to fix permissions."
     echo_step "fix perms" "end"
 }
+
+# List of commands.
+command_list="build, format, test [other, other-cjs], eslint, docs, link, fix-perms, compile"
+
+# Function to parse command.
+# First paramter should be the name of the command.
+# Second paramater is optional, used in commands such as test.
+function parse_command() {
+    if [ "$1" = "build" ]; then
+        build
+    elif [ "$1" = "format" ]; then
+        format
+    elif [ "$1" = "test" ]; then
+        test "$2"
+    elif [ "$1" = "eslint" ]; then
+        eslint
+    elif [ "$1" = "docs" ]; then
+        docs
+    elif [ "$1" = "link" ]; then
+        link
+    elif [ "$1" = "fix-perms" ]; then
+        fix_perms
+    elif [ "$1" = "compile" ]; then
+        build
+        docs
+        format
+        eslint
+        link
+        fix_perms
+    else
+        formatted_echo "Unknown command '$1'."
+        formatted_echo "Commands: $command_list"
+    fi
+}
+
+if [ "$1" = "" ]; then
+    while true; do
+        clear
+        formatted_echo "Welcome to the build repl! Enter 'exit' to exit."
+        formatted_echo "Commands: $command_list"
+        read -r -p "$ " arg1 arg2
+        clear
+        if [ "$arg1" == "exit" ]; then
+            exit
+        else
+            parse_command "$arg1" "$arg2"
+        fi
+        read -p "> Press any key to continue..." -r -n 1
+    done
+else
+    parse_command "$1" "$2"
+fi

@@ -69,8 +69,6 @@ export const logger = {
             sortedColumns[key] = columns[key].sort((a, b) => b.value.length - a.value.length);
         }
 
-        
-
         console.log(columns);
         return;
     },
