@@ -19,10 +19,6 @@
             "email": "lovelyjacob@aol.com"
         }
     ],
-    "scripts": {
-        "build": "bash build.bash",
-        "compile": "bash build.bash compile"
-    },
     "files": [
         "build",
         "LICENSE",

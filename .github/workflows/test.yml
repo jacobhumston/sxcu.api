@@ -19,19 +19,11 @@ jobs:
 
             - name: Build Package
               id: build-package
-              run: npm run build
-
-            - name: Format Package
-              id: format-package
-              run: npm run format
-
-            - name: 'Link Package'
-              id: link-package
-              run: npm run link
+              run: bash build.bash build
 
             - name: Run Tests
               id: run-tests
-              run: npm test
+              run: bash build.bash test
 
     test_error:
         runs-on: ubuntu-latest
