@@ -1,4 +1,4 @@
-# Set the current working directory.
+# Defined as the current working directory. 
 current_directory=$(pwd)
 
 # Function for formatted echo.
