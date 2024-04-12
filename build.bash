@@ -188,7 +188,7 @@ function parse_command() {
 if [ "$1" = "" ]; then
     while true; do
         clear
-        formatted_echo "Welcome to the build repl! Enter 'exit' to exit."
+        formatted_echo "Welcome to the build REPL! Enter 'exit' to exit."
         formatted_echo "Commands: $command_list"
         read -r -p "$ " arg1 arg2
         clear
