@@ -151,8 +151,20 @@ function fix_perms() {
     echo_step "fix perms" "end"
 }
 
+# Function for running the docs-server.
+function docs-server() {
+    # Reset directory.
+    cd "$current_directory" || exit
+
+    # Run the docs server.
+    echo_step "docs server" "start"
+    formatted_echo "Starting docs server..."
+    node tools/docs-server.js
+    echo_step "docs server" "end"
+}
+
 # List of commands.
-command_list="build, format, test [other, other-cjs], eslint, docs, link, fix-perms, compile"
+command_list="help, build, format, test [other, other-cjs], eslint, docs, link, fix-perms, compile, docs-server"
 
 # Function to parse command.
 # First paramter should be the name of the command.
@@ -179,6 +191,17 @@ function parse_command() {
         eslint
         link
         fix_perms
+    elif [ "$1" = "docs-server" ]; then
+        docs-server
+    elif [ "$1" = "help" ]; then
+        formatted_echo "::[---> HELP ~ sxcu.api/build.bash <---]::"
+        formatted_echo
+        formatted_echo "Commands: $command_list"
+        formatted_echo "Square brackets indicate the avalible second paramaters for that command, if any."
+        formatted_echo
+        formatted_echo "NOTE: If you do not wish to enter the REPL, just use the command directly. (Ex; bash build.bash help)"
+        formatted_echo
+        formatted_echo "If you need any help, create an issue! https://github.com/jacobhumston/sxcu.api/issues"
     else
         formatted_echo "Unknown command '$1'."
         formatted_echo "Commands: $command_list"
@@ -188,8 +211,10 @@ function parse_command() {
 if [ "$1" = "" ]; then
     while true; do
         clear
-        formatted_echo "Welcome to the build REPL! Enter 'exit' to exit."
-        formatted_echo "Commands: $command_list"
+        formatted_echo "::[---> REPL ~ sxcu.api/build.bash <---]::"
+        formatted_echo
+        formatted_echo "Welcome to the sxcu.api build REPL!"
+        formatted_echo "For a list of commands, enter 'help'. Enter 'exit' to exit."
         read -r -p "$ " arg1 arg2
         clear
         if [ "$arg1" == "exit" ]; then
