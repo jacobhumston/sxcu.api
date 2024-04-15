@@ -53,23 +53,62 @@ export const logger = {
      * @param objects The objects to create the table with.
      */
     table: function (objects: { [key: string]: string | number | boolean }[]): void {
-        //const characters: string[] = ['│', '╭', '╮', '╯', '╰', '├', '┼', '─', '┤', '┴', '┬'];
-        const columns: { [key: string]: { index: number; value: string }[] } = {};
-        const sortedColumns: { [key: string]: { index: number; value: string }[] } = {};
+        // Create and sort the columns.
+        const columns: { [key: string]: { value: string }[] } = {};
 
         let objectIndex = -1;
         for (const object of objects) {
             objectIndex++;
             for (const [key, value] of Object.entries(object)) {
                 if (!columns[key]) columns[key] = [];
-                columns[key].push({ index: objectIndex, value: value.toString() });
+                columns[key].push({ value: value.toString() });
             }
         }
+
         for (const key of Object.keys(columns)) {
-            sortedColumns[key] = columns[key].sort((a, b) => b.value.length - a.value.length);
+            const sorted = [...columns[key]].sort((a, b) => b.value.length - a.value.length);
+            const length = key.length > sorted[0].value.length ? key.length : sorted[0].value.length;
+            columns[key].forEach((object, index) => {
+                columns[key][index].value = `${object.value}${' '.repeat(length - object.value.length)}`;
+            });
+            columns[`${key}${' '.repeat(length - key.length)}`] = columns[key];
+            delete columns[key];
         }
 
-        console.log(columns);
+        // Create the rows of text to be outputted.
+        // Character Map ........ 0    1    2    3    4    5    6     7    8     9    10
+        const chars: string[] = ['─', '│', '├', '┼', '┤', '┴', '┬', '╭', '╮', '╯', '╰'];
+        const lines: string[] = [];
+
+        {
+            // Header section.
+            let top = chars[7];
+            let middle = chars[1];
+            let bottom = chars[2];
+
+            const keys = Object.keys(columns);
+            keys.forEach(function (value, index) {
+                top = `${top}${chars[0].repeat(value.length + 2)}`;
+                middle = `${middle} ${value} `;
+                bottom = `${bottom}${chars[0].repeat(value.length + 2)}`;
+                if (keys[index + 1]) {
+                    top = `${top}${chars[6]}`;
+                    middle = `${middle}${chars[1]}`;
+                    bottom = `${bottom}${chars[3]}`;
+                }
+            });
+
+            top = `${top}${chars[8]}`;
+            middle = `${middle}${chars[1]}`;
+            bottom = `${bottom}${chars[4]}`;
+
+            lines.push(top, middle, bottom);
+        }
+
+        // Bottom line.
+        lines.push(`${chars[10]}${chars[0].repeat(lines[0].length - 2)}${chars[9]}`);
+
+        console.log(lines.join('\n'));
         return;
     },
 };
