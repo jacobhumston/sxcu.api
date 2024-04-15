@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Defined as the current working directory.
 current_directory=$(pwd)
 
