@@ -18,13 +18,13 @@ function echo_step() {
 
     # Log the start/end message accordingly.
     if [ "$2" = "start" ]; then
-        echo_line
+        #echo_line
         formatted_echo "Step $1 is executing...."
-        echo_line
+        #echo_line
     elif [ "$2" = "end" ]; then
-        echo_line
+        #echo_line
         formatted_echo "Step $1 has finished executing."
-        echo_line
+        #echo_line
     fi
 }
 

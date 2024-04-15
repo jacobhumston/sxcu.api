@@ -17,6 +17,9 @@ export const logger = {
             Success: fgGreen,
             Error: fgRed,
         };
+        message.forEach((value, index) => {
+            message[index] = value.replaceAll('\n', colorText(colors[type], `\n[${type}]: `));
+        });
         console.log(colorText(colors[type], `[${type}]:`), ...message);
         return;
     },
@@ -74,7 +77,7 @@ export const logger = {
         }
 
         // Create the rows of text to be outputted.
-        // Character Map ........ 0    1    2    3    4    5    6     7    8     9    10
+        // Character Map ........ 0    1    2    3    4    5    6    7    8    9   10
         const chars: string[] = ['─', '│', '├', '┼', '┤', '┴', '┬', '╭', '╮', '╯', '╰'];
         const lines: string[] = [];
 
@@ -86,10 +89,9 @@ export const logger = {
 
             const keys = Object.keys(columns);
             keys.forEach(function (value, index) {
-                console.log(headerSpaces[value]);
-                top = `${top}${chars[0].repeat(headerSpaces[value] + 2)}`;
+                top = `${top}${chars[0].repeat(headerSpaces[value] + value.length + 2)}`;
                 middle = `${middle} ${value}${' '.repeat(headerSpaces[value])} `;
-                bottom = `${bottom}${chars[0].repeat(headerSpaces[value] + 2)}`;
+                bottom = `${bottom}${chars[0].repeat(headerSpaces[value] + value.length + 2)}`;
                 if (keys[index + 1]) {
                     top = `${top}${chars[6]}`;
                     middle = `${middle}${chars[1]}`;
@@ -118,7 +120,9 @@ export const logger = {
         }
 
         // Bottom line.
-        lines.push(lines[0].replace(chars[7], chars[10]).replace(chars[8], chars[9]).replace(chars[6], chars[5]));
+        lines.push(
+            lines[0].replaceAll(chars[7], chars[10]).replaceAll(chars[8], chars[9]).replaceAll(chars[6], chars[5])
+        );
 
         console.log(lines.join('\n'));
         return;

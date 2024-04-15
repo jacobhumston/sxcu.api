@@ -40,12 +40,13 @@ export default createCommand(
                 );
             } else {
                 logger.blank();
-                logger.info(
-                    `Viewing the information of "${foundCommand.name}".\n- The syntax for a command option is "--<option> <value>".\n- Options that are not required can be omitted entirely.`
-                );
+                logger.info(`Viewing the information of "${foundCommand.name}".`);
                 if (options[1].value === true) {
-                    logger.blank();
                     logger.table([{ Name: foundCommand.name, Description: foundCommand.description }]);
+                    logger.blank();
+                    logger.info(
+                        '- The syntax for a command option is "--<option> <value>".\n- Options that are not required can be omitted entirely.'
+                    );
                     if (foundCommand.options.length > 0) {
                         logger.table(
                             foundCommand.options.map((option) => ({
