@@ -56,23 +56,21 @@ export const logger = {
         // Create and sort the columns.
         const columns: { [key: string]: { value: string }[] } = {};
 
-        let objectIndex = -1;
         for (const object of objects) {
-            objectIndex++;
             for (const [key, value] of Object.entries(object)) {
                 if (!columns[key]) columns[key] = [];
                 columns[key].push({ value: value.toString() });
             }
         }
 
+        const headerSpaces: { [key: string]: number } = {};
         for (const key of Object.keys(columns)) {
             const sorted = [...columns[key]].sort((a, b) => b.value.length - a.value.length);
             const length = key.length > sorted[0].value.length ? key.length : sorted[0].value.length;
             columns[key].forEach((object, index) => {
                 columns[key][index].value = `${object.value}${' '.repeat(length - object.value.length)}`;
             });
-            columns[`${key}${' '.repeat(length - key.length)}`] = columns[key];
-            delete columns[key];
+            headerSpaces[key] = length - key.length;
         }
 
         // Create the rows of text to be outputted.
@@ -88,9 +86,10 @@ export const logger = {
 
             const keys = Object.keys(columns);
             keys.forEach(function (value, index) {
-                top = `${top}${chars[0].repeat(value.length + 2)}`;
-                middle = `${middle} ${value} `;
-                bottom = `${bottom}${chars[0].repeat(value.length + 2)}`;
+                console.log(headerSpaces[value]);
+                top = `${top}${chars[0].repeat(headerSpaces[value] + 2)}`;
+                middle = `${middle} ${value}${' '.repeat(headerSpaces[value])} `;
+                bottom = `${bottom}${chars[0].repeat(headerSpaces[value] + 2)}`;
                 if (keys[index + 1]) {
                     top = `${top}${chars[6]}`;
                     middle = `${middle}${chars[1]}`;
@@ -105,8 +104,21 @@ export const logger = {
             lines.push(top, middle, bottom);
         }
 
+        // Data rows.
+        {
+            const keys = Object.keys(columns);
+            const rows: string[] = [];
+            keys.forEach(function (key) {
+                columns[key].forEach(function (object, index) {
+                    if (!rows[index]) rows[index] = chars[1];
+                    rows[index] = `${rows[index]} ${object.value} ${chars[1]}`;
+                });
+            });
+            lines.push(...rows);
+        }
+
         // Bottom line.
-        lines.push(`${chars[10]}${chars[0].repeat(lines[0].length - 2)}${chars[9]}`);
+        lines.push(lines[0].replace(chars[7], chars[10]).replace(chars[8], chars[9]).replace(chars[6], chars[5]));
 
         console.log(lines.join('\n'));
         return;
