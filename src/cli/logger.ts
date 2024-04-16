@@ -1,4 +1,4 @@
-import { colorText, fgBlue, fgGreen, fgRed, fgYellow } from './colors.js';
+import { colorText, fgBlue, fgGreen, fgRed, fgWhite, fgYellow } from './colors.js';
 
 /** Logging type. */
 export type LoggerType = 'Info' | 'Warn' | 'Success' | 'Error';
@@ -90,7 +90,7 @@ export const logger = {
             const keys = Object.keys(columns);
             keys.forEach(function (value, index) {
                 top = `${top}${chars[0].repeat(headerSpaces[value] + value.length + 2)}`;
-                middle = `${middle} ${value}${' '.repeat(headerSpaces[value])} `;
+                middle = `${middle} ${colorText(fgBlue, value)}${' '.repeat(headerSpaces[value])} `;
                 bottom = `${bottom}${chars[0].repeat(headerSpaces[value] + value.length + 2)}`;
                 if (keys[index + 1]) {
                     top = `${top}${chars[6]}`;
@@ -113,7 +113,11 @@ export const logger = {
             keys.forEach(function (key) {
                 columns[key].forEach(function (object, index) {
                     if (!rows[index]) rows[index] = chars[1];
-                    rows[index] = `${rows[index]} ${object.value} ${chars[1]}`;
+                    let color: string = fgWhite;
+                    const spacelessString = object.value.replaceAll(' ', '');
+                    if (spacelessString === 'false' || spacelessString === 'true') color = fgYellow;
+                    if (!isNaN(parseFloat(spacelessString))) color = fgYellow;
+                    rows[index] = `${rows[index]} ${colorText(color, object.value)} ${chars[1]}`;
                 });
             });
             lines.push(...rows);
