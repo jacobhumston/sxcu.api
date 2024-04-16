@@ -25,7 +25,7 @@ jobs:
               run: bash ./build.bash docs
 
             - name: Format Docs
-              run: base ./build.bash format
+              run: bash ./build.bash format
 
             - name: Save Docs
               run: |
