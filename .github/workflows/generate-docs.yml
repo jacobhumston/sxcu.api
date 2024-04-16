@@ -26,7 +26,7 @@ jobs:
 
             - name: Save Docs
               run: |
-                  cp -R ${{ github.workspace }}/docs/ /temp_docs/
+                  cp -R ${{ github.workspace }}/docs/ ../temp_docs/
 
             - name: Checkout Docs Branch
               uses: actions/checkout@v2
@@ -36,7 +36,7 @@ jobs:
             - name: Copy Docs
               run: |
                   rm -rf docs
-                  mv /temp_docs/ docs/
+                  mv ../temp_docs/ docs/
 
             - name: Commit Changes
               run: |
