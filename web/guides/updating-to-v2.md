@@ -41,7 +41,3 @@ import { FileOptions } from 'sxcu.api';
 ```
 
 **Note:** Not all changes are documented here. Please refer to the [API documentation](https://sxcu.api.lovelyjacob.com) for more information.
-
-```
-
-```

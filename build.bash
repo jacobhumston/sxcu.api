@@ -35,7 +35,7 @@ function delete_directory() {
         formatted_echo "Deleting the '$1' directory..."
         rm -r "$1"
     else
-        formatted_echo "The directory '$1' does not exits, skipping..."
+        formatted_echo "The directory '$1' does not exists, skipping deletion..."
     fi
 }
 
@@ -162,7 +162,7 @@ function fix_perms() {
 }
 
 # Function for running the docs-server.
-function docs-server() {
+function docs_server() {
     # Reset directory.
     cd "$current_directory" || exit
 
@@ -202,7 +202,7 @@ function parse_command() {
         link
         fix_perms
     elif [ "$1" = "docs-server" ]; then
-        docs-server
+        docs_server
     elif [ "$1" = "help" ]; then
         formatted_echo "::[---> HELP ~ sxcu.api/build.bash <---]::"
         formatted_echo
