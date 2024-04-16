@@ -78,7 +78,15 @@ function format() {
     # Format.
     echo_step "format" "start"
     formatted_echo "Formatting..."
-    npx prettier ./ ./build --write
+    if [ -d "build" ]; then
+        formatted_echo "Build directory found! Formatting..."
+        npx prettier ./build --write
+    fi
+    if [ -d "docs" ]; then
+        formatted_echo "Docs directory found! Formatting..."
+        npx prettier ./docs --write
+    fi
+    npx prettier ./ --write
     echo_step "format" "end"
 }
 

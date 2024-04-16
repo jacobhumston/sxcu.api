@@ -26,8 +26,7 @@ jobs:
 
             - name: Format Docs
               run: |
-                  rm .gitignore
-                  bash ./build.bash docs
+                  bash ./build.bash format
 
             - name: Save Docs
               run: |
