@@ -31,8 +31,8 @@ jobs:
 
             - name: Replace Docs
               run: |
-                  rm -rf docs
-                  mv ./docs docs
+                rm -rf docs
+                mv ${{ github.workspace }}/docs docs
 
             - name: Commit Changes
               run: |
