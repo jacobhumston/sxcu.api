@@ -80,11 +80,11 @@ function format() {
     formatted_echo "Formatting..."
     if [ -d "build" ]; then
         formatted_echo "Build directory found! Formatting..."
-        npx prettier ./build --write
+        npx prettier ./build --write --ignore-path .prettierignore # https://github.com/prettier/prettier/issues/15438
     fi
     if [ -d "docs" ]; then
         formatted_echo "Docs directory found! Formatting..."
-        npx prettier ./docs --write
+        npx prettier ./docs --write --ignore-path .prettierignore
     fi
     npx prettier ./ --write
     echo_step "format" "end"
