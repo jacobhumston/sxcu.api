@@ -29,10 +29,14 @@ jobs:
               with:
                   ref: docs
 
+            - name: Copy Docs
+              run: |
+                  cp -R ${{ github.workspace }}/docs/ docs/
+
             - name: Replace Docs
               run: |
-                rm -rf docs
-                mv ${{ github.workspace }}/docs/ docs/
+                  rm -rf docs
+                  mv ${{ github.workspace }}/docs/ docs/
 
             - name: Commit Changes
               run: |
