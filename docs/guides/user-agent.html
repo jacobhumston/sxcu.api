@@ -52,24 +52,23 @@
                 <code>UserAgent</code> instead.
             </p>
             <p>Setting the User Agent is very straight forward.</p>
-            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>();<br></code></pre>
-            <p>
-                What exactly does <code>useDefault</code> do? - It simply uses data from the package.json file found in
-                sxcu.api as the User Agent.
-            </p>
-            <p>
-                You can optionally set the <code>pathOverride</code> parameter of <code>useDefault</code> to the path of
-                a different package.json.
-            </p>
-            <pre><code class="language-js"><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>(<span class="hljs-string">&#x27;path/to/package.json&#x27;</span>);<br></code></pre>
-            <p>If you want to set a custom User Agent, just use the <code>set</code> method.</p>
-            <pre><code class="language-js"><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;sxcuUploader/$versionNumber (+$url)&#x27;</span>);<br></code></pre>
+            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;user agent&#x27;</span>);<br></code></pre>
             <p>
                 The format for User Agents is listed as the following on
                 <a href="https://sxcu.net/api/docs/#overview">sxcu.net's API documentation</a>.
             </p>
             <p><code>sxcuUploader/$versionNumber (+$url)</code></p>
-            <p><strong>Keep in mind that invalid User Agents will likely result in errors!</strong></p>
+            <p><strong>Keep in mind that invalid User Agents will likely result in api errors!</strong></p>
+            <hr />
+            <p>
+                There is also an available method that uses a default User Agent based on sxcu.api's package.json file.
+            </p>
+            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>();<br></code></pre>
+            <p>
+                You can optionally set the <code>pathOverride</code> parameter of <code>useDefault</code> to the path of
+                a different package.json file.
+            </p>
+            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>(<span class="hljs-string">&#x27;path/to/package.json&#x27;</span>);<br></code></pre>
         </div>
         <br />
         <br />

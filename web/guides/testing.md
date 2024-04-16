@@ -30,7 +30,7 @@ export async function execute() {
     console.log('my result!');
 
     // uh oh, error!
-    throw "oh no :(";
+    throw 'oh no :(';
 }
 ```
 

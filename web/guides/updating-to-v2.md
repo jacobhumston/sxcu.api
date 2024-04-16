@@ -40,4 +40,8 @@ If you are using TypeScript, then you can now import types from the package as y
 import { FileOptions } from 'sxcu.api';
 ```
 
-**Note:** The package is now using `fetch` instead of `axios`.
+**Note:** Not all changes are documented here. Please refer to the [API documentation](https://sxcu.api.lovelyjacob.com) for more information.
+
+```
+
+```

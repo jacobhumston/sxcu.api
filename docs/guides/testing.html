@@ -36,14 +36,17 @@
             <h1>Testing</h1>
             <hr />
             <p>sxcu.api's testing system is as follows:</p>
-            <pre><code class="language-txt">test/ - Test directory.<br>    assets/ - Test assets directory.<br>        test.png - Testing image.<br>        test.sxcu - Testing image.<br>    tests/ - Tests to be executed.<br>        &lt;name&gt;.js - Test file.<br>    index.js - Main test file.<br>    output.txt - Output file. (Git ignored.)<br>    other.js - Other test file. (Git ignored.)<br>    other.cjs - Other test file. [Commonjs] (Git ignored.)<br></code></pre>
+            <pre><code class="language-txt">test/ - Test directory.<br>    assets/ - Test assets directory.<br>        test.png - Testing image.<br>        test.sxcu - Testing sxcu file.<br>    tests/ - Tests to be executed.<br>        &lt;name&gt;.js - Test file.<br>    index.js - Main test file.<br>    output.txt - Output file. (Git ignored.)<br>    other.js - Other test file. (Git ignored.)<br>    other.cjs - Other test file. [Commonjs] (Git ignored.)<br></code></pre>
             <p>
                 Please do not add tests in your pull requests unless it is related to the pull request itself. (Make
                 sure the test is formatted correctly!)
             </p>
             <p>Creating a test is pretty easy:</p>
-            <pre><code class="language-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> sxcu <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> active = <span class="hljs-literal">true</span>; <span class="hljs-comment">// If false, the test will be skipped.</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">execute</span>(<span class="hljs-params"></span>) {<br>    <span class="hljs-comment">// test code</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;my result!&#x27;</span>);<br>}<br></code></pre>
-            <p>Make sure to output the result, so that it can be found in the output file!</p>
+            <pre><code class="language-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> sxcu <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-comment">// Tests that make requests to the API are required to be inactive when not testing manually.</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> active = <span class="hljs-literal">true</span>; <span class="hljs-comment">// If false, the test will be skipped.</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">execute</span>(<span class="hljs-params"></span>) {<br>    <span class="hljs-comment">// test code</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;my result!&#x27;</span>);<br><br>    <span class="hljs-comment">// uh oh, error!</span><br>    <span class="hljs-keyword">throw</span> <span class="hljs-string">&quot;oh no :(&quot;</span>;<br>}<br></code></pre>
+            <p>
+                Make sure to log the result to the console so that it is added to the output file. It is also important
+                that you throw an error if the test fails.
+            </p>
             <p>If you have any questions, let us know!</p>
         </div>
         <br />
