@@ -21,7 +21,7 @@ const files = categories.files;
 files.uploadFile();
 ```
 
-If you have been using ESM, then you are in luck because we now support ESM in the latest version!
+We added native support for ESM in v2.0.0.
 
 ```js
 // Instead of...
@@ -40,4 +40,8 @@ If you are using TypeScript, then you can now import types from the package as y
 import { FileOptions } from 'sxcu.api';
 ```
 
-However, some methods have been changed or renamed because of the rewrite. The best way to see what has changed is update the package and see what works. If you have any issues or questions, then please open an issue on the GitHub repository.
+**Note:** Not all changes are documented here. Please refer to the [API documentation](https://sxcu.api.lovelyjacob.com) for more information.
+
+```
+
+```

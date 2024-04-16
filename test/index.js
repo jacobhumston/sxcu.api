@@ -21,11 +21,12 @@ console.log = function (data) {
 console.clear();
 
 console.log('----------------------------------------');
-console.log(`\n${colors.blue('[STARTING] : Starting tests...')}`);
+console.log(`${colors.blue('[STARTING] : Starting tests...')}`);
 
 let startTime = new Date().getTime();
 
 for (const file of readdirSync('test/tests/')) {
+    console.log('----------------------------------------');
     const test = await import(`./tests/${file}`);
     let successful = true;
     if (!test.active) {
@@ -46,8 +47,10 @@ for (const file of readdirSync('test/tests/')) {
     }
 }
 
+console.log('----------------------------------------');
 console.log(`${colors.blue(`[RESULT]   : Success: ${success} / Failed: ${failed} / Skipped: ${skipped}`)}`);
 console.log(`${colors.blue(`[TIME]     : Finished in ${colors.yellow(new Date().getTime() - startTime + 'ms')}`)}`);
+console.log(`${colors.blue(`[OUTPUT]   : Output can be found in ${colors.yellow('test/output.txt')}`)}`);
 console.log('\n----------------------------------------');
 
 if (failed > 0) {

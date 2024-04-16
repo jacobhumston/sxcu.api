@@ -1,17 +1,17 @@
 {
     "name": "sxcu.api",
-    "version": "2.0.3",
+    "version": "2.0.4",
     "description": "Node.js library to interact with the sxcu.net API.",
     "main": "./build/esm/index.js",
     "exports": {
         "import": "./build/esm/index.js",
         "require": "./build/cjs/index.js",
-        "types": "./types/index.d.ts"
+        "types": "./build/types/index.d.ts"
     },
     "bin": {
         "sxcu": "build/cli/index.js"
     },
-    "types": "types/index.d.ts",
+    "types": "build/types/index.d.ts",
     "type": "module",
     "maintainers": [
         {
@@ -19,22 +19,10 @@
             "email": "lovelyjacob@aol.com"
         }
     ],
-    "scripts": {
-        "test": "node test/index.js --trace-uncaught --trace-warnings --trace-exit",
-        "test-other": "node test/other.js --trace-uncaught --trace-warnings --trace-exit",
-        "test-other-cjs": "node test/other.cjs --trace-uncaught --trace-warnings --trace-exit",
-        "build": "bash build.sh",
-        "eslint": "npx eslint src/",
-        "gen-doc": "npx del-cli docs/ && npx typedoc --hideGenerator --githubPages false && node tools/gen-web.cjs",
-        "compile": "npm run build && npm run gen-doc && npm run format && npm run eslint && npm run link",
-        "format": "npx prettier ./ ./build ./types --write",
-        "link": "npm link ./ --force && npm link sxcu.api --force",
-        "fix-perms": "chmod +x node_modules/.bin/sxcu"
-    },
     "files": [
         "build",
         "LICENSE",
-        "types"
+        "README.md"
     ],
     "repository": {
         "type": "git",
@@ -63,8 +51,11 @@
         "eslint": "^8.57.0",
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.1.3",
+        "express": "^4.19.2",
+        "get-port": "^7.1.0",
         "highlight.js": "^11.9.0",
         "markdown-it": "^14.1.0",
+        "open": "^10.1.0",
         "prettier": "^3.2.5",
         "typedoc": "^0.25.12",
         "typescript": "^5.4.3"

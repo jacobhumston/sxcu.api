@@ -1,6 +1,7 @@
 import commandFileList from '../commandFileList.js';
 import { Command } from '../createCommand.js';
 import createCommand from '../createCommand.js';
+import { logger } from '../logger.js';
 
 export default createCommand(
     'help',
@@ -34,51 +35,58 @@ export default createCommand(
         if (options[0].value !== null) {
             const foundCommand = commands.find((cmd) => cmd.name === options[0].value);
             if (foundCommand === undefined) {
-                console.log(
+                logger.error(
                     `Command '${options[0].value}' was not found. Please use "sxcu help" for a list of available commands.`
                 );
             } else {
-                console.log('');
-                console.log(
-                    `Viewing the information of "${foundCommand.name}".\n- The syntax for a command option is "--<option> <value>".`
-                );
+                logger.blank();
+                logger.info(`Viewing the information of "${foundCommand.name}".`);
                 if (options[1].value === true) {
-                    console.log('- Options that are not required can be omitted entirely.');
-                    console.log('');
-                    console.table({ Name: foundCommand.name, Description: foundCommand.description });
-                    console.table(
-                        foundCommand.options.map((option) => ({
-                            Name: option.name,
-                            Description: option.description,
-                            Required: option.required,
-                        }))
+                    logger.table([{ Name: foundCommand.name, Description: foundCommand.description }]);
+                    logger.blank();
+                    logger.info(
+                        '- The syntax for a command option is "--<option> <value>".\n- Options that are not required can be omitted entirely.'
                     );
+                    if (foundCommand.options.length > 0) {
+                        logger.table(
+                            foundCommand.options.map((option) => ({
+                                Name: option.name,
+                                Description: option.description,
+                                Required: option.required,
+                            }))
+                        );
+                    } else {
+                        logger.info('This command does not have any options.');
+                    }
                 } else {
-                    console.log('');
-                    console.log(`$ ${foundCommand.name} - ${foundCommand.description}`);
-                    console.log(
+                    logger.blank();
+                    logger.info(`$ ${foundCommand.name} - ${foundCommand.description}`);
+                    logger.info(
                         '- Options: <required> [optional] (Options that are not required can be omitted entirely.)'
                     );
-                    console.log('');
-                    const tab = '    ';
-                    for (const option of foundCommand.options) {
-                        console.log(
-                            `${tab}--${option.name} ${option.required ? '<value>' : '[value]'} - ${option.description}`
-                        );
+                    logger.blank();
+                    if (foundCommand.options.length > 0) {
+                        for (const option of foundCommand.options) {
+                            logger.info(
+                                `--${option.name} ${option.required ? '<value>' : '[value]'} - ${option.description}`
+                            );
+                        }
+                    } else {
+                        logger.info('This command does not have any options.');
                     }
                 }
             }
         } else {
-            console.log('');
-            console.log(
+            logger.blank();
+            logger.info(
                 'Viewing the list of available commands.\n- To view more information about a command, including available options, run: sxcu help --command [command]\n- If you would like a table view, you can run: sxcu help --table true'
             );
-            console.log('');
+            logger.blank();
             if (options[1].value === true) {
-                console.table(commands.map((cmd) => ({ Name: cmd.name, Description: cmd.description })));
+                logger.table(commands.map((cmd) => ({ Name: cmd.name, Description: cmd.description })));
             } else {
                 for (const command of commands) {
-                    console.log(`$ ${command.name} - ${command.description}`);
+                    logger.info(`$ ${command.name} - ${command.description}`);
                 }
             }
         }
