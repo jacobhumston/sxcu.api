@@ -1,0 +1,37 @@
+name: Generate Docs
+
+on:
+    - workflow_dispatch
+
+permissions:
+    actions: write
+
+jobs:
+    docs:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout Main Branch
+              uses: actions/checkout@v2
+              with:
+                  ref: main
+
+            - name: Build Docs
+              run: bash ./build.bash docs
+
+            - name: Checkout docs branch
+              uses: actions/checkout@v2
+              with:
+                  ref: docs
+
+            - name: Replace Docs
+              run: |
+                  rm -rf docs
+                  mv ./docs docs
+
+            - name: Commit Changes
+              run: |
+                  git config --global user.name "GitHub Actions"
+                  git config --global user.email "actions@github.com"
+                  git add .
+                  git commit -m "Update Docs"
+                  git push origin docs
