@@ -24,6 +24,9 @@ jobs:
             - name: Build Docs
               run: bash ./build.bash docs
 
+            - name: Format Docs
+              run: base ./build.bash format
+
             - name: Save Docs
               run: |
                   cp -R ${{ github.workspace }}/docs/ ../temp_docs/
