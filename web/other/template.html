@@ -52,6 +52,40 @@
                 sideNavBarDarken.style.display = enabled ? 'none' : 'block';
                 document.body.style.overflowY = enabled ? 'auto' : 'hidden';
             });
+
+            {
+                const codeBlocks = document.getElementsByTagName('code');
+                for (const block of codeBlocks) {
+                    if (block.parentElement.tagName !== 'PRE') continue;
+                    const id = `copy${Date.now()}${Math.random()}`;
+                    const button = `<span class="material-icons-round copy-button" id="${id}">content_copy</span>`;
+                    block.innerHTML = block.innerHTML.replace('<br>', `${button}<br>`);
+                    if (!block.innerHTML.includes(button)) block.insertAdjacentHTML('beforeend', button);
+                    let coolDown = false;
+                    const element = document.getElementById(id);
+                    element.addEventListener('click', async function () {
+                        const fakeBlock = block.cloneNode(true);
+                        fakeBlock.innerHTML = fakeBlock.innerHTML.replaceAll('<br>', '\n').replace('content_copy', '');
+                        if (coolDown === true) return fakeBlock.remove();
+                        coolDown = true;
+                        element.innerText = 'hourglass_empty';
+                        try {
+                            await navigator.clipboard.writeText(fakeBlock.textContent);
+                            element.innerText = 'done';
+                            element.style.color = 'rgb(93, 166, 99)';
+                        } catch {
+                            element.innerText = 'error';
+                            element.style.color = 'rgb(243, 109, 109)';
+                        }
+                        setTimeout(function () {
+                            element.innerText = 'content_copy';
+                            element.style.color = null;
+                            coolDown = false;
+                        }, 3000);
+                        fakeBlock.remove();
+                    });
+                }
+            }
         </script>
     </body>
 </html>

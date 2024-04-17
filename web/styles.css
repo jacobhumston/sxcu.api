@@ -272,6 +272,17 @@ c-property {
     height: 40px;
 }
 
+.copy-button {
+    float: right;
+    margin-left: 10px;
+    color: #a5a5a5;
+}
+
+.copy-button:hover {
+    cursor: pointer;
+    color: rgb(105, 121, 212);
+}
+
 /*
 
 Atom One Dark by Daniel Gamage
