@@ -59,8 +59,9 @@
                     if (block.parentElement.tagName !== 'PRE') continue;
                     const id = `copy${Date.now()}${Math.random()}`;
                     const button = `<span class="material-icons-round copy-button" id="${id}">content_copy</span>`;
-                    block.innerHTML = block.innerHTML.replace('<br>', `${button}<br>`);
-                    if (!block.innerHTML.includes(button)) block.insertAdjacentHTML('beforeend', button);
+                    //block.innerHTML = block.innerHTML.replace('<br>', `${button}<br>`);
+                    //if (!block.innerHTML.includes(button)) block.insertAdjacentHTML('beforeend', button);
+                    block.parentElement.insertAdjacentHTML('beforeend', button);
                     let coolDown = false;
                     const element = document.getElementById(id);
                     element.addEventListener('click', async function () {

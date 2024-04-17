@@ -283,6 +283,10 @@ c-property {
     color: rgb(105, 121, 212);
 }
 
+pre {
+    display: inline-block;
+}
+
 /*
 
 Atom One Dark by Daniel Gamage
