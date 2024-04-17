@@ -2,7 +2,7 @@ import createCommand from '../createCommand.js';
 
 export default createCommand(
     'server',
-    'Run a middleware server that adds extra features to uploaded files.',
+    'Run a middleware server that adds extra features to uploaded files. (WIP)',
     [
         {
             name: 'port',
