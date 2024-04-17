@@ -3,9 +3,27 @@
 # Defined as the current working directory.
 current_directory=$(pwd)
 
+# Define the nme directory.
+nme_directory="$current_directory/node_modules/.bin"
+if [[ -n "${NMEDIR}" ]]; then
+    nme_directory="${NMEDIR}"
+fi
+
 # Function for formatted echo.
 function formatted_echo() {
     echo "> $1"
+}
+
+# Node Module Execute (nme) function.
+# The module executable location can be changed with the NMEDIR environment variable.
+function nme() {
+    if [ -f "$nme_directory/$1" ]; then
+        "$nme_directory/"$@
+    else
+        formatted_echo "FATAL!: The executable '$nme_directory/$1' was not found!"
+        formatted_echo "Note: The location can be changed using the NMEDIR environment variable."
+        exit
+    fi
 }
 
 # Function to echo the current step.
@@ -52,18 +70,18 @@ function build() {
 
     # Build CommonJs.
     formatted_echo "Building CommonJS..."
-    npx tsc --module commonjs --outDir build/cjs/ --declaration false --declarationMap false --esModuleInterop true --noEmitOnError true
+    nme tsc --module commonjs --outDir build/cjs/ --declaration false --declarationMap false --esModuleInterop true --noEmitOnError true
     echo "{\"type\": \"commonjs\"}" >build/cjs/package.json
 
     # Build ESM and Types.
     formatted_echo "Building ESM and Type Definitions..."
-    npx tsc --module es2022 --outDir build/esm/ --declarationDir build/types/ --declaration true --declarationMap true --noEmitOnError true
+    nme tsc --module es2022 --outDir build/esm/ --declarationDir build/types/ --declaration true --declarationMap true --noEmitOnError true
     echo "{\"type\": \"module\"}" >build/esm/package.json
 
     # Build the CLI.
     formatted_echo "Building CLI ..."
     cd ./src/cli/ || exit
-    npx tsc --outDir ../../build/cli/ --declaration false --declarationMap false --noEmitOnError true
+    nme tsc --outDir ../../build/cli/ --declaration false --declarationMap false --noEmitOnError true
     echo "{\"type\": \"module\"}" >../../build/cli/package.json
 
     # Echo the end of the step.
@@ -80,13 +98,13 @@ function format() {
     formatted_echo "Formatting..."
     if [ -d "build" ]; then
         formatted_echo "Build directory found! Formatting..."
-        npx prettier ./build --write --ignore-path .prettierignore # https://github.com/prettier/prettier/issues/15438
+        nme prettier ./build --write --ignore-path .prettierignore # https://github.com/prettier/prettier/issues/15438
     fi
     if [ -d "docs" ]; then
         formatted_echo "Docs directory found! Formatting..."
-        npx prettier ./docs --write --ignore-path .prettierignore
+        nme prettier ./docs --write --ignore-path .prettierignore
     fi
-    npx prettier ./ --write
+    nme prettier ./ --write
     echo_step "format" "end"
 }
 
@@ -118,7 +136,7 @@ function eslint() {
     # Run eslint.
     echo_step "eslint" "start"
     formatted_echo "Running eslint..."
-    npx eslint src/
+    nme eslint src/
     echo_step "eslint" "end"
 }
 
@@ -131,7 +149,7 @@ function docs() {
     echo_step "docs" "start"
     formatted_echo "Generating docs..."
     delete_directory "docs"
-    npx typedoc --hideGenerator --githubPages false
+    nme typedoc --hideGenerator --githubPages false
     node tools/gen-web.cjs
     echo_step "docs" "end"
 }
