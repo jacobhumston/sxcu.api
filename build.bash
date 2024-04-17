@@ -18,7 +18,8 @@ function formatted_echo() {
 # The module executable location can be changed with the NMEDIR environment variable.
 function nme() {
     if [ -f "$nme_directory/$1" ]; then
-        "$nme_directory/"$@
+        formatted_echo "Executing: $*"
+        "$nme_directory/"$*
     else
         formatted_echo "FATAL!: The executable '$nme_directory/$1' was not found!"
         formatted_echo "Note: The location can be changed using the NMEDIR environment variable."
