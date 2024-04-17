@@ -131,4 +131,8 @@ export const logger = {
         console.log(lines.join('\n'));
         return;
     },
+    /**
+     * Clear the console.
+     */
+    clear: console.clear,
 };

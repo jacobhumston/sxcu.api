@@ -14,6 +14,11 @@ export type Option = {
      * or return the parsed value if it succeeds.
      */
     result?: (value: string) => any;
+    /**
+     * Default value for this option.
+     * This is only used if no value is provided.
+     */
+    default?: any;
 };
 
 /** Parsed command option. */

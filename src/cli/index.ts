@@ -84,6 +84,7 @@ for (const commandString of commandsToExecute) {
             }
             if (option.required === true && commandMissing === true)
                 errors.push(`Option --${option.name} is missing, however it is required.`);
+            if (!value && option.default) value = option.default;
             commandArgs.push({
                 name: option.name,
                 description: option.description,
