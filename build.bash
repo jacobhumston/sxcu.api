@@ -192,8 +192,20 @@ function docs_server() {
     echo_step "docs server" "end"
 }
 
+# Function for cleaning build/doc etc folders.
+function clean() {
+    # Reset directory.
+    cd "$current_directory" || exit
+
+    # Clean
+    echo_step "clean" "start"
+    delete_directory "build"
+    delete_directory "docs"
+    echo_step "clean" "end"
+}
+
 # List of commands.
-command_list="help, build, format, test [other, other-cjs], eslint, docs, link, fix-perms, compile, docs-server"
+command_list="help, build, format, test [other, other-cjs], eslint, docs, link, fix-perms, compile, docs-server, clean"
 
 # Function to parse command.
 # First paramter should be the name of the command.
@@ -222,6 +234,8 @@ function parse_command() {
         fix_perms
     elif [ "$1" = "docs-server" ]; then
         docs_server
+    elif [ "$1" = "clean" ]; then
+        clean
     elif [ "$1" = "help" ]; then
         formatted_echo "::[---> HELP ~ sxcu.api/build.bash <---]::"
         formatted_echo
