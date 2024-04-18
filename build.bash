@@ -34,13 +34,13 @@ function echo_step() {
     function echo_line() {
         echo ">==============================================<"
     }
-    
+
     # Log the start/end message accordingly.
     if [ "$2" = "start" ]; then
         #echo_line
         formatted_echo "Step $1 is executing...."
-        #echo_line
-        elif [ "$2" = "end" ]; then
+    #echo_line
+    elif [ "$2" = "end" ]; then
         #echo_line
         formatted_echo "Step $1 has finished executing."
         #echo_line
@@ -62,29 +62,29 @@ function delete_directory() {
 function build() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Echo the step.
     echo_step "build" "start"
-    
+
     # Delete the build folder.
     delete_directory 'build'
-    
+
     # Build CommonJs.
     formatted_echo "Building CommonJS..."
     nme tsc --module commonjs --outDir build/cjs/ --declaration false --declarationMap false --esModuleInterop true --noEmitOnError true
     echo "{\"type\": \"commonjs\"}" >build/cjs/package.json
-    
+
     # Build ESM and Types.
     formatted_echo "Building ESM and Type Definitions..."
     nme tsc --module es2022 --outDir build/esm/ --declarationDir build/types/ --declaration true --declarationMap true --noEmitOnError true
     echo "{\"type\": \"module\"}" >build/esm/package.json
-    
+
     # Build the CLI.
     formatted_echo "Building CLI ..."
     cd ./src/cli/ || exit
     nme tsc --outDir ../../build/cli/ --declaration false --declarationMap false --noEmitOnError true
     echo "{\"type\": \"module\"}" >../../build/cli/package.json
-    
+
     # Echo the end of the step.
     echo_step "build" "end"
 }
@@ -93,7 +93,7 @@ function build() {
 function format() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Format.
     # https://github.com/prettier/prettier/issues/15438
     echo_step "format" "start"
@@ -114,13 +114,13 @@ function format() {
 function test() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Run the selcted tests.
     echo_step "test" "start"
     if [ "$1" = "other" ]; then
         formatted_echo "Running other (ESM) test..."
         node test/other.js --trace-uncaught --trace-warnings --trace-exit
-        elif [ "$1" = "other-cjs" ]; then
+    elif [ "$1" = "other-cjs" ]; then
         formatted_echo "Running other (CommonJs) test..."
         node test/other.cjs --trace-uncaught --trace-warnings --trace-exit
     else
@@ -134,7 +134,7 @@ function test() {
 function eslint() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Run eslint.
     echo_step "eslint" "start"
     formatted_echo "Running eslint..."
@@ -146,7 +146,7 @@ function eslint() {
 function docs() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Generate docs.
     echo_step "docs" "start"
     formatted_echo "Generating docs..."
@@ -160,7 +160,7 @@ function docs() {
 function link() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Link the package.
     echo_step "link" "start"
     formatted_echo "Linking package..."
@@ -173,7 +173,7 @@ function link() {
 function fix_perms() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Fix linked script permissions.
     echo_step "fix perms" "start"
     formatted_echo "Fixing linked script's permissions..."
@@ -185,7 +185,7 @@ function fix_perms() {
 function docs_server() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Run the docs server.
     echo_step "docs server" "start"
     formatted_echo "Starting docs server..."
@@ -197,7 +197,7 @@ function docs_server() {
 function clean() {
     # Reset directory.
     cd "$current_directory" || exit
-    
+
     # Clean
     echo_step "clean" "start"
     delete_directory "build"
@@ -206,7 +206,7 @@ function clean() {
 }
 
 # List of commands.
-command_list="help, build, format, test [other, other-cjs], eslint, docs, link, fix-perms, compile, docs-server, clean"
+command_list="help, build, format, test [other, other-cjs], eslint, docs, link, fix-perms, compile, docs-server, clean, quick-compile"
 
 # Function to parse command.
 # First paramter should be the name of the command.
@@ -214,30 +214,34 @@ command_list="help, build, format, test [other, other-cjs], eslint, docs, link, 
 function parse_command() {
     if [ "$1" = "build" ]; then
         build
-        elif [ "$1" = "format" ]; then
+    elif [ "$1" = "format" ]; then
         format
-        elif [ "$1" = "test" ]; then
+    elif [ "$1" = "test" ]; then
         test "$2"
-        elif [ "$1" = "eslint" ]; then
+    elif [ "$1" = "eslint" ]; then
         eslint
-        elif [ "$1" = "docs" ]; then
+    elif [ "$1" = "docs" ]; then
         docs
-        elif [ "$1" = "link" ]; then
+    elif [ "$1" = "link" ]; then
         link
-        elif [ "$1" = "fix-perms" ]; then
+    elif [ "$1" = "fix-perms" ]; then
         fix_perms
-        elif [ "$1" = "compile" ]; then
+    elif [ "$1" = "compile" ]; then
         build
         docs
         format
         eslint
         link
         fix_perms
-        elif [ "$1" = "docs-server" ]; then
+    elif [ "$1" = "quick-compile" ]; then
+        build
+        link
+        fix_perms
+    elif [ "$1" = "docs-server" ]; then
         docs_server
-        elif [ "$1" = "clean" ]; then
+    elif [ "$1" = "clean" ]; then
         clean
-        elif [ "$1" = "help" ]; then
+    elif [ "$1" = "help" ]; then
         formatted_echo "::[---> HELP ~ sxcu.api/build.bash <---]::"
         formatted_echo
         formatted_echo "Commands: $command_list"

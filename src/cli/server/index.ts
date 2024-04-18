@@ -3,8 +3,13 @@ import { ParsedOption } from '../createCommand.js';
 import { logger } from '../logger.js';
 import { logo } from './text-logo.js';
 import http from 'node:http';
+import fs from 'node:fs';
+import parse from './parser.js';
+import { uploadFile, toggleRequestQueue } from 'sxcu.api';
 
 export async function main(options: ParsedOption[]) {
+    toggleRequestQueue(true, true);
+    
     logger.clear();
     logger.info(colorText(fgGreen, logo));
     logger.blank();
@@ -23,46 +28,28 @@ export async function main(options: ParsedOption[]) {
         if (!request.method) return err('No method provided.');
         if (request.method.toLowerCase() !== 'post') return err('Method type not allowed.');
         if (!request.url) return err('Invalid URL.');
+        if (!request.headers['content-type']) return err('Missing required header.');
 
         let chunks = '';
         request.on('data', (chunk) => (chunks += chunk));
-        request.on('end', function () {
-            if (request.headers['content-type'] === 'multipart/form-data') {
-                // Parse the multipart form data
-                const contentType = request.headers['content-type'];
-                if (!contentType) {
-                    throw new Error('Content-Type header is missing');
-                }
-
-                let parts: any = contentType.split('; ');
-                if (parts.length < 2) {
-                    throw new Error('Invalid Content-Type header');
-                }
-
-                const boundaryPart = parts[1];
-                if (!boundaryPart.startsWith('boundary=')) {
-                    throw new Error('Boundary is missing from Content-Type header');
-                }
-
-                const boundary = '--' + boundaryPart.split('=')[1];
-                parts = chunks.split(boundary).slice(1, -1);
-                let formData: any = {};
-
-                parts.forEach((part: any) => {
-                    const [headers, body] = part.split('\r\n\r\n');
-                    const nameMatch = headers.match(/name="([^"]*)"/);
-                    if (nameMatch) {
-                        const name = nameMatch[1];
-                        formData[name] = body.trim();
+        request.on('end', async function () {
+            if (request.headers['content-type']?.startsWith('multipart/form-data')) {
+                const data = parse(chunks);
+                console.log(data);
+                let url = ""
+                if (data['file'].type === "file") {
+                    const result = await uploadFile(data['file'].image).catch((e) => console.log(e))
+                    if (result) {
+                        url = result.url
                     }
-                });
-
-                console.log(formData);
+                }
+                fs.writeFileSync('e.json', JSON.stringify(data));
+                response.write(JSON.stringify({ url: url }));
+                response.end();
             } else {
-                // Handle the case when it's not multipart form data
-                //console.log(chunks);
+                console.log(request.headers['content-type']);
+                return err('Invalid content type.');
             }
-            response.end();
         });
     });
 
