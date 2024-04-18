@@ -1,4 +1,4 @@
-import { colorText, fgBlue, fgGreen, fgRed, fgWhite, fgYellow } from './colors.js';
+import { colorText, fgBlue, fgGray, fgGreen, fgRed, fgWhite, fgYellow } from './colors.js';
 
 /** Logging type. */
 export type LoggerType = 'Info' | 'Warn' | 'Success' | 'Error';
@@ -46,7 +46,7 @@ export const logger = {
     /**
      * Log a blank newline to the console.
      */
-    blank: () => console.log(''),
+    blank: () => console.log(colorText(fgGray, '[]:')),
     /**
      * Log a raw message to the console.
      */
@@ -128,7 +128,7 @@ export const logger = {
             lines[0].replaceAll(chars[7], chars[10]).replaceAll(chars[8], chars[9]).replaceAll(chars[6], chars[5])
         );
 
-        console.log(lines.join('\n'));
+        console.log(`${colorText(fgGray, '[]: ')}${lines.join(`\n${colorText(fgGray, '[]: ')}`)}`);
         return;
     },
     /**

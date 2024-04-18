@@ -92,7 +92,7 @@ export const colorList: string[] = [
  * @returns The colored text.
  */
 export function colorText(color: string, text: string): string {
-    return `${color}${text}${reset}`;
+    return `${color}${text.replaceAll('\n', `${reset}\n${color}`)}${reset}`;
 }
 
 /**
