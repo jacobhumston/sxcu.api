@@ -27,7 +27,41 @@ export async function main(options: ParsedOption[]) {
         let chunks = '';
         request.on('data', (chunk) => (chunks += chunk));
         request.on('end', function () {
-            console.log(chunks);
+            if (request.headers['content-type'] === 'multipart/form-data') {
+                // Parse the multipart form data
+                const contentType = request.headers['content-type'];
+                if (!contentType) {
+                    throw new Error('Content-Type header is missing');
+                }
+
+                let parts: any = contentType.split('; ');
+                if (parts.length < 2) {
+                    throw new Error('Invalid Content-Type header');
+                }
+
+                const boundaryPart = parts[1];
+                if (!boundaryPart.startsWith('boundary=')) {
+                    throw new Error('Boundary is missing from Content-Type header');
+                }
+
+                const boundary = '--' + boundaryPart.split('=')[1];
+                parts = chunks.split(boundary).slice(1, -1);
+                let formData: any = {};
+
+                parts.forEach((part: any) => {
+                    const [headers, body] = part.split('\r\n\r\n');
+                    const nameMatch = headers.match(/name="([^"]*)"/);
+                    if (nameMatch) {
+                        const name = nameMatch[1];
+                        formData[name] = body.trim();
+                    }
+                });
+
+                console.log(formData);
+            } else {
+                // Handle the case when it's not multipart form data
+                //console.log(chunks);
+            }
             response.end();
         });
     });
