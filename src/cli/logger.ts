@@ -1,7 +1,7 @@
 import { colorText, fgBlue, fgGray, fgGreen, fgRed, fgWhite, fgYellow } from './colors.js';
 
 /** Logging type. */
-export type LoggerType = 'Info' | 'Warn' | 'Success' | 'Error';
+export type LoggerType = 'Info' | 'Warning' | 'Success' | 'Error';
 
 /** Logger methods. */
 export const logger = {
@@ -13,7 +13,7 @@ export const logger = {
     log: function (type: LoggerType, ...message: string[]): void {
         const colors = {
             Info: fgBlue,
-            Warn: fgYellow,
+            Warning: fgYellow,
             Success: fgGreen,
             Error: fgRed,
         };
@@ -32,7 +32,7 @@ export const logger = {
      * Log a warning message to the console.
      * @param message The message to log.
      */
-    warn: (...message: string[]) => logger.log('Warn', ...message),
+    warn: (...message: string[]) => logger.log('Warning', ...message),
     /**
      * Log a success message to the console.
      * @param message The message to log.
