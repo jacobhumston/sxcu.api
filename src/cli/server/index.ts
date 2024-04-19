@@ -17,7 +17,9 @@ export async function main(options: ParsedOption[]) {
     logger.info(colorText(fgGreen, logo));
     logger.blank();
     logger.info('Attempting to run with the following options:');
-    logger.table(options.map((value) => ({ Name: value.name, Value: value.value, Description: value.description })));
+    logger.table(
+        options.map((value) => ({ Name: value.name, Value: `${value.value}`, Description: value.description }))
+    );
 
     const urlPool: { url: string; added: number }[] = [];
 
