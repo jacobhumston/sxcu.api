@@ -34,12 +34,13 @@ export async function main(options: ParsedOption[]) {
         if (!request.url) return err('Invalid URL.');
         if (!request.headers['content-type']) return err('Missing required header.');
 
-        let chunks: any[] = [];
+        let chunks: Buffer[] = [];
         request.on('data', (chunk) => chunks.push(chunk));
         request.on('end', async function () {
             if (request.headers['content-type']?.startsWith('multipart/form-data')) {
+                console.log(chunks);
                 const connectedChunks = Buffer.concat(chunks).toString()
-                fs.writeFileSync('e.txt', connectedChunks)
+                fs.writeFileSync('e.txt', Buffer.concat(chunks))
                 const data = parse(connectedChunks);
                 console.log(data);
                 let url = ""
