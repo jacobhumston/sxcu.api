@@ -9,7 +9,7 @@ import { uploadFile, toggleRequestQueue } from 'sxcu.api';
 
 export async function main(options: ParsedOption[]) {
     toggleRequestQueue(true, true);
-    
+
     logger.clear();
     logger.info(colorText(fgGreen, logo));
     logger.blank();
@@ -18,6 +18,10 @@ export async function main(options: ParsedOption[]) {
 
     const server = http.createServer();
     server.on('request', function (request, response) {
+        /**
+         * The function to send the error message.
+         * @param message The error message.
+         */
         function err(message: string): void {
             response.statusCode = 400;
             response.write(JSON.stringify({ error: message }));
@@ -30,15 +34,17 @@ export async function main(options: ParsedOption[]) {
         if (!request.url) return err('Invalid URL.');
         if (!request.headers['content-type']) return err('Missing required header.');
 
-        let chunks = '';
-        request.on('data', (chunk) => (chunks += chunk));
+        let chunks: any[] = [];
+        request.on('data', (chunk) => chunks.push(chunk));
         request.on('end', async function () {
             if (request.headers['content-type']?.startsWith('multipart/form-data')) {
-                const data = parse(chunks);
+                const connectedChunks = Buffer.concat(chunks).toString()
+                fs.writeFileSync('e.txt', connectedChunks)
+                const data = parse(connectedChunks);
                 console.log(data);
                 let url = ""
-                if (data['file'].type === "file") {
-                    const result = await uploadFile(data['file'].image).catch((e) => console.log(e))
+                if (data['file'].type === 'file') {
+                    const result = await uploadFile(data["file"].file).catch((e) => console.log(e))
                     if (result) {
                         url = result.url
                     }

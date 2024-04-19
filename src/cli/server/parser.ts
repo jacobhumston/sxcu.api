@@ -1,3 +1,5 @@
+import { writeFileSync } from "fs";
+
 /**
  * Represents a parsed data plain value.
  */
@@ -6,7 +8,7 @@ export type ParsedDataPlain = { type: 'plain'; value: string };
 /**
  * Represents a parsed data file.
  */
-export type ParsedDataFile = { type: 'file'; fileName: string; image: Blob };
+export type ParsedDataFile = { type: 'file'; fileName: string; file: Blob, fileType: string };
 
 /**
  * Represents parsed data.
@@ -43,12 +45,19 @@ export default function parse(data: string): ParsedData {
         if (meta.split(';').length > 2) {
             const name = meta.split(';')[1].split('name=')[1].replaceAll('"', '');
             const fileName = meta.split(';')[2].split('filename=')[1].replaceAll('"', '');
-            const value = section.split('\n');
+            const type = section.split('\n')[1].split(" ")[1]
+            const value: any = section.split('\n');
             value.shift();
             value.shift();
             value.shift();
-            value.pop();
-            parsedData[name] = { type: 'file', fileName: fileName, image: new Blob([atob(value.join('\n'))]) };
+            value.shift();
+            const binaryData = value.join('');
+            const byteArray = new Uint8Array(binaryData.length);
+            for (let i = 0; i < binaryData.length; i++) {
+                byteArray[i] = binaryData.charCodeAt(i) & 0xff;
+            }
+            writeFileSync(fileName, Buffer.from(byteArray))
+            parsedData[name] = { type: 'file', fileName: fileName, file: new Blob([Buffer.from(byteArray)]), fileType: type };
         } else {
             const name = meta.split(';')[1].split('name=')[1].replaceAll('"', '');
             const value = section.split('\n');
