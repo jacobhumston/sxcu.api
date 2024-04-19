@@ -15,5 +15,8 @@ build/
 types/**/*.d.ts
 types/**/*.d.ts.map
 
-# Documentation directory.
+# Documentation Directory
 docs/
+
+# Test Files
+e*

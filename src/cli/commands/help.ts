@@ -39,7 +39,6 @@ export default createCommand(
                     `Command '${options[0].value}' was not found. Please use "sxcu help" for a list of available commands.`
                 );
             } else {
-                logger.blank();
                 logger.info(`Viewing the information of "${foundCommand.name}".`);
                 if (options[1].value === true) {
                     logger.table([{ Name: foundCommand.name, Description: foundCommand.description }]);
@@ -77,7 +76,6 @@ export default createCommand(
                 }
             }
         } else {
-            logger.blank();
             logger.info(
                 'Viewing the list of available commands.\n- To view more information about a command, including available options, run: sxcu help --command [command]\n- If you would like a table view, you can run: sxcu help --table true'
             );

@@ -21,6 +21,10 @@ jobs:
               id: build-package
               run: bash build.bash build
 
+            - name: Link Package
+              id: link-package
+              run: bash build.bash link
+
             - name: Run Tests
               id: run-tests
               run: bash build.bash test
