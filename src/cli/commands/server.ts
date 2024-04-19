@@ -2,7 +2,7 @@ import createCommand from '../createCommand.js';
 
 export default createCommand(
     'server',
-    'Run a middleware server that adds extra features to uploaded files. (WIP)',
+    'Run a middleware server that adds extra features to uploaded files.',
     [
         {
             name: 'port',
@@ -24,6 +24,18 @@ export default createCommand(
                 return number;
             },
             default: 5,
+        },
+        {
+            name: 'log',
+            description: 'If true, actions will be logged. (Default: false)',
+            required: false,
+            result(value) {
+                if (value !== 'false' && value !== 'true') {
+                    throw "Expected 'false' or 'true'.";
+                }
+                return value === 'false' ? false : true;
+            },
+            default: false,
         },
     ],
     async function (options) {
