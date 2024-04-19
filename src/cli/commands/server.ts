@@ -37,6 +37,24 @@ export default createCommand(
             },
             default: false,
         },
+        {
+            name: 'skip-subdomain-check',
+            description: 'If true, subdomains will not be validated.',
+            required: false,
+            result(value) {
+                if (value !== 'false' && value !== 'true') {
+                    throw "Expected 'false' or 'true'.";
+                }
+                return value === 'false' ? false : true;
+            },
+            default: false,
+        },
+        {
+            name: 'token',
+            description: 'If provided, this value will be required in the authorization header.',
+            required: false,
+            default: false,
+        },
     ],
     async function (options) {
         const server = await import('../server/index.js');
