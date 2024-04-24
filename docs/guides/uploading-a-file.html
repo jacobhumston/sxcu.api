@@ -35,22 +35,34 @@
         </div>
         <br />
         <div id="guide-wrapper">
-            <h1>Updating to v2.0.0</h1>
+            <h1>Uploading a File</h1>
+            <hr />
+            <p>This is a guide on how to upload a file.</p>
+            <h2>File Structure</h2>
+            <hr />
+            <p>The file structure of this guide is as follows:</p>
+            <p><img src="/assets/file-structer-uploading-a-file-guide.png" alt="File Structure" /></p>
+            <h2>Uploading a File</h2>
             <hr />
             <p>
-                The package has been rewritten from the ground up in TypeScript, and this means that there are some
-                breaking changes!
+                To upload the file, we need to use the <code>uploadFile</code> method.
+                <a href="https://sxcu.api.lovelyjacob.com/latest/functions/uploadFile.html">Documentation Reference</a>
             </p>
-            <p>The biggest change is that we removed the method categories.</p>
-            <pre><code class="language-js"><span class="hljs-comment">// This is now wrong...</span><br><span class="hljs-keyword">const</span> { files } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;sxcu.api&#x27;</span>);<br>files.<span class="hljs-title function_">uploadFile</span>();<br><br><span class="hljs-comment">// This is now correct...</span><br><span class="hljs-keyword">const</span> { uploadFile } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;sxcu.api&#x27;</span>);<br><span class="hljs-title function_">uploadFile</span>();<br><br><span class="hljs-comment">// But, if you prefer categories, then you can do this...</span><br><span class="hljs-keyword">const</span> { categorizeImports } = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;sxcu.api&#x27;</span>);<br><span class="hljs-keyword">const</span> categories = <span class="hljs-title function_">categorizeImports</span>();<br><span class="hljs-keyword">const</span> files = categories.<span class="hljs-property">files</span>;<br><br>files.<span class="hljs-title function_">uploadFile</span>();<br></code></pre>
-            <p>We added native support for ESM in v2.0.0.</p>
-            <pre><code class="language-js"><span class="hljs-comment">// Instead of...</span><br><span class="hljs-keyword">const</span> sxcu = <span class="hljs-keyword">await</span> <span class="hljs-keyword">import</span>(<span class="hljs-string">&#x27;sxcu.api&#x27;</span>);<br>sxcu.<span class="hljs-property">files</span>.<span class="hljs-title function_">uploadFile</span>();<br><br><span class="hljs-comment">// You can now do...</span><br><span class="hljs-keyword">import</span> { uploadFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><span class="hljs-title function_">uploadFile</span>();<br></code></pre>
-            <p>If you are using TypeScript, then you can now import types from the package as you please.</p>
-            <pre><code class="language-ts"><span class="hljs-comment">// Import FileOptions type.</span><br><span class="hljs-keyword">import</span> { <span class="hljs-title class_">FileOptions</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br></code></pre>
+            <pre><code class="language-js"><span class="hljs-keyword">import</span> { uploadFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title function_">uploadFile</span>();<br></code></pre>
             <p>
-                <strong>Note:</strong> Not all changes are documented here. Please refer to the
-                <a href="https://sxcu.api.lovelyjacob.com">API documentation</a> for more information.
+                For the first argument of the function, we need to provide the path of the image. In our case, it is
+                <code>test.png</code> <em>or</em> <code>./test.png</code>.
             </p>
+            <pre><code class="language-js"><span class="hljs-title function_">uploadFile</span>(<span class="hljs-string">&#x27;test.png&#x27;</span>);<br></code></pre>
+            <p>However, we are not finished yet! We need to get the result, and also handle errors.</p>
+            <pre><code class="language-js"><span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> We use await because uploadFile returns a promise!</span><br><span class="hljs-comment">// ----- https://www.freecodecamp.org/news/guide-to-javascript-promises/</span><br><span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> <span class="hljs-title function_">uploadFile</span>(<span class="hljs-string">&#x27;test.png&#x27;</span>).<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Something went wrong!&#x27;</span>, err));<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);<br></code></pre>
+            <p>Execute the command <code>node index.mjs</code>, you will get an output similar to the following:</p>
+            <pre><code class="language-json"><span class="hljs-punctuation">{</span><br>    <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;6xUyjTePe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://sxcu.net/6xUyjTePe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;deletionUrl&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://sxcu.net/api/files/delete/6xUyjTePe/ce7f3b7e...&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;deletionToken&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ce7f3b7e...&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;thumbnail&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://sxcu.net/t/6xUyjTePe.png&quot;</span><br><span class="hljs-punctuation">}</span><br></code></pre>
+            <h2>Conclusion</h2>
+            <hr />
+            <p>Uploading a file with sxcu.api is extremely easy, however mistakes are easy to make!</p>
+            <p>If you need any help, feel free to create an issue in our GitHub repository.</p>
+            <p>Happy coding!</p>
         </div>
         <br />
         <br />
