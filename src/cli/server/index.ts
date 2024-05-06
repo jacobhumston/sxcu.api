@@ -90,7 +90,7 @@ export async function main(options: ParsedOption[]) {
                     if (!data['file']) return err('Missing file.');
                     if (data['file'].type !== 'file') return err('Missing file.');
 
-                    let subdomain = request.url?.split('/')[1];
+                    const subdomain = request.url?.split('/')[1];
                     let subdomainCheckPassed = false;
                     if (subdomainList.length !== 0) {
                         for (const domain of subdomainList) {
