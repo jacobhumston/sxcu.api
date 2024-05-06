@@ -130,10 +130,12 @@ export async function request(options: RequestOptions): Promise<{ [key: string]:
         endpoint: response.headers.get('X-RateLimit-Global') ? null : endpoint,
     };
 
-    if (foundRateLimit.isGlobal) {
-        rateLimits['_Global'] = foundRateLimit;
-    } else {
-        rateLimits[foundRateLimit.bucket] = foundRateLimit;
+    if (foundRateLimit.bucket !== '?') {
+        if (foundRateLimit.isGlobal) {
+            rateLimits['_Global'] = foundRateLimit;
+        } else {
+            rateLimits[foundRateLimit.bucket] = foundRateLimit;
+        }
     }
 
     // Retry the request if it failed due to the rate limit. Only if the retry queue is enabled.
