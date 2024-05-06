@@ -19,7 +19,7 @@ jobs:
 
             - name: Run Eslint
               id: run-eslint
-              run: bash build.bash eslint
+              run: npx eslint src/
 
     eslint_error:
         runs-on: ubuntu-latest
