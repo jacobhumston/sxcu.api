@@ -26,6 +26,12 @@ You can install sxcu.api using npm.
 npm install sxcu.api
 ```
 
+If you would like to install the latest developer build, you can install from the `dev-build` branch.
+
+```bash
+npm install "https://github.com/jacobhumston/sxcu.api.git#dev-build"
+```
+
 ## Example Usage
 
 Here is an example of uploading a file.
