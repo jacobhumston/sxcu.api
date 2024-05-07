@@ -8,7 +8,7 @@ permissions:
     contents: write
 
 jobs:
-    docs:
+    dev-build:
         runs-on: ubuntu-latest
         steps:
             - uses: actions/checkout@v2
@@ -28,6 +28,11 @@ jobs:
             - name: Format
               run: |
                   bash ./build.bash format
+
+            - name: "Make Save Directories"
+              run: |
+                  mkdir ../temp_dir/
+                  mkdir ../temp_dir/build/
 
             - name: Save Files
               run: |
