@@ -49,6 +49,13 @@ jobs:
               run: |
                   rm -rf ./*
                   mv ../temp_dir/* ./
+                  
+            - name: Create Auto File
+              run: |
+                  echo "" > ./.auto
+                  echo "SHA: ${GITHUB_SHA}" >> ./.auto
+                  echo "SHA URL: https://github.com/jacobhumston/sxcu.api/commit/${GITHUB_SHA}" >> ./.auto
+                  echo "Date Modified: $(date +%F)" >> ./.auto
 
             - name: Commit Changes
               run: |
