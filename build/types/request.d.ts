@@ -44,7 +44,7 @@ export type RateLimit = {
      * Endpoint that this rate limit belongs to.
      * This will be null if isGlobal is true.
      */
-    endpoint: string | null;
+    endpoint: Endpoint | null;
 };
 /**
  * Available endpoints.
