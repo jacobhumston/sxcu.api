@@ -32,11 +32,10 @@ jobs:
             - name: "Make Save Directories"
               run: |
                   mkdir ../temp_dir/
-                  mkdir ../temp_dir/build/
 
             - name: Save Files
               run: |
-                  cp -R ${{ github.workspace }}/build/ ../temp_dir/build/
+                  cp -R ${{ github.workspace }}/build/ ../temp_dir/
                   cp ${{ github.workspace }}/package.json ../temp_dir/package.json
                   cp ${{ github.workspace }}/README.md ../temp_dir/README.md
                   cp ${{ github.workspace }}/LICENSE ../temp_dir/LICENSE
@@ -49,7 +48,7 @@ jobs:
             - name: Move Files
               run: |
                   rm -rf ./*
-                  mv ../temp_dir/ ./
+                  mv ../temp_dir/* ./
 
             - name: Commit Changes
               run: |
