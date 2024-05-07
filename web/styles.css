@@ -184,7 +184,8 @@ c-property {
 }
 
 #docs,
-#guide {
+#guide,
+#cli {
     font-size: larger;
     margin-left: 10px;
     margin-right: 10px;
@@ -198,12 +199,14 @@ c-property {
 }
 
 #docs .material-icons-round,
-#guide .material-icons-round {
+#guide .material-icons-round,
+#cli .material-icons-round {
     font-size: x-large !important;
 }
 
 #docs:hover,
-#guide:hover {
+#guide:hover,
+#cli:hover {
     border-radius: 10px;
 }
 
@@ -215,7 +218,11 @@ c-property {
     background-color: rgb(255, 73, 73);
 }
 
-@media screen and (max-width: 450px) {
+#cli {
+    background-color: #35a719;
+}
+
+@media screen and (max-width: 600px) {
     .button-splitter {
         display: inline-block !important;
     }
