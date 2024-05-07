@@ -29,7 +29,7 @@ jobs:
               run: |
                   bash ./build.bash format
 
-            - name: "Make Save Directories"
+            - name: 'Make Save Directories'
               run: |
                   mkdir ../temp_dir/
 
