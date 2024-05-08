@@ -159,8 +159,7 @@ export async function main(options) {
                     return err('Something went wrong.');
                 }
             } else {
-                console.log(request.headers['content-type']);
-                return err('Invalid content type.');
+                return err(`Invalid content type: ${request.headers['content-type']}`);
             }
         });
     });
