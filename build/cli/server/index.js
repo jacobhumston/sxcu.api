@@ -18,6 +18,11 @@ import { uploadFile, toggleRequestQueue, UserAgent, resolveError, listSubdomains
  */
 export async function main(options) {
     toggleRequestQueue(true, true);
+    const port = options[0].value;
+    const urlLifespan = options[1].value;
+    const log = options[2].value;
+    const skipSubdomainCheck = options[3].value;
+    const token = options[4].value;
     logger.clear();
     logger.info(colorText(fgGreen, logo));
     logger.blank();
@@ -29,10 +34,11 @@ export async function main(options) {
             Description: value.description,
         }))
     );
-    if (options[4].value !== false) logger.warn('The authorization header will be required for all requests.');
+    if (token !== false) logger.warn('The authorization header will be required for all requests.');
     const urlPool = [];
     const subdomainList = [];
-    if (options[3].value === false) {
+    if (skipSubdomainCheck === false) {
+        logger.info(`Downloading subdomain list...`);
         const result = await listSubdomains().catch(function (err) {
             logger.error(`Failed to load subdomain list: ${err}`);
             logger.warn('Subdomains will not be validated.');
@@ -54,7 +60,7 @@ export async function main(options) {
             response.statusCode = 400;
             response.write(JSON.stringify({ error: message }));
             response.end();
-            if (options[2].value === true) logger.error(message);
+            if (log === true) logger.error(message);
             return;
         }
         if (!request.method) return err('No method provided.');
@@ -62,8 +68,7 @@ export async function main(options) {
         if (!request.url) return err('Invalid URL.');
         if (!request.headers['content-type']) return err('Missing required header.');
         if (!request.headers['user-agent']) return err('Missing required header.');
-        if (options[4].value !== false && request.headers['authorization'] !== options[4].value)
-            return err(`Invalid token.`);
+        if (token !== false && request.headers['authorization'] !== token) return err(`Invalid token.`);
         const chunks = [];
         request.on('data', (chunk) => chunks.push(chunk));
         request.on('end', async function () {
@@ -82,7 +87,7 @@ export async function main(options) {
                         subdomainCheckPassed = true;
                     }
                     if (subdomainCheckPassed === false) return err('Failed subdomain check.');
-                    if (options[2].value === true)
+                    if (log === true)
                         logger.info(
                             `Received a file with ${data['file'].file.size} bytes.\nAttempting to upload: ${data['file'].fileName} (${data['file'].fileType})`
                         );
@@ -127,7 +132,7 @@ export async function main(options) {
                     urlPool.push({ url: result.url, added: Date.now() / 1000 });
                     const urlsToRemove = [];
                     for (const url of urlPool) {
-                        if (Date.now() / 1000 - url.added >= options[1].value) {
+                        if (Date.now() / 1000 - url.added >= urlLifespan) {
                             urlsToRemove.push(url.url);
                         }
                     }
@@ -136,10 +141,9 @@ export async function main(options) {
                             urlPool.findIndex((u) => u.url === url),
                             1
                         );
-                        if (options[2].value === true)
-                            logger.warn(`${url} was removed from the url pool. Left: ${urlPool.length}`);
+                        if (log === true) logger.warn(`${url} was removed from the url pool. Left: ${urlPool.length}`);
                     });
-                    if (options[2].value === true) {
+                    if (log === true) {
                         logger.success(`Uploaded: ${result.url}`);
                         logger.info(`Urls sent: ${urlPool.map((value) => value.url).join(', ')}`);
                     }
@@ -160,17 +164,14 @@ export async function main(options) {
             }
         });
     });
-    server.listen(options[0].value, () => {
-        logger.success(`Listening on port ${options[0].value}.`);
+    server.listen(port, () => {
+        logger.success(`Listening on port ${port}.`);
         logger.info(
-            `Remember to change your upload url from:\nhttps://<domain>/api/files/create -> http://localhost:${options[0].value}/<domain>`
+            `Remember to change your upload url from:\nhttps://<domain>/api/files/create -> http://localhost:${port}/<domain>`
         );
-        if (options[2].value === true) logger.info('Verbose logging has been enabled.');
+        if (log === true) logger.info('Verbose logging has been enabled.');
     });
     server.on('error', (err) => {
-        logger.error(
-            `Failed to listen on port ${options[0].value}. Use a different port number and try again.`,
-            `\n${err}`
-        );
+        logger.error(`Failed to listen on port ${port}. Use a different port number and try again.`, `\n${err}`);
     });
 }
