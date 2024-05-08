@@ -49,7 +49,7 @@ jobs:
               run: |
                   rm -rf ./*
                   mv ../temp_dir/* ./
-                  
+
             - name: Create Auto File
               run: |
                   echo "" > ./.auto
