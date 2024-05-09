@@ -92,7 +92,7 @@ a:hover {
     font-size: medium;
     text-align: left;
     max-width: 80%;
-    overflow-x: auto;
+    overflow-x: scroll;
     white-space: nowrap;
 }
 
@@ -121,6 +121,11 @@ code {
     white-space: nowrap;
     max-width: 95%;
     white-space: pre;
+}
+
+pre:has(> code) {
+    max-width: 90%;
+    overflow-x: none;
 }
 
 #side-nav-bar {
