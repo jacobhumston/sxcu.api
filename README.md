@@ -96,7 +96,7 @@ Need to make a custom request? It's pretty simple as well. The request method al
 
 ```js
 // Import methods.
-import { request, toggleRequestQueue } from 'sxcu.api';
+import { request, toggleRequestQueue, resolveError } from 'sxcu.api';
 
 // Enable the request queue.
 toggleRequestQueue(true, true);
