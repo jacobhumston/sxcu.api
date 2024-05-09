@@ -2,6 +2,7 @@ name: Generate Docs
 
 on:
     - workflow_dispatch
+    - push
 
 permissions:
     contents: write
@@ -32,6 +33,25 @@ jobs:
               run: |
                   cp -R ${{ github.workspace }}/docs/ ../temp_docs/
 
+            - name: Checkout Dev Branch
+              uses: actions/checkout@v2
+              with:
+                  ref: dev
+
+            - name: Install Dependencies (Dev)
+              run: npm ci
+    
+            - name: Build Docs (Dev)
+              run: bash ./build.bash docs
+    
+            - name: Format Docs (Dev)
+              run: |
+                  bash ./build.bash format
+    
+            - name: Save Docs (Dev)
+              run: |
+                  cp -R ${{ github.workspace }}/docs/ ../temp_docs/dev/
+
             - name: Checkout Docs Branch
               uses: actions/checkout@v2
               with:
@@ -41,6 +61,14 @@ jobs:
               run: |
                   rm -rf docs
                   mv ../temp_docs/ docs/
+            
+            - name: Create Auto File
+              run: |
+                  rm ./.auto || true;
+                  echo "" > ./.auto
+                  echo "SHA: ${GITHUB_SHA}" >> ./.auto
+                  echo "SHA URL: https://github.com/jacobhumston/sxcu.api/commit/${GITHUB_SHA}" >> ./.auto
+                  echo "Date Modified: $(date +%F)" >> ./.auto
 
             - name: Commit Changes
               run: |
