@@ -14,7 +14,7 @@ sxcu.api was created to allow any developer of any skill set to easily create im
 
 **sxcu.net:** [Website](https://sxcu.net/) / [API Docs](https://sxcu.net/api/docs/) / [Discord](https://discord.gg/ZBcYQwMWTG) / [Donate](https://paypal.me/MisterFix)
 
-## Updating to v2.0.0 from v1.x.x
+### Updating to v2.0.0 from v1.x.x
 
 The guide for doing so can be found [here](https://sxcu.api.lovelyjacob.com/guides/updating-to-v2.html).
 
@@ -31,6 +31,13 @@ If you would like to install the latest developer build, you can install from th
 ```bash
 npm install "https://github.com/jacobhumston/sxcu.api.git#dev-build"
 ```
+
+## Documentation
+
+The documentation includes api information and guides/tutorials.
+
+-   Latest version: [sxcu.api.lovelyjacob.com](https://sxcu.api.lovelyjacob.com)
+-   Development version: [sxcu.api.lovelyjacob.com/dev](https://sxcu.api.lovelyjacob.com/dev/)
 
 ## Example Usage
 
