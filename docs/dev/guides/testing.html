@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>sxcu.api</title>
+        <meta property="og:title" content="sxcu.api - node.js library to interact with the sxcu.net api." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sxcu.api.lovelyjacob.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../styles.css" />
+    </head>
+    <body>
+        <div id="nav-bar">
+            <button id="menu" type="button"><span class="material-icons-round">menu</span></button>
+            <p>sxcu.api</p>
+            <a href="../">Home</a>
+            <a href="../latest/">Docs</a>
+        </div>
+        <div id="side-nav-bar-darken"></div>
+        <div id="side-nav-bar">
+            <a href="cli.html" class="side-nav-bar-link">Command Line Interface</a>
+            <hr />
+            <a href="testing.html" class="side-nav-bar-link">Testing</a>
+            <hr />
+            <a href="updating-to-v2.html" class="side-nav-bar-link">Updating to v2.0.0</a>
+            <hr />
+            <a href="uploading-a-file.html" class="side-nav-bar-link">Uploading a File</a>
+            <hr />
+            <a href="user-agent.html" class="side-nav-bar-link">Setting/Modifying the User Agent</a>
+            <hr />
+            <a href="welcome.html" class="side-nav-bar-link">Welcome!</a>
+        </div>
+        <br />
+        <div id="guide-wrapper">
+            <h1>Testing</h1>
+            <hr />
+            <p>sxcu.api's testing system is as follows:</p>
+            <pre><code class="language-txt">test/ - Test directory.<br>    assets/ - Test assets directory.<br>        test.png - Testing image.<br>        test.sxcu - Testing sxcu file.<br>    tests/ - Tests to be executed.<br>        &lt;name&gt;.js - Test file.<br>    index.js - Main test file.<br>    output.txt - Output file. (Git ignored.)<br>    other.js - Other test file. (Git ignored.)<br>    other.cjs - Other test file. [Commonjs] (Git ignored.)<br></code></pre>
+            <p>
+                Please do not add tests in your pull requests unless it is related to the pull request itself. (Make
+                sure the test is formatted correctly!)
+            </p>
+            <p>Creating a test is pretty easy:</p>
+            <pre><code class="language-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> sxcu <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-comment">// Tests that make requests to the API are required to be inactive when not testing manually.</span><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> active = <span class="hljs-literal">true</span>; <span class="hljs-comment">// If false, the test will be skipped.</span><br><br><span class="hljs-keyword">export</span> <span class="hljs-keyword">async</span> <span class="hljs-keyword">function</span> <span class="hljs-title function_">execute</span>(<span class="hljs-params"></span>) {<br>    <span class="hljs-comment">// test code</span><br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;my result!&#x27;</span>);<br><br>    <span class="hljs-comment">// uh oh, error!</span><br>    <span class="hljs-keyword">throw</span> <span class="hljs-string">&#x27;oh no :(&#x27;</span>;<br>}<br></code></pre>
+            <p>
+                Make sure to log the result to the console so that it is added to the output file. It is also important
+                that you throw an error if the test fails.
+            </p>
+            <p>If you have any questions, let us know!</p>
+        </div>
+        <br />
+        <br />
+        <script>
+            const menu = document.getElementById('menu');
+
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach((block) => {
+                if (block.childElementCount === 0) {
+                    block.classList.add('inline-code');
+                }
+            });
+
+            const sideNavBar = document.getElementById('side-nav-bar');
+            const sideNavBarDarken = document.getElementById('side-nav-bar-darken');
+
+            let enabled = true;
+            menu.addEventListener('click', () => {
+                enabled = enabled ? null : true;
+                console.log(enabled);
+                sideNavBar.style.display = enabled ? 'none' : 'block';
+                sideNavBarDarken.style.display = enabled ? 'none' : 'block';
+                document.body.style.overflowY = enabled ? 'auto' : 'hidden';
+            });
+
+            {
+                const codeBlocks = document.getElementsByTagName('code');
+                for (const block of codeBlocks) {
+                    if (block.parentElement.tagName !== 'PRE') continue;
+                    const id = `copy${Date.now()}${Math.random()}`;
+                    const button = `<span class="material-icons-round copy-button" id="${id}">content_copy</span>`;
+                    //block.innerHTML = block.innerHTML.replace('<br>', `${button}<br>`);
+                    //if (!block.innerHTML.includes(button)) block.insertAdjacentHTML('beforeend', button);
+                    block.parentElement.insertAdjacentHTML('beforeend', button);
+                    let coolDown = false;
+                    const element = document.getElementById(id);
+                    element.addEventListener('click', async function () {
+                        const fakeBlock = block.cloneNode(true);
+                        fakeBlock.innerHTML = fakeBlock.innerHTML.replaceAll('<br>', '\n').replace('content_copy', '');
+                        if (coolDown === true) return fakeBlock.remove();
+                        coolDown = true;
+                        element.innerText = 'hourglass_empty';
+                        try {
+                            await navigator.clipboard.writeText(fakeBlock.textContent);
+                            element.innerText = 'done';
+                            element.style.color = 'rgb(93, 166, 99)';
+                        } catch {
+                            element.innerText = 'error';
+                            element.style.color = 'rgb(243, 109, 109)';
+                        }
+                        setTimeout(function () {
+                            element.innerText = 'content_copy';
+                            element.style.color = null;
+                            coolDown = false;
+                        }, 3000);
+                        fakeBlock.remove();
+                    });
+                }
+            }
+        </script>
+    </body>
+</html>

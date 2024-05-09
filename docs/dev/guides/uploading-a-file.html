@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>sxcu.api</title>
+        <meta property="og:title" content="sxcu.api - node.js library to interact with the sxcu.net api." />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://sxcu.api.lovelyjacob.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="../styles.css" />
+    </head>
+    <body>
+        <div id="nav-bar">
+            <button id="menu" type="button"><span class="material-icons-round">menu</span></button>
+            <p>sxcu.api</p>
+            <a href="../">Home</a>
+            <a href="../latest/">Docs</a>
+        </div>
+        <div id="side-nav-bar-darken"></div>
+        <div id="side-nav-bar">
+            <a href="cli.html" class="side-nav-bar-link">Command Line Interface</a>
+            <hr />
+            <a href="testing.html" class="side-nav-bar-link">Testing</a>
+            <hr />
+            <a href="updating-to-v2.html" class="side-nav-bar-link">Updating to v2.0.0</a>
+            <hr />
+            <a href="uploading-a-file.html" class="side-nav-bar-link">Uploading a File</a>
+            <hr />
+            <a href="user-agent.html" class="side-nav-bar-link">Setting/Modifying the User Agent</a>
+            <hr />
+            <a href="welcome.html" class="side-nav-bar-link">Welcome!</a>
+        </div>
+        <br />
+        <div id="guide-wrapper">
+            <h1>Uploading a File</h1>
+            <hr />
+            <p>This is a guide on how to upload a file.</p>
+            <h2>File Structure</h2>
+            <hr />
+            <p>The file structure of this guide is as follows:</p>
+            <p><img src="/assets/file-structer-uploading-a-file-guide.png" alt="File Structure" /></p>
+            <h2>Uploading a File</h2>
+            <hr />
+            <p>
+                To upload the file, we need to use the <code>uploadFile</code> method.
+                <a href="https://sxcu.api.lovelyjacob.com/latest/functions/uploadFile.html">Documentation Reference</a>
+            </p>
+            <pre><code class="language-js"><span class="hljs-keyword">import</span> { uploadFile } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title function_">uploadFile</span>();<br></code></pre>
+            <p>
+                For the first argument of the function, we need to provide the path of the image. In our case, it is
+                <code>test.png</code> <em>or</em> <code>./test.png</code>.
+            </p>
+            <pre><code class="language-js"><span class="hljs-title function_">uploadFile</span>(<span class="hljs-string">&#x27;test.png&#x27;</span>);<br></code></pre>
+            <p>However, we are not finished yet! We need to get the result, and also handle errors.</p>
+            <pre><code class="language-js"><span class="hljs-comment">// <span class="hljs-doctag">NOTE:</span> We use await because uploadFile returns a promise!</span><br><span class="hljs-comment">// ----- https://www.freecodecamp.org/news/guide-to-javascript-promises/</span><br><span class="hljs-keyword">const</span> result = <span class="hljs-keyword">await</span> <span class="hljs-title function_">uploadFile</span>(<span class="hljs-string">&#x27;test.png&#x27;</span>).<span class="hljs-title function_">catch</span>(<span class="hljs-function">(<span class="hljs-params">err</span>) =&gt;</span> <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;Something went wrong!&#x27;</span>, err));<br><br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result);<br></code></pre>
+            <p>Execute the command <code>node index.mjs</code>, you will get an output similar to the following:</p>
+            <pre><code class="language-json"><span class="hljs-punctuation">{</span><br>    <span class="hljs-attr">&quot;id&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;6xUyjTePe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;url&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://sxcu.net/6xUyjTePe&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;deletionUrl&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://sxcu.net/api/files/delete/6xUyjTePe/ce7f3b7e...&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;deletionToken&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ce7f3b7e...&quot;</span><span class="hljs-punctuation">,</span><br>    <span class="hljs-attr">&quot;thumbnail&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;https://sxcu.net/t/6xUyjTePe.png&quot;</span><br><span class="hljs-punctuation">}</span><br></code></pre>
+            <h2>Conclusion</h2>
+            <hr />
+            <p>Uploading a file with sxcu.api is extremely easy, however mistakes are easy to make!</p>
+            <p>If you need any help, feel free to create an issue in our GitHub repository.</p>
+            <p>Happy coding!</p>
+        </div>
+        <br />
+        <br />
+        <script>
+            const menu = document.getElementById('menu');
+
+            const codeBlocks = document.querySelectorAll('code');
+            codeBlocks.forEach((block) => {
+                if (block.childElementCount === 0) {
+                    block.classList.add('inline-code');
+                }
+            });
+
+            const sideNavBar = document.getElementById('side-nav-bar');
+            const sideNavBarDarken = document.getElementById('side-nav-bar-darken');
+
+            let enabled = true;
+            menu.addEventListener('click', () => {
+                enabled = enabled ? null : true;
+                console.log(enabled);
+                sideNavBar.style.display = enabled ? 'none' : 'block';
+                sideNavBarDarken.style.display = enabled ? 'none' : 'block';
+                document.body.style.overflowY = enabled ? 'auto' : 'hidden';
+            });
+
+            {
+                const codeBlocks = document.getElementsByTagName('code');
+                for (const block of codeBlocks) {
+                    if (block.parentElement.tagName !== 'PRE') continue;
+                    const id = `copy${Date.now()}${Math.random()}`;
+                    const button = `<span class="material-icons-round copy-button" id="${id}">content_copy</span>`;
+                    //block.innerHTML = block.innerHTML.replace('<br>', `${button}<br>`);
+                    //if (!block.innerHTML.includes(button)) block.insertAdjacentHTML('beforeend', button);
+                    block.parentElement.insertAdjacentHTML('beforeend', button);
+                    let coolDown = false;
+                    const element = document.getElementById(id);
+                    element.addEventListener('click', async function () {
+                        const fakeBlock = block.cloneNode(true);
+                        fakeBlock.innerHTML = fakeBlock.innerHTML.replaceAll('<br>', '\n').replace('content_copy', '');
+                        if (coolDown === true) return fakeBlock.remove();
+                        coolDown = true;
+                        element.innerText = 'hourglass_empty';
+                        try {
+                            await navigator.clipboard.writeText(fakeBlock.textContent);
+                            element.innerText = 'done';
+                            element.style.color = 'rgb(93, 166, 99)';
+                        } catch {
+                            element.innerText = 'error';
+                            element.style.color = 'rgb(243, 109, 109)';
+                        }
+                        setTimeout(function () {
+                            element.innerText = 'content_copy';
+                            element.style.color = null;
+                            coolDown = false;
+                        }, 3000);
+                        fakeBlock.remove();
+                    });
+                }
+            }
+        </script>
+    </body>
+</html>
