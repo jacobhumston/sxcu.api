@@ -69,7 +69,7 @@ sxcu help --table true --command <command>
 
 ## Middleware Server
 
-The CLI includes a middleware server for upload files. The two main features are ratel imit handling and multiple urls in the result. This middleware can handle any application that sends a valid payload. **(This includes ShareX!)**
+The CLI includes a middleware server for uploading files. The two main features are rate limit handling as well as multiple urls in the same response. This middleware can handle any application that sends a valid payload. **(This includes ShareX!)**
 
 Instead of having to send image urls in multiple messages, you can provide a value for `--url-lifespan <number>`. This option determines how old an image can be before it's link is no longer included in responses. Each link is separated by a new line.
 

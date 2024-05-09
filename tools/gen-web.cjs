@@ -28,7 +28,7 @@ fs.copyFileSync(`web/.nojekyll`, `docs/.nojekyll`);
 console.log(`Generating guide list...`);
 const guideList = [];
 const rawGuideList = [];
-for (const file of fs.readdirSync('web/guides/')) {
+for (const file of fs.readdirSync('web/guides/').sort()) {
     if (file.endsWith('.md')) {
         const content = fs.readFileSync(`web/guides/${file}`, 'utf-8');
         const title = content.split('\n')[0].replace('# ', '');
@@ -40,7 +40,7 @@ for (const file of fs.readdirSync('web/guides/')) {
     }
 }
 
-for (const file of fs.readdirSync('web/guides/')) {
+for (const file of fs.readdirSync('web/guides/').sort()) {
     if (file.endsWith('.md')) {
         console.log(`Parsing... ${file}`);
         const content = fs
