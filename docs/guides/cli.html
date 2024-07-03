@@ -37,42 +37,68 @@
         </div>
         <br />
         <div id="guide-wrapper">
-            <h1>Setting/Modifying the User Agent</h1>
+            <h1>Command Line Interface</h1>
             <hr />
             <p>
-                Setting your User Agent is very important, as this value is used to the set
-                <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/User-Agent">User-Agent Header</a> on
-                all requests made to the API.
+                sxcu.api has a CLI included in the package. The CLI includes utility commands to interact with the
+                sxcu.api library in the command line. A middleware server is also included, which can add some extra
+                features to your uploader of choice.
             </p>
+            <h2>Installing &amp; Execution</h2>
+            <hr />
+            <pre><code class="language-bash">npm install -g sxcu.api<br></code></pre>
             <p>
-                <strong
-                    >This is done for you on the first request automatically, however using a custom User Agent is
-                    usually recommended.</strong
+                <em
+                    >You can replace <code>sxcu.api</code> with
+                    <code>&quot;https://github.com/jacobhumston/sxcu.api.git#dev-build&quot;</code> to install the
+                    latest development build instead.</em
                 >
             </p>
             <p>
-                <strong>Important note:</strong> The class <code>UserAgentClass</code> is not used by the request module
-                internally and is only intended for type checking. Please use the exported variable
-                <code>UserAgent</code> instead.
+                Once installed, you should be able to run <code>sxcu</code> in your terminal.
+                <em>(A terminal restart may be required.)</em>
             </p>
-            <p>Setting the User Agent is very straight forward.</p>
-            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">set</span>(<span class="hljs-string">&#x27;user agent&#x27;</span>);<br></code></pre>
+            <pre><code class="language-bash">sxcu<br></code></pre>
+            <p>If you do not want to install the package globally, install locally instead.</p>
+            <pre><code class="language-bash">npm install sxcu.api<br></code></pre>
+            <p>To execute sxcu on a local install; you will need to include the path or use <code>npx</code>.</p>
+            <pre><code class="language-bash">npx sxcu<br></code></pre>
+            <pre><code class="language-bash">./node_modules/.bin/sxcu<br></code></pre>
+            <h2>Help Command and Options</h2>
+            <hr />
+            <p>You can use the <code>help</code> command to get a list of commands.</p>
+            <pre><code class="language-bash">sxcu <span class="hljs-built_in">help</span><br></code></pre>
+            <p>The CLI uses named arguments instead of positional for options.</p>
+            <pre><code class="language-bash">sxcu <span class="hljs-built_in">help</span> <span class="hljs-literal">true</span> <span class="hljs-comment"># wrong</span><br>sxcu <span class="hljs-built_in">help</span> --table <span class="hljs-literal">true</span> <span class="hljs-comment"># correct</span><br></code></pre>
+            <p>The format is simple; <code>sxcu &lt;command&gt; --&lt;option name&gt; &lt;option value&gt;</code></p>
+            <p>You can include as many options as needed. For example:</p>
+            <pre><code class="language-bash">sxcu server --port 80 --url-lifespan 60 --<span class="hljs-built_in">log</span> <span class="hljs-literal">true</span><br></code></pre>
             <p>
-                The format for User Agents is listed as the following on
-                <a href="https://sxcu.net/api/docs/#overview">sxcu.net's API documentation</a>.
+                To get a list of a command's options and their descriptions; use the <code>command</code> option of the
+                <code>help</code> command.
             </p>
-            <p><code>sxcuUploader/$versionNumber (+$url)</code></p>
-            <p><strong>Keep in mind that invalid User Agents will likely result in api errors!</strong></p>
+            <pre><code class="language-bash">sxcu <span class="hljs-built_in">help</span> --<span class="hljs-built_in">command</span> &lt;<span class="hljs-built_in">command</span>&gt;<br></code></pre>
+            <p>The help command also has an option to display the results as a table.</p>
+            <pre><code class="language-bash">sxcu <span class="hljs-built_in">help</span> --table <span class="hljs-literal">true</span> --<span class="hljs-built_in">command</span> &lt;<span class="hljs-built_in">command</span>&gt;<br></code></pre>
+            <h2>Middleware Server</h2>
             <hr />
             <p>
-                There is also an available method that uses a default User Agent based on sxcu.api's package.json file.
+                The CLI includes a middleware server for uploading files. The two main features are rate limit handling
+                as well as multiple urls in the same response. This middleware can handle any application that sends a
+                valid payload. <strong>(This includes ShareX!)</strong>
             </p>
-            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>();<br></code></pre>
             <p>
-                You can optionally set the <code>pathOverride</code> parameter of <code>useDefault</code> to the path of
-                a different package.json file.
+                Instead of having to send image urls in multiple messages, you can provide a value for
+                <code>--url-lifespan &lt;number&gt;</code>. This option determines how old an image can be before it's
+                link is no longer included in responses. Each link is separated by a new line.
             </p>
-            <pre><code class="language-js"><span class="hljs-keyword">import</span> { <span class="hljs-title class_">UserAgent</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;sxcu.api&#x27;</span>;<br><br><span class="hljs-title class_">UserAgent</span>.<span class="hljs-title function_">useDefault</span>(<span class="hljs-string">&#x27;path/to/package.json&#x27;</span>);<br></code></pre>
+            <p>To start the server, all you need to do is provide the port.</p>
+            <pre><code class="language-bash">sxcu server --port 5555<br></code></pre>
+            <p>There is plenty of options available, which can be found using the help command.</p>
+            <p>
+                <strong>If you want to request a feature, create an issue on the GitHub repository!</strong> - Or create
+                a pull request with the changes already made. :^)
+            </p>
         </div>
         <br />
         <br />
