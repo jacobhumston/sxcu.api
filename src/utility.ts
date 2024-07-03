@@ -110,9 +110,8 @@ const snowflakeFlags: (keyof typeof SnowflakeObjectFlag | null)[] = [
  * @returns The snowflake's data.
  */
 export function parseSnowflake(snowflake: Snowflake): ParsedSnowflake {
-    if (typeof snowflake === 'number') snowflake = convertBase(snowflake.toString(), 10, 63);
-
-    const binaryString = convertBase(snowflake.replaceAll('_', '+'), 63, 10),
+    const binaryString =
+            typeof snowflake === 'number' ? snowflake : convertBase(snowflake.replaceAll('_', '+'), 63, 10),
         binary = BigInt(binaryString);
 
     const data = {

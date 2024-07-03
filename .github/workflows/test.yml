@@ -27,7 +27,7 @@ jobs:
 
             - name: Run Tests
               id: run-tests
-              run: bash build.bash test
+              run: node test/index.js --trace-uncaught --trace-warnings --trace-exit
 
     test_error:
         runs-on: ubuntu-latest

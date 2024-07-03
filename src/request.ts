@@ -47,7 +47,7 @@ export type RateLimit = {
      * Endpoint that this rate limit belongs to.
      * This will be null if isGlobal is true.
      */
-    endpoint: string | null;
+    endpoint: Endpoint | null;
 };
 
 /**
@@ -118,22 +118,33 @@ export async function request(options: RequestOptions): Promise<{ [key: string]:
         throw { error: error.toString(), code: 0 };
     });
 
-    // Update rate limit data.
+    // Get rate limit headers.
+    const globalHeader = response.headers.get('X-RateLimit-Global');
+    const limitHeader = response.headers.get('X-RateLimit-Limit');
+    const remainingHeader = response.headers.get('X-RateLimit-Remaining');
+    const resetHeader = response.headers.get('X-RateLimit-Reset');
+    const resetAfterHeader = response.headers.get('X-RateLimit-Reset-After');
+    const bucketHeader = response.headers.get('X-RateLimit-Bucket');
+
+    // Create a rate limit object.
     const foundRateLimit: RateLimit = {
-        isGlobal: response.headers.get('X-RateLimit-Global') ? true : false,
-        limit: parseInt(response.headers.get('X-RateLimit-Limit') ?? '0'),
-        remaining: parseInt(response.headers.get('X-RateLimit-Remaining') ?? '0'),
-        reset: parseInt(response.headers.get('X-RateLimit-Reset') ?? '0'),
-        resetDate: new Date(parseInt(response.headers.get('X-RateLimit-Reset') ?? '0') * 1000),
-        resetAfter: parseFloat(response.headers.get('X-RateLimit-Reset-After') ?? '0'),
-        bucket: response.headers.get('X-RateLimit-Bucket') ?? '?',
-        endpoint: response.headers.get('X-RateLimit-Global') ? null : endpoint,
+        isGlobal: globalHeader ? true : false,
+        limit: parseInt(limitHeader ?? '0'),
+        remaining: parseInt(remainingHeader ?? '0'),
+        reset: parseInt(resetHeader ?? '0'),
+        resetDate: new Date(parseInt(resetHeader ?? '0') * 1000),
+        resetAfter: parseFloat(resetAfterHeader ?? '0'),
+        bucket: bucketHeader ?? '?',
+        endpoint: globalHeader ? null : endpoint,
     };
 
-    if (foundRateLimit.isGlobal) {
-        rateLimits['_Global'] = foundRateLimit;
-    } else {
-        rateLimits[foundRateLimit.bucket] = foundRateLimit;
+    // If the rate limit data is missing then it won't be stored.
+    if (foundRateLimit.bucket !== '?') {
+        if (foundRateLimit.isGlobal) {
+            rateLimits['_Global'] = foundRateLimit;
+        } else {
+            rateLimits[foundRateLimit.bucket] = foundRateLimit;
+        }
     }
 
     // Retry the request if it failed due to the rate limit. Only if the retry queue is enabled.
