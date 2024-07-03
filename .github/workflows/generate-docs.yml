@@ -40,14 +40,14 @@ jobs:
 
             - name: Install Dependencies (Dev)
               run: npm ci
-    
+
             - name: Build Docs (Dev)
               run: bash ./build.bash docs
-    
+
             - name: Format Docs (Dev)
               run: |
                   bash ./build.bash format
-    
+
             - name: Save Docs (Dev)
               run: |
                   cp -R ${{ github.workspace }}/docs/ ../temp_docs/dev/
@@ -61,7 +61,7 @@ jobs:
               run: |
                   rm -rf docs
                   mv ../temp_docs/ docs/
-            
+
             - name: Create Auto File
               run: |
                   rm ./.auto || true;

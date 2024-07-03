@@ -92,7 +92,7 @@ a:hover {
     font-size: medium;
     text-align: left;
     max-width: 80%;
-    overflow-x: scroll;
+    overflow-x: auto;
     white-space: nowrap;
 }
 

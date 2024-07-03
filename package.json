@@ -57,7 +57,7 @@
         "markdown-it": "^14.1.0",
         "open": "^10.1.0",
         "prettier": "^3.2.5",
-        "typedoc": "^0.25.12",
+        "typedoc": "^0.26.3",
         "typescript": "^5.4.3"
     }
 }
