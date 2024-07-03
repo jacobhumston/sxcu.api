@@ -1,6 +1,7 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.resolveError = exports.createError = void 0;
+exports.createError = createError;
+exports.resolveError = resolveError;
 /**
  * Create an error code.
  * @param message Error message.
@@ -9,7 +10,6 @@ exports.resolveError = exports.createError = void 0;
 function createError(message, code) {
     return { error: message, code: code };
 }
-exports.createError = createError;
 /**
  * Attempt to resolve an error from "thing".
  * @param thing Thing to attempt to convert to an error.
@@ -28,4 +28,3 @@ function resolveError(thing) {
         return { error: 'Unknown', code: 0 };
     }
 }
-exports.resolveError = resolveError;

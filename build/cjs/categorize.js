@@ -1,6 +1,6 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.categorizeImports = void 0;
+exports.categorizeImports = categorizeImports;
 const index_js_1 = require('./index.js');
 /**
  * Categorize imports into their respective categories.
@@ -37,4 +37,3 @@ function categorizeImports() {
         },
     };
 }
-exports.categorizeImports = categorizeImports;

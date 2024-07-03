@@ -1,6 +1,7 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.getCollectionMeta = exports.createCollection = void 0;
+exports.createCollection = createCollection;
+exports.getCollectionMeta = getCollectionMeta;
 const request_js_1 = require('../request.js');
 const error_js_1 = require('../error.js');
 /**
@@ -34,7 +35,6 @@ async function createCollection(title, options) {
         url: `https://sxcu.net/c/${response.collection_id}`,
     };
 }
-exports.createCollection = createCollection;
 /**
  * Get the meta information of a collection.
  * @param id The ID of the collection.
@@ -66,4 +66,3 @@ async function getCollectionMeta(id) {
         })),
     };
 }
-exports.getCollectionMeta = getCollectionMeta;

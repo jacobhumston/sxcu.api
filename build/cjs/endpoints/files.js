@@ -1,6 +1,8 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.deleteFile = exports.getFileMeta = exports.uploadFile = void 0;
+exports.uploadFile = uploadFile;
+exports.getFileMeta = getFileMeta;
+exports.deleteFile = deleteFile;
 const request_js_1 = require('../request.js');
 const error_js_1 = require('../error.js');
 const node_fs_1 = require('node:fs');
@@ -81,7 +83,6 @@ async function uploadFile(file, options, subdomain) {
         getMeta: async () => await getFileMeta(response.id),
     };
 }
-exports.uploadFile = uploadFile;
 /**
  * Get the meta information of a file.
  * @param id The ID of the file.
@@ -114,7 +115,6 @@ async function getFileMeta(id) {
         },
     };
 }
-exports.getFileMeta = getFileMeta;
 /**
  * Delete a file.
  * @param id The ID of the file.
@@ -132,4 +132,3 @@ async function deleteFile(id, token) {
     });
     return response.message;
 }
-exports.deleteFile = deleteFile;

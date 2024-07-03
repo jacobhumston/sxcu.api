@@ -1,6 +1,6 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.convertBase = void 0;
+exports.convertBase = convertBase;
 const error_js_1 = require('../error.js');
 /**
  * Convert a number from one base to another.
@@ -29,4 +29,3 @@ function convertBase(value, fromBase, toBase) {
     }
     return newValue || '0';
 }
-exports.convertBase = convertBase;

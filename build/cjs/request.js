@@ -1,13 +1,12 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.toggleRequestQueue =
-    exports.promisifyEndpointRateLimit =
-    exports.promisifyGlobalRateLimit =
-    exports.promisifyRateLimit =
-    exports.getGlobalRateLimit =
-    exports.getRateLimits =
-    exports.request =
-        void 0;
+exports.request = request;
+exports.getRateLimits = getRateLimits;
+exports.getGlobalRateLimit = getGlobalRateLimit;
+exports.promisifyRateLimit = promisifyRateLimit;
+exports.promisifyGlobalRateLimit = promisifyGlobalRateLimit;
+exports.promisifyEndpointRateLimit = promisifyEndpointRateLimit;
+exports.toggleRequestQueue = toggleRequestQueue;
 const user_agent_js_1 = require('./classes/user-agent.js');
 /**
  * Rate limit storage.
@@ -109,21 +108,18 @@ async function request(options) {
     // If it's an OK, we return the JSON.
     return json;
 }
-exports.request = request;
 /**
  * Returns a copy of the object containing all stored rate limits.
  */
 function getRateLimits() {
     return structuredClone(rateLimits);
 }
-exports.getRateLimits = getRateLimits;
 /**
  * Returns a copy of the global rate limit if it's available.
  */
 function getGlobalRateLimit() {
     return rateLimits['_Global'] ? structuredClone(rateLimits['_Global']) : null;
 }
-exports.getGlobalRateLimit = getGlobalRateLimit;
 /**
  * Returns a blank promise.
  */
@@ -141,7 +137,6 @@ function promisifyRateLimit(rateLimit) {
         setTimeout(resolve, (rateLimit.resetAfter + 1) * 1000); // Add an extra second as a precautionary measure.
     });
 }
-exports.promisifyRateLimit = promisifyRateLimit;
 /**
  * A wrapper for promisifyRateLimit that uses the global rate limit as the first argument.
  * Note that if the global rate limit isn't available then it will instantly resolve.
@@ -151,7 +146,6 @@ function promisifyGlobalRateLimit() {
     if (rateLimit) return promisifyRateLimit(rateLimit);
     return blankPromise();
 }
-exports.promisifyGlobalRateLimit = promisifyGlobalRateLimit;
 /**
  * A wrapper for promisifyRateLimit that uses an endpoint's rate limit as the first argument.
  * Note that if rate limit data for said endpoint isn't available then it will instantly resolve.
@@ -165,7 +159,6 @@ function promisifyEndpointRateLimit(endpoint) {
     if (rateLimit) return promisifyRateLimit(rateLimit);
     return blankPromise();
 }
-exports.promisifyEndpointRateLimit = promisifyEndpointRateLimit;
 /**
  * Toggle the request queue.
  * The request queue enables all requests to automatically respect rate limits.
@@ -178,4 +171,3 @@ function toggleRequestQueue(enabled, retryEnabled) {
     requestQueueEnabled = enabled;
     requestQueueAutomaticRetryEnabled = retryEnabled ?? false;
 }
-exports.toggleRequestQueue = toggleRequestQueue;

@@ -1,6 +1,7 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.deleteLink = exports.createLink = void 0;
+exports.createLink = createLink;
+exports.deleteLink = deleteLink;
 const request_js_1 = require('../request.js');
 const utility_js_1 = require('../utility.js');
 const error_js_1 = require('../error.js');
@@ -33,7 +34,6 @@ async function createLink(url, subdomain) {
             ),
     };
 }
-exports.createLink = createLink;
 /**
  * Delete a link.
  * @param id The ID of the link.
@@ -51,4 +51,3 @@ async function deleteLink(id, token) {
     });
     return response.message;
 }
-exports.deleteLink = deleteLink;

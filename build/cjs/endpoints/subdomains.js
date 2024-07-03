@@ -1,6 +1,8 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.listSubdomains = exports.getSubdomainMeta = exports.checkSubdomain = void 0;
+exports.checkSubdomain = checkSubdomain;
+exports.getSubdomainMeta = getSubdomainMeta;
+exports.listSubdomains = listSubdomains;
 const request_js_1 = require('../request.js');
 const error_js_1 = require('../error.js');
 /**
@@ -19,7 +21,6 @@ async function checkSubdomain(subdomain) {
     });
     return response.exists;
 }
-exports.checkSubdomain = checkSubdomain;
 /**
  * Get the meta data of a subdomain.
  * @param subdomain The subdomain to get the meta data of.
@@ -45,7 +46,6 @@ async function getSubdomainMeta(subdomain) {
         lastActivityDate: new Date(response.last_activity * 1000),
     };
 }
-exports.getSubdomainMeta = getSubdomainMeta;
 /**
  * Get a list of all subdomains.
  * WARNING: The returned list includes NSFW domain names.
@@ -71,4 +71,3 @@ async function listSubdomains() {
     });
     return array;
 }
-exports.listSubdomains = listSubdomains;

@@ -1,11 +1,9 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.convertSxcuFile =
-    exports.parseSnowflake =
-    exports.SnowflakeObjectFlag =
-    exports.SnowflakeObjectType =
-    exports.extractToken =
-        void 0;
+exports.SnowflakeObjectFlag = exports.SnowflakeObjectType = void 0;
+exports.extractToken = extractToken;
+exports.parseSnowflake = parseSnowflake;
+exports.convertSxcuFile = convertSxcuFile;
 const convert_base_js_1 = require('./modules/convert-base.js');
 const node_fs_1 = require('node:fs');
 const error_js_1 = require('./error.js');
@@ -17,7 +15,6 @@ const error_js_1 = require('./error.js');
 function extractToken(url) {
     return url.split('/').pop() ?? '';
 }
-exports.extractToken = extractToken;
 /** All possible strings of a snowflake object type.  */
 var SnowflakeObjectType;
 (function (SnowflakeObjectType) {
@@ -93,7 +90,6 @@ function parseSnowflake(snowflake) {
         raw: data,
     };
 }
-exports.parseSnowflake = parseSnowflake;
 /**
  * Convert an sxcu file to a useable object.
  * @param file Path of the file to convert.
@@ -127,4 +123,3 @@ function convertSxcuFile(file) {
         },
     };
 }
-exports.convertSxcuFile = convertSxcuFile;

@@ -1,6 +1,7 @@
 'use strict';
 Object.defineProperty(exports, '__esModule', { value: true });
-exports.deletePaste = exports.createPaste = void 0;
+exports.createPaste = createPaste;
+exports.deletePaste = deletePaste;
 const request_js_1 = require('../request.js');
 const utility_js_1 = require('../utility.js');
 const error_js_1 = require('../error.js');
@@ -31,7 +32,6 @@ async function createPaste(text) {
             ),
     };
 }
-exports.createPaste = createPaste;
 /**
  * Delete a paste.
  * @param id The ID of the paste.
@@ -49,4 +49,3 @@ async function deletePaste(id, token) {
     });
     return response.message;
 }
-exports.deletePaste = deletePaste;
