@@ -2,5 +2,5 @@
   "name": "@jacobhumston/sxcu",
   "version": "2.0.6",
   "exports": "./src/index.ts",
-  "exclude": "-src/**/*.ts"
+  "exclude": ["-src/**/*.ts"]
 }
