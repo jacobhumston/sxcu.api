@@ -17,6 +17,3 @@ types/**/*.d.ts.map
 
 # Documentation Directory
 docs/
-
-# Test Files
-e*
