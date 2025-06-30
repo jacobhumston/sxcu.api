@@ -23,11 +23,7 @@ import {
     promisifyEndpointRateLimit,
     toggleRequestQueue,
 } from './index.js';
-/**
- * Categorize imports into their respective categories.
- * This does not include types.
- */
-export declare function categorizeImports(): {
+declare const categorized: {
     files: {
         uploadFile: typeof uploadFile;
         getFileMeta: typeof getFileMeta;
@@ -65,4 +61,10 @@ export declare function categorizeImports(): {
         toggleRequestQueue: typeof toggleRequestQueue;
     };
 };
+/**
+ * Categorize imports into their respective categories.
+ * This does not include types.
+ */
+export declare function categorizeImports(): typeof categorized;
+export {};
 //# sourceMappingURL=categorize.d.ts.map
