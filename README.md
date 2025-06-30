@@ -36,8 +36,8 @@ npm install "https://github.com/jacobhumston/sxcu.api.git#dev-build"
 
 The documentation includes api information and guides/tutorials.
 
--   Latest version: [sxcu.api.lovelyjacob.com](https://sxcu.api.lovelyjacob.com)
--   Development version: [sxcu.api.lovelyjacob.com/dev](https://sxcu.api.lovelyjacob.com/dev/)
+- Latest version: [sxcu.api.lovelyjacob.com](https://sxcu.api.lovelyjacob.com)
+- Development version: [sxcu.api.lovelyjacob.com/dev](https://sxcu.api.lovelyjacob.com/dev/)
 
 ## Example Usage
 

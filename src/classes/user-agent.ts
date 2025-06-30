@@ -36,4 +36,4 @@ export class UserAgentClass {
 }
 
 /** User agent used for all requests. */
-export const UserAgent = new UserAgentClass();
+export const UserAgent: UserAgentClass = new UserAgentClass();

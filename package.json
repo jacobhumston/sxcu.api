@@ -54,6 +54,7 @@
         "express": "^4.19.2",
         "get-port": "^7.1.0",
         "highlight.js": "^11.9.0",
+        "jsr": "^0.13.4",
         "markdown-it": "^14.1.0",
         "open": "^10.1.0",
         "prettier": "^3.2.5",

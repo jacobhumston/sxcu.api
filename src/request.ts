@@ -221,7 +221,7 @@ export function promisifyGlobalRateLimit(): Promise<void> {
  * Note that if rate limit data for said endpoint isn't available then it will instantly resolve.
  * @param endpoint Endpoint to promisify the rate limit of.
  */
-export function promisifyEndpointRateLimit(endpoint: Endpoint) {
+export function promisifyEndpointRateLimit(endpoint: Endpoint): Promise<void> {
     let rateLimit = null;
     Object.entries(rateLimits).forEach(([key, value]) => {
         if (value.endpoint === endpoint && key !== '_Global') rateLimit = value;
