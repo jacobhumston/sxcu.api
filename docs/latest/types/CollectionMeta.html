@@ -10,6 +10,7 @@
         <link rel="stylesheet" href="../assets/highlight.css" />
         <link rel="stylesheet" href="../assets/my-theme.css" />
         <script defer src="../assets/main.js"></script>
+        <script defer src="../assets/onload.js"></script>
         <script async src="../assets/icons.js" id="tsd-icons-script"></script>
         <script async src="../assets/search.js" id="tsd-search-script"></script>
         <script async src="../assets/navigation.js" id="tsd-nav-script"></script>
@@ -180,15 +181,16 @@
                     ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                     ><span class="tsd-kind-property">description</span><span class="tsd-signature-symbol">: </span
                     ><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span
-                    ><br /><span>    </span><span class="tsd-kind-property">fileViews</span
-                    ><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span
-                    ><span class="tsd-signature-symbol">; </span><br /><span>    </span
-                    ><span class="tsd-kind-property">files</span><span class="tsd-signature-symbol">: </span
+                    ><br /><span>    </span><span class="tsd-kind-property">files</span
+                    ><span class="tsd-signature-symbol">: </span
                     ><a href="FileCollectionMeta.html" class="tsd-signature-type tsd-kind-type-alias"
                         >FileCollectionMeta</a
                     ><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span><br /><span
                         >    </span
-                    ><span class="tsd-kind-property">id</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-kind-property">fileViews</span><span class="tsd-signature-symbol">: </span
+                    ><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">; </span
+                    ><br /><span>    </span><span class="tsd-kind-property">id</span
+                    ><span class="tsd-signature-symbol">: </span
                     ><a href="Snowflake.html" class="tsd-signature-type tsd-kind-type-alias">Snowflake</a
                     ><span class="tsd-signature-symbol">; </span><br /><span>    </span
                     ><span class="tsd-kind-property">public</span><span class="tsd-signature-symbol">: </span
@@ -239,17 +241,6 @@
                         </li>
                         <li class="tsd-parameter">
                             <h5>
-                                <span class="tsd-kind-property">file<wbr />Views</span
-                                ><span class="tsd-signature-symbol">: </span
-                                ><span class="tsd-signature-type">number</span>
-                            </h5>
-                            <div class="tsd-comment tsd-typography">
-                                <p>The total amount of views the files in this collection have.</p>
-                            </div>
-                            <div class="tsd-comment tsd-typography"></div>
-                        </li>
-                        <li class="tsd-parameter">
-                            <h5>
                                 <span class="tsd-kind-property">files</span><span class="tsd-signature-symbol">: </span
                                 ><a href="FileCollectionMeta.html" class="tsd-signature-type tsd-kind-type-alias"
                                     >FileCollectionMeta</a
@@ -257,6 +248,17 @@
                             </h5>
                             <div class="tsd-comment tsd-typography">
                                 <p>An array of files that belong to this collection.</p>
+                            </div>
+                            <div class="tsd-comment tsd-typography"></div>
+                        </li>
+                        <li class="tsd-parameter">
+                            <h5>
+                                <span class="tsd-kind-property">file<wbr />Views</span
+                                ><span class="tsd-signature-symbol">: </span
+                                ><span class="tsd-signature-type">number</span>
+                            </h5>
+                            <div class="tsd-comment tsd-typography">
+                                <p>The total amount of views the files in this collection have.</p>
                             </div>
                             <div class="tsd-comment tsd-typography"></div>
                         </li>
@@ -309,7 +311,7 @@
                         <li>
                             Defined in
                             <a
-                                href="https://github.com/jacobhumston/sxcu.api/blob/50a47ac3705ee052e18eb967e494a16266f560bb/src/endpoints/collections.ts#L60"
+                                href="https://github.com/jacobhumston/sxcu.api/blob/153683504ac20fe6ddc00bbaf69d0d11b958f801/src/endpoints/collections.ts#L60"
                                 >endpoints/collections.ts:60</a
                             >
                         </li>
