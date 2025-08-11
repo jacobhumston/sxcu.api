@@ -1,7 +1,7 @@
-import { Snowflake } from './types.js';
+import type { Snowflake } from './types.js';
 import { convertBase } from './modules/convert-base.js';
 import { readFileSync } from 'node:fs';
-import { FileOptions } from './endpoints/files.js';
+import type { FileOptions } from './endpoints/files.js';
 import { createError } from './error.js';
 
 /**
