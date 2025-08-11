@@ -1,6 +1,6 @@
 {
     "name": "sxcu.api",
-    "version": "2.0.6",
+    "version": "2.0.7",
     "description": "Node.js library to interact with the sxcu.net API.",
     "main": "./build/esm/index.js",
     "exports": {
