@@ -2,6 +2,7 @@
 Object.defineProperty(exports, '__esModule', { value: true });
 exports.categorizeImports = categorizeImports;
 const index_js_1 = require('./index.js');
+/** Categorized imports. */
 const categorized = {
     files: {
         uploadFile: index_js_1.uploadFile,

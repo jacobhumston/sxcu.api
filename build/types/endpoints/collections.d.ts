@@ -1,4 +1,4 @@
-import { Snowflake, Token, Url } from '../types';
+import type { Snowflake, Token, Url } from '../types';
 /**
  * Available options that can be provided when creating a collection.
  */

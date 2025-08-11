@@ -1,4 +1,4 @@
-import { DeletionToken, Url, Snowflake } from '../types.js';
+import type { DeletionToken, Url, Snowflake } from '../types.js';
 /** A paste object. */
 export type Paste = {
     /** The id of this paste. */

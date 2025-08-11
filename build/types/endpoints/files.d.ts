@@ -1,5 +1,5 @@
-import { SubdomainUrl } from './subdomains.js';
-import { DeletionToken, Snowflake, Token, Url } from '../types.js';
+import type { SubdomainUrl } from './subdomains.js';
+import type { DeletionToken, Snowflake, Token, Url } from '../types.js';
 /** Represents file options which can be utilized in `uploadFile`. */
 export type FileOptions = {
     /** Subdomain upload token. */

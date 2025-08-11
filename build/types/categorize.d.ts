@@ -23,6 +23,7 @@ import {
     promisifyEndpointRateLimit,
     toggleRequestQueue,
 } from './index.js';
+/** Categorized imports. */
 declare const categorized: {
     files: {
         uploadFile: typeof uploadFile;

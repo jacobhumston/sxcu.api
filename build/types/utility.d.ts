@@ -1,5 +1,5 @@
-import { Snowflake } from './types.js';
-import { FileOptions } from './endpoints/files.js';
+import type { Snowflake } from './types.js';
+import type { FileOptions } from './endpoints/files.js';
 /**
  * Extracts the token or id from a url or path.
  * @param url Url to extract the token from.
