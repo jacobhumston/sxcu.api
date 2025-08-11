@@ -30,6 +30,7 @@ import {
     UserAgent,
 } from './index.js';
 
+/** Categorized imports. */
 const categorized = {
     files: { uploadFile: uploadFile, getFileMeta: getFileMeta, deleteFile: deleteFile },
     collections: { createCollection: createCollection, getCollectionMeta: getCollectionMeta },

@@ -1,8 +1,8 @@
 import { request } from '../request.js';
 import { resolveError } from '../error.js';
-import { SubdomainUrl } from './subdomains.js';
+import type { SubdomainUrl } from './subdomains.js';
 import { readFileSync, existsSync } from 'node:fs';
-import { DeletionToken, Snowflake, Token, Url } from '../types.js';
+import type { DeletionToken, Snowflake, Token, Url } from '../types.js';
 import { extractToken } from '../utility.js';
 
 /** Represents file options which can be utilized in `uploadFile`. */

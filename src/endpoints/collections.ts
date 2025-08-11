@@ -1,5 +1,5 @@
 import { request } from '../request.js';
-import { Snowflake, Token, Url } from '../types';
+import type { Snowflake, Token, Url } from '../types';
 import { resolveError } from '../error.js';
 
 /**

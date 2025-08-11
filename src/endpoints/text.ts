@@ -1,5 +1,5 @@
 import { request } from '../request.js';
-import { DeletionToken, Url, Snowflake } from '../types.js';
+import type { DeletionToken, Url, Snowflake } from '../types.js';
 import { extractToken } from '../utility.js';
 import { resolveError } from '../error.js';
 

@@ -1,6 +1,6 @@
 import { request } from '../request.js';
 import { resolveError } from '../error.js';
-import { Snowflake, Url } from '../types.js';
+import type { Snowflake, Url } from '../types.js';
 
 /**
  * Represents a subdomain's url.
