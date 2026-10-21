@@ -1,3 +1,6 @@
+> [!WARNING]
+> As of 10/21/2026, sxcu.net has been sunset. Because of this, sxcu.api will no longer receive updates. The code behind this project is pretty simple; you may be able to repurpose it for another image uploader service if you are interested.
+
 <img src="https://raw.githubusercontent.com/jacobhumston/sxcu.api/banner/new-banner.png" alt="sxcu.api">
 
 # sxcu.api
